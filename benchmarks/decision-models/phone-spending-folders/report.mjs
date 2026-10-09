@@ -435,8 +435,8 @@ th .folder { display: block; font-size: 13px; color: var(--muted); border: 0; pa
 <main>
 <p class="eyebrow"><a href="../../../">AI bench lab</a> · <a href="../../../#${category}">${esc(categories[category].name)}</a> · ${day}</p>
 <h1>Which folder does a chat about phone spending go in?</h1>
-<p class="lede">A simple task with a surprising result. We asked two decision models to file a chat into one of the
-user's folders, ${runs} times per case, then changed one thing at a time to find out why one of them kept missing.</p>
+<p class="lede">Two decision models choose which of the user's folders a chat belongs in. Each case ran ${runs} times,
+and each test changes one variable: the language, the folder's name, the user's wording or the carriers mentioned.</p>
 
 <div class="scores">${[jev, luna].map(scoreRow).join("")}</div>
 <p class="note">Right folder, out of ${total[jev.id].of} runs each. Prices from the Vercel AI Gateway on ${day}; output is free for both.</p>

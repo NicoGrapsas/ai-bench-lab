@@ -4,7 +4,7 @@
 
 A chat app suggests which of your folders a conversation belongs in. We asked
 two decision models to make that call, 10 times per case, and changed one
-thing at a time to see what trips them up.
+thing at a time to isolate what changes the answer.
 
 | Model | Right folder | Price per 1M input tokens |
 |---|---|---|

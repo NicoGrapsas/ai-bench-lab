@@ -46,7 +46,7 @@ ${g.benches.map(card).join("\n")}
 </section>`;
 
 const description =
-  "Small, reproducible AI model benchmarks on simple tasks, each from a real product feature, with every call published.";
+  "Small, reproducible AI model benchmarks on narrow, well-defined tasks, each from a real product feature, with every call published.";
 
 const html = `<!doctype html>
 <html lang="en">
@@ -79,7 +79,7 @@ ${fontLinks}
 <body>
 <main>
 <h1>AI bench lab</h1>
-<p class="lede">Small benchmarks of AI models on simple tasks. Each one comes from a real feature, runs every
+<p class="lede">Small benchmarks of AI models on narrow, well-defined tasks. Each one comes from a real feature, runs every
 case several times through the <a href="https://vercel.com/docs/ai-gateway">Vercel AI Gateway</a>, and
 publishes every call it made.</p>
 ${groups.map(group).join("\n")}

@@ -1,9 +1,9 @@
 # AI bench lab
 
-Small, reproducible benchmarks of AI models on simple tasks. Each one comes
-from a real product feature, runs every case several times through the
-[Vercel AI Gateway](https://vercel.com/docs/ai-gateway), and publishes every
-call it made.
+Small, reproducible benchmarks of AI models on narrow, well-defined tasks.
+Each one comes from a real product feature, runs every case several times
+through the [Vercel AI Gateway](https://vercel.com/docs/ai-gateway), and
+publishes every call it made.
 
 **[Browse the reports →](https://nicograpsas.github.io/ai-bench-lab/)**
 
