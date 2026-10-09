@@ -1,6 +1,6 @@
 # Which folder does a chat about phone spending go in?
 
-**[Read the full report →](https://nicograpsas.github.io/ai-bench-lab/benchmarks/phone-spending-folders/)**
+**[Read the full report →](https://nicograpsas.github.io/ai-bench-lab/benchmarks/decision-models/phone-spending-folders/)**
 
 A chat app suggests which of your folders a conversation belongs in. We asked
 two decision models to make that call, 10 times per case, and changed one
@@ -109,7 +109,7 @@ personal finance.
 | jev | 0 of 25 | 0.11 |
 | Luna Decisions | 0 of 25 | 0.00 |
 
-Every option's probability for every case is in [the report](https://nicograpsas.github.io/ai-bench-lab/benchmarks/phone-spending-folders/)
+Every option's probability for every case is in [the report](https://nicograpsas.github.io/ai-bench-lab/benchmarks/decision-models/phone-spending-folders/)
 and [`results/results.md`](results/results.md); every call is in
 [`results/raw.json`](results/raw.json).
 
@@ -142,8 +142,8 @@ and [`results/results.md`](results/results.md); every call is in
 ## Rerun
 
 ```bash
-npm run bench -- phone-spending-folders            # 500 calls, well under one cent
-npm run bench -- phone-spending-folders --runs 3
+npm run bench -- decision-models/phone-spending-folders            # 500 calls, well under one cent
+npm run bench -- decision-models/phone-spending-folders --runs 3
 ```
 
 Run on 2026-10-09 with `ai@7.0.137` and `@ai-sdk/gateway@4.0.110`.

@@ -7,14 +7,16 @@
 // written against the run committed with them.
 
 import { readFile, writeFile } from "node:fs/promises";
-import { escapeHtml as esc, fmt } from "../../lib/bench.mjs";
-import { fontLinks, pageCss } from "../../lib/page.mjs";
+import { escapeHtml as esc, fmt } from "../../../lib/bench.mjs";
+import { fontLinks, pageCss } from "../../../lib/page.mjs";
 
 const here = new URL(".", import.meta.url);
-const slug = "phone-spending-folders";
-const site = JSON.parse(await readFile(new URL("../../site.json", here), "utf8"));
-const siteUrl = `${site.siteUrl}benchmarks/${slug}/`;
-const sourceUrl = `${site.repoUrl}/blob/main/benchmarks/${slug}/`;
+// The folder is benchmarks/<category>/<slug>/.
+const [category, slug] = here.pathname.split("/").filter(Boolean).slice(-2);
+const categories = JSON.parse(await readFile(new URL("../../../categories.json", here), "utf8"));
+const site = JSON.parse(await readFile(new URL("../../../site.json", here), "utf8"));
+const siteUrl = `${site.siteUrl}benchmarks/${category}/${slug}/`;
+const sourceUrl = `${site.repoUrl}/blob/main/benchmarks/${category}/${slug}/`;
 
 const data = JSON.parse(await readFile(new URL("results/raw.json", here), "utf8"));
 const { scenarios, results, runs, question } = data;
@@ -431,7 +433,7 @@ th .folder { display: block; font-size: 13px; color: var(--muted); border: 0; pa
 </head>
 <body>
 <main>
-<p class="eyebrow"><a href="../../">Decision model benchmarks</a> · ${day}</p>
+<p class="eyebrow"><a href="../../../">AI bench lab</a> · <a href="../../../#${category}">${esc(categories[category].name)}</a> · ${day}</p>
 <h1>Which folder does a chat about phone spending go in?</h1>
 <p class="lede">A simple task with a surprising result. We asked two decision models to file a chat into one of the
 user's folders, ${runs} times per case, then changed one thing at a time to find out why one of them kept missing.</p>
@@ -515,6 +517,7 @@ await writeFile(
   `${JSON.stringify(
     {
       slug,
+      category,
       title: "Which folder does a chat about phone spending go in?",
       task: "choice between the user's folders",
       date: day,

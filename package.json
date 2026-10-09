@@ -2,7 +2,7 @@
   "name": "ai-bench-lab",
   "private": true,
   "type": "module",
-  "description": "Small, reproducible benchmarks of decision models (Decisions API) on the Vercel AI Gateway",
+  "description": "Small, reproducible AI model benchmarks on the Vercel AI Gateway",
   "license": "MIT",
   "engines": { "node": ">=22.9" },
   "scripts": {

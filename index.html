@@ -3,13 +3,13 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>Decision model benchmarks</title>
-<meta name="description" content="Small, reproducible benchmarks of decision models on the Vercel AI Gateway, each from a real product feature.">
+<title>AI bench lab</title>
+<meta name="description" content="Small, reproducible AI model benchmarks on simple tasks, each from a real product feature, with every call published.">
 <meta property="og:type" content="website">
-<meta property="og:title" content="Decision model benchmarks">
-<meta property="og:description" content="Small, reproducible benchmarks of decision models on the Vercel AI Gateway, each from a real product feature.">
+<meta property="og:title" content="AI bench lab">
+<meta property="og:description" content="Small, reproducible AI model benchmarks on simple tasks, each from a real product feature, with every call published.">
 <meta property="og:url" content="https://nicograpsas.github.io/ai-bench-lab/">
-<meta property="og:image" content="https://nicograpsas.github.io/ai-bench-lab/benchmarks/phone-spending-folders/og.png">
+<meta property="og:image" content="https://nicograpsas.github.io/ai-bench-lab/benchmarks/decision-models/phone-spending-folders/og.png">
 <meta name="twitter:card" content="summary_large_image">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -64,6 +64,8 @@ footer { margin-top: 64px; padding-top: 16px; border-top: 1px solid var(--line);
 
 .bench { display: block; color: inherit; text-decoration: none; margin-top: 16px; padding: 20px; background: var(--surface); border: 1px solid var(--line); border-radius: 10px; }
 .bench:hover { border-color: var(--accent); }
+.category { margin-top: 48px; scroll-margin-top: 24px; }
+.category > .note { margin-bottom: 0; }
 .bench h3 { margin: 0 0 4px; font-size: 20px; }
 .bench table { margin-top: 12px; }
 .bench th { font-weight: 400; }
@@ -75,19 +77,21 @@ footer { margin-top: 64px; padding-top: 16px; border-top: 1px solid var(--line);
 </head>
 <body>
 <main>
-<h1>Decision model benchmarks</h1>
-<p class="lede">Decision models answer typed questions (yes or no, pick one, a score) with probabilities
-instead of text. Each benchmark here comes from a real feature, runs every case several times through the
-<a href="https://vercel.com/docs/ai-gateway/sdks-and-apis/openai-decisions">Vercel AI Gateway</a>, and
-publishes its raw data.</p>
-<h2>Benchmarks</h2>
-<a class="bench" href="benchmarks/phone-spending-folders/">
+<h1>AI bench lab</h1>
+<p class="lede">Small benchmarks of AI models on simple tasks. Each one comes from a real feature, runs every
+case several times through the <a href="https://vercel.com/docs/ai-gateway">Vercel AI Gateway</a>, and
+publishes every call it made.</p>
+<section class="category" id="decision-models">
+<h2>Decision models</h2>
+<p class="note">Models that answer typed questions (yes or no, pick one, a score) with probabilities instead of text, through the Decisions API on the Vercel AI Gateway.</p>
+<a class="bench" href="benchmarks/decision-models/phone-spending-folders/">
   <h3>Which folder does a chat about phone spending go in?</h3>
   <p class="note">choice between the user's folders · 500 calls · 2026-10-09</p>
   <table class="summary"><tbody><tr><th scope="row"><code>typesafe-ai/jev</code></th>
       <td><span class="meter"><span style="width:100%"></span></span> 250/250</td></tr><tr><th scope="row"><code>openai/gpt-6-luna-decisions</code></th>
       <td><span class="meter"><span style="width:44%"></span></span> 110/250</td></tr></tbody></table>
 </a>
+</section>
 <footer>Code, raw data and how to rerun: <a href="https://github.com/NicoGrapsas/ai-bench-lab">github.com/NicoGrapsas/ai-bench-lab</a>. Built by <a href="https://github.com/NicoGrapsas">Nico Grapsas</a> with <a href="https://claude.com/claude-code">Claude Code</a>.</footer>
 </main>
 </body>

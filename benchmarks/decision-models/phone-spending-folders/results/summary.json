@@ -1,5 +1,6 @@
 {
   "slug": "phone-spending-folders",
+  "category": "decision-models",
   "title": "Which folder does a chat about phone spending go in?",
   "task": "choice between the user's folders",
   "date": "2026-10-09",

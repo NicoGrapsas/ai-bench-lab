@@ -5,7 +5,7 @@
 
 import { mkdir, writeFile } from "node:fs/promises";
 import { experimental_decide as decide } from "ai";
-import { gatewayFromEnv, pool, range, runsFromArgs } from "../../lib/bench.mjs";
+import { gatewayFromEnv, pool, range, runsFromArgs } from "../../../lib/bench.mjs";
 
 const here = new URL(".", import.meta.url);
 const runs = runsFromArgs();

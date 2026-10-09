@@ -1,0 +1,6 @@
+{
+  "decision-models": {
+    "name": "Decision models",
+    "about": "Models that answer typed questions (yes or no, pick one, a score) with probabilities instead of text, through the Decisions API on the Vercel AI Gateway."
+  }
+}
