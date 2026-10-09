@@ -1,0 +1,7094 @@
+{
+  "date": "2026-10-09T20:49:27.739Z",
+  "runs": 10,
+  "question": "Which of the user's folders does a conversation with these messages belong in?",
+  "scenarios": [
+    {
+      "id": "es-facturas",
+      "label": "Spanish · Personal / Ideas / Facturas",
+      "folders": [
+        "Personal",
+        "Ideas",
+        "Facturas"
+      ],
+      "target": "Facturas",
+      "messages": {
+        "A": "cuanto estoy gastando en telefonia por mes? tengo movistar y personal flow",
+        "B": "cuanto estoy gastando en telefonia por mes?",
+        "C": "user: cuanto estoy gastando en telefonia por mes? tengo movistar y personal flow\n\nassistant: Para calcularlo sumá tus facturas mensuales de Movistar y Personal Flow. Si me pasás los montos te armo un resumen de gastos.",
+        "A-us": "cuanto estoy gastando en telefonia por mes? tengo verizon y t-mobile",
+        "C-us": "user: cuanto estoy gastando en telefonia por mes? tengo verizon y t-mobile\n\nassistant: Para calcularlo sumá tus facturas mensuales de Verizon y T-Mobile. Si me pasás los montos te armo un resumen de gastos."
+      }
+    },
+    {
+      "id": "en-invoices",
+      "label": "English (\"phone bills\") · Personal / Ideas / Invoices",
+      "folders": [
+        "Personal",
+        "Ideas",
+        "Invoices"
+      ],
+      "target": "Invoices",
+      "messages": {
+        "A": "how much am I spending on my phone bills each month? I have Movistar and Personal Flow",
+        "B": "how much am I spending on my phone bills each month?",
+        "C": "user: how much am I spending on my phone bills each month? I have Movistar and Personal Flow\n\nassistant: To work it out, add up your monthly invoices from Movistar and Personal Flow. If you send me the amounts I can put together a summary of your spending.",
+        "A-us": "how much am I spending on my phone bills each month? I have Verizon and T-Mobile",
+        "C-us": "user: how much am I spending on my phone bills each month? I have Verizon and T-Mobile\n\nassistant: To work it out, add up your monthly invoices from Verizon and T-Mobile. If you send me the amounts I can put together a summary of your spending."
+      }
+    },
+    {
+      "id": "en-bills",
+      "label": "English (\"phone bills\") · Personal / Ideas / Bills",
+      "folders": [
+        "Personal",
+        "Ideas",
+        "Bills"
+      ],
+      "target": "Bills",
+      "messages": {
+        "A": "how much am I spending on my phone bills each month? I have Movistar and Personal Flow",
+        "B": "how much am I spending on my phone bills each month?",
+        "C": "user: how much am I spending on my phone bills each month? I have Movistar and Personal Flow\n\nassistant: To work it out, add up your monthly invoices from Movistar and Personal Flow. If you send me the amounts I can put together a summary of your spending.",
+        "A-us": "how much am I spending on my phone bills each month? I have Verizon and T-Mobile",
+        "C-us": "user: how much am I spending on my phone bills each month? I have Verizon and T-Mobile\n\nassistant: To work it out, add up your monthly invoices from Verizon and T-Mobile. If you send me the amounts I can put together a summary of your spending."
+      }
+    },
+    {
+      "id": "en-service-invoices",
+      "label": "English (\"phone service\") · Personal / Ideas / Invoices",
+      "folders": [
+        "Personal",
+        "Ideas",
+        "Invoices"
+      ],
+      "target": "Invoices",
+      "messages": {
+        "A": "how much am I spending on phone service each month? I have Movistar and Personal Flow",
+        "B": "how much am I spending on phone service each month?",
+        "C": "user: how much am I spending on phone service each month? I have Movistar and Personal Flow\n\nassistant: To work it out, add up your monthly invoices from Movistar and Personal Flow. If you send me the amounts I can put together a summary of your spending.",
+        "A-us": "how much am I spending on phone service each month? I have Verizon and T-Mobile",
+        "C-us": "user: how much am I spending on phone service each month? I have Verizon and T-Mobile\n\nassistant: To work it out, add up your monthly invoices from Verizon and T-Mobile. If you send me the amounts I can put together a summary of your spending."
+      }
+    },
+    {
+      "id": "en-service-bills",
+      "label": "English (\"phone service\") · Personal / Ideas / Bills",
+      "folders": [
+        "Personal",
+        "Ideas",
+        "Bills"
+      ],
+      "target": "Bills",
+      "messages": {
+        "A": "how much am I spending on phone service each month? I have Movistar and Personal Flow",
+        "B": "how much am I spending on phone service each month?",
+        "C": "user: how much am I spending on phone service each month? I have Movistar and Personal Flow\n\nassistant: To work it out, add up your monthly invoices from Movistar and Personal Flow. If you send me the amounts I can put together a summary of your spending.",
+        "A-us": "how much am I spending on phone service each month? I have Verizon and T-Mobile",
+        "C-us": "user: how much am I spending on phone service each month? I have Verizon and T-Mobile\n\nassistant: To work it out, add up your monthly invoices from Verizon and T-Mobile. If you send me the amounts I can put together a summary of your spending."
+      }
+    }
+  ],
+  "results": [
+    {
+      "scenario": "en-bills",
+      "message": "A-us",
+      "model": "openai/gpt-6-luna-decisions",
+      "run": 1,
+      "choice": "Bills",
+      "probabilities": {
+        "Personal": 0,
+        "Ideas": 0,
+        "Bills": 0.99,
+        "none": 0.01
+      },
+      "ms": 191
+    },
+    {
+      "scenario": "en-bills",
+      "message": "A-us",
+      "model": "openai/gpt-6-luna-decisions",
+      "run": 2,
+      "choice": "Bills",
+      "probabilities": {
+        "Personal": 0,
+        "Ideas": 0,
+        "Bills": 0.99,
+        "none": 0.01
+      },
+      "ms": 161
+    },
+    {
+      "scenario": "en-bills",
+      "message": "A-us",
+      "model": "openai/gpt-6-luna-decisions",
+      "run": 3,
+      "choice": "Bills",
+      "probabilities": {
+        "Personal": 0,
+        "Ideas": 0,
+        "Bills": 0.99,
+        "none": 0.01
+      },
+      "ms": 207
+    },
+    {
+      "scenario": "en-bills",
+      "message": "A-us",
+      "model": "openai/gpt-6-luna-decisions",
+      "run": 4,
+      "choice": "Bills",
+      "probabilities": {
+        "Personal": 0,
+        "Ideas": 0,
+        "Bills": 0.99,
+        "none": 0.01
+      },
+      "ms": 1261
+    },
+    {
+      "scenario": "en-bills",
+      "message": "A-us",
+      "model": "openai/gpt-6-luna-decisions",
+      "run": 5,
+      "choice": "Bills",
+      "probabilities": {
+        "Personal": 0,
+        "Ideas": 0,
+        "Bills": 0.99,
+        "none": 0.01
+      },
+      "ms": 164
+    },
+    {
+      "scenario": "en-bills",
+      "message": "A-us",
+      "model": "openai/gpt-6-luna-decisions",
+      "run": 6,
+      "choice": "Bills",
+      "probabilities": {
+        "Personal": 0,
+        "Ideas": 0,
+        "Bills": 0.99,
+        "none": 0.01
+      },
+      "ms": 196
+    },
+    {
+      "scenario": "en-bills",
+      "message": "A-us",
+      "model": "openai/gpt-6-luna-decisions",
+      "run": 7,
+      "choice": "Bills",
+      "probabilities": {
+        "Personal": 0,
+        "Ideas": 0,
+        "Bills": 0.99,
+        "none": 0.01
+      },
+      "ms": 1566
+    },
+    {
+      "scenario": "en-bills",
+      "message": "A-us",
+      "model": "openai/gpt-6-luna-decisions",
+      "run": 8,
+      "choice": "Bills",
+      "probabilities": {
+        "Personal": 0,
+        "Ideas": 0,
+        "Bills": 0.99,
+        "none": 0.01
+      },
+      "ms": 158
+    },
+    {
+      "scenario": "en-bills",
+      "message": "A-us",
+      "model": "openai/gpt-6-luna-decisions",
+      "run": 9,
+      "choice": "Bills",
+      "probabilities": {
+        "Personal": 0,
+        "Ideas": 0,
+        "Bills": 0.99,
+        "none": 0.01
+      },
+      "ms": 177
+    },
+    {
+      "scenario": "en-bills",
+      "message": "A-us",
+      "model": "openai/gpt-6-luna-decisions",
+      "run": 10,
+      "choice": "Bills",
+      "probabilities": {
+        "Personal": 0,
+        "Ideas": 0,
+        "Bills": 0.99,
+        "none": 0.01
+      },
+      "ms": 193
+    },
+    {
+      "scenario": "en-bills",
+      "message": "A-us",
+      "model": "typesafe-ai/jev",
+      "run": 1,
+      "choice": "Bills",
+      "probabilities": {
+        "Personal": 0,
+        "Ideas": 0,
+        "Bills": 1,
+        "none": 0
+      },
+      "ms": 171
+    },
+    {
+      "scenario": "en-bills",
+      "message": "A-us",
+      "model": "typesafe-ai/jev",
+      "run": 2,
+      "choice": "Bills",
+      "probabilities": {
+        "Personal": 0,
+        "Ideas": 0,
+        "Bills": 1,
+        "none": 0
+      },
+      "ms": 179
+    },
+    {
+      "scenario": "en-bills",
+      "message": "A-us",
+      "model": "typesafe-ai/jev",
+      "run": 3,
+      "choice": "Bills",
+      "probabilities": {
+        "Personal": 0,
+        "Ideas": 0,
+        "Bills": 1,
+        "none": 0
+      },
+      "ms": 202
+    },
+    {
+      "scenario": "en-bills",
+      "message": "A-us",
+      "model": "typesafe-ai/jev",
+      "run": 4,
+      "choice": "Bills",
+      "probabilities": {
+        "Personal": 0,
+        "Ideas": 0,
+        "Bills": 1,
+        "none": 0
+      },
+      "ms": 213
+    },
+    {
+      "scenario": "en-bills",
+      "message": "A-us",
+      "model": "typesafe-ai/jev",
+      "run": 5,
+      "choice": "Bills",
+      "probabilities": {
+        "Personal": 0,
+        "Ideas": 0,
+        "Bills": 1,
+        "none": 0
+      },
+      "ms": 222
+    },
+    {
+      "scenario": "en-bills",
+      "message": "A-us",
+      "model": "typesafe-ai/jev",
+      "run": 6,
+      "choice": "Bills",
+      "probabilities": {
+        "Personal": 0,
+        "Ideas": 0,
+        "Bills": 1,
+        "none": 0
+      },
+      "ms": 199
+    },
+    {
+      "scenario": "en-bills",
+      "message": "A-us",
+      "model": "typesafe-ai/jev",
+      "run": 7,
+      "choice": "Bills",
+      "probabilities": {
+        "Personal": 0,
+        "Ideas": 0,
+        "Bills": 1,
+        "none": 0
+      },
+      "ms": 187
+    },
+    {
+      "scenario": "en-bills",
+      "message": "A-us",
+      "model": "typesafe-ai/jev",
+      "run": 8,
+      "choice": "Bills",
+      "probabilities": {
+        "Personal": 0,
+        "Ideas": 0,
+        "Bills": 1,
+        "none": 0
+      },
+      "ms": 195
+    },
+    {
+      "scenario": "en-bills",
+      "message": "A-us",
+      "model": "typesafe-ai/jev",
+      "run": 9,
+      "choice": "Bills",
+      "probabilities": {
+        "Personal": 0,
+        "Ideas": 0,
+        "Bills": 1,
+        "none": 0
+      },
+      "ms": 174
+    },
+    {
+      "scenario": "en-bills",
+      "message": "A-us",
+      "model": "typesafe-ai/jev",
+      "run": 10,
+      "choice": "Bills",
+      "probabilities": {
+        "Personal": 0,
+        "Ideas": 0,
+        "Bills": 1,
+        "none": 0
+      },
+      "ms": 229
+    },
+    {
+      "scenario": "en-bills",
+      "message": "A",
+      "model": "openai/gpt-6-luna-decisions",
+      "run": 1,
+      "choice": "Bills",
+      "probabilities": {
+        "Personal": 0.01,
+        "Ideas": 0,
+        "Bills": 0.95,
+        "none": 0.04
+      },
+      "ms": 215
+    },
+    {
+      "scenario": "en-bills",
+      "message": "A",
+      "model": "openai/gpt-6-luna-decisions",
+      "run": 2,
+      "choice": "Bills",
+      "probabilities": {
+        "Personal": 0.01,
+        "Ideas": 0,
+        "Bills": 0.95,
+        "none": 0.04
+      },
+      "ms": 199
+    },
+    {
+      "scenario": "en-bills",
+      "message": "A",
+      "model": "openai/gpt-6-luna-decisions",
+      "run": 3,
+      "choice": "Bills",
+      "probabilities": {
+        "Personal": 0.01,
+        "Ideas": 0,
+        "Bills": 0.95,
+        "none": 0.04
+      },
+      "ms": 155
+    },
+    {
+      "scenario": "en-bills",
+      "message": "A",
+      "model": "openai/gpt-6-luna-decisions",
+      "run": 4,
+      "choice": "Bills",
+      "probabilities": {
+        "Personal": 0.01,
+        "Ideas": 0,
+        "Bills": 0.95,
+        "none": 0.04
+      },
+      "ms": 239
+    },
+    {
+      "scenario": "en-bills",
+      "message": "A",
+      "model": "openai/gpt-6-luna-decisions",
+      "run": 5,
+      "choice": "Bills",
+      "probabilities": {
+        "Personal": 0.01,
+        "Ideas": 0,
+        "Bills": 0.95,
+        "none": 0.04
+      },
+      "ms": 173
+    },
+    {
+      "scenario": "en-bills",
+      "message": "A",
+      "model": "openai/gpt-6-luna-decisions",
+      "run": 6,
+      "choice": "Bills",
+      "probabilities": {
+        "Personal": 0.01,
+        "Ideas": 0,
+        "Bills": 0.95,
+        "none": 0.04
+      },
+      "ms": 152
+    },
+    {
+      "scenario": "en-bills",
+      "message": "A",
+      "model": "openai/gpt-6-luna-decisions",
+      "run": 7,
+      "choice": "Bills",
+      "probabilities": {
+        "Personal": 0.01,
+        "Ideas": 0,
+        "Bills": 0.95,
+        "none": 0.04
+      },
+      "ms": 222
+    },
+    {
+      "scenario": "en-bills",
+      "message": "A",
+      "model": "openai/gpt-6-luna-decisions",
+      "run": 8,
+      "choice": "Bills",
+      "probabilities": {
+        "Personal": 0.01,
+        "Ideas": 0,
+        "Bills": 0.95,
+        "none": 0.04
+      },
+      "ms": 170
+    },
+    {
+      "scenario": "en-bills",
+      "message": "A",
+      "model": "openai/gpt-6-luna-decisions",
+      "run": 9,
+      "choice": "Bills",
+      "probabilities": {
+        "Personal": 0.01,
+        "Ideas": 0,
+        "Bills": 0.95,
+        "none": 0.04
+      },
+      "ms": 170
+    },
+    {
+      "scenario": "en-bills",
+      "message": "A",
+      "model": "openai/gpt-6-luna-decisions",
+      "run": 10,
+      "choice": "Bills",
+      "probabilities": {
+        "Personal": 0.01,
+        "Ideas": 0,
+        "Bills": 0.95,
+        "none": 0.04
+      },
+      "ms": 381
+    },
+    {
+      "scenario": "en-bills",
+      "message": "A",
+      "model": "typesafe-ai/jev",
+      "run": 1,
+      "choice": "Bills",
+      "probabilities": {
+        "Personal": 0,
+        "Ideas": 0,
+        "Bills": 1,
+        "none": 0
+      },
+      "ms": 187
+    },
+    {
+      "scenario": "en-bills",
+      "message": "A",
+      "model": "typesafe-ai/jev",
+      "run": 2,
+      "choice": "Bills",
+      "probabilities": {
+        "Personal": 0,
+        "Ideas": 0,
+        "Bills": 1,
+        "none": 0
+      },
+      "ms": 167
+    },
+    {
+      "scenario": "en-bills",
+      "message": "A",
+      "model": "typesafe-ai/jev",
+      "run": 3,
+      "choice": "Bills",
+      "probabilities": {
+        "Personal": 0,
+        "Ideas": 0,
+        "Bills": 1,
+        "none": 0
+      },
+      "ms": 257
+    },
+    {
+      "scenario": "en-bills",
+      "message": "A",
+      "model": "typesafe-ai/jev",
+      "run": 4,
+      "choice": "Bills",
+      "probabilities": {
+        "Personal": 0,
+        "Ideas": 0,
+        "Bills": 1,
+        "none": 0
+      },
+      "ms": 209
+    },
+    {
+      "scenario": "en-bills",
+      "message": "A",
+      "model": "typesafe-ai/jev",
+      "run": 5,
+      "choice": "Bills",
+      "probabilities": {
+        "Personal": 0,
+        "Ideas": 0,
+        "Bills": 1,
+        "none": 0
+      },
+      "ms": 189
+    },
+    {
+      "scenario": "en-bills",
+      "message": "A",
+      "model": "typesafe-ai/jev",
+      "run": 6,
+      "choice": "Bills",
+      "probabilities": {
+        "Personal": 0,
+        "Ideas": 0,
+        "Bills": 1,
+        "none": 0
+      },
+      "ms": 206
+    },
+    {
+      "scenario": "en-bills",
+      "message": "A",
+      "model": "typesafe-ai/jev",
+      "run": 7,
+      "choice": "Bills",
+      "probabilities": {
+        "Personal": 0,
+        "Ideas": 0,
+        "Bills": 1,
+        "none": 0
+      },
+      "ms": 234
+    },
+    {
+      "scenario": "en-bills",
+      "message": "A",
+      "model": "typesafe-ai/jev",
+      "run": 8,
+      "choice": "Bills",
+      "probabilities": {
+        "Personal": 0,
+        "Ideas": 0,
+        "Bills": 1,
+        "none": 0
+      },
+      "ms": 206
+    },
+    {
+      "scenario": "en-bills",
+      "message": "A",
+      "model": "typesafe-ai/jev",
+      "run": 9,
+      "choice": "Bills",
+      "probabilities": {
+        "Personal": 0,
+        "Ideas": 0,
+        "Bills": 1,
+        "none": 0
+      },
+      "ms": 270
+    },
+    {
+      "scenario": "en-bills",
+      "message": "A",
+      "model": "typesafe-ai/jev",
+      "run": 10,
+      "choice": "Bills",
+      "probabilities": {
+        "Personal": 0,
+        "Ideas": 0,
+        "Bills": 1,
+        "none": 0
+      },
+      "ms": 232
+    },
+    {
+      "scenario": "en-bills",
+      "message": "B",
+      "model": "openai/gpt-6-luna-decisions",
+      "run": 1,
+      "choice": "Bills",
+      "probabilities": {
+        "Personal": 0.02,
+        "Ideas": 0,
+        "Bills": 0.87,
+        "none": 0.11
+      },
+      "ms": 161
+    },
+    {
+      "scenario": "en-bills",
+      "message": "B",
+      "model": "openai/gpt-6-luna-decisions",
+      "run": 2,
+      "choice": "Bills",
+      "probabilities": {
+        "Personal": 0.02,
+        "Ideas": 0,
+        "Bills": 0.87,
+        "none": 0.11
+      },
+      "ms": 239
+    },
+    {
+      "scenario": "en-bills",
+      "message": "B",
+      "model": "openai/gpt-6-luna-decisions",
+      "run": 3,
+      "choice": "Bills",
+      "probabilities": {
+        "Personal": 0.02,
+        "Ideas": 0,
+        "Bills": 0.87,
+        "none": 0.11
+      },
+      "ms": 183
+    },
+    {
+      "scenario": "en-bills",
+      "message": "B",
+      "model": "openai/gpt-6-luna-decisions",
+      "run": 4,
+      "choice": "Bills",
+      "probabilities": {
+        "Personal": 0.02,
+        "Ideas": 0,
+        "Bills": 0.87,
+        "none": 0.11
+      },
+      "ms": 162
+    },
+    {
+      "scenario": "en-bills",
+      "message": "B",
+      "model": "openai/gpt-6-luna-decisions",
+      "run": 5,
+      "choice": "Bills",
+      "probabilities": {
+        "Personal": 0.02,
+        "Ideas": 0,
+        "Bills": 0.87,
+        "none": 0.11
+      },
+      "ms": 157
+    },
+    {
+      "scenario": "en-bills",
+      "message": "B",
+      "model": "openai/gpt-6-luna-decisions",
+      "run": 6,
+      "choice": "Bills",
+      "probabilities": {
+        "Personal": 0.02,
+        "Ideas": 0,
+        "Bills": 0.87,
+        "none": 0.11
+      },
+      "ms": 210
+    },
+    {
+      "scenario": "en-bills",
+      "message": "B",
+      "model": "openai/gpt-6-luna-decisions",
+      "run": 7,
+      "choice": "Bills",
+      "probabilities": {
+        "Personal": 0.02,
+        "Ideas": 0,
+        "Bills": 0.87,
+        "none": 0.11
+      },
+      "ms": 239
+    },
+    {
+      "scenario": "en-bills",
+      "message": "B",
+      "model": "openai/gpt-6-luna-decisions",
+      "run": 8,
+      "choice": "Bills",
+      "probabilities": {
+        "Personal": 0.02,
+        "Ideas": 0,
+        "Bills": 0.87,
+        "none": 0.11
+      },
+      "ms": 148
+    },
+    {
+      "scenario": "en-bills",
+      "message": "B",
+      "model": "openai/gpt-6-luna-decisions",
+      "run": 9,
+      "choice": "Bills",
+      "probabilities": {
+        "Personal": 0.02,
+        "Ideas": 0,
+        "Bills": 0.87,
+        "none": 0.11
+      },
+      "ms": 198
+    },
+    {
+      "scenario": "en-bills",
+      "message": "B",
+      "model": "openai/gpt-6-luna-decisions",
+      "run": 10,
+      "choice": "Bills",
+      "probabilities": {
+        "Personal": 0.02,
+        "Ideas": 0,
+        "Bills": 0.87,
+        "none": 0.11
+      },
+      "ms": 212
+    },
+    {
+      "scenario": "en-bills",
+      "message": "B",
+      "model": "typesafe-ai/jev",
+      "run": 1,
+      "choice": "Bills",
+      "probabilities": {
+        "Personal": 0,
+        "Ideas": 0,
+        "Bills": 1,
+        "none": 0
+      },
+      "ms": 225
+    },
+    {
+      "scenario": "en-bills",
+      "message": "B",
+      "model": "typesafe-ai/jev",
+      "run": 2,
+      "choice": "Bills",
+      "probabilities": {
+        "Personal": 0,
+        "Ideas": 0,
+        "Bills": 1,
+        "none": 0
+      },
+      "ms": 189
+    },
+    {
+      "scenario": "en-bills",
+      "message": "B",
+      "model": "typesafe-ai/jev",
+      "run": 3,
+      "choice": "Bills",
+      "probabilities": {
+        "Personal": 0,
+        "Ideas": 0,
+        "Bills": 1,
+        "none": 0
+      },
+      "ms": 275
+    },
+    {
+      "scenario": "en-bills",
+      "message": "B",
+      "model": "typesafe-ai/jev",
+      "run": 4,
+      "choice": "Bills",
+      "probabilities": {
+        "Personal": 0,
+        "Ideas": 0,
+        "Bills": 1,
+        "none": 0
+      },
+      "ms": 193
+    },
+    {
+      "scenario": "en-bills",
+      "message": "B",
+      "model": "typesafe-ai/jev",
+      "run": 5,
+      "choice": "Bills",
+      "probabilities": {
+        "Personal": 0,
+        "Ideas": 0,
+        "Bills": 1,
+        "none": 0
+      },
+      "ms": 183
+    },
+    {
+      "scenario": "en-bills",
+      "message": "B",
+      "model": "typesafe-ai/jev",
+      "run": 6,
+      "choice": "Bills",
+      "probabilities": {
+        "Personal": 0,
+        "Ideas": 0,
+        "Bills": 1,
+        "none": 0
+      },
+      "ms": 187
+    },
+    {
+      "scenario": "en-bills",
+      "message": "B",
+      "model": "typesafe-ai/jev",
+      "run": 7,
+      "choice": "Bills",
+      "probabilities": {
+        "Personal": 0,
+        "Ideas": 0,
+        "Bills": 1,
+        "none": 0
+      },
+      "ms": 174
+    },
+    {
+      "scenario": "en-bills",
+      "message": "B",
+      "model": "typesafe-ai/jev",
+      "run": 8,
+      "choice": "Bills",
+      "probabilities": {
+        "Personal": 0,
+        "Ideas": 0,
+        "Bills": 1,
+        "none": 0
+      },
+      "ms": 169
+    },
+    {
+      "scenario": "en-bills",
+      "message": "B",
+      "model": "typesafe-ai/jev",
+      "run": 9,
+      "choice": "Bills",
+      "probabilities": {
+        "Personal": 0,
+        "Ideas": 0,
+        "Bills": 1,
+        "none": 0
+      },
+      "ms": 210
+    },
+    {
+      "scenario": "en-bills",
+      "message": "B",
+      "model": "typesafe-ai/jev",
+      "run": 10,
+      "choice": "Bills",
+      "probabilities": {
+        "Personal": 0,
+        "Ideas": 0,
+        "Bills": 1,
+        "none": 0
+      },
+      "ms": 194
+    },
+    {
+      "scenario": "en-bills",
+      "message": "C-us",
+      "model": "openai/gpt-6-luna-decisions",
+      "run": 1,
+      "choice": "Bills",
+      "probabilities": {
+        "Personal": 0.03,
+        "Ideas": 0,
+        "Bills": 0.84,
+        "none": 0.13
+      },
+      "ms": 194
+    },
+    {
+      "scenario": "en-bills",
+      "message": "C-us",
+      "model": "openai/gpt-6-luna-decisions",
+      "run": 2,
+      "choice": "Bills",
+      "probabilities": {
+        "Personal": 0.03,
+        "Ideas": 0,
+        "Bills": 0.84,
+        "none": 0.13
+      },
+      "ms": 150
+    },
+    {
+      "scenario": "en-bills",
+      "message": "C-us",
+      "model": "openai/gpt-6-luna-decisions",
+      "run": 3,
+      "choice": "Bills",
+      "probabilities": {
+        "Personal": 0.03,
+        "Ideas": 0,
+        "Bills": 0.84,
+        "none": 0.13
+      },
+      "ms": 184
+    },
+    {
+      "scenario": "en-bills",
+      "message": "C-us",
+      "model": "openai/gpt-6-luna-decisions",
+      "run": 4,
+      "choice": "Bills",
+      "probabilities": {
+        "Personal": 0.03,
+        "Ideas": 0,
+        "Bills": 0.84,
+        "none": 0.13
+      },
+      "ms": 225
+    },
+    {
+      "scenario": "en-bills",
+      "message": "C-us",
+      "model": "openai/gpt-6-luna-decisions",
+      "run": 5,
+      "choice": "Bills",
+      "probabilities": {
+        "Personal": 0.03,
+        "Ideas": 0,
+        "Bills": 0.84,
+        "none": 0.13
+      },
+      "ms": 209
+    },
+    {
+      "scenario": "en-bills",
+      "message": "C-us",
+      "model": "openai/gpt-6-luna-decisions",
+      "run": 6,
+      "choice": "Bills",
+      "probabilities": {
+        "Personal": 0.03,
+        "Ideas": 0,
+        "Bills": 0.84,
+        "none": 0.13
+      },
+      "ms": 147
+    },
+    {
+      "scenario": "en-bills",
+      "message": "C-us",
+      "model": "openai/gpt-6-luna-decisions",
+      "run": 7,
+      "choice": "Bills",
+      "probabilities": {
+        "Personal": 0.03,
+        "Ideas": 0,
+        "Bills": 0.84,
+        "none": 0.13
+      },
+      "ms": 198
+    },
+    {
+      "scenario": "en-bills",
+      "message": "C-us",
+      "model": "openai/gpt-6-luna-decisions",
+      "run": 8,
+      "choice": "Bills",
+      "probabilities": {
+        "Personal": 0.03,
+        "Ideas": 0,
+        "Bills": 0.84,
+        "none": 0.13
+      },
+      "ms": 146
+    },
+    {
+      "scenario": "en-bills",
+      "message": "C-us",
+      "model": "openai/gpt-6-luna-decisions",
+      "run": 9,
+      "choice": "Bills",
+      "probabilities": {
+        "Personal": 0.03,
+        "Ideas": 0,
+        "Bills": 0.84,
+        "none": 0.13
+      },
+      "ms": 180
+    },
+    {
+      "scenario": "en-bills",
+      "message": "C-us",
+      "model": "openai/gpt-6-luna-decisions",
+      "run": 10,
+      "choice": "Bills",
+      "probabilities": {
+        "Personal": 0.03,
+        "Ideas": 0,
+        "Bills": 0.84,
+        "none": 0.13
+      },
+      "ms": 846
+    },
+    {
+      "scenario": "en-bills",
+      "message": "C-us",
+      "model": "typesafe-ai/jev",
+      "run": 1,
+      "choice": "Bills",
+      "probabilities": {
+        "Personal": 0,
+        "Ideas": 0,
+        "Bills": 1,
+        "none": 0
+      },
+      "ms": 231
+    },
+    {
+      "scenario": "en-bills",
+      "message": "C-us",
+      "model": "typesafe-ai/jev",
+      "run": 2,
+      "choice": "Bills",
+      "probabilities": {
+        "Personal": 0,
+        "Ideas": 0,
+        "Bills": 1,
+        "none": 0
+      },
+      "ms": 196
+    },
+    {
+      "scenario": "en-bills",
+      "message": "C-us",
+      "model": "typesafe-ai/jev",
+      "run": 3,
+      "choice": "Bills",
+      "probabilities": {
+        "Personal": 0,
+        "Ideas": 0,
+        "Bills": 1,
+        "none": 0
+      },
+      "ms": 218
+    },
+    {
+      "scenario": "en-bills",
+      "message": "C-us",
+      "model": "typesafe-ai/jev",
+      "run": 4,
+      "choice": "Bills",
+      "probabilities": {
+        "Personal": 0,
+        "Ideas": 0,
+        "Bills": 1,
+        "none": 0
+      },
+      "ms": 167
+    },
+    {
+      "scenario": "en-bills",
+      "message": "C-us",
+      "model": "typesafe-ai/jev",
+      "run": 5,
+      "choice": "Bills",
+      "probabilities": {
+        "Personal": 0,
+        "Ideas": 0,
+        "Bills": 1,
+        "none": 0
+      },
+      "ms": 198
+    },
+    {
+      "scenario": "en-bills",
+      "message": "C-us",
+      "model": "typesafe-ai/jev",
+      "run": 6,
+      "choice": "Bills",
+      "probabilities": {
+        "Personal": 0,
+        "Ideas": 0,
+        "Bills": 1,
+        "none": 0
+      },
+      "ms": 200
+    },
+    {
+      "scenario": "en-bills",
+      "message": "C-us",
+      "model": "typesafe-ai/jev",
+      "run": 7,
+      "choice": "Bills",
+      "probabilities": {
+        "Personal": 0,
+        "Ideas": 0,
+        "Bills": 1,
+        "none": 0
+      },
+      "ms": 264
+    },
+    {
+      "scenario": "en-bills",
+      "message": "C-us",
+      "model": "typesafe-ai/jev",
+      "run": 8,
+      "choice": "Bills",
+      "probabilities": {
+        "Personal": 0,
+        "Ideas": 0,
+        "Bills": 1,
+        "none": 0
+      },
+      "ms": 221
+    },
+    {
+      "scenario": "en-bills",
+      "message": "C-us",
+      "model": "typesafe-ai/jev",
+      "run": 9,
+      "choice": "Bills",
+      "probabilities": {
+        "Personal": 0,
+        "Ideas": 0,
+        "Bills": 1,
+        "none": 0
+      },
+      "ms": 215
+    },
+    {
+      "scenario": "en-bills",
+      "message": "C-us",
+      "model": "typesafe-ai/jev",
+      "run": 10,
+      "choice": "Bills",
+      "probabilities": {
+        "Personal": 0,
+        "Ideas": 0,
+        "Bills": 1,
+        "none": 0
+      },
+      "ms": 219
+    },
+    {
+      "scenario": "en-bills",
+      "message": "C",
+      "model": "openai/gpt-6-luna-decisions",
+      "run": 1,
+      "choice": "Bills",
+      "probabilities": {
+        "Personal": 0.01,
+        "Ideas": 0,
+        "Bills": 0.98,
+        "none": 0.01
+      },
+      "ms": 160
+    },
+    {
+      "scenario": "en-bills",
+      "message": "C",
+      "model": "openai/gpt-6-luna-decisions",
+      "run": 2,
+      "choice": "Bills",
+      "probabilities": {
+        "Personal": 0.01,
+        "Ideas": 0,
+        "Bills": 0.98,
+        "none": 0.01
+      },
+      "ms": 497
+    },
+    {
+      "scenario": "en-bills",
+      "message": "C",
+      "model": "openai/gpt-6-luna-decisions",
+      "run": 3,
+      "choice": "Bills",
+      "probabilities": {
+        "Personal": 0.01,
+        "Ideas": 0,
+        "Bills": 0.98,
+        "none": 0.01
+      },
+      "ms": 227
+    },
+    {
+      "scenario": "en-bills",
+      "message": "C",
+      "model": "openai/gpt-6-luna-decisions",
+      "run": 4,
+      "choice": "Bills",
+      "probabilities": {
+        "Personal": 0.01,
+        "Ideas": 0,
+        "Bills": 0.98,
+        "none": 0.01
+      },
+      "ms": 170
+    },
+    {
+      "scenario": "en-bills",
+      "message": "C",
+      "model": "openai/gpt-6-luna-decisions",
+      "run": 5,
+      "choice": "Bills",
+      "probabilities": {
+        "Personal": 0.01,
+        "Ideas": 0,
+        "Bills": 0.98,
+        "none": 0.01
+      },
+      "ms": 162
+    },
+    {
+      "scenario": "en-bills",
+      "message": "C",
+      "model": "openai/gpt-6-luna-decisions",
+      "run": 6,
+      "choice": "Bills",
+      "probabilities": {
+        "Personal": 0.01,
+        "Ideas": 0,
+        "Bills": 0.98,
+        "none": 0.01
+      },
+      "ms": 158
+    },
+    {
+      "scenario": "en-bills",
+      "message": "C",
+      "model": "openai/gpt-6-luna-decisions",
+      "run": 7,
+      "choice": "Bills",
+      "probabilities": {
+        "Personal": 0.01,
+        "Ideas": 0,
+        "Bills": 0.98,
+        "none": 0.01
+      },
+      "ms": 143
+    },
+    {
+      "scenario": "en-bills",
+      "message": "C",
+      "model": "openai/gpt-6-luna-decisions",
+      "run": 8,
+      "choice": "Bills",
+      "probabilities": {
+        "Personal": 0.01,
+        "Ideas": 0,
+        "Bills": 0.98,
+        "none": 0.01
+      },
+      "ms": 233
+    },
+    {
+      "scenario": "en-bills",
+      "message": "C",
+      "model": "openai/gpt-6-luna-decisions",
+      "run": 9,
+      "choice": "Bills",
+      "probabilities": {
+        "Personal": 0.01,
+        "Ideas": 0,
+        "Bills": 0.98,
+        "none": 0.01
+      },
+      "ms": 148
+    },
+    {
+      "scenario": "en-bills",
+      "message": "C",
+      "model": "openai/gpt-6-luna-decisions",
+      "run": 10,
+      "choice": "Bills",
+      "probabilities": {
+        "Personal": 0.01,
+        "Ideas": 0,
+        "Bills": 0.98,
+        "none": 0.01
+      },
+      "ms": 210
+    },
+    {
+      "scenario": "en-bills",
+      "message": "C",
+      "model": "typesafe-ai/jev",
+      "run": 1,
+      "choice": "Bills",
+      "probabilities": {
+        "Personal": 0,
+        "Ideas": 0,
+        "Bills": 1,
+        "none": 0
+      },
+      "ms": 194
+    },
+    {
+      "scenario": "en-bills",
+      "message": "C",
+      "model": "typesafe-ai/jev",
+      "run": 2,
+      "choice": "Bills",
+      "probabilities": {
+        "Personal": 0,
+        "Ideas": 0,
+        "Bills": 1,
+        "none": 0
+      },
+      "ms": 336
+    },
+    {
+      "scenario": "en-bills",
+      "message": "C",
+      "model": "typesafe-ai/jev",
+      "run": 3,
+      "choice": "Bills",
+      "probabilities": {
+        "Personal": 0,
+        "Ideas": 0,
+        "Bills": 1,
+        "none": 0
+      },
+      "ms": 170
+    },
+    {
+      "scenario": "en-bills",
+      "message": "C",
+      "model": "typesafe-ai/jev",
+      "run": 4,
+      "choice": "Bills",
+      "probabilities": {
+        "Personal": 0,
+        "Ideas": 0,
+        "Bills": 1,
+        "none": 0
+      },
+      "ms": 206
+    },
+    {
+      "scenario": "en-bills",
+      "message": "C",
+      "model": "typesafe-ai/jev",
+      "run": 5,
+      "choice": "Bills",
+      "probabilities": {
+        "Personal": 0,
+        "Ideas": 0,
+        "Bills": 1,
+        "none": 0
+      },
+      "ms": 197
+    },
+    {
+      "scenario": "en-bills",
+      "message": "C",
+      "model": "typesafe-ai/jev",
+      "run": 6,
+      "choice": "Bills",
+      "probabilities": {
+        "Personal": 0,
+        "Ideas": 0,
+        "Bills": 1,
+        "none": 0
+      },
+      "ms": 212
+    },
+    {
+      "scenario": "en-bills",
+      "message": "C",
+      "model": "typesafe-ai/jev",
+      "run": 7,
+      "choice": "Bills",
+      "probabilities": {
+        "Personal": 0,
+        "Ideas": 0,
+        "Bills": 1,
+        "none": 0
+      },
+      "ms": 169
+    },
+    {
+      "scenario": "en-bills",
+      "message": "C",
+      "model": "typesafe-ai/jev",
+      "run": 8,
+      "choice": "Bills",
+      "probabilities": {
+        "Personal": 0,
+        "Ideas": 0,
+        "Bills": 1,
+        "none": 0
+      },
+      "ms": 222
+    },
+    {
+      "scenario": "en-bills",
+      "message": "C",
+      "model": "typesafe-ai/jev",
+      "run": 9,
+      "choice": "Bills",
+      "probabilities": {
+        "Personal": 0,
+        "Ideas": 0,
+        "Bills": 1,
+        "none": 0
+      },
+      "ms": 235
+    },
+    {
+      "scenario": "en-bills",
+      "message": "C",
+      "model": "typesafe-ai/jev",
+      "run": 10,
+      "choice": "Bills",
+      "probabilities": {
+        "Personal": 0,
+        "Ideas": 0,
+        "Bills": 1,
+        "none": 0
+      },
+      "ms": 179
+    },
+    {
+      "scenario": "en-invoices",
+      "message": "A-us",
+      "model": "openai/gpt-6-luna-decisions",
+      "run": 1,
+      "choice": "none",
+      "probabilities": {
+        "Personal": 0.46,
+        "Ideas": 0.01,
+        "Invoices": 0.01,
+        "none": 0.52
+      },
+      "ms": 286
+    },
+    {
+      "scenario": "en-invoices",
+      "message": "A-us",
+      "model": "openai/gpt-6-luna-decisions",
+      "run": 2,
+      "choice": "none",
+      "probabilities": {
+        "Personal": 0.46,
+        "Ideas": 0.01,
+        "Invoices": 0.01,
+        "none": 0.52
+      },
+      "ms": 193
+    },
+    {
+      "scenario": "en-invoices",
+      "message": "A-us",
+      "model": "openai/gpt-6-luna-decisions",
+      "run": 3,
+      "choice": "none",
+      "probabilities": {
+        "Personal": 0.46,
+        "Ideas": 0.01,
+        "Invoices": 0.01,
+        "none": 0.52
+      },
+      "ms": 142
+    },
+    {
+      "scenario": "en-invoices",
+      "message": "A-us",
+      "model": "openai/gpt-6-luna-decisions",
+      "run": 4,
+      "choice": "none",
+      "probabilities": {
+        "Personal": 0.46,
+        "Ideas": 0.01,
+        "Invoices": 0.01,
+        "none": 0.52
+      },
+      "ms": 215
+    },
+    {
+      "scenario": "en-invoices",
+      "message": "A-us",
+      "model": "openai/gpt-6-luna-decisions",
+      "run": 5,
+      "choice": "none",
+      "probabilities": {
+        "Personal": 0.46,
+        "Ideas": 0.01,
+        "Invoices": 0.01,
+        "none": 0.52
+      },
+      "ms": 165
+    },
+    {
+      "scenario": "en-invoices",
+      "message": "A-us",
+      "model": "openai/gpt-6-luna-decisions",
+      "run": 6,
+      "choice": "none",
+      "probabilities": {
+        "Personal": 0.46,
+        "Ideas": 0.01,
+        "Invoices": 0.01,
+        "none": 0.52
+      },
+      "ms": 214
+    },
+    {
+      "scenario": "en-invoices",
+      "message": "A-us",
+      "model": "openai/gpt-6-luna-decisions",
+      "run": 7,
+      "choice": "none",
+      "probabilities": {
+        "Personal": 0.46,
+        "Ideas": 0.01,
+        "Invoices": 0.01,
+        "none": 0.52
+      },
+      "ms": 189
+    },
+    {
+      "scenario": "en-invoices",
+      "message": "A-us",
+      "model": "openai/gpt-6-luna-decisions",
+      "run": 8,
+      "choice": "none",
+      "probabilities": {
+        "Personal": 0.46,
+        "Ideas": 0.01,
+        "Invoices": 0.01,
+        "none": 0.52
+      },
+      "ms": 209
+    },
+    {
+      "scenario": "en-invoices",
+      "message": "A-us",
+      "model": "openai/gpt-6-luna-decisions",
+      "run": 9,
+      "choice": "none",
+      "probabilities": {
+        "Personal": 0.46,
+        "Ideas": 0.01,
+        "Invoices": 0.01,
+        "none": 0.52
+      },
+      "ms": 196
+    },
+    {
+      "scenario": "en-invoices",
+      "message": "A-us",
+      "model": "openai/gpt-6-luna-decisions",
+      "run": 10,
+      "choice": "none",
+      "probabilities": {
+        "Personal": 0.46,
+        "Ideas": 0.01,
+        "Invoices": 0.01,
+        "none": 0.52
+      },
+      "ms": 219
+    },
+    {
+      "scenario": "en-invoices",
+      "message": "A-us",
+      "model": "typesafe-ai/jev",
+      "run": 1,
+      "choice": "Invoices",
+      "probabilities": {
+        "Personal": 0.39,
+        "Ideas": 0,
+        "Invoices": 0.59,
+        "none": 0.02
+      },
+      "ms": 195
+    },
+    {
+      "scenario": "en-invoices",
+      "message": "A-us",
+      "model": "typesafe-ai/jev",
+      "run": 2,
+      "choice": "Invoices",
+      "probabilities": {
+        "Personal": 0.38,
+        "Ideas": 0,
+        "Invoices": 0.6,
+        "none": 0.02
+      },
+      "ms": 202
+    },
+    {
+      "scenario": "en-invoices",
+      "message": "A-us",
+      "model": "typesafe-ai/jev",
+      "run": 3,
+      "choice": "Invoices",
+      "probabilities": {
+        "Personal": 0.41,
+        "Ideas": 0,
+        "Invoices": 0.57,
+        "none": 0.02
+      },
+      "ms": 275
+    },
+    {
+      "scenario": "en-invoices",
+      "message": "A-us",
+      "model": "typesafe-ai/jev",
+      "run": 4,
+      "choice": "Invoices",
+      "probabilities": {
+        "Personal": 0.41,
+        "Ideas": 0,
+        "Invoices": 0.57,
+        "none": 0.02
+      },
+      "ms": 234
+    },
+    {
+      "scenario": "en-invoices",
+      "message": "A-us",
+      "model": "typesafe-ai/jev",
+      "run": 5,
+      "choice": "Invoices",
+      "probabilities": {
+        "Personal": 0.38,
+        "Ideas": 0,
+        "Invoices": 0.6,
+        "none": 0.02
+      },
+      "ms": 179
+    },
+    {
+      "scenario": "en-invoices",
+      "message": "A-us",
+      "model": "typesafe-ai/jev",
+      "run": 6,
+      "choice": "Invoices",
+      "probabilities": {
+        "Personal": 0.38,
+        "Ideas": 0,
+        "Invoices": 0.6,
+        "none": 0.02
+      },
+      "ms": 167
+    },
+    {
+      "scenario": "en-invoices",
+      "message": "A-us",
+      "model": "typesafe-ai/jev",
+      "run": 7,
+      "choice": "Invoices",
+      "probabilities": {
+        "Personal": 0.41,
+        "Ideas": 0,
+        "Invoices": 0.57,
+        "none": 0.02
+      },
+      "ms": 205
+    },
+    {
+      "scenario": "en-invoices",
+      "message": "A-us",
+      "model": "typesafe-ai/jev",
+      "run": 8,
+      "choice": "Invoices",
+      "probabilities": {
+        "Personal": 0.4,
+        "Ideas": 0,
+        "Invoices": 0.58,
+        "none": 0.02
+      },
+      "ms": 168
+    },
+    {
+      "scenario": "en-invoices",
+      "message": "A-us",
+      "model": "typesafe-ai/jev",
+      "run": 9,
+      "choice": "Invoices",
+      "probabilities": {
+        "Personal": 0.4,
+        "Ideas": 0,
+        "Invoices": 0.58,
+        "none": 0.02
+      },
+      "ms": 243
+    },
+    {
+      "scenario": "en-invoices",
+      "message": "A-us",
+      "model": "typesafe-ai/jev",
+      "run": 10,
+      "choice": "Invoices",
+      "probabilities": {
+        "Personal": 0.4,
+        "Ideas": 0,
+        "Invoices": 0.58,
+        "none": 0.02
+      },
+      "ms": 227
+    },
+    {
+      "scenario": "en-invoices",
+      "message": "A",
+      "model": "openai/gpt-6-luna-decisions",
+      "run": 1,
+      "choice": "none",
+      "probabilities": {
+        "Personal": 0.28,
+        "Ideas": 0.02,
+        "Invoices": 0.23,
+        "none": 0.47
+      },
+      "ms": 177
+    },
+    {
+      "scenario": "en-invoices",
+      "message": "A",
+      "model": "openai/gpt-6-luna-decisions",
+      "run": 2,
+      "choice": "none",
+      "probabilities": {
+        "Personal": 0.28,
+        "Ideas": 0.02,
+        "Invoices": 0.23,
+        "none": 0.47
+      },
+      "ms": 196
+    },
+    {
+      "scenario": "en-invoices",
+      "message": "A",
+      "model": "openai/gpt-6-luna-decisions",
+      "run": 3,
+      "choice": "none",
+      "probabilities": {
+        "Personal": 0.28,
+        "Ideas": 0.02,
+        "Invoices": 0.23,
+        "none": 0.47
+      },
+      "ms": 241
+    },
+    {
+      "scenario": "en-invoices",
+      "message": "A",
+      "model": "openai/gpt-6-luna-decisions",
+      "run": 4,
+      "choice": "none",
+      "probabilities": {
+        "Personal": 0.28,
+        "Ideas": 0.02,
+        "Invoices": 0.23,
+        "none": 0.47
+      },
+      "ms": 206
+    },
+    {
+      "scenario": "en-invoices",
+      "message": "A",
+      "model": "openai/gpt-6-luna-decisions",
+      "run": 5,
+      "choice": "none",
+      "probabilities": {
+        "Personal": 0.28,
+        "Ideas": 0.02,
+        "Invoices": 0.23,
+        "none": 0.47
+      },
+      "ms": 155
+    },
+    {
+      "scenario": "en-invoices",
+      "message": "A",
+      "model": "openai/gpt-6-luna-decisions",
+      "run": 6,
+      "choice": "none",
+      "probabilities": {
+        "Personal": 0.28,
+        "Ideas": 0.02,
+        "Invoices": 0.23,
+        "none": 0.47
+      },
+      "ms": 203
+    },
+    {
+      "scenario": "en-invoices",
+      "message": "A",
+      "model": "openai/gpt-6-luna-decisions",
+      "run": 7,
+      "choice": "none",
+      "probabilities": {
+        "Personal": 0.28,
+        "Ideas": 0.02,
+        "Invoices": 0.23,
+        "none": 0.47
+      },
+      "ms": 203
+    },
+    {
+      "scenario": "en-invoices",
+      "message": "A",
+      "model": "openai/gpt-6-luna-decisions",
+      "run": 8,
+      "choice": "none",
+      "probabilities": {
+        "Personal": 0.28,
+        "Ideas": 0.02,
+        "Invoices": 0.23,
+        "none": 0.47
+      },
+      "ms": 206
+    },
+    {
+      "scenario": "en-invoices",
+      "message": "A",
+      "model": "openai/gpt-6-luna-decisions",
+      "run": 9,
+      "choice": "none",
+      "probabilities": {
+        "Personal": 0.28,
+        "Ideas": 0.02,
+        "Invoices": 0.23,
+        "none": 0.47
+      },
+      "ms": 322
+    },
+    {
+      "scenario": "en-invoices",
+      "message": "A",
+      "model": "openai/gpt-6-luna-decisions",
+      "run": 10,
+      "choice": "none",
+      "probabilities": {
+        "Personal": 0.28,
+        "Ideas": 0.02,
+        "Invoices": 0.23,
+        "none": 0.47
+      },
+      "ms": 176
+    },
+    {
+      "scenario": "en-invoices",
+      "message": "A",
+      "model": "typesafe-ai/jev",
+      "run": 1,
+      "choice": "Invoices",
+      "probabilities": {
+        "Personal": 0.31,
+        "Ideas": 0,
+        "Invoices": 0.65,
+        "none": 0.04
+      },
+      "ms": 202
+    },
+    {
+      "scenario": "en-invoices",
+      "message": "A",
+      "model": "typesafe-ai/jev",
+      "run": 2,
+      "choice": "Invoices",
+      "probabilities": {
+        "Personal": 0.28,
+        "Ideas": 0,
+        "Invoices": 0.69,
+        "none": 0.03
+      },
+      "ms": 238
+    },
+    {
+      "scenario": "en-invoices",
+      "message": "A",
+      "model": "typesafe-ai/jev",
+      "run": 3,
+      "choice": "Invoices",
+      "probabilities": {
+        "Personal": 0.31,
+        "Ideas": 0,
+        "Invoices": 0.65,
+        "none": 0.04
+      },
+      "ms": 190
+    },
+    {
+      "scenario": "en-invoices",
+      "message": "A",
+      "model": "typesafe-ai/jev",
+      "run": 4,
+      "choice": "Invoices",
+      "probabilities": {
+        "Personal": 0.28,
+        "Ideas": 0,
+        "Invoices": 0.69,
+        "none": 0.03
+      },
+      "ms": 182
+    },
+    {
+      "scenario": "en-invoices",
+      "message": "A",
+      "model": "typesafe-ai/jev",
+      "run": 5,
+      "choice": "Invoices",
+      "probabilities": {
+        "Personal": 0.32,
+        "Ideas": 0,
+        "Invoices": 0.65,
+        "none": 0.03
+      },
+      "ms": 253
+    },
+    {
+      "scenario": "en-invoices",
+      "message": "A",
+      "model": "typesafe-ai/jev",
+      "run": 6,
+      "choice": "Invoices",
+      "probabilities": {
+        "Personal": 0.27,
+        "Ideas": 0,
+        "Invoices": 0.7,
+        "none": 0.03
+      },
+      "ms": 297
+    },
+    {
+      "scenario": "en-invoices",
+      "message": "A",
+      "model": "typesafe-ai/jev",
+      "run": 7,
+      "choice": "Invoices",
+      "probabilities": {
+        "Personal": 0.34,
+        "Ideas": 0,
+        "Invoices": 0.62,
+        "none": 0.04
+      },
+      "ms": 227
+    },
+    {
+      "scenario": "en-invoices",
+      "message": "A",
+      "model": "typesafe-ai/jev",
+      "run": 8,
+      "choice": "Invoices",
+      "probabilities": {
+        "Personal": 0.28,
+        "Ideas": 0,
+        "Invoices": 0.68,
+        "none": 0.03
+      },
+      "ms": 234
+    },
+    {
+      "scenario": "en-invoices",
+      "message": "A",
+      "model": "typesafe-ai/jev",
+      "run": 9,
+      "choice": "Invoices",
+      "probabilities": {
+        "Personal": 0.29,
+        "Ideas": 0,
+        "Invoices": 0.68,
+        "none": 0.03
+      },
+      "ms": 188
+    },
+    {
+      "scenario": "en-invoices",
+      "message": "A",
+      "model": "typesafe-ai/jev",
+      "run": 10,
+      "choice": "Invoices",
+      "probabilities": {
+        "Personal": 0.31,
+        "Ideas": 0,
+        "Invoices": 0.66,
+        "none": 0.03
+      },
+      "ms": 206
+    },
+    {
+      "scenario": "en-invoices",
+      "message": "B",
+      "model": "openai/gpt-6-luna-decisions",
+      "run": 1,
+      "choice": "none",
+      "probabilities": {
+        "Personal": 0.33,
+        "Ideas": 0.01,
+        "Invoices": 0.01,
+        "none": 0.65
+      },
+      "ms": 181
+    },
+    {
+      "scenario": "en-invoices",
+      "message": "B",
+      "model": "openai/gpt-6-luna-decisions",
+      "run": 2,
+      "choice": "none",
+      "probabilities": {
+        "Personal": 0.33,
+        "Ideas": 0.01,
+        "Invoices": 0.01,
+        "none": 0.65
+      },
+      "ms": 207
+    },
+    {
+      "scenario": "en-invoices",
+      "message": "B",
+      "model": "openai/gpt-6-luna-decisions",
+      "run": 3,
+      "choice": "none",
+      "probabilities": {
+        "Personal": 0.33,
+        "Ideas": 0.01,
+        "Invoices": 0.01,
+        "none": 0.65
+      },
+      "ms": 195
+    },
+    {
+      "scenario": "en-invoices",
+      "message": "B",
+      "model": "openai/gpt-6-luna-decisions",
+      "run": 4,
+      "choice": "none",
+      "probabilities": {
+        "Personal": 0.33,
+        "Ideas": 0.01,
+        "Invoices": 0.01,
+        "none": 0.65
+      },
+      "ms": 193
+    },
+    {
+      "scenario": "en-invoices",
+      "message": "B",
+      "model": "openai/gpt-6-luna-decisions",
+      "run": 5,
+      "choice": "none",
+      "probabilities": {
+        "Personal": 0.33,
+        "Ideas": 0.01,
+        "Invoices": 0.01,
+        "none": 0.65
+      },
+      "ms": 197
+    },
+    {
+      "scenario": "en-invoices",
+      "message": "B",
+      "model": "openai/gpt-6-luna-decisions",
+      "run": 6,
+      "choice": "none",
+      "probabilities": {
+        "Personal": 0.33,
+        "Ideas": 0.01,
+        "Invoices": 0.01,
+        "none": 0.65
+      },
+      "ms": 172
+    },
+    {
+      "scenario": "en-invoices",
+      "message": "B",
+      "model": "openai/gpt-6-luna-decisions",
+      "run": 7,
+      "choice": "none",
+      "probabilities": {
+        "Personal": 0.33,
+        "Ideas": 0.01,
+        "Invoices": 0.01,
+        "none": 0.65
+      },
+      "ms": 153
+    },
+    {
+      "scenario": "en-invoices",
+      "message": "B",
+      "model": "openai/gpt-6-luna-decisions",
+      "run": 8,
+      "choice": "none",
+      "probabilities": {
+        "Personal": 0.33,
+        "Ideas": 0.01,
+        "Invoices": 0.01,
+        "none": 0.65
+      },
+      "ms": 207
+    },
+    {
+      "scenario": "en-invoices",
+      "message": "B",
+      "model": "openai/gpt-6-luna-decisions",
+      "run": 9,
+      "choice": "none",
+      "probabilities": {
+        "Personal": 0.33,
+        "Ideas": 0.01,
+        "Invoices": 0.01,
+        "none": 0.65
+      },
+      "ms": 208
+    },
+    {
+      "scenario": "en-invoices",
+      "message": "B",
+      "model": "openai/gpt-6-luna-decisions",
+      "run": 10,
+      "choice": "none",
+      "probabilities": {
+        "Personal": 0.33,
+        "Ideas": 0.01,
+        "Invoices": 0.01,
+        "none": 0.65
+      },
+      "ms": 252
+    },
+    {
+      "scenario": "en-invoices",
+      "message": "B",
+      "model": "typesafe-ai/jev",
+      "run": 1,
+      "choice": "Invoices",
+      "probabilities": {
+        "Personal": 0.37,
+        "Ideas": 0,
+        "Invoices": 0.6,
+        "none": 0.03
+      },
+      "ms": 188
+    },
+    {
+      "scenario": "en-invoices",
+      "message": "B",
+      "model": "typesafe-ai/jev",
+      "run": 2,
+      "choice": "Invoices",
+      "probabilities": {
+        "Personal": 0.35,
+        "Ideas": 0,
+        "Invoices": 0.63,
+        "none": 0.02
+      },
+      "ms": 170
+    },
+    {
+      "scenario": "en-invoices",
+      "message": "B",
+      "model": "typesafe-ai/jev",
+      "run": 3,
+      "choice": "Invoices",
+      "probabilities": {
+        "Personal": 0.39,
+        "Ideas": 0,
+        "Invoices": 0.58,
+        "none": 0.03
+      },
+      "ms": 187
+    },
+    {
+      "scenario": "en-invoices",
+      "message": "B",
+      "model": "typesafe-ai/jev",
+      "run": 4,
+      "choice": "Invoices",
+      "probabilities": {
+        "Personal": 0.42,
+        "Ideas": 0,
+        "Invoices": 0.55,
+        "none": 0.03
+      },
+      "ms": 179
+    },
+    {
+      "scenario": "en-invoices",
+      "message": "B",
+      "model": "typesafe-ai/jev",
+      "run": 5,
+      "choice": "Invoices",
+      "probabilities": {
+        "Personal": 0.38,
+        "Ideas": 0,
+        "Invoices": 0.6,
+        "none": 0.02
+      },
+      "ms": 185
+    },
+    {
+      "scenario": "en-invoices",
+      "message": "B",
+      "model": "typesafe-ai/jev",
+      "run": 6,
+      "choice": "Invoices",
+      "probabilities": {
+        "Personal": 0.4,
+        "Ideas": 0,
+        "Invoices": 0.57,
+        "none": 0.03
+      },
+      "ms": 213
+    },
+    {
+      "scenario": "en-invoices",
+      "message": "B",
+      "model": "typesafe-ai/jev",
+      "run": 7,
+      "choice": "Invoices",
+      "probabilities": {
+        "Personal": 0.4,
+        "Ideas": 0,
+        "Invoices": 0.57,
+        "none": 0.03
+      },
+      "ms": 212
+    },
+    {
+      "scenario": "en-invoices",
+      "message": "B",
+      "model": "typesafe-ai/jev",
+      "run": 8,
+      "choice": "Invoices",
+      "probabilities": {
+        "Personal": 0.38,
+        "Ideas": 0,
+        "Invoices": 0.6,
+        "none": 0.02
+      },
+      "ms": 167
+    },
+    {
+      "scenario": "en-invoices",
+      "message": "B",
+      "model": "typesafe-ai/jev",
+      "run": 9,
+      "choice": "Invoices",
+      "probabilities": {
+        "Personal": 0.39,
+        "Ideas": 0,
+        "Invoices": 0.58,
+        "none": 0.03
+      },
+      "ms": 230
+    },
+    {
+      "scenario": "en-invoices",
+      "message": "B",
+      "model": "typesafe-ai/jev",
+      "run": 10,
+      "choice": "Invoices",
+      "probabilities": {
+        "Personal": 0.4,
+        "Ideas": 0,
+        "Invoices": 0.58,
+        "none": 0.02
+      },
+      "ms": 189
+    },
+    {
+      "scenario": "en-invoices",
+      "message": "C-us",
+      "model": "openai/gpt-6-luna-decisions",
+      "run": 1,
+      "choice": "none",
+      "probabilities": {
+        "Personal": 0.31,
+        "Ideas": 0.01,
+        "Invoices": 0.22,
+        "none": 0.46
+      },
+      "ms": 161
+    },
+    {
+      "scenario": "en-invoices",
+      "message": "C-us",
+      "model": "openai/gpt-6-luna-decisions",
+      "run": 2,
+      "choice": "none",
+      "probabilities": {
+        "Personal": 0.31,
+        "Ideas": 0.01,
+        "Invoices": 0.22,
+        "none": 0.46
+      },
+      "ms": 210
+    },
+    {
+      "scenario": "en-invoices",
+      "message": "C-us",
+      "model": "openai/gpt-6-luna-decisions",
+      "run": 3,
+      "choice": "none",
+      "probabilities": {
+        "Personal": 0.31,
+        "Ideas": 0.01,
+        "Invoices": 0.22,
+        "none": 0.46
+      },
+      "ms": 217
+    },
+    {
+      "scenario": "en-invoices",
+      "message": "C-us",
+      "model": "openai/gpt-6-luna-decisions",
+      "run": 4,
+      "choice": "none",
+      "probabilities": {
+        "Personal": 0.31,
+        "Ideas": 0.01,
+        "Invoices": 0.22,
+        "none": 0.46
+      },
+      "ms": 258
+    },
+    {
+      "scenario": "en-invoices",
+      "message": "C-us",
+      "model": "openai/gpt-6-luna-decisions",
+      "run": 5,
+      "choice": "none",
+      "probabilities": {
+        "Personal": 0.31,
+        "Ideas": 0.01,
+        "Invoices": 0.22,
+        "none": 0.46
+      },
+      "ms": 239
+    },
+    {
+      "scenario": "en-invoices",
+      "message": "C-us",
+      "model": "openai/gpt-6-luna-decisions",
+      "run": 6,
+      "choice": "none",
+      "probabilities": {
+        "Personal": 0.31,
+        "Ideas": 0.01,
+        "Invoices": 0.22,
+        "none": 0.46
+      },
+      "ms": 210
+    },
+    {
+      "scenario": "en-invoices",
+      "message": "C-us",
+      "model": "openai/gpt-6-luna-decisions",
+      "run": 7,
+      "choice": "none",
+      "probabilities": {
+        "Personal": 0.31,
+        "Ideas": 0.01,
+        "Invoices": 0.22,
+        "none": 0.46
+      },
+      "ms": 199
+    },
+    {
+      "scenario": "en-invoices",
+      "message": "C-us",
+      "model": "openai/gpt-6-luna-decisions",
+      "run": 8,
+      "choice": "none",
+      "probabilities": {
+        "Personal": 0.31,
+        "Ideas": 0.01,
+        "Invoices": 0.22,
+        "none": 0.46
+      },
+      "ms": 278
+    },
+    {
+      "scenario": "en-invoices",
+      "message": "C-us",
+      "model": "openai/gpt-6-luna-decisions",
+      "run": 9,
+      "choice": "none",
+      "probabilities": {
+        "Personal": 0.31,
+        "Ideas": 0.01,
+        "Invoices": 0.22,
+        "none": 0.46
+      },
+      "ms": 194
+    },
+    {
+      "scenario": "en-invoices",
+      "message": "C-us",
+      "model": "openai/gpt-6-luna-decisions",
+      "run": 10,
+      "choice": "none",
+      "probabilities": {
+        "Personal": 0.31,
+        "Ideas": 0.01,
+        "Invoices": 0.22,
+        "none": 0.46
+      },
+      "ms": 178
+    },
+    {
+      "scenario": "en-invoices",
+      "message": "C-us",
+      "model": "typesafe-ai/jev",
+      "run": 1,
+      "choice": "Invoices",
+      "probabilities": {
+        "Personal": 0.16,
+        "Ideas": 0,
+        "Invoices": 0.83,
+        "none": 0.01
+      },
+      "ms": 187
+    },
+    {
+      "scenario": "en-invoices",
+      "message": "C-us",
+      "model": "typesafe-ai/jev",
+      "run": 2,
+      "choice": "Invoices",
+      "probabilities": {
+        "Personal": 0.15,
+        "Ideas": 0,
+        "Invoices": 0.84,
+        "none": 0.01
+      },
+      "ms": 228
+    },
+    {
+      "scenario": "en-invoices",
+      "message": "C-us",
+      "model": "typesafe-ai/jev",
+      "run": 3,
+      "choice": "Invoices",
+      "probabilities": {
+        "Personal": 0.15,
+        "Ideas": 0,
+        "Invoices": 0.84,
+        "none": 0.01
+      },
+      "ms": 183
+    },
+    {
+      "scenario": "en-invoices",
+      "message": "C-us",
+      "model": "typesafe-ai/jev",
+      "run": 4,
+      "choice": "Invoices",
+      "probabilities": {
+        "Personal": 0.14,
+        "Ideas": 0,
+        "Invoices": 0.85,
+        "none": 0.01
+      },
+      "ms": 153
+    },
+    {
+      "scenario": "en-invoices",
+      "message": "C-us",
+      "model": "typesafe-ai/jev",
+      "run": 5,
+      "choice": "Invoices",
+      "probabilities": {
+        "Personal": 0.15,
+        "Ideas": 0,
+        "Invoices": 0.84,
+        "none": 0.01
+      },
+      "ms": 208
+    },
+    {
+      "scenario": "en-invoices",
+      "message": "C-us",
+      "model": "typesafe-ai/jev",
+      "run": 6,
+      "choice": "Invoices",
+      "probabilities": {
+        "Personal": 0.17,
+        "Ideas": 0,
+        "Invoices": 0.82,
+        "none": 0.01
+      },
+      "ms": 182
+    },
+    {
+      "scenario": "en-invoices",
+      "message": "C-us",
+      "model": "typesafe-ai/jev",
+      "run": 7,
+      "choice": "Invoices",
+      "probabilities": {
+        "Personal": 0.18,
+        "Ideas": 0,
+        "Invoices": 0.81,
+        "none": 0.01
+      },
+      "ms": 197
+    },
+    {
+      "scenario": "en-invoices",
+      "message": "C-us",
+      "model": "typesafe-ai/jev",
+      "run": 8,
+      "choice": "Invoices",
+      "probabilities": {
+        "Personal": 0.14,
+        "Ideas": 0,
+        "Invoices": 0.85,
+        "none": 0.01
+      },
+      "ms": 182
+    },
+    {
+      "scenario": "en-invoices",
+      "message": "C-us",
+      "model": "typesafe-ai/jev",
+      "run": 9,
+      "choice": "Invoices",
+      "probabilities": {
+        "Personal": 0.16,
+        "Ideas": 0,
+        "Invoices": 0.83,
+        "none": 0.01
+      },
+      "ms": 181
+    },
+    {
+      "scenario": "en-invoices",
+      "message": "C-us",
+      "model": "typesafe-ai/jev",
+      "run": 10,
+      "choice": "Invoices",
+      "probabilities": {
+        "Personal": 0.13,
+        "Ideas": 0,
+        "Invoices": 0.86,
+        "none": 0.01
+      },
+      "ms": 231
+    },
+    {
+      "scenario": "en-invoices",
+      "message": "C",
+      "model": "openai/gpt-6-luna-decisions",
+      "run": 1,
+      "choice": "Invoices",
+      "probabilities": {
+        "Personal": 0.17,
+        "Ideas": 0.01,
+        "Invoices": 0.49,
+        "none": 0.33
+      },
+      "ms": 175
+    },
+    {
+      "scenario": "en-invoices",
+      "message": "C",
+      "model": "openai/gpt-6-luna-decisions",
+      "run": 2,
+      "choice": "Invoices",
+      "probabilities": {
+        "Personal": 0.17,
+        "Ideas": 0.01,
+        "Invoices": 0.49,
+        "none": 0.33
+      },
+      "ms": 545
+    },
+    {
+      "scenario": "en-invoices",
+      "message": "C",
+      "model": "openai/gpt-6-luna-decisions",
+      "run": 3,
+      "choice": "Invoices",
+      "probabilities": {
+        "Personal": 0.17,
+        "Ideas": 0.01,
+        "Invoices": 0.49,
+        "none": 0.33
+      },
+      "ms": 615
+    },
+    {
+      "scenario": "en-invoices",
+      "message": "C",
+      "model": "openai/gpt-6-luna-decisions",
+      "run": 4,
+      "choice": "Invoices",
+      "probabilities": {
+        "Personal": 0.17,
+        "Ideas": 0.01,
+        "Invoices": 0.49,
+        "none": 0.33
+      },
+      "ms": 205
+    },
+    {
+      "scenario": "en-invoices",
+      "message": "C",
+      "model": "openai/gpt-6-luna-decisions",
+      "run": 5,
+      "choice": "Invoices",
+      "probabilities": {
+        "Personal": 0.17,
+        "Ideas": 0.01,
+        "Invoices": 0.49,
+        "none": 0.33
+      },
+      "ms": 222
+    },
+    {
+      "scenario": "en-invoices",
+      "message": "C",
+      "model": "openai/gpt-6-luna-decisions",
+      "run": 6,
+      "choice": "Invoices",
+      "probabilities": {
+        "Personal": 0.17,
+        "Ideas": 0.01,
+        "Invoices": 0.49,
+        "none": 0.33
+      },
+      "ms": 215
+    },
+    {
+      "scenario": "en-invoices",
+      "message": "C",
+      "model": "openai/gpt-6-luna-decisions",
+      "run": 7,
+      "choice": "Invoices",
+      "probabilities": {
+        "Personal": 0.17,
+        "Ideas": 0.01,
+        "Invoices": 0.49,
+        "none": 0.33
+      },
+      "ms": 173
+    },
+    {
+      "scenario": "en-invoices",
+      "message": "C",
+      "model": "openai/gpt-6-luna-decisions",
+      "run": 8,
+      "choice": "Invoices",
+      "probabilities": {
+        "Personal": 0.17,
+        "Ideas": 0.01,
+        "Invoices": 0.49,
+        "none": 0.33
+      },
+      "ms": 186
+    },
+    {
+      "scenario": "en-invoices",
+      "message": "C",
+      "model": "openai/gpt-6-luna-decisions",
+      "run": 9,
+      "choice": "Invoices",
+      "probabilities": {
+        "Personal": 0.17,
+        "Ideas": 0.01,
+        "Invoices": 0.49,
+        "none": 0.33
+      },
+      "ms": 192
+    },
+    {
+      "scenario": "en-invoices",
+      "message": "C",
+      "model": "openai/gpt-6-luna-decisions",
+      "run": 10,
+      "choice": "Invoices",
+      "probabilities": {
+        "Personal": 0.17,
+        "Ideas": 0.01,
+        "Invoices": 0.49,
+        "none": 0.33
+      },
+      "ms": 320
+    },
+    {
+      "scenario": "en-invoices",
+      "message": "C",
+      "model": "typesafe-ai/jev",
+      "run": 1,
+      "choice": "Invoices",
+      "probabilities": {
+        "Personal": 0.13,
+        "Ideas": 0,
+        "Invoices": 0.86,
+        "none": 0.01
+      },
+      "ms": 169
+    },
+    {
+      "scenario": "en-invoices",
+      "message": "C",
+      "model": "typesafe-ai/jev",
+      "run": 2,
+      "choice": "Invoices",
+      "probabilities": {
+        "Personal": 0.11,
+        "Ideas": 0,
+        "Invoices": 0.88,
+        "none": 0.01
+      },
+      "ms": 214
+    },
+    {
+      "scenario": "en-invoices",
+      "message": "C",
+      "model": "typesafe-ai/jev",
+      "run": 3,
+      "choice": "Invoices",
+      "probabilities": {
+        "Personal": 0.1,
+        "Ideas": 0,
+        "Invoices": 0.89,
+        "none": 0.01
+      },
+      "ms": 219
+    },
+    {
+      "scenario": "en-invoices",
+      "message": "C",
+      "model": "typesafe-ai/jev",
+      "run": 4,
+      "choice": "Invoices",
+      "probabilities": {
+        "Personal": 0.12,
+        "Ideas": 0,
+        "Invoices": 0.87,
+        "none": 0.01
+      },
+      "ms": 201
+    },
+    {
+      "scenario": "en-invoices",
+      "message": "C",
+      "model": "typesafe-ai/jev",
+      "run": 5,
+      "choice": "Invoices",
+      "probabilities": {
+        "Personal": 0.09,
+        "Ideas": 0,
+        "Invoices": 0.9,
+        "none": 0.01
+      },
+      "ms": 197
+    },
+    {
+      "scenario": "en-invoices",
+      "message": "C",
+      "model": "typesafe-ai/jev",
+      "run": 6,
+      "choice": "Invoices",
+      "probabilities": {
+        "Personal": 0.12,
+        "Ideas": 0,
+        "Invoices": 0.87,
+        "none": 0.01
+      },
+      "ms": 199
+    },
+    {
+      "scenario": "en-invoices",
+      "message": "C",
+      "model": "typesafe-ai/jev",
+      "run": 7,
+      "choice": "Invoices",
+      "probabilities": {
+        "Personal": 0.09,
+        "Ideas": 0,
+        "Invoices": 0.9,
+        "none": 0.01
+      },
+      "ms": 206
+    },
+    {
+      "scenario": "en-invoices",
+      "message": "C",
+      "model": "typesafe-ai/jev",
+      "run": 8,
+      "choice": "Invoices",
+      "probabilities": {
+        "Personal": 0.12,
+        "Ideas": 0,
+        "Invoices": 0.87,
+        "none": 0.01
+      },
+      "ms": 189
+    },
+    {
+      "scenario": "en-invoices",
+      "message": "C",
+      "model": "typesafe-ai/jev",
+      "run": 9,
+      "choice": "Invoices",
+      "probabilities": {
+        "Personal": 0.11,
+        "Ideas": 0,
+        "Invoices": 0.88,
+        "none": 0.01
+      },
+      "ms": 208
+    },
+    {
+      "scenario": "en-invoices",
+      "message": "C",
+      "model": "typesafe-ai/jev",
+      "run": 10,
+      "choice": "Invoices",
+      "probabilities": {
+        "Personal": 0.12,
+        "Ideas": 0,
+        "Invoices": 0.87,
+        "none": 0.01
+      },
+      "ms": 209
+    },
+    {
+      "scenario": "en-service-bills",
+      "message": "A-us",
+      "model": "openai/gpt-6-luna-decisions",
+      "run": 1,
+      "choice": "Bills",
+      "probabilities": {
+        "Personal": 0.06,
+        "Ideas": 0.01,
+        "Bills": 0.7,
+        "none": 0.23
+      },
+      "ms": 151
+    },
+    {
+      "scenario": "en-service-bills",
+      "message": "A-us",
+      "model": "openai/gpt-6-luna-decisions",
+      "run": 2,
+      "choice": "Bills",
+      "probabilities": {
+        "Personal": 0.06,
+        "Ideas": 0.01,
+        "Bills": 0.7,
+        "none": 0.23
+      },
+      "ms": 174
+    },
+    {
+      "scenario": "en-service-bills",
+      "message": "A-us",
+      "model": "openai/gpt-6-luna-decisions",
+      "run": 3,
+      "choice": "Bills",
+      "probabilities": {
+        "Personal": 0.06,
+        "Ideas": 0.01,
+        "Bills": 0.7,
+        "none": 0.23
+      },
+      "ms": 151
+    },
+    {
+      "scenario": "en-service-bills",
+      "message": "A-us",
+      "model": "openai/gpt-6-luna-decisions",
+      "run": 4,
+      "choice": "Bills",
+      "probabilities": {
+        "Personal": 0.06,
+        "Ideas": 0.01,
+        "Bills": 0.7,
+        "none": 0.23
+      },
+      "ms": 269
+    },
+    {
+      "scenario": "en-service-bills",
+      "message": "A-us",
+      "model": "openai/gpt-6-luna-decisions",
+      "run": 5,
+      "choice": "Bills",
+      "probabilities": {
+        "Personal": 0.06,
+        "Ideas": 0.01,
+        "Bills": 0.7,
+        "none": 0.23
+      },
+      "ms": 208
+    },
+    {
+      "scenario": "en-service-bills",
+      "message": "A-us",
+      "model": "openai/gpt-6-luna-decisions",
+      "run": 6,
+      "choice": "Bills",
+      "probabilities": {
+        "Personal": 0.06,
+        "Ideas": 0.01,
+        "Bills": 0.7,
+        "none": 0.23
+      },
+      "ms": 161
+    },
+    {
+      "scenario": "en-service-bills",
+      "message": "A-us",
+      "model": "openai/gpt-6-luna-decisions",
+      "run": 7,
+      "choice": "Bills",
+      "probabilities": {
+        "Personal": 0.06,
+        "Ideas": 0.01,
+        "Bills": 0.7,
+        "none": 0.23
+      },
+      "ms": 191
+    },
+    {
+      "scenario": "en-service-bills",
+      "message": "A-us",
+      "model": "openai/gpt-6-luna-decisions",
+      "run": 8,
+      "choice": "Bills",
+      "probabilities": {
+        "Personal": 0.06,
+        "Ideas": 0.01,
+        "Bills": 0.7,
+        "none": 0.23
+      },
+      "ms": 152
+    },
+    {
+      "scenario": "en-service-bills",
+      "message": "A-us",
+      "model": "openai/gpt-6-luna-decisions",
+      "run": 9,
+      "choice": "Bills",
+      "probabilities": {
+        "Personal": 0.06,
+        "Ideas": 0.01,
+        "Bills": 0.7,
+        "none": 0.23
+      },
+      "ms": 228
+    },
+    {
+      "scenario": "en-service-bills",
+      "message": "A-us",
+      "model": "openai/gpt-6-luna-decisions",
+      "run": 10,
+      "choice": "Bills",
+      "probabilities": {
+        "Personal": 0.06,
+        "Ideas": 0.01,
+        "Bills": 0.7,
+        "none": 0.23
+      },
+      "ms": 168
+    },
+    {
+      "scenario": "en-service-bills",
+      "message": "A-us",
+      "model": "typesafe-ai/jev",
+      "run": 1,
+      "choice": "Bills",
+      "probabilities": {
+        "Personal": 0,
+        "Ideas": 0,
+        "Bills": 1,
+        "none": 0
+      },
+      "ms": 214
+    },
+    {
+      "scenario": "en-service-bills",
+      "message": "A-us",
+      "model": "typesafe-ai/jev",
+      "run": 2,
+      "choice": "Bills",
+      "probabilities": {
+        "Personal": 0,
+        "Ideas": 0,
+        "Bills": 1,
+        "none": 0
+      },
+      "ms": 172
+    },
+    {
+      "scenario": "en-service-bills",
+      "message": "A-us",
+      "model": "typesafe-ai/jev",
+      "run": 3,
+      "choice": "Bills",
+      "probabilities": {
+        "Personal": 0,
+        "Ideas": 0,
+        "Bills": 1,
+        "none": 0
+      },
+      "ms": 201
+    },
+    {
+      "scenario": "en-service-bills",
+      "message": "A-us",
+      "model": "typesafe-ai/jev",
+      "run": 4,
+      "choice": "Bills",
+      "probabilities": {
+        "Personal": 0,
+        "Ideas": 0,
+        "Bills": 1,
+        "none": 0
+      },
+      "ms": 225
+    },
+    {
+      "scenario": "en-service-bills",
+      "message": "A-us",
+      "model": "typesafe-ai/jev",
+      "run": 5,
+      "choice": "Bills",
+      "probabilities": {
+        "Personal": 0,
+        "Ideas": 0,
+        "Bills": 1,
+        "none": 0
+      },
+      "ms": 183
+    },
+    {
+      "scenario": "en-service-bills",
+      "message": "A-us",
+      "model": "typesafe-ai/jev",
+      "run": 6,
+      "choice": "Bills",
+      "probabilities": {
+        "Personal": 0,
+        "Ideas": 0,
+        "Bills": 1,
+        "none": 0
+      },
+      "ms": 188
+    },
+    {
+      "scenario": "en-service-bills",
+      "message": "A-us",
+      "model": "typesafe-ai/jev",
+      "run": 7,
+      "choice": "Bills",
+      "probabilities": {
+        "Personal": 0,
+        "Ideas": 0,
+        "Bills": 1,
+        "none": 0
+      },
+      "ms": 174
+    },
+    {
+      "scenario": "en-service-bills",
+      "message": "A-us",
+      "model": "typesafe-ai/jev",
+      "run": 8,
+      "choice": "Bills",
+      "probabilities": {
+        "Personal": 0,
+        "Ideas": 0,
+        "Bills": 1,
+        "none": 0
+      },
+      "ms": 196
+    },
+    {
+      "scenario": "en-service-bills",
+      "message": "A-us",
+      "model": "typesafe-ai/jev",
+      "run": 9,
+      "choice": "Bills",
+      "probabilities": {
+        "Personal": 0,
+        "Ideas": 0,
+        "Bills": 1,
+        "none": 0
+      },
+      "ms": 209
+    },
+    {
+      "scenario": "en-service-bills",
+      "message": "A-us",
+      "model": "typesafe-ai/jev",
+      "run": 10,
+      "choice": "Bills",
+      "probabilities": {
+        "Personal": 0,
+        "Ideas": 0,
+        "Bills": 1,
+        "none": 0
+      },
+      "ms": 182
+    },
+    {
+      "scenario": "en-service-bills",
+      "message": "A",
+      "model": "openai/gpt-6-luna-decisions",
+      "run": 1,
+      "choice": "Bills",
+      "probabilities": {
+        "Personal": 0.03,
+        "Ideas": 0.01,
+        "Bills": 0.71,
+        "none": 0.25
+      },
+      "ms": 209
+    },
+    {
+      "scenario": "en-service-bills",
+      "message": "A",
+      "model": "openai/gpt-6-luna-decisions",
+      "run": 2,
+      "choice": "Bills",
+      "probabilities": {
+        "Personal": 0.03,
+        "Ideas": 0.01,
+        "Bills": 0.71,
+        "none": 0.25
+      },
+      "ms": 146
+    },
+    {
+      "scenario": "en-service-bills",
+      "message": "A",
+      "model": "openai/gpt-6-luna-decisions",
+      "run": 3,
+      "choice": "Bills",
+      "probabilities": {
+        "Personal": 0.03,
+        "Ideas": 0.01,
+        "Bills": 0.71,
+        "none": 0.25
+      },
+      "ms": 183
+    },
+    {
+      "scenario": "en-service-bills",
+      "message": "A",
+      "model": "openai/gpt-6-luna-decisions",
+      "run": 4,
+      "choice": "Bills",
+      "probabilities": {
+        "Personal": 0.03,
+        "Ideas": 0.01,
+        "Bills": 0.71,
+        "none": 0.25
+      },
+      "ms": 190
+    },
+    {
+      "scenario": "en-service-bills",
+      "message": "A",
+      "model": "openai/gpt-6-luna-decisions",
+      "run": 5,
+      "choice": "Bills",
+      "probabilities": {
+        "Personal": 0.03,
+        "Ideas": 0.01,
+        "Bills": 0.71,
+        "none": 0.25
+      },
+      "ms": 144
+    },
+    {
+      "scenario": "en-service-bills",
+      "message": "A",
+      "model": "openai/gpt-6-luna-decisions",
+      "run": 6,
+      "choice": "Bills",
+      "probabilities": {
+        "Personal": 0.03,
+        "Ideas": 0.01,
+        "Bills": 0.71,
+        "none": 0.25
+      },
+      "ms": 171
+    },
+    {
+      "scenario": "en-service-bills",
+      "message": "A",
+      "model": "openai/gpt-6-luna-decisions",
+      "run": 7,
+      "choice": "Bills",
+      "probabilities": {
+        "Personal": 0.03,
+        "Ideas": 0.01,
+        "Bills": 0.71,
+        "none": 0.25
+      },
+      "ms": 191
+    },
+    {
+      "scenario": "en-service-bills",
+      "message": "A",
+      "model": "openai/gpt-6-luna-decisions",
+      "run": 8,
+      "choice": "Bills",
+      "probabilities": {
+        "Personal": 0.03,
+        "Ideas": 0.01,
+        "Bills": 0.71,
+        "none": 0.25
+      },
+      "ms": 227
+    },
+    {
+      "scenario": "en-service-bills",
+      "message": "A",
+      "model": "openai/gpt-6-luna-decisions",
+      "run": 9,
+      "choice": "Bills",
+      "probabilities": {
+        "Personal": 0.03,
+        "Ideas": 0.01,
+        "Bills": 0.71,
+        "none": 0.25
+      },
+      "ms": 199
+    },
+    {
+      "scenario": "en-service-bills",
+      "message": "A",
+      "model": "openai/gpt-6-luna-decisions",
+      "run": 10,
+      "choice": "Bills",
+      "probabilities": {
+        "Personal": 0.03,
+        "Ideas": 0.01,
+        "Bills": 0.71,
+        "none": 0.25
+      },
+      "ms": 224
+    },
+    {
+      "scenario": "en-service-bills",
+      "message": "A",
+      "model": "typesafe-ai/jev",
+      "run": 1,
+      "choice": "Bills",
+      "probabilities": {
+        "Personal": 0,
+        "Ideas": 0,
+        "Bills": 1,
+        "none": 0
+      },
+      "ms": 179
+    },
+    {
+      "scenario": "en-service-bills",
+      "message": "A",
+      "model": "typesafe-ai/jev",
+      "run": 2,
+      "choice": "Bills",
+      "probabilities": {
+        "Personal": 0,
+        "Ideas": 0,
+        "Bills": 1,
+        "none": 0
+      },
+      "ms": 188
+    },
+    {
+      "scenario": "en-service-bills",
+      "message": "A",
+      "model": "typesafe-ai/jev",
+      "run": 3,
+      "choice": "Bills",
+      "probabilities": {
+        "Personal": 0,
+        "Ideas": 0,
+        "Bills": 1,
+        "none": 0
+      },
+      "ms": 178
+    },
+    {
+      "scenario": "en-service-bills",
+      "message": "A",
+      "model": "typesafe-ai/jev",
+      "run": 4,
+      "choice": "Bills",
+      "probabilities": {
+        "Personal": 0,
+        "Ideas": 0,
+        "Bills": 1,
+        "none": 0
+      },
+      "ms": 209
+    },
+    {
+      "scenario": "en-service-bills",
+      "message": "A",
+      "model": "typesafe-ai/jev",
+      "run": 5,
+      "choice": "Bills",
+      "probabilities": {
+        "Personal": 0,
+        "Ideas": 0,
+        "Bills": 1,
+        "none": 0
+      },
+      "ms": 210
+    },
+    {
+      "scenario": "en-service-bills",
+      "message": "A",
+      "model": "typesafe-ai/jev",
+      "run": 6,
+      "choice": "Bills",
+      "probabilities": {
+        "Personal": 0,
+        "Ideas": 0,
+        "Bills": 1,
+        "none": 0
+      },
+      "ms": 162
+    },
+    {
+      "scenario": "en-service-bills",
+      "message": "A",
+      "model": "typesafe-ai/jev",
+      "run": 7,
+      "choice": "Bills",
+      "probabilities": {
+        "Personal": 0,
+        "Ideas": 0,
+        "Bills": 1,
+        "none": 0
+      },
+      "ms": 270
+    },
+    {
+      "scenario": "en-service-bills",
+      "message": "A",
+      "model": "typesafe-ai/jev",
+      "run": 8,
+      "choice": "Bills",
+      "probabilities": {
+        "Personal": 0,
+        "Ideas": 0,
+        "Bills": 1,
+        "none": 0
+      },
+      "ms": 247
+    },
+    {
+      "scenario": "en-service-bills",
+      "message": "A",
+      "model": "typesafe-ai/jev",
+      "run": 9,
+      "choice": "Bills",
+      "probabilities": {
+        "Personal": 0,
+        "Ideas": 0,
+        "Bills": 1,
+        "none": 0
+      },
+      "ms": 214
+    },
+    {
+      "scenario": "en-service-bills",
+      "message": "A",
+      "model": "typesafe-ai/jev",
+      "run": 10,
+      "choice": "Bills",
+      "probabilities": {
+        "Personal": 0,
+        "Ideas": 0,
+        "Bills": 1,
+        "none": 0
+      },
+      "ms": 231
+    },
+    {
+      "scenario": "en-service-bills",
+      "message": "B",
+      "model": "openai/gpt-6-luna-decisions",
+      "run": 1,
+      "choice": "none",
+      "probabilities": {
+        "Personal": 0.23,
+        "Ideas": 0.01,
+        "Bills": 0.23,
+        "none": 0.53
+      },
+      "ms": 195
+    },
+    {
+      "scenario": "en-service-bills",
+      "message": "B",
+      "model": "openai/gpt-6-luna-decisions",
+      "run": 2,
+      "choice": "none",
+      "probabilities": {
+        "Personal": 0.23,
+        "Ideas": 0.01,
+        "Bills": 0.23,
+        "none": 0.53
+      },
+      "ms": 225
+    },
+    {
+      "scenario": "en-service-bills",
+      "message": "B",
+      "model": "openai/gpt-6-luna-decisions",
+      "run": 3,
+      "choice": "none",
+      "probabilities": {
+        "Personal": 0.23,
+        "Ideas": 0.01,
+        "Bills": 0.23,
+        "none": 0.53
+      },
+      "ms": 198
+    },
+    {
+      "scenario": "en-service-bills",
+      "message": "B",
+      "model": "openai/gpt-6-luna-decisions",
+      "run": 4,
+      "choice": "none",
+      "probabilities": {
+        "Personal": 0.23,
+        "Ideas": 0.01,
+        "Bills": 0.23,
+        "none": 0.53
+      },
+      "ms": 265
+    },
+    {
+      "scenario": "en-service-bills",
+      "message": "B",
+      "model": "openai/gpt-6-luna-decisions",
+      "run": 5,
+      "choice": "none",
+      "probabilities": {
+        "Personal": 0.23,
+        "Ideas": 0.01,
+        "Bills": 0.23,
+        "none": 0.53
+      },
+      "ms": 175
+    },
+    {
+      "scenario": "en-service-bills",
+      "message": "B",
+      "model": "openai/gpt-6-luna-decisions",
+      "run": 6,
+      "choice": "none",
+      "probabilities": {
+        "Personal": 0.23,
+        "Ideas": 0.01,
+        "Bills": 0.23,
+        "none": 0.53
+      },
+      "ms": 223
+    },
+    {
+      "scenario": "en-service-bills",
+      "message": "B",
+      "model": "openai/gpt-6-luna-decisions",
+      "run": 7,
+      "choice": "none",
+      "probabilities": {
+        "Personal": 0.23,
+        "Ideas": 0.01,
+        "Bills": 0.23,
+        "none": 0.53
+      },
+      "ms": 174
+    },
+    {
+      "scenario": "en-service-bills",
+      "message": "B",
+      "model": "openai/gpt-6-luna-decisions",
+      "run": 8,
+      "choice": "none",
+      "probabilities": {
+        "Personal": 0.23,
+        "Ideas": 0.01,
+        "Bills": 0.23,
+        "none": 0.53
+      },
+      "ms": 223
+    },
+    {
+      "scenario": "en-service-bills",
+      "message": "B",
+      "model": "openai/gpt-6-luna-decisions",
+      "run": 9,
+      "choice": "none",
+      "probabilities": {
+        "Personal": 0.23,
+        "Ideas": 0.01,
+        "Bills": 0.23,
+        "none": 0.53
+      },
+      "ms": 265
+    },
+    {
+      "scenario": "en-service-bills",
+      "message": "B",
+      "model": "openai/gpt-6-luna-decisions",
+      "run": 10,
+      "choice": "none",
+      "probabilities": {
+        "Personal": 0.23,
+        "Ideas": 0.01,
+        "Bills": 0.23,
+        "none": 0.53
+      },
+      "ms": 186
+    },
+    {
+      "scenario": "en-service-bills",
+      "message": "B",
+      "model": "typesafe-ai/jev",
+      "run": 1,
+      "choice": "Bills",
+      "probabilities": {
+        "Personal": 0,
+        "Ideas": 0,
+        "Bills": 1,
+        "none": 0
+      },
+      "ms": 192
+    },
+    {
+      "scenario": "en-service-bills",
+      "message": "B",
+      "model": "typesafe-ai/jev",
+      "run": 2,
+      "choice": "Bills",
+      "probabilities": {
+        "Personal": 0,
+        "Ideas": 0,
+        "Bills": 1,
+        "none": 0
+      },
+      "ms": 167
+    },
+    {
+      "scenario": "en-service-bills",
+      "message": "B",
+      "model": "typesafe-ai/jev",
+      "run": 3,
+      "choice": "Bills",
+      "probabilities": {
+        "Personal": 0,
+        "Ideas": 0,
+        "Bills": 1,
+        "none": 0
+      },
+      "ms": 184
+    },
+    {
+      "scenario": "en-service-bills",
+      "message": "B",
+      "model": "typesafe-ai/jev",
+      "run": 4,
+      "choice": "Bills",
+      "probabilities": {
+        "Personal": 0,
+        "Ideas": 0,
+        "Bills": 1,
+        "none": 0
+      },
+      "ms": 200
+    },
+    {
+      "scenario": "en-service-bills",
+      "message": "B",
+      "model": "typesafe-ai/jev",
+      "run": 5,
+      "choice": "Bills",
+      "probabilities": {
+        "Personal": 0,
+        "Ideas": 0,
+        "Bills": 1,
+        "none": 0
+      },
+      "ms": 225
+    },
+    {
+      "scenario": "en-service-bills",
+      "message": "B",
+      "model": "typesafe-ai/jev",
+      "run": 6,
+      "choice": "Bills",
+      "probabilities": {
+        "Personal": 0,
+        "Ideas": 0,
+        "Bills": 1,
+        "none": 0
+      },
+      "ms": 180
+    },
+    {
+      "scenario": "en-service-bills",
+      "message": "B",
+      "model": "typesafe-ai/jev",
+      "run": 7,
+      "choice": "Bills",
+      "probabilities": {
+        "Personal": 0,
+        "Ideas": 0,
+        "Bills": 1,
+        "none": 0
+      },
+      "ms": 237
+    },
+    {
+      "scenario": "en-service-bills",
+      "message": "B",
+      "model": "typesafe-ai/jev",
+      "run": 8,
+      "choice": "Bills",
+      "probabilities": {
+        "Personal": 0,
+        "Ideas": 0,
+        "Bills": 1,
+        "none": 0
+      },
+      "ms": 183
+    },
+    {
+      "scenario": "en-service-bills",
+      "message": "B",
+      "model": "typesafe-ai/jev",
+      "run": 9,
+      "choice": "Bills",
+      "probabilities": {
+        "Personal": 0,
+        "Ideas": 0,
+        "Bills": 1,
+        "none": 0
+      },
+      "ms": 230
+    },
+    {
+      "scenario": "en-service-bills",
+      "message": "B",
+      "model": "typesafe-ai/jev",
+      "run": 10,
+      "choice": "Bills",
+      "probabilities": {
+        "Personal": 0,
+        "Ideas": 0,
+        "Bills": 1,
+        "none": 0
+      },
+      "ms": 181
+    },
+    {
+      "scenario": "en-service-bills",
+      "message": "C-us",
+      "model": "openai/gpt-6-luna-decisions",
+      "run": 1,
+      "choice": "Bills",
+      "probabilities": {
+        "Personal": 0.01,
+        "Ideas": 0,
+        "Bills": 0.83,
+        "none": 0.16
+      },
+      "ms": 255
+    },
+    {
+      "scenario": "en-service-bills",
+      "message": "C-us",
+      "model": "openai/gpt-6-luna-decisions",
+      "run": 2,
+      "choice": "Bills",
+      "probabilities": {
+        "Personal": 0.01,
+        "Ideas": 0,
+        "Bills": 0.83,
+        "none": 0.16
+      },
+      "ms": 190
+    },
+    {
+      "scenario": "en-service-bills",
+      "message": "C-us",
+      "model": "openai/gpt-6-luna-decisions",
+      "run": 3,
+      "choice": "Bills",
+      "probabilities": {
+        "Personal": 0.01,
+        "Ideas": 0,
+        "Bills": 0.83,
+        "none": 0.16
+      },
+      "ms": 199
+    },
+    {
+      "scenario": "en-service-bills",
+      "message": "C-us",
+      "model": "openai/gpt-6-luna-decisions",
+      "run": 4,
+      "choice": "Bills",
+      "probabilities": {
+        "Personal": 0.01,
+        "Ideas": 0,
+        "Bills": 0.83,
+        "none": 0.16
+      },
+      "ms": 171
+    },
+    {
+      "scenario": "en-service-bills",
+      "message": "C-us",
+      "model": "openai/gpt-6-luna-decisions",
+      "run": 5,
+      "choice": "Bills",
+      "probabilities": {
+        "Personal": 0.01,
+        "Ideas": 0,
+        "Bills": 0.83,
+        "none": 0.16
+      },
+      "ms": 212
+    },
+    {
+      "scenario": "en-service-bills",
+      "message": "C-us",
+      "model": "openai/gpt-6-luna-decisions",
+      "run": 6,
+      "choice": "Bills",
+      "probabilities": {
+        "Personal": 0.01,
+        "Ideas": 0,
+        "Bills": 0.83,
+        "none": 0.16
+      },
+      "ms": 200
+    },
+    {
+      "scenario": "en-service-bills",
+      "message": "C-us",
+      "model": "openai/gpt-6-luna-decisions",
+      "run": 7,
+      "choice": "Bills",
+      "probabilities": {
+        "Personal": 0.01,
+        "Ideas": 0,
+        "Bills": 0.83,
+        "none": 0.16
+      },
+      "ms": 155
+    },
+    {
+      "scenario": "en-service-bills",
+      "message": "C-us",
+      "model": "openai/gpt-6-luna-decisions",
+      "run": 8,
+      "choice": "Bills",
+      "probabilities": {
+        "Personal": 0.01,
+        "Ideas": 0,
+        "Bills": 0.83,
+        "none": 0.16
+      },
+      "ms": 250
+    },
+    {
+      "scenario": "en-service-bills",
+      "message": "C-us",
+      "model": "openai/gpt-6-luna-decisions",
+      "run": 9,
+      "choice": "Bills",
+      "probabilities": {
+        "Personal": 0.01,
+        "Ideas": 0,
+        "Bills": 0.83,
+        "none": 0.16
+      },
+      "ms": 171
+    },
+    {
+      "scenario": "en-service-bills",
+      "message": "C-us",
+      "model": "openai/gpt-6-luna-decisions",
+      "run": 10,
+      "choice": "Bills",
+      "probabilities": {
+        "Personal": 0.01,
+        "Ideas": 0,
+        "Bills": 0.83,
+        "none": 0.16
+      },
+      "ms": 235
+    },
+    {
+      "scenario": "en-service-bills",
+      "message": "C-us",
+      "model": "typesafe-ai/jev",
+      "run": 1,
+      "choice": "Bills",
+      "probabilities": {
+        "Personal": 0,
+        "Ideas": 0,
+        "Bills": 1,
+        "none": 0
+      },
+      "ms": 170
+    },
+    {
+      "scenario": "en-service-bills",
+      "message": "C-us",
+      "model": "typesafe-ai/jev",
+      "run": 2,
+      "choice": "Bills",
+      "probabilities": {
+        "Personal": 0,
+        "Ideas": 0,
+        "Bills": 1,
+        "none": 0
+      },
+      "ms": 225
+    },
+    {
+      "scenario": "en-service-bills",
+      "message": "C-us",
+      "model": "typesafe-ai/jev",
+      "run": 3,
+      "choice": "Bills",
+      "probabilities": {
+        "Personal": 0,
+        "Ideas": 0,
+        "Bills": 1,
+        "none": 0
+      },
+      "ms": 189
+    },
+    {
+      "scenario": "en-service-bills",
+      "message": "C-us",
+      "model": "typesafe-ai/jev",
+      "run": 4,
+      "choice": "Bills",
+      "probabilities": {
+        "Personal": 0,
+        "Ideas": 0,
+        "Bills": 1,
+        "none": 0
+      },
+      "ms": 200
+    },
+    {
+      "scenario": "en-service-bills",
+      "message": "C-us",
+      "model": "typesafe-ai/jev",
+      "run": 5,
+      "choice": "Bills",
+      "probabilities": {
+        "Personal": 0,
+        "Ideas": 0,
+        "Bills": 1,
+        "none": 0
+      },
+      "ms": 221
+    },
+    {
+      "scenario": "en-service-bills",
+      "message": "C-us",
+      "model": "typesafe-ai/jev",
+      "run": 6,
+      "choice": "Bills",
+      "probabilities": {
+        "Personal": 0,
+        "Ideas": 0,
+        "Bills": 1,
+        "none": 0
+      },
+      "ms": 168
+    },
+    {
+      "scenario": "en-service-bills",
+      "message": "C-us",
+      "model": "typesafe-ai/jev",
+      "run": 7,
+      "choice": "Bills",
+      "probabilities": {
+        "Personal": 0,
+        "Ideas": 0,
+        "Bills": 1,
+        "none": 0
+      },
+      "ms": 207
+    },
+    {
+      "scenario": "en-service-bills",
+      "message": "C-us",
+      "model": "typesafe-ai/jev",
+      "run": 8,
+      "choice": "Bills",
+      "probabilities": {
+        "Personal": 0,
+        "Ideas": 0,
+        "Bills": 1,
+        "none": 0
+      },
+      "ms": 163
+    },
+    {
+      "scenario": "en-service-bills",
+      "message": "C-us",
+      "model": "typesafe-ai/jev",
+      "run": 9,
+      "choice": "Bills",
+      "probabilities": {
+        "Personal": 0,
+        "Ideas": 0,
+        "Bills": 1,
+        "none": 0
+      },
+      "ms": 173
+    },
+    {
+      "scenario": "en-service-bills",
+      "message": "C-us",
+      "model": "typesafe-ai/jev",
+      "run": 10,
+      "choice": "Bills",
+      "probabilities": {
+        "Personal": 0,
+        "Ideas": 0,
+        "Bills": 1,
+        "none": 0
+      },
+      "ms": 181
+    },
+    {
+      "scenario": "en-service-bills",
+      "message": "C",
+      "model": "openai/gpt-6-luna-decisions",
+      "run": 1,
+      "choice": "Bills",
+      "probabilities": {
+        "Personal": 0.02,
+        "Ideas": 0,
+        "Bills": 0.92,
+        "none": 0.06
+      },
+      "ms": 227
+    },
+    {
+      "scenario": "en-service-bills",
+      "message": "C",
+      "model": "openai/gpt-6-luna-decisions",
+      "run": 2,
+      "choice": "Bills",
+      "probabilities": {
+        "Personal": 0.02,
+        "Ideas": 0,
+        "Bills": 0.92,
+        "none": 0.06
+      },
+      "ms": 206
+    },
+    {
+      "scenario": "en-service-bills",
+      "message": "C",
+      "model": "openai/gpt-6-luna-decisions",
+      "run": 3,
+      "choice": "Bills",
+      "probabilities": {
+        "Personal": 0.02,
+        "Ideas": 0,
+        "Bills": 0.92,
+        "none": 0.06
+      },
+      "ms": 196
+    },
+    {
+      "scenario": "en-service-bills",
+      "message": "C",
+      "model": "openai/gpt-6-luna-decisions",
+      "run": 4,
+      "choice": "Bills",
+      "probabilities": {
+        "Personal": 0.02,
+        "Ideas": 0,
+        "Bills": 0.92,
+        "none": 0.06
+      },
+      "ms": 165
+    },
+    {
+      "scenario": "en-service-bills",
+      "message": "C",
+      "model": "openai/gpt-6-luna-decisions",
+      "run": 5,
+      "choice": "Bills",
+      "probabilities": {
+        "Personal": 0.02,
+        "Ideas": 0,
+        "Bills": 0.92,
+        "none": 0.06
+      },
+      "ms": 172
+    },
+    {
+      "scenario": "en-service-bills",
+      "message": "C",
+      "model": "openai/gpt-6-luna-decisions",
+      "run": 6,
+      "choice": "Bills",
+      "probabilities": {
+        "Personal": 0.02,
+        "Ideas": 0,
+        "Bills": 0.92,
+        "none": 0.06
+      },
+      "ms": 245
+    },
+    {
+      "scenario": "en-service-bills",
+      "message": "C",
+      "model": "openai/gpt-6-luna-decisions",
+      "run": 7,
+      "choice": "Bills",
+      "probabilities": {
+        "Personal": 0.02,
+        "Ideas": 0,
+        "Bills": 0.92,
+        "none": 0.06
+      },
+      "ms": 166
+    },
+    {
+      "scenario": "en-service-bills",
+      "message": "C",
+      "model": "openai/gpt-6-luna-decisions",
+      "run": 8,
+      "choice": "Bills",
+      "probabilities": {
+        "Personal": 0.02,
+        "Ideas": 0,
+        "Bills": 0.92,
+        "none": 0.06
+      },
+      "ms": 208
+    },
+    {
+      "scenario": "en-service-bills",
+      "message": "C",
+      "model": "openai/gpt-6-luna-decisions",
+      "run": 9,
+      "choice": "Bills",
+      "probabilities": {
+        "Personal": 0.02,
+        "Ideas": 0,
+        "Bills": 0.92,
+        "none": 0.06
+      },
+      "ms": 160
+    },
+    {
+      "scenario": "en-service-bills",
+      "message": "C",
+      "model": "openai/gpt-6-luna-decisions",
+      "run": 10,
+      "choice": "Bills",
+      "probabilities": {
+        "Personal": 0.02,
+        "Ideas": 0,
+        "Bills": 0.92,
+        "none": 0.06
+      },
+      "ms": 191
+    },
+    {
+      "scenario": "en-service-bills",
+      "message": "C",
+      "model": "typesafe-ai/jev",
+      "run": 1,
+      "choice": "Bills",
+      "probabilities": {
+        "Personal": 0,
+        "Ideas": 0,
+        "Bills": 1,
+        "none": 0
+      },
+      "ms": 187
+    },
+    {
+      "scenario": "en-service-bills",
+      "message": "C",
+      "model": "typesafe-ai/jev",
+      "run": 2,
+      "choice": "Bills",
+      "probabilities": {
+        "Personal": 0,
+        "Ideas": 0,
+        "Bills": 1,
+        "none": 0
+      },
+      "ms": 249
+    },
+    {
+      "scenario": "en-service-bills",
+      "message": "C",
+      "model": "typesafe-ai/jev",
+      "run": 3,
+      "choice": "Bills",
+      "probabilities": {
+        "Personal": 0,
+        "Ideas": 0,
+        "Bills": 1,
+        "none": 0
+      },
+      "ms": 176
+    },
+    {
+      "scenario": "en-service-bills",
+      "message": "C",
+      "model": "typesafe-ai/jev",
+      "run": 4,
+      "choice": "Bills",
+      "probabilities": {
+        "Personal": 0,
+        "Ideas": 0,
+        "Bills": 1,
+        "none": 0
+      },
+      "ms": 184
+    },
+    {
+      "scenario": "en-service-bills",
+      "message": "C",
+      "model": "typesafe-ai/jev",
+      "run": 5,
+      "choice": "Bills",
+      "probabilities": {
+        "Personal": 0,
+        "Ideas": 0,
+        "Bills": 1,
+        "none": 0
+      },
+      "ms": 161
+    },
+    {
+      "scenario": "en-service-bills",
+      "message": "C",
+      "model": "typesafe-ai/jev",
+      "run": 6,
+      "choice": "Bills",
+      "probabilities": {
+        "Personal": 0,
+        "Ideas": 0,
+        "Bills": 1,
+        "none": 0
+      },
+      "ms": 180
+    },
+    {
+      "scenario": "en-service-bills",
+      "message": "C",
+      "model": "typesafe-ai/jev",
+      "run": 7,
+      "choice": "Bills",
+      "probabilities": {
+        "Personal": 0,
+        "Ideas": 0,
+        "Bills": 1,
+        "none": 0
+      },
+      "ms": 332
+    },
+    {
+      "scenario": "en-service-bills",
+      "message": "C",
+      "model": "typesafe-ai/jev",
+      "run": 8,
+      "choice": "Bills",
+      "probabilities": {
+        "Personal": 0,
+        "Ideas": 0,
+        "Bills": 1,
+        "none": 0
+      },
+      "ms": 172
+    },
+    {
+      "scenario": "en-service-bills",
+      "message": "C",
+      "model": "typesafe-ai/jev",
+      "run": 9,
+      "choice": "Bills",
+      "probabilities": {
+        "Personal": 0,
+        "Ideas": 0,
+        "Bills": 1,
+        "none": 0
+      },
+      "ms": 182
+    },
+    {
+      "scenario": "en-service-bills",
+      "message": "C",
+      "model": "typesafe-ai/jev",
+      "run": 10,
+      "choice": "Bills",
+      "probabilities": {
+        "Personal": 0,
+        "Ideas": 0,
+        "Bills": 1,
+        "none": 0
+      },
+      "ms": 174
+    },
+    {
+      "scenario": "en-service-invoices",
+      "message": "A-us",
+      "model": "openai/gpt-6-luna-decisions",
+      "run": 1,
+      "choice": "none",
+      "probabilities": {
+        "Personal": 0.46,
+        "Ideas": 0.02,
+        "Invoices": 0.02,
+        "none": 0.5
+      },
+      "ms": 214
+    },
+    {
+      "scenario": "en-service-invoices",
+      "message": "A-us",
+      "model": "openai/gpt-6-luna-decisions",
+      "run": 2,
+      "choice": "none",
+      "probabilities": {
+        "Personal": 0.46,
+        "Ideas": 0.02,
+        "Invoices": 0.02,
+        "none": 0.5
+      },
+      "ms": 195
+    },
+    {
+      "scenario": "en-service-invoices",
+      "message": "A-us",
+      "model": "openai/gpt-6-luna-decisions",
+      "run": 3,
+      "choice": "none",
+      "probabilities": {
+        "Personal": 0.46,
+        "Ideas": 0.02,
+        "Invoices": 0.02,
+        "none": 0.5
+      },
+      "ms": 213
+    },
+    {
+      "scenario": "en-service-invoices",
+      "message": "A-us",
+      "model": "openai/gpt-6-luna-decisions",
+      "run": 4,
+      "choice": "none",
+      "probabilities": {
+        "Personal": 0.46,
+        "Ideas": 0.02,
+        "Invoices": 0.02,
+        "none": 0.5
+      },
+      "ms": 218
+    },
+    {
+      "scenario": "en-service-invoices",
+      "message": "A-us",
+      "model": "openai/gpt-6-luna-decisions",
+      "run": 5,
+      "choice": "none",
+      "probabilities": {
+        "Personal": 0.46,
+        "Ideas": 0.02,
+        "Invoices": 0.02,
+        "none": 0.5
+      },
+      "ms": 166
+    },
+    {
+      "scenario": "en-service-invoices",
+      "message": "A-us",
+      "model": "openai/gpt-6-luna-decisions",
+      "run": 6,
+      "choice": "none",
+      "probabilities": {
+        "Personal": 0.46,
+        "Ideas": 0.02,
+        "Invoices": 0.02,
+        "none": 0.5
+      },
+      "ms": 212
+    },
+    {
+      "scenario": "en-service-invoices",
+      "message": "A-us",
+      "model": "openai/gpt-6-luna-decisions",
+      "run": 7,
+      "choice": "none",
+      "probabilities": {
+        "Personal": 0.46,
+        "Ideas": 0.02,
+        "Invoices": 0.02,
+        "none": 0.5
+      },
+      "ms": 158
+    },
+    {
+      "scenario": "en-service-invoices",
+      "message": "A-us",
+      "model": "openai/gpt-6-luna-decisions",
+      "run": 8,
+      "choice": "none",
+      "probabilities": {
+        "Personal": 0.46,
+        "Ideas": 0.02,
+        "Invoices": 0.02,
+        "none": 0.5
+      },
+      "ms": 198
+    },
+    {
+      "scenario": "en-service-invoices",
+      "message": "A-us",
+      "model": "openai/gpt-6-luna-decisions",
+      "run": 9,
+      "choice": "none",
+      "probabilities": {
+        "Personal": 0.46,
+        "Ideas": 0.02,
+        "Invoices": 0.02,
+        "none": 0.5
+      },
+      "ms": 213
+    },
+    {
+      "scenario": "en-service-invoices",
+      "message": "A-us",
+      "model": "openai/gpt-6-luna-decisions",
+      "run": 10,
+      "choice": "none",
+      "probabilities": {
+        "Personal": 0.46,
+        "Ideas": 0.02,
+        "Invoices": 0.02,
+        "none": 0.5
+      },
+      "ms": 252
+    },
+    {
+      "scenario": "en-service-invoices",
+      "message": "A-us",
+      "model": "typesafe-ai/jev",
+      "run": 1,
+      "choice": "Invoices",
+      "probabilities": {
+        "Personal": 0.38,
+        "Ideas": 0,
+        "Invoices": 0.59,
+        "none": 0.03
+      },
+      "ms": 193
+    },
+    {
+      "scenario": "en-service-invoices",
+      "message": "A-us",
+      "model": "typesafe-ai/jev",
+      "run": 2,
+      "choice": "Invoices",
+      "probabilities": {
+        "Personal": 0.4,
+        "Ideas": 0,
+        "Invoices": 0.57,
+        "none": 0.03
+      },
+      "ms": 178
+    },
+    {
+      "scenario": "en-service-invoices",
+      "message": "A-us",
+      "model": "typesafe-ai/jev",
+      "run": 3,
+      "choice": "Invoices",
+      "probabilities": {
+        "Personal": 0.34,
+        "Ideas": 0,
+        "Invoices": 0.64,
+        "none": 0.02
+      },
+      "ms": 182
+    },
+    {
+      "scenario": "en-service-invoices",
+      "message": "A-us",
+      "model": "typesafe-ai/jev",
+      "run": 4,
+      "choice": "Invoices",
+      "probabilities": {
+        "Personal": 0.39,
+        "Ideas": 0,
+        "Invoices": 0.59,
+        "none": 0.02
+      },
+      "ms": 250
+    },
+    {
+      "scenario": "en-service-invoices",
+      "message": "A-us",
+      "model": "typesafe-ai/jev",
+      "run": 5,
+      "choice": "Invoices",
+      "probabilities": {
+        "Personal": 0.45,
+        "Ideas": 0,
+        "Invoices": 0.53,
+        "none": 0.02
+      },
+      "ms": 175
+    },
+    {
+      "scenario": "en-service-invoices",
+      "message": "A-us",
+      "model": "typesafe-ai/jev",
+      "run": 6,
+      "choice": "Invoices",
+      "probabilities": {
+        "Personal": 0.39,
+        "Ideas": 0,
+        "Invoices": 0.59,
+        "none": 0.02
+      },
+      "ms": 168
+    },
+    {
+      "scenario": "en-service-invoices",
+      "message": "A-us",
+      "model": "typesafe-ai/jev",
+      "run": 7,
+      "choice": "Invoices",
+      "probabilities": {
+        "Personal": 0.38,
+        "Ideas": 0,
+        "Invoices": 0.6,
+        "none": 0.02
+      },
+      "ms": 162
+    },
+    {
+      "scenario": "en-service-invoices",
+      "message": "A-us",
+      "model": "typesafe-ai/jev",
+      "run": 8,
+      "choice": "Invoices",
+      "probabilities": {
+        "Personal": 0.36,
+        "Ideas": 0,
+        "Invoices": 0.62,
+        "none": 0.02
+      },
+      "ms": 177
+    },
+    {
+      "scenario": "en-service-invoices",
+      "message": "A-us",
+      "model": "typesafe-ai/jev",
+      "run": 9,
+      "choice": "Invoices",
+      "probabilities": {
+        "Personal": 0.44,
+        "Ideas": 0,
+        "Invoices": 0.54,
+        "none": 0.02
+      },
+      "ms": 168
+    },
+    {
+      "scenario": "en-service-invoices",
+      "message": "A-us",
+      "model": "typesafe-ai/jev",
+      "run": 10,
+      "choice": "Invoices",
+      "probabilities": {
+        "Personal": 0.41,
+        "Ideas": 0,
+        "Invoices": 0.56,
+        "none": 0.03
+      },
+      "ms": 197
+    },
+    {
+      "scenario": "en-service-invoices",
+      "message": "A",
+      "model": "openai/gpt-6-luna-decisions",
+      "run": 1,
+      "choice": "none",
+      "probabilities": {
+        "Personal": 0.35,
+        "Ideas": 0.01,
+        "Invoices": 0.05,
+        "none": 0.59
+      },
+      "ms": 206
+    },
+    {
+      "scenario": "en-service-invoices",
+      "message": "A",
+      "model": "openai/gpt-6-luna-decisions",
+      "run": 2,
+      "choice": "none",
+      "probabilities": {
+        "Personal": 0.35,
+        "Ideas": 0.01,
+        "Invoices": 0.05,
+        "none": 0.59
+      },
+      "ms": 139
+    },
+    {
+      "scenario": "en-service-invoices",
+      "message": "A",
+      "model": "openai/gpt-6-luna-decisions",
+      "run": 3,
+      "choice": "none",
+      "probabilities": {
+        "Personal": 0.35,
+        "Ideas": 0.01,
+        "Invoices": 0.05,
+        "none": 0.59
+      },
+      "ms": 316
+    },
+    {
+      "scenario": "en-service-invoices",
+      "message": "A",
+      "model": "openai/gpt-6-luna-decisions",
+      "run": 4,
+      "choice": "none",
+      "probabilities": {
+        "Personal": 0.35,
+        "Ideas": 0.01,
+        "Invoices": 0.05,
+        "none": 0.59
+      },
+      "ms": 257
+    },
+    {
+      "scenario": "en-service-invoices",
+      "message": "A",
+      "model": "openai/gpt-6-luna-decisions",
+      "run": 5,
+      "choice": "none",
+      "probabilities": {
+        "Personal": 0.35,
+        "Ideas": 0.01,
+        "Invoices": 0.05,
+        "none": 0.59
+      },
+      "ms": 169
+    },
+    {
+      "scenario": "en-service-invoices",
+      "message": "A",
+      "model": "openai/gpt-6-luna-decisions",
+      "run": 6,
+      "choice": "none",
+      "probabilities": {
+        "Personal": 0.35,
+        "Ideas": 0.01,
+        "Invoices": 0.05,
+        "none": 0.59
+      },
+      "ms": 164
+    },
+    {
+      "scenario": "en-service-invoices",
+      "message": "A",
+      "model": "openai/gpt-6-luna-decisions",
+      "run": 7,
+      "choice": "none",
+      "probabilities": {
+        "Personal": 0.35,
+        "Ideas": 0.01,
+        "Invoices": 0.05,
+        "none": 0.59
+      },
+      "ms": 157
+    },
+    {
+      "scenario": "en-service-invoices",
+      "message": "A",
+      "model": "openai/gpt-6-luna-decisions",
+      "run": 8,
+      "choice": "none",
+      "probabilities": {
+        "Personal": 0.35,
+        "Ideas": 0.01,
+        "Invoices": 0.05,
+        "none": 0.59
+      },
+      "ms": 253
+    },
+    {
+      "scenario": "en-service-invoices",
+      "message": "A",
+      "model": "openai/gpt-6-luna-decisions",
+      "run": 9,
+      "choice": "none",
+      "probabilities": {
+        "Personal": 0.35,
+        "Ideas": 0.01,
+        "Invoices": 0.05,
+        "none": 0.59
+      },
+      "ms": 188
+    },
+    {
+      "scenario": "en-service-invoices",
+      "message": "A",
+      "model": "openai/gpt-6-luna-decisions",
+      "run": 10,
+      "choice": "none",
+      "probabilities": {
+        "Personal": 0.35,
+        "Ideas": 0.01,
+        "Invoices": 0.05,
+        "none": 0.59
+      },
+      "ms": 172
+    },
+    {
+      "scenario": "en-service-invoices",
+      "message": "A",
+      "model": "typesafe-ai/jev",
+      "run": 1,
+      "choice": "Invoices",
+      "probabilities": {
+        "Personal": 0.27,
+        "Ideas": 0,
+        "Invoices": 0.69,
+        "none": 0.04
+      },
+      "ms": 186
+    },
+    {
+      "scenario": "en-service-invoices",
+      "message": "A",
+      "model": "typesafe-ai/jev",
+      "run": 2,
+      "choice": "Invoices",
+      "probabilities": {
+        "Personal": 0.26,
+        "Ideas": 0,
+        "Invoices": 0.71,
+        "none": 0.03
+      },
+      "ms": 205
+    },
+    {
+      "scenario": "en-service-invoices",
+      "message": "A",
+      "model": "typesafe-ai/jev",
+      "run": 3,
+      "choice": "Invoices",
+      "probabilities": {
+        "Personal": 0.27,
+        "Ideas": 0,
+        "Invoices": 0.69,
+        "none": 0.04
+      },
+      "ms": 206
+    },
+    {
+      "scenario": "en-service-invoices",
+      "message": "A",
+      "model": "typesafe-ai/jev",
+      "run": 4,
+      "choice": "Invoices",
+      "probabilities": {
+        "Personal": 0.27,
+        "Ideas": 0,
+        "Invoices": 0.7,
+        "none": 0.03
+      },
+      "ms": 238
+    },
+    {
+      "scenario": "en-service-invoices",
+      "message": "A",
+      "model": "typesafe-ai/jev",
+      "run": 5,
+      "choice": "Invoices",
+      "probabilities": {
+        "Personal": 0.3,
+        "Ideas": 0,
+        "Invoices": 0.67,
+        "none": 0.03
+      },
+      "ms": 216
+    },
+    {
+      "scenario": "en-service-invoices",
+      "message": "A",
+      "model": "typesafe-ai/jev",
+      "run": 6,
+      "choice": "Invoices",
+      "probabilities": {
+        "Personal": 0.28,
+        "Ideas": 0,
+        "Invoices": 0.68,
+        "none": 0.04
+      },
+      "ms": 185
+    },
+    {
+      "scenario": "en-service-invoices",
+      "message": "A",
+      "model": "typesafe-ai/jev",
+      "run": 7,
+      "choice": "Invoices",
+      "probabilities": {
+        "Personal": 0.27,
+        "Ideas": 0,
+        "Invoices": 0.69,
+        "none": 0.04
+      },
+      "ms": 200
+    },
+    {
+      "scenario": "en-service-invoices",
+      "message": "A",
+      "model": "typesafe-ai/jev",
+      "run": 8,
+      "choice": "Invoices",
+      "probabilities": {
+        "Personal": 0.27,
+        "Ideas": 0,
+        "Invoices": 0.7,
+        "none": 0.03
+      },
+      "ms": 178
+    },
+    {
+      "scenario": "en-service-invoices",
+      "message": "A",
+      "model": "typesafe-ai/jev",
+      "run": 9,
+      "choice": "Invoices",
+      "probabilities": {
+        "Personal": 0.25,
+        "Ideas": 0,
+        "Invoices": 0.71,
+        "none": 0.04
+      },
+      "ms": 254
+    },
+    {
+      "scenario": "en-service-invoices",
+      "message": "A",
+      "model": "typesafe-ai/jev",
+      "run": 10,
+      "choice": "Invoices",
+      "probabilities": {
+        "Personal": 0.25,
+        "Ideas": 0,
+        "Invoices": 0.72,
+        "none": 0.03
+      },
+      "ms": 245
+    },
+    {
+      "scenario": "en-service-invoices",
+      "message": "B",
+      "model": "openai/gpt-6-luna-decisions",
+      "run": 1,
+      "choice": "none",
+      "probabilities": {
+        "Personal": 0.13,
+        "Ideas": 0.02,
+        "Invoices": 0.01,
+        "none": 0.84
+      },
+      "ms": 202
+    },
+    {
+      "scenario": "en-service-invoices",
+      "message": "B",
+      "model": "openai/gpt-6-luna-decisions",
+      "run": 2,
+      "choice": "none",
+      "probabilities": {
+        "Personal": 0.13,
+        "Ideas": 0.02,
+        "Invoices": 0.01,
+        "none": 0.84
+      },
+      "ms": 172
+    },
+    {
+      "scenario": "en-service-invoices",
+      "message": "B",
+      "model": "openai/gpt-6-luna-decisions",
+      "run": 3,
+      "choice": "none",
+      "probabilities": {
+        "Personal": 0.13,
+        "Ideas": 0.02,
+        "Invoices": 0.01,
+        "none": 0.84
+      },
+      "ms": 166
+    },
+    {
+      "scenario": "en-service-invoices",
+      "message": "B",
+      "model": "openai/gpt-6-luna-decisions",
+      "run": 4,
+      "choice": "none",
+      "probabilities": {
+        "Personal": 0.13,
+        "Ideas": 0.02,
+        "Invoices": 0.01,
+        "none": 0.84
+      },
+      "ms": 166
+    },
+    {
+      "scenario": "en-service-invoices",
+      "message": "B",
+      "model": "openai/gpt-6-luna-decisions",
+      "run": 5,
+      "choice": "none",
+      "probabilities": {
+        "Personal": 0.13,
+        "Ideas": 0.02,
+        "Invoices": 0.01,
+        "none": 0.84
+      },
+      "ms": 211
+    },
+    {
+      "scenario": "en-service-invoices",
+      "message": "B",
+      "model": "openai/gpt-6-luna-decisions",
+      "run": 6,
+      "choice": "none",
+      "probabilities": {
+        "Personal": 0.13,
+        "Ideas": 0.02,
+        "Invoices": 0.01,
+        "none": 0.84
+      },
+      "ms": 194
+    },
+    {
+      "scenario": "en-service-invoices",
+      "message": "B",
+      "model": "openai/gpt-6-luna-decisions",
+      "run": 7,
+      "choice": "none",
+      "probabilities": {
+        "Personal": 0.13,
+        "Ideas": 0.02,
+        "Invoices": 0.01,
+        "none": 0.84
+      },
+      "ms": 224
+    },
+    {
+      "scenario": "en-service-invoices",
+      "message": "B",
+      "model": "openai/gpt-6-luna-decisions",
+      "run": 8,
+      "choice": "none",
+      "probabilities": {
+        "Personal": 0.13,
+        "Ideas": 0.02,
+        "Invoices": 0.01,
+        "none": 0.84
+      },
+      "ms": 325
+    },
+    {
+      "scenario": "en-service-invoices",
+      "message": "B",
+      "model": "openai/gpt-6-luna-decisions",
+      "run": 9,
+      "choice": "none",
+      "probabilities": {
+        "Personal": 0.13,
+        "Ideas": 0.02,
+        "Invoices": 0.01,
+        "none": 0.84
+      },
+      "ms": 225
+    },
+    {
+      "scenario": "en-service-invoices",
+      "message": "B",
+      "model": "openai/gpt-6-luna-decisions",
+      "run": 10,
+      "choice": "none",
+      "probabilities": {
+        "Personal": 0.13,
+        "Ideas": 0.02,
+        "Invoices": 0.01,
+        "none": 0.84
+      },
+      "ms": 159
+    },
+    {
+      "scenario": "en-service-invoices",
+      "message": "B",
+      "model": "typesafe-ai/jev",
+      "run": 1,
+      "choice": "Invoices",
+      "probabilities": {
+        "Personal": 0.34,
+        "Ideas": 0,
+        "Invoices": 0.64,
+        "none": 0.02
+      },
+      "ms": 179
+    },
+    {
+      "scenario": "en-service-invoices",
+      "message": "B",
+      "model": "typesafe-ai/jev",
+      "run": 2,
+      "choice": "Invoices",
+      "probabilities": {
+        "Personal": 0.35,
+        "Ideas": 0,
+        "Invoices": 0.62,
+        "none": 0.03
+      },
+      "ms": 205
+    },
+    {
+      "scenario": "en-service-invoices",
+      "message": "B",
+      "model": "typesafe-ai/jev",
+      "run": 3,
+      "choice": "Invoices",
+      "probabilities": {
+        "Personal": 0.31,
+        "Ideas": 0,
+        "Invoices": 0.67,
+        "none": 0.02
+      },
+      "ms": 211
+    },
+    {
+      "scenario": "en-service-invoices",
+      "message": "B",
+      "model": "typesafe-ai/jev",
+      "run": 4,
+      "choice": "Invoices",
+      "probabilities": {
+        "Personal": 0.34,
+        "Ideas": 0,
+        "Invoices": 0.63,
+        "none": 0.03
+      },
+      "ms": 182
+    },
+    {
+      "scenario": "en-service-invoices",
+      "message": "B",
+      "model": "typesafe-ai/jev",
+      "run": 5,
+      "choice": "Invoices",
+      "probabilities": {
+        "Personal": 0.32,
+        "Ideas": 0,
+        "Invoices": 0.66,
+        "none": 0.02
+      },
+      "ms": 213
+    },
+    {
+      "scenario": "en-service-invoices",
+      "message": "B",
+      "model": "typesafe-ai/jev",
+      "run": 6,
+      "choice": "Invoices",
+      "probabilities": {
+        "Personal": 0.32,
+        "Ideas": 0,
+        "Invoices": 0.66,
+        "none": 0.02
+      },
+      "ms": 216
+    },
+    {
+      "scenario": "en-service-invoices",
+      "message": "B",
+      "model": "typesafe-ai/jev",
+      "run": 7,
+      "choice": "Invoices",
+      "probabilities": {
+        "Personal": 0.33,
+        "Ideas": 0,
+        "Invoices": 0.65,
+        "none": 0.02
+      },
+      "ms": 163
+    },
+    {
+      "scenario": "en-service-invoices",
+      "message": "B",
+      "model": "typesafe-ai/jev",
+      "run": 8,
+      "choice": "Invoices",
+      "probabilities": {
+        "Personal": 0.29,
+        "Ideas": 0,
+        "Invoices": 0.69,
+        "none": 0.02
+      },
+      "ms": 201
+    },
+    {
+      "scenario": "en-service-invoices",
+      "message": "B",
+      "model": "typesafe-ai/jev",
+      "run": 9,
+      "choice": "Invoices",
+      "probabilities": {
+        "Personal": 0.32,
+        "Ideas": 0,
+        "Invoices": 0.66,
+        "none": 0.02
+      },
+      "ms": 174
+    },
+    {
+      "scenario": "en-service-invoices",
+      "message": "B",
+      "model": "typesafe-ai/jev",
+      "run": 10,
+      "choice": "Invoices",
+      "probabilities": {
+        "Personal": 0.34,
+        "Ideas": 0,
+        "Invoices": 0.64,
+        "none": 0.02
+      },
+      "ms": 173
+    },
+    {
+      "scenario": "en-service-invoices",
+      "message": "C-us",
+      "model": "openai/gpt-6-luna-decisions",
+      "run": 1,
+      "choice": "Personal",
+      "probabilities": {
+        "Personal": 0.44,
+        "Ideas": 0.01,
+        "Invoices": 0.15,
+        "none": 0.4
+      },
+      "ms": 175
+    },
+    {
+      "scenario": "en-service-invoices",
+      "message": "C-us",
+      "model": "openai/gpt-6-luna-decisions",
+      "run": 2,
+      "choice": "Personal",
+      "probabilities": {
+        "Personal": 0.44,
+        "Ideas": 0.01,
+        "Invoices": 0.15,
+        "none": 0.4
+      },
+      "ms": 225
+    },
+    {
+      "scenario": "en-service-invoices",
+      "message": "C-us",
+      "model": "openai/gpt-6-luna-decisions",
+      "run": 3,
+      "choice": "Personal",
+      "probabilities": {
+        "Personal": 0.44,
+        "Ideas": 0.01,
+        "Invoices": 0.15,
+        "none": 0.4
+      },
+      "ms": 580
+    },
+    {
+      "scenario": "en-service-invoices",
+      "message": "C-us",
+      "model": "openai/gpt-6-luna-decisions",
+      "run": 4,
+      "choice": "Personal",
+      "probabilities": {
+        "Personal": 0.44,
+        "Ideas": 0.01,
+        "Invoices": 0.15,
+        "none": 0.4
+      },
+      "ms": 166
+    },
+    {
+      "scenario": "en-service-invoices",
+      "message": "C-us",
+      "model": "openai/gpt-6-luna-decisions",
+      "run": 5,
+      "choice": "Personal",
+      "probabilities": {
+        "Personal": 0.44,
+        "Ideas": 0.01,
+        "Invoices": 0.15,
+        "none": 0.4
+      },
+      "ms": 193
+    },
+    {
+      "scenario": "en-service-invoices",
+      "message": "C-us",
+      "model": "openai/gpt-6-luna-decisions",
+      "run": 6,
+      "choice": "Personal",
+      "probabilities": {
+        "Personal": 0.44,
+        "Ideas": 0.01,
+        "Invoices": 0.15,
+        "none": 0.4
+      },
+      "ms": 179
+    },
+    {
+      "scenario": "en-service-invoices",
+      "message": "C-us",
+      "model": "openai/gpt-6-luna-decisions",
+      "run": 7,
+      "choice": "Personal",
+      "probabilities": {
+        "Personal": 0.44,
+        "Ideas": 0.01,
+        "Invoices": 0.15,
+        "none": 0.4
+      },
+      "ms": 224
+    },
+    {
+      "scenario": "en-service-invoices",
+      "message": "C-us",
+      "model": "openai/gpt-6-luna-decisions",
+      "run": 8,
+      "choice": "Personal",
+      "probabilities": {
+        "Personal": 0.44,
+        "Ideas": 0.01,
+        "Invoices": 0.15,
+        "none": 0.4
+      },
+      "ms": 231
+    },
+    {
+      "scenario": "en-service-invoices",
+      "message": "C-us",
+      "model": "openai/gpt-6-luna-decisions",
+      "run": 9,
+      "choice": "Personal",
+      "probabilities": {
+        "Personal": 0.44,
+        "Ideas": 0.01,
+        "Invoices": 0.15,
+        "none": 0.4
+      },
+      "ms": 185
+    },
+    {
+      "scenario": "en-service-invoices",
+      "message": "C-us",
+      "model": "openai/gpt-6-luna-decisions",
+      "run": 10,
+      "choice": "Personal",
+      "probabilities": {
+        "Personal": 0.44,
+        "Ideas": 0.01,
+        "Invoices": 0.15,
+        "none": 0.4
+      },
+      "ms": 167
+    },
+    {
+      "scenario": "en-service-invoices",
+      "message": "C-us",
+      "model": "typesafe-ai/jev",
+      "run": 1,
+      "choice": "Invoices",
+      "probabilities": {
+        "Personal": 0.12,
+        "Ideas": 0,
+        "Invoices": 0.87,
+        "none": 0.01
+      },
+      "ms": 173
+    },
+    {
+      "scenario": "en-service-invoices",
+      "message": "C-us",
+      "model": "typesafe-ai/jev",
+      "run": 2,
+      "choice": "Invoices",
+      "probabilities": {
+        "Personal": 0.12,
+        "Ideas": 0,
+        "Invoices": 0.87,
+        "none": 0.01
+      },
+      "ms": 191
+    },
+    {
+      "scenario": "en-service-invoices",
+      "message": "C-us",
+      "model": "typesafe-ai/jev",
+      "run": 3,
+      "choice": "Invoices",
+      "probabilities": {
+        "Personal": 0.14,
+        "Ideas": 0,
+        "Invoices": 0.85,
+        "none": 0.01
+      },
+      "ms": 187
+    },
+    {
+      "scenario": "en-service-invoices",
+      "message": "C-us",
+      "model": "typesafe-ai/jev",
+      "run": 4,
+      "choice": "Invoices",
+      "probabilities": {
+        "Personal": 0.14,
+        "Ideas": 0,
+        "Invoices": 0.85,
+        "none": 0.01
+      },
+      "ms": 176
+    },
+    {
+      "scenario": "en-service-invoices",
+      "message": "C-us",
+      "model": "typesafe-ai/jev",
+      "run": 5,
+      "choice": "Invoices",
+      "probabilities": {
+        "Personal": 0.14,
+        "Ideas": 0,
+        "Invoices": 0.85,
+        "none": 0.01
+      },
+      "ms": 265
+    },
+    {
+      "scenario": "en-service-invoices",
+      "message": "C-us",
+      "model": "typesafe-ai/jev",
+      "run": 6,
+      "choice": "Invoices",
+      "probabilities": {
+        "Personal": 0.17,
+        "Ideas": 0,
+        "Invoices": 0.82,
+        "none": 0.01
+      },
+      "ms": 251
+    },
+    {
+      "scenario": "en-service-invoices",
+      "message": "C-us",
+      "model": "typesafe-ai/jev",
+      "run": 7,
+      "choice": "Invoices",
+      "probabilities": {
+        "Personal": 0.14,
+        "Ideas": 0,
+        "Invoices": 0.85,
+        "none": 0.01
+      },
+      "ms": 179
+    },
+    {
+      "scenario": "en-service-invoices",
+      "message": "C-us",
+      "model": "typesafe-ai/jev",
+      "run": 8,
+      "choice": "Invoices",
+      "probabilities": {
+        "Personal": 0.14,
+        "Ideas": 0,
+        "Invoices": 0.85,
+        "none": 0.01
+      },
+      "ms": 174
+    },
+    {
+      "scenario": "en-service-invoices",
+      "message": "C-us",
+      "model": "typesafe-ai/jev",
+      "run": 9,
+      "choice": "Invoices",
+      "probabilities": {
+        "Personal": 0.15,
+        "Ideas": 0,
+        "Invoices": 0.84,
+        "none": 0.01
+      },
+      "ms": 197
+    },
+    {
+      "scenario": "en-service-invoices",
+      "message": "C-us",
+      "model": "typesafe-ai/jev",
+      "run": 10,
+      "choice": "Invoices",
+      "probabilities": {
+        "Personal": 0.17,
+        "Ideas": 0,
+        "Invoices": 0.81,
+        "none": 0.01
+      },
+      "ms": 215
+    },
+    {
+      "scenario": "en-service-invoices",
+      "message": "C",
+      "model": "openai/gpt-6-luna-decisions",
+      "run": 1,
+      "choice": "Personal",
+      "probabilities": {
+        "Personal": 0.41,
+        "Ideas": 0.01,
+        "Invoices": 0.4,
+        "none": 0.18
+      },
+      "ms": 200
+    },
+    {
+      "scenario": "en-service-invoices",
+      "message": "C",
+      "model": "openai/gpt-6-luna-decisions",
+      "run": 2,
+      "choice": "Personal",
+      "probabilities": {
+        "Personal": 0.41,
+        "Ideas": 0.01,
+        "Invoices": 0.4,
+        "none": 0.18
+      },
+      "ms": 186
+    },
+    {
+      "scenario": "en-service-invoices",
+      "message": "C",
+      "model": "openai/gpt-6-luna-decisions",
+      "run": 3,
+      "choice": "Personal",
+      "probabilities": {
+        "Personal": 0.41,
+        "Ideas": 0.01,
+        "Invoices": 0.4,
+        "none": 0.18
+      },
+      "ms": 158
+    },
+    {
+      "scenario": "en-service-invoices",
+      "message": "C",
+      "model": "openai/gpt-6-luna-decisions",
+      "run": 4,
+      "choice": "Personal",
+      "probabilities": {
+        "Personal": 0.41,
+        "Ideas": 0.01,
+        "Invoices": 0.4,
+        "none": 0.18
+      },
+      "ms": 232
+    },
+    {
+      "scenario": "en-service-invoices",
+      "message": "C",
+      "model": "openai/gpt-6-luna-decisions",
+      "run": 5,
+      "choice": "Personal",
+      "probabilities": {
+        "Personal": 0.41,
+        "Ideas": 0.01,
+        "Invoices": 0.4,
+        "none": 0.18
+      },
+      "ms": 188
+    },
+    {
+      "scenario": "en-service-invoices",
+      "message": "C",
+      "model": "openai/gpt-6-luna-decisions",
+      "run": 6,
+      "choice": "Personal",
+      "probabilities": {
+        "Personal": 0.41,
+        "Ideas": 0.01,
+        "Invoices": 0.4,
+        "none": 0.18
+      },
+      "ms": 201
+    },
+    {
+      "scenario": "en-service-invoices",
+      "message": "C",
+      "model": "openai/gpt-6-luna-decisions",
+      "run": 7,
+      "choice": "Personal",
+      "probabilities": {
+        "Personal": 0.41,
+        "Ideas": 0.01,
+        "Invoices": 0.4,
+        "none": 0.18
+      },
+      "ms": 238
+    },
+    {
+      "scenario": "en-service-invoices",
+      "message": "C",
+      "model": "openai/gpt-6-luna-decisions",
+      "run": 8,
+      "choice": "Personal",
+      "probabilities": {
+        "Personal": 0.41,
+        "Ideas": 0.01,
+        "Invoices": 0.4,
+        "none": 0.18
+      },
+      "ms": 195
+    },
+    {
+      "scenario": "en-service-invoices",
+      "message": "C",
+      "model": "openai/gpt-6-luna-decisions",
+      "run": 9,
+      "choice": "Personal",
+      "probabilities": {
+        "Personal": 0.41,
+        "Ideas": 0.01,
+        "Invoices": 0.4,
+        "none": 0.18
+      },
+      "ms": 190
+    },
+    {
+      "scenario": "en-service-invoices",
+      "message": "C",
+      "model": "openai/gpt-6-luna-decisions",
+      "run": 10,
+      "choice": "Personal",
+      "probabilities": {
+        "Personal": 0.41,
+        "Ideas": 0.01,
+        "Invoices": 0.4,
+        "none": 0.18
+      },
+      "ms": 195
+    },
+    {
+      "scenario": "en-service-invoices",
+      "message": "C",
+      "model": "typesafe-ai/jev",
+      "run": 1,
+      "choice": "Invoices",
+      "probabilities": {
+        "Personal": 0.13,
+        "Ideas": 0,
+        "Invoices": 0.86,
+        "none": 0.01
+      },
+      "ms": 168
+    },
+    {
+      "scenario": "en-service-invoices",
+      "message": "C",
+      "model": "typesafe-ai/jev",
+      "run": 2,
+      "choice": "Invoices",
+      "probabilities": {
+        "Personal": 0.1,
+        "Ideas": 0,
+        "Invoices": 0.89,
+        "none": 0.01
+      },
+      "ms": 211
+    },
+    {
+      "scenario": "en-service-invoices",
+      "message": "C",
+      "model": "typesafe-ai/jev",
+      "run": 3,
+      "choice": "Invoices",
+      "probabilities": {
+        "Personal": 0.13,
+        "Ideas": 0,
+        "Invoices": 0.86,
+        "none": 0.01
+      },
+      "ms": 190
+    },
+    {
+      "scenario": "en-service-invoices",
+      "message": "C",
+      "model": "typesafe-ai/jev",
+      "run": 4,
+      "choice": "Invoices",
+      "probabilities": {
+        "Personal": 0.13,
+        "Ideas": 0,
+        "Invoices": 0.86,
+        "none": 0.01
+      },
+      "ms": 176
+    },
+    {
+      "scenario": "en-service-invoices",
+      "message": "C",
+      "model": "typesafe-ai/jev",
+      "run": 5,
+      "choice": "Invoices",
+      "probabilities": {
+        "Personal": 0.11,
+        "Ideas": 0,
+        "Invoices": 0.88,
+        "none": 0.01
+      },
+      "ms": 171
+    },
+    {
+      "scenario": "en-service-invoices",
+      "message": "C",
+      "model": "typesafe-ai/jev",
+      "run": 6,
+      "choice": "Invoices",
+      "probabilities": {
+        "Personal": 0.13,
+        "Ideas": 0,
+        "Invoices": 0.86,
+        "none": 0.01
+      },
+      "ms": 231
+    },
+    {
+      "scenario": "en-service-invoices",
+      "message": "C",
+      "model": "typesafe-ai/jev",
+      "run": 7,
+      "choice": "Invoices",
+      "probabilities": {
+        "Personal": 0.12,
+        "Ideas": 0,
+        "Invoices": 0.87,
+        "none": 0.01
+      },
+      "ms": 289
+    },
+    {
+      "scenario": "en-service-invoices",
+      "message": "C",
+      "model": "typesafe-ai/jev",
+      "run": 8,
+      "choice": "Invoices",
+      "probabilities": {
+        "Personal": 0.13,
+        "Ideas": 0,
+        "Invoices": 0.86,
+        "none": 0.01
+      },
+      "ms": 267
+    },
+    {
+      "scenario": "en-service-invoices",
+      "message": "C",
+      "model": "typesafe-ai/jev",
+      "run": 9,
+      "choice": "Invoices",
+      "probabilities": {
+        "Personal": 0.12,
+        "Ideas": 0,
+        "Invoices": 0.87,
+        "none": 0.01
+      },
+      "ms": 188
+    },
+    {
+      "scenario": "en-service-invoices",
+      "message": "C",
+      "model": "typesafe-ai/jev",
+      "run": 10,
+      "choice": "Invoices",
+      "probabilities": {
+        "Personal": 0.11,
+        "Ideas": 0,
+        "Invoices": 0.88,
+        "none": 0.01
+      },
+      "ms": 182
+    },
+    {
+      "scenario": "es-facturas",
+      "message": "A-us",
+      "model": "openai/gpt-6-luna-decisions",
+      "run": 1,
+      "choice": "Personal",
+      "probabilities": {
+        "Personal": 0.37,
+        "Ideas": 0.01,
+        "Facturas": 0.29,
+        "none": 0.33
+      },
+      "ms": 203
+    },
+    {
+      "scenario": "es-facturas",
+      "message": "A-us",
+      "model": "openai/gpt-6-luna-decisions",
+      "run": 2,
+      "choice": "Personal",
+      "probabilities": {
+        "Personal": 0.37,
+        "Ideas": 0.01,
+        "Facturas": 0.29,
+        "none": 0.33
+      },
+      "ms": 185
+    },
+    {
+      "scenario": "es-facturas",
+      "message": "A-us",
+      "model": "openai/gpt-6-luna-decisions",
+      "run": 3,
+      "choice": "Personal",
+      "probabilities": {
+        "Personal": 0.37,
+        "Ideas": 0.01,
+        "Facturas": 0.29,
+        "none": 0.33
+      },
+      "ms": 202
+    },
+    {
+      "scenario": "es-facturas",
+      "message": "A-us",
+      "model": "openai/gpt-6-luna-decisions",
+      "run": 4,
+      "choice": "Personal",
+      "probabilities": {
+        "Personal": 0.37,
+        "Ideas": 0.01,
+        "Facturas": 0.29,
+        "none": 0.33
+      },
+      "ms": 296
+    },
+    {
+      "scenario": "es-facturas",
+      "message": "A-us",
+      "model": "openai/gpt-6-luna-decisions",
+      "run": 5,
+      "choice": "Personal",
+      "probabilities": {
+        "Personal": 0.37,
+        "Ideas": 0.01,
+        "Facturas": 0.29,
+        "none": 0.33
+      },
+      "ms": 216
+    },
+    {
+      "scenario": "es-facturas",
+      "message": "A-us",
+      "model": "openai/gpt-6-luna-decisions",
+      "run": 6,
+      "choice": "Personal",
+      "probabilities": {
+        "Personal": 0.37,
+        "Ideas": 0.01,
+        "Facturas": 0.29,
+        "none": 0.33
+      },
+      "ms": 190
+    },
+    {
+      "scenario": "es-facturas",
+      "message": "A-us",
+      "model": "openai/gpt-6-luna-decisions",
+      "run": 7,
+      "choice": "Personal",
+      "probabilities": {
+        "Personal": 0.37,
+        "Ideas": 0.01,
+        "Facturas": 0.29,
+        "none": 0.33
+      },
+      "ms": 277
+    },
+    {
+      "scenario": "es-facturas",
+      "message": "A-us",
+      "model": "openai/gpt-6-luna-decisions",
+      "run": 8,
+      "choice": "Personal",
+      "probabilities": {
+        "Personal": 0.37,
+        "Ideas": 0.01,
+        "Facturas": 0.29,
+        "none": 0.33
+      },
+      "ms": 139
+    },
+    {
+      "scenario": "es-facturas",
+      "message": "A-us",
+      "model": "openai/gpt-6-luna-decisions",
+      "run": 9,
+      "choice": "Personal",
+      "probabilities": {
+        "Personal": 0.37,
+        "Ideas": 0.01,
+        "Facturas": 0.29,
+        "none": 0.33
+      },
+      "ms": 155
+    },
+    {
+      "scenario": "es-facturas",
+      "message": "A-us",
+      "model": "openai/gpt-6-luna-decisions",
+      "run": 10,
+      "choice": "Personal",
+      "probabilities": {
+        "Personal": 0.37,
+        "Ideas": 0.01,
+        "Facturas": 0.29,
+        "none": 0.33
+      },
+      "ms": 202
+    },
+    {
+      "scenario": "es-facturas",
+      "message": "A-us",
+      "model": "typesafe-ai/jev",
+      "run": 1,
+      "choice": "Facturas",
+      "probabilities": {
+        "Personal": 0.07,
+        "Ideas": 0,
+        "Facturas": 0.92,
+        "none": 0.01
+      },
+      "ms": 206
+    },
+    {
+      "scenario": "es-facturas",
+      "message": "A-us",
+      "model": "typesafe-ai/jev",
+      "run": 2,
+      "choice": "Facturas",
+      "probabilities": {
+        "Personal": 0.09,
+        "Ideas": 0,
+        "Facturas": 0.9,
+        "none": 0.01
+      },
+      "ms": 208
+    },
+    {
+      "scenario": "es-facturas",
+      "message": "A-us",
+      "model": "typesafe-ai/jev",
+      "run": 3,
+      "choice": "Facturas",
+      "probabilities": {
+        "Personal": 0.08,
+        "Ideas": 0,
+        "Facturas": 0.91,
+        "none": 0.01
+      },
+      "ms": 170
+    },
+    {
+      "scenario": "es-facturas",
+      "message": "A-us",
+      "model": "typesafe-ai/jev",
+      "run": 4,
+      "choice": "Facturas",
+      "probabilities": {
+        "Personal": 0.07,
+        "Ideas": 0,
+        "Facturas": 0.92,
+        "none": 0.01
+      },
+      "ms": 207
+    },
+    {
+      "scenario": "es-facturas",
+      "message": "A-us",
+      "model": "typesafe-ai/jev",
+      "run": 5,
+      "choice": "Facturas",
+      "probabilities": {
+        "Personal": 0.07,
+        "Ideas": 0,
+        "Facturas": 0.92,
+        "none": 0.01
+      },
+      "ms": 177
+    },
+    {
+      "scenario": "es-facturas",
+      "message": "A-us",
+      "model": "typesafe-ai/jev",
+      "run": 6,
+      "choice": "Facturas",
+      "probabilities": {
+        "Personal": 0.08,
+        "Ideas": 0,
+        "Facturas": 0.91,
+        "none": 0.01
+      },
+      "ms": 174
+    },
+    {
+      "scenario": "es-facturas",
+      "message": "A-us",
+      "model": "typesafe-ai/jev",
+      "run": 7,
+      "choice": "Facturas",
+      "probabilities": {
+        "Personal": 0.07,
+        "Ideas": 0,
+        "Facturas": 0.92,
+        "none": 0.01
+      },
+      "ms": 189
+    },
+    {
+      "scenario": "es-facturas",
+      "message": "A-us",
+      "model": "typesafe-ai/jev",
+      "run": 8,
+      "choice": "Facturas",
+      "probabilities": {
+        "Personal": 0.08,
+        "Ideas": 0,
+        "Facturas": 0.91,
+        "none": 0.01
+      },
+      "ms": 194
+    },
+    {
+      "scenario": "es-facturas",
+      "message": "A-us",
+      "model": "typesafe-ai/jev",
+      "run": 9,
+      "choice": "Facturas",
+      "probabilities": {
+        "Personal": 0.09,
+        "Ideas": 0,
+        "Facturas": 0.9,
+        "none": 0.01
+      },
+      "ms": 173
+    },
+    {
+      "scenario": "es-facturas",
+      "message": "A-us",
+      "model": "typesafe-ai/jev",
+      "run": 10,
+      "choice": "Facturas",
+      "probabilities": {
+        "Personal": 0.07,
+        "Ideas": 0,
+        "Facturas": 0.92,
+        "none": 0.01
+      },
+      "ms": 6737
+    },
+    {
+      "scenario": "es-facturas",
+      "message": "A",
+      "model": "openai/gpt-6-luna-decisions",
+      "run": 1,
+      "choice": "none",
+      "probabilities": {
+        "Personal": 0.27,
+        "Ideas": 0,
+        "Facturas": 0.34,
+        "none": 0.39
+      },
+      "ms": 399
+    },
+    {
+      "scenario": "es-facturas",
+      "message": "A",
+      "model": "openai/gpt-6-luna-decisions",
+      "run": 2,
+      "choice": "none",
+      "probabilities": {
+        "Personal": 0.27,
+        "Ideas": 0,
+        "Facturas": 0.34,
+        "none": 0.39
+      },
+      "ms": 490
+    },
+    {
+      "scenario": "es-facturas",
+      "message": "A",
+      "model": "openai/gpt-6-luna-decisions",
+      "run": 3,
+      "choice": "none",
+      "probabilities": {
+        "Personal": 0.27,
+        "Ideas": 0,
+        "Facturas": 0.34,
+        "none": 0.39
+      },
+      "ms": 401
+    },
+    {
+      "scenario": "es-facturas",
+      "message": "A",
+      "model": "openai/gpt-6-luna-decisions",
+      "run": 4,
+      "choice": "none",
+      "probabilities": {
+        "Personal": 0.27,
+        "Ideas": 0,
+        "Facturas": 0.34,
+        "none": 0.39
+      },
+      "ms": 371
+    },
+    {
+      "scenario": "es-facturas",
+      "message": "A",
+      "model": "openai/gpt-6-luna-decisions",
+      "run": 5,
+      "choice": "none",
+      "probabilities": {
+        "Personal": 0.27,
+        "Ideas": 0,
+        "Facturas": 0.34,
+        "none": 0.39
+      },
+      "ms": 478
+    },
+    {
+      "scenario": "es-facturas",
+      "message": "A",
+      "model": "openai/gpt-6-luna-decisions",
+      "run": 6,
+      "choice": "none",
+      "probabilities": {
+        "Personal": 0.27,
+        "Ideas": 0,
+        "Facturas": 0.34,
+        "none": 0.39
+      },
+      "ms": 383
+    },
+    {
+      "scenario": "es-facturas",
+      "message": "A",
+      "model": "openai/gpt-6-luna-decisions",
+      "run": 7,
+      "choice": "none",
+      "probabilities": {
+        "Personal": 0.27,
+        "Ideas": 0,
+        "Facturas": 0.34,
+        "none": 0.39
+      },
+      "ms": 169
+    },
+    {
+      "scenario": "es-facturas",
+      "message": "A",
+      "model": "openai/gpt-6-luna-decisions",
+      "run": 8,
+      "choice": "none",
+      "probabilities": {
+        "Personal": 0.27,
+        "Ideas": 0,
+        "Facturas": 0.34,
+        "none": 0.39
+      },
+      "ms": 2091
+    },
+    {
+      "scenario": "es-facturas",
+      "message": "A",
+      "model": "openai/gpt-6-luna-decisions",
+      "run": 9,
+      "choice": "none",
+      "probabilities": {
+        "Personal": 0.27,
+        "Ideas": 0,
+        "Facturas": 0.34,
+        "none": 0.39
+      },
+      "ms": 180
+    },
+    {
+      "scenario": "es-facturas",
+      "message": "A",
+      "model": "openai/gpt-6-luna-decisions",
+      "run": 10,
+      "choice": "none",
+      "probabilities": {
+        "Personal": 0.27,
+        "Ideas": 0,
+        "Facturas": 0.34,
+        "none": 0.39
+      },
+      "ms": 220
+    },
+    {
+      "scenario": "es-facturas",
+      "message": "A",
+      "model": "typesafe-ai/jev",
+      "run": 1,
+      "choice": "Facturas",
+      "probabilities": {
+        "Personal": 0.07,
+        "Ideas": 0,
+        "Facturas": 0.92,
+        "none": 0.01
+      },
+      "ms": 215
+    },
+    {
+      "scenario": "es-facturas",
+      "message": "A",
+      "model": "typesafe-ai/jev",
+      "run": 2,
+      "choice": "Facturas",
+      "probabilities": {
+        "Personal": 0.06,
+        "Ideas": 0,
+        "Facturas": 0.93,
+        "none": 0.01
+      },
+      "ms": 207
+    },
+    {
+      "scenario": "es-facturas",
+      "message": "A",
+      "model": "typesafe-ai/jev",
+      "run": 3,
+      "choice": "Facturas",
+      "probabilities": {
+        "Personal": 0.07,
+        "Ideas": 0,
+        "Facturas": 0.92,
+        "none": 0.01
+      },
+      "ms": 262
+    },
+    {
+      "scenario": "es-facturas",
+      "message": "A",
+      "model": "typesafe-ai/jev",
+      "run": 4,
+      "choice": "Facturas",
+      "probabilities": {
+        "Personal": 0.06,
+        "Ideas": 0,
+        "Facturas": 0.93,
+        "none": 0.01
+      },
+      "ms": 236
+    },
+    {
+      "scenario": "es-facturas",
+      "message": "A",
+      "model": "typesafe-ai/jev",
+      "run": 5,
+      "choice": "Facturas",
+      "probabilities": {
+        "Personal": 0.07,
+        "Ideas": 0,
+        "Facturas": 0.91,
+        "none": 0.02
+      },
+      "ms": 186
+    },
+    {
+      "scenario": "es-facturas",
+      "message": "A",
+      "model": "typesafe-ai/jev",
+      "run": 6,
+      "choice": "Facturas",
+      "probabilities": {
+        "Personal": 0.06,
+        "Ideas": 0,
+        "Facturas": 0.93,
+        "none": 0.01
+      },
+      "ms": 190
+    },
+    {
+      "scenario": "es-facturas",
+      "message": "A",
+      "model": "typesafe-ai/jev",
+      "run": 7,
+      "choice": "Facturas",
+      "probabilities": {
+        "Personal": 0.07,
+        "Ideas": 0,
+        "Facturas": 0.91,
+        "none": 0.02
+      },
+      "ms": 173
+    },
+    {
+      "scenario": "es-facturas",
+      "message": "A",
+      "model": "typesafe-ai/jev",
+      "run": 8,
+      "choice": "Facturas",
+      "probabilities": {
+        "Personal": 0.06,
+        "Ideas": 0,
+        "Facturas": 0.93,
+        "none": 0.01
+      },
+      "ms": 228
+    },
+    {
+      "scenario": "es-facturas",
+      "message": "A",
+      "model": "typesafe-ai/jev",
+      "run": 9,
+      "choice": "Facturas",
+      "probabilities": {
+        "Personal": 0.07,
+        "Ideas": 0,
+        "Facturas": 0.91,
+        "none": 0.02
+      },
+      "ms": 221
+    },
+    {
+      "scenario": "es-facturas",
+      "message": "A",
+      "model": "typesafe-ai/jev",
+      "run": 10,
+      "choice": "Facturas",
+      "probabilities": {
+        "Personal": 0.08,
+        "Ideas": 0,
+        "Facturas": 0.91,
+        "none": 0.01
+      },
+      "ms": 233
+    },
+    {
+      "scenario": "es-facturas",
+      "message": "B",
+      "model": "openai/gpt-6-luna-decisions",
+      "run": 1,
+      "choice": "none",
+      "probabilities": {
+        "Personal": 0.11,
+        "Ideas": 0.01,
+        "Facturas": 0.37,
+        "none": 0.51
+      },
+      "ms": 250
+    },
+    {
+      "scenario": "es-facturas",
+      "message": "B",
+      "model": "openai/gpt-6-luna-decisions",
+      "run": 2,
+      "choice": "none",
+      "probabilities": {
+        "Personal": 0.11,
+        "Ideas": 0.01,
+        "Facturas": 0.37,
+        "none": 0.51
+      },
+      "ms": 258
+    },
+    {
+      "scenario": "es-facturas",
+      "message": "B",
+      "model": "openai/gpt-6-luna-decisions",
+      "run": 3,
+      "choice": "none",
+      "probabilities": {
+        "Personal": 0.11,
+        "Ideas": 0.01,
+        "Facturas": 0.37,
+        "none": 0.51
+      },
+      "ms": 260
+    },
+    {
+      "scenario": "es-facturas",
+      "message": "B",
+      "model": "openai/gpt-6-luna-decisions",
+      "run": 4,
+      "choice": "none",
+      "probabilities": {
+        "Personal": 0.11,
+        "Ideas": 0.01,
+        "Facturas": 0.37,
+        "none": 0.51
+      },
+      "ms": 190
+    },
+    {
+      "scenario": "es-facturas",
+      "message": "B",
+      "model": "openai/gpt-6-luna-decisions",
+      "run": 5,
+      "choice": "none",
+      "probabilities": {
+        "Personal": 0.11,
+        "Ideas": 0.01,
+        "Facturas": 0.37,
+        "none": 0.51
+      },
+      "ms": 240
+    },
+    {
+      "scenario": "es-facturas",
+      "message": "B",
+      "model": "openai/gpt-6-luna-decisions",
+      "run": 6,
+      "choice": "none",
+      "probabilities": {
+        "Personal": 0.11,
+        "Ideas": 0.01,
+        "Facturas": 0.37,
+        "none": 0.51
+      },
+      "ms": 145
+    },
+    {
+      "scenario": "es-facturas",
+      "message": "B",
+      "model": "openai/gpt-6-luna-decisions",
+      "run": 7,
+      "choice": "none",
+      "probabilities": {
+        "Personal": 0.11,
+        "Ideas": 0.01,
+        "Facturas": 0.37,
+        "none": 0.51
+      },
+      "ms": 216
+    },
+    {
+      "scenario": "es-facturas",
+      "message": "B",
+      "model": "openai/gpt-6-luna-decisions",
+      "run": 8,
+      "choice": "none",
+      "probabilities": {
+        "Personal": 0.11,
+        "Ideas": 0.01,
+        "Facturas": 0.37,
+        "none": 0.51
+      },
+      "ms": 276
+    },
+    {
+      "scenario": "es-facturas",
+      "message": "B",
+      "model": "openai/gpt-6-luna-decisions",
+      "run": 9,
+      "choice": "none",
+      "probabilities": {
+        "Personal": 0.11,
+        "Ideas": 0.01,
+        "Facturas": 0.37,
+        "none": 0.51
+      },
+      "ms": 699
+    },
+    {
+      "scenario": "es-facturas",
+      "message": "B",
+      "model": "openai/gpt-6-luna-decisions",
+      "run": 10,
+      "choice": "none",
+      "probabilities": {
+        "Personal": 0.11,
+        "Ideas": 0.01,
+        "Facturas": 0.37,
+        "none": 0.51
+      },
+      "ms": 201
+    },
+    {
+      "scenario": "es-facturas",
+      "message": "B",
+      "model": "typesafe-ai/jev",
+      "run": 1,
+      "choice": "Facturas",
+      "probabilities": {
+        "Personal": 0.04,
+        "Ideas": 0,
+        "Facturas": 0.95,
+        "none": 0.01
+      },
+      "ms": 238
+    },
+    {
+      "scenario": "es-facturas",
+      "message": "B",
+      "model": "typesafe-ai/jev",
+      "run": 2,
+      "choice": "Facturas",
+      "probabilities": {
+        "Personal": 0.04,
+        "Ideas": 0,
+        "Facturas": 0.95,
+        "none": 0.01
+      },
+      "ms": 652
+    },
+    {
+      "scenario": "es-facturas",
+      "message": "B",
+      "model": "typesafe-ai/jev",
+      "run": 3,
+      "choice": "Facturas",
+      "probabilities": {
+        "Personal": 0.04,
+        "Ideas": 0,
+        "Facturas": 0.95,
+        "none": 0.01
+      },
+      "ms": 242
+    },
+    {
+      "scenario": "es-facturas",
+      "message": "B",
+      "model": "typesafe-ai/jev",
+      "run": 4,
+      "choice": "Facturas",
+      "probabilities": {
+        "Personal": 0.03,
+        "Ideas": 0,
+        "Facturas": 0.96,
+        "none": 0.01
+      },
+      "ms": 283
+    },
+    {
+      "scenario": "es-facturas",
+      "message": "B",
+      "model": "typesafe-ai/jev",
+      "run": 5,
+      "choice": "Facturas",
+      "probabilities": {
+        "Personal": 0.04,
+        "Ideas": 0,
+        "Facturas": 0.95,
+        "none": 0.01
+      },
+      "ms": 215
+    },
+    {
+      "scenario": "es-facturas",
+      "message": "B",
+      "model": "typesafe-ai/jev",
+      "run": 6,
+      "choice": "Facturas",
+      "probabilities": {
+        "Personal": 0.04,
+        "Ideas": 0,
+        "Facturas": 0.95,
+        "none": 0.01
+      },
+      "ms": 440
+    },
+    {
+      "scenario": "es-facturas",
+      "message": "B",
+      "model": "typesafe-ai/jev",
+      "run": 7,
+      "choice": "Facturas",
+      "probabilities": {
+        "Personal": 0.04,
+        "Ideas": 0,
+        "Facturas": 0.95,
+        "none": 0.01
+      },
+      "ms": 175
+    },
+    {
+      "scenario": "es-facturas",
+      "message": "B",
+      "model": "typesafe-ai/jev",
+      "run": 8,
+      "choice": "Facturas",
+      "probabilities": {
+        "Personal": 0.03,
+        "Ideas": 0,
+        "Facturas": 0.96,
+        "none": 0.01
+      },
+      "ms": 250
+    },
+    {
+      "scenario": "es-facturas",
+      "message": "B",
+      "model": "typesafe-ai/jev",
+      "run": 9,
+      "choice": "Facturas",
+      "probabilities": {
+        "Personal": 0.03,
+        "Ideas": 0,
+        "Facturas": 0.96,
+        "none": 0.01
+      },
+      "ms": 214
+    },
+    {
+      "scenario": "es-facturas",
+      "message": "B",
+      "model": "typesafe-ai/jev",
+      "run": 10,
+      "choice": "Facturas",
+      "probabilities": {
+        "Personal": 0.03,
+        "Ideas": 0,
+        "Facturas": 0.96,
+        "none": 0.01
+      },
+      "ms": 203
+    },
+    {
+      "scenario": "es-facturas",
+      "message": "C-us",
+      "model": "openai/gpt-6-luna-decisions",
+      "run": 1,
+      "choice": "Facturas",
+      "probabilities": {
+        "Personal": 0.15,
+        "Ideas": 0,
+        "Facturas": 0.57,
+        "none": 0.28
+      },
+      "ms": 172
+    },
+    {
+      "scenario": "es-facturas",
+      "message": "C-us",
+      "model": "openai/gpt-6-luna-decisions",
+      "run": 2,
+      "choice": "Facturas",
+      "probabilities": {
+        "Personal": 0.15,
+        "Ideas": 0,
+        "Facturas": 0.57,
+        "none": 0.28
+      },
+      "ms": 159
+    },
+    {
+      "scenario": "es-facturas",
+      "message": "C-us",
+      "model": "openai/gpt-6-luna-decisions",
+      "run": 3,
+      "choice": "Facturas",
+      "probabilities": {
+        "Personal": 0.15,
+        "Ideas": 0,
+        "Facturas": 0.57,
+        "none": 0.28
+      },
+      "ms": 6608
+    },
+    {
+      "scenario": "es-facturas",
+      "message": "C-us",
+      "model": "openai/gpt-6-luna-decisions",
+      "run": 4,
+      "choice": "Facturas",
+      "probabilities": {
+        "Personal": 0.15,
+        "Ideas": 0,
+        "Facturas": 0.57,
+        "none": 0.28
+      },
+      "ms": 227
+    },
+    {
+      "scenario": "es-facturas",
+      "message": "C-us",
+      "model": "openai/gpt-6-luna-decisions",
+      "run": 5,
+      "choice": "Facturas",
+      "probabilities": {
+        "Personal": 0.15,
+        "Ideas": 0,
+        "Facturas": 0.57,
+        "none": 0.28
+      },
+      "ms": 172
+    },
+    {
+      "scenario": "es-facturas",
+      "message": "C-us",
+      "model": "openai/gpt-6-luna-decisions",
+      "run": 6,
+      "choice": "Facturas",
+      "probabilities": {
+        "Personal": 0.15,
+        "Ideas": 0,
+        "Facturas": 0.57,
+        "none": 0.28
+      },
+      "ms": 241
+    },
+    {
+      "scenario": "es-facturas",
+      "message": "C-us",
+      "model": "openai/gpt-6-luna-decisions",
+      "run": 7,
+      "choice": "Facturas",
+      "probabilities": {
+        "Personal": 0.15,
+        "Ideas": 0,
+        "Facturas": 0.57,
+        "none": 0.28
+      },
+      "ms": 222
+    },
+    {
+      "scenario": "es-facturas",
+      "message": "C-us",
+      "model": "openai/gpt-6-luna-decisions",
+      "run": 8,
+      "choice": "Facturas",
+      "probabilities": {
+        "Personal": 0.15,
+        "Ideas": 0,
+        "Facturas": 0.57,
+        "none": 0.28
+      },
+      "ms": 6588
+    },
+    {
+      "scenario": "es-facturas",
+      "message": "C-us",
+      "model": "openai/gpt-6-luna-decisions",
+      "run": 9,
+      "choice": "Facturas",
+      "probabilities": {
+        "Personal": 0.15,
+        "Ideas": 0,
+        "Facturas": 0.57,
+        "none": 0.28
+      },
+      "ms": 149
+    },
+    {
+      "scenario": "es-facturas",
+      "message": "C-us",
+      "model": "openai/gpt-6-luna-decisions",
+      "run": 10,
+      "choice": "Facturas",
+      "probabilities": {
+        "Personal": 0.15,
+        "Ideas": 0,
+        "Facturas": 0.57,
+        "none": 0.28
+      },
+      "ms": 183
+    },
+    {
+      "scenario": "es-facturas",
+      "message": "C-us",
+      "model": "typesafe-ai/jev",
+      "run": 1,
+      "choice": "Facturas",
+      "probabilities": {
+        "Personal": 0.02,
+        "Ideas": 0,
+        "Facturas": 0.98,
+        "none": 0
+      },
+      "ms": 211
+    },
+    {
+      "scenario": "es-facturas",
+      "message": "C-us",
+      "model": "typesafe-ai/jev",
+      "run": 2,
+      "choice": "Facturas",
+      "probabilities": {
+        "Personal": 0.02,
+        "Ideas": 0,
+        "Facturas": 0.98,
+        "none": 0
+      },
+      "ms": 184
+    },
+    {
+      "scenario": "es-facturas",
+      "message": "C-us",
+      "model": "typesafe-ai/jev",
+      "run": 3,
+      "choice": "Facturas",
+      "probabilities": {
+        "Personal": 0.02,
+        "Ideas": 0,
+        "Facturas": 0.98,
+        "none": 0
+      },
+      "ms": 202
+    },
+    {
+      "scenario": "es-facturas",
+      "message": "C-us",
+      "model": "typesafe-ai/jev",
+      "run": 4,
+      "choice": "Facturas",
+      "probabilities": {
+        "Personal": 0.02,
+        "Ideas": 0,
+        "Facturas": 0.98,
+        "none": 0
+      },
+      "ms": 185
+    },
+    {
+      "scenario": "es-facturas",
+      "message": "C-us",
+      "model": "typesafe-ai/jev",
+      "run": 5,
+      "choice": "Facturas",
+      "probabilities": {
+        "Personal": 0.01,
+        "Ideas": 0,
+        "Facturas": 0.99,
+        "none": 0
+      },
+      "ms": 215
+    },
+    {
+      "scenario": "es-facturas",
+      "message": "C-us",
+      "model": "typesafe-ai/jev",
+      "run": 6,
+      "choice": "Facturas",
+      "probabilities": {
+        "Personal": 0.02,
+        "Ideas": 0,
+        "Facturas": 0.98,
+        "none": 0
+      },
+      "ms": 254
+    },
+    {
+      "scenario": "es-facturas",
+      "message": "C-us",
+      "model": "typesafe-ai/jev",
+      "run": 7,
+      "choice": "Facturas",
+      "probabilities": {
+        "Personal": 0.01,
+        "Ideas": 0,
+        "Facturas": 0.99,
+        "none": 0
+      },
+      "ms": 232
+    },
+    {
+      "scenario": "es-facturas",
+      "message": "C-us",
+      "model": "typesafe-ai/jev",
+      "run": 8,
+      "choice": "Facturas",
+      "probabilities": {
+        "Personal": 0.02,
+        "Ideas": 0,
+        "Facturas": 0.98,
+        "none": 0
+      },
+      "ms": 236
+    },
+    {
+      "scenario": "es-facturas",
+      "message": "C-us",
+      "model": "typesafe-ai/jev",
+      "run": 9,
+      "choice": "Facturas",
+      "probabilities": {
+        "Personal": 0.02,
+        "Ideas": 0,
+        "Facturas": 0.98,
+        "none": 0
+      },
+      "ms": 184
+    },
+    {
+      "scenario": "es-facturas",
+      "message": "C-us",
+      "model": "typesafe-ai/jev",
+      "run": 10,
+      "choice": "Facturas",
+      "probabilities": {
+        "Personal": 0.02,
+        "Ideas": 0,
+        "Facturas": 0.98,
+        "none": 0
+      },
+      "ms": 212
+    },
+    {
+      "scenario": "es-facturas",
+      "message": "C",
+      "model": "openai/gpt-6-luna-decisions",
+      "run": 1,
+      "choice": "none",
+      "probabilities": {
+        "Personal": 0.24,
+        "Ideas": 0,
+        "Facturas": 0.37,
+        "none": 0.39
+      },
+      "ms": 213
+    },
+    {
+      "scenario": "es-facturas",
+      "message": "C",
+      "model": "openai/gpt-6-luna-decisions",
+      "run": 2,
+      "choice": "none",
+      "probabilities": {
+        "Personal": 0.24,
+        "Ideas": 0,
+        "Facturas": 0.37,
+        "none": 0.39
+      },
+      "ms": 203
+    },
+    {
+      "scenario": "es-facturas",
+      "message": "C",
+      "model": "openai/gpt-6-luna-decisions",
+      "run": 3,
+      "choice": "none",
+      "probabilities": {
+        "Personal": 0.24,
+        "Ideas": 0,
+        "Facturas": 0.37,
+        "none": 0.39
+      },
+      "ms": 236
+    },
+    {
+      "scenario": "es-facturas",
+      "message": "C",
+      "model": "openai/gpt-6-luna-decisions",
+      "run": 4,
+      "choice": "none",
+      "probabilities": {
+        "Personal": 0.24,
+        "Ideas": 0,
+        "Facturas": 0.37,
+        "none": 0.39
+      },
+      "ms": 179
+    },
+    {
+      "scenario": "es-facturas",
+      "message": "C",
+      "model": "openai/gpt-6-luna-decisions",
+      "run": 5,
+      "choice": "none",
+      "probabilities": {
+        "Personal": 0.24,
+        "Ideas": 0,
+        "Facturas": 0.37,
+        "none": 0.39
+      },
+      "ms": 212
+    },
+    {
+      "scenario": "es-facturas",
+      "message": "C",
+      "model": "openai/gpt-6-luna-decisions",
+      "run": 6,
+      "choice": "none",
+      "probabilities": {
+        "Personal": 0.24,
+        "Ideas": 0,
+        "Facturas": 0.37,
+        "none": 0.39
+      },
+      "ms": 228
+    },
+    {
+      "scenario": "es-facturas",
+      "message": "C",
+      "model": "openai/gpt-6-luna-decisions",
+      "run": 7,
+      "choice": "none",
+      "probabilities": {
+        "Personal": 0.24,
+        "Ideas": 0,
+        "Facturas": 0.37,
+        "none": 0.39
+      },
+      "ms": 217
+    },
+    {
+      "scenario": "es-facturas",
+      "message": "C",
+      "model": "openai/gpt-6-luna-decisions",
+      "run": 8,
+      "choice": "none",
+      "probabilities": {
+        "Personal": 0.24,
+        "Ideas": 0,
+        "Facturas": 0.37,
+        "none": 0.39
+      },
+      "ms": 252
+    },
+    {
+      "scenario": "es-facturas",
+      "message": "C",
+      "model": "openai/gpt-6-luna-decisions",
+      "run": 9,
+      "choice": "none",
+      "probabilities": {
+        "Personal": 0.24,
+        "Ideas": 0,
+        "Facturas": 0.37,
+        "none": 0.39
+      },
+      "ms": 220
+    },
+    {
+      "scenario": "es-facturas",
+      "message": "C",
+      "model": "openai/gpt-6-luna-decisions",
+      "run": 10,
+      "choice": "none",
+      "probabilities": {
+        "Personal": 0.24,
+        "Ideas": 0,
+        "Facturas": 0.37,
+        "none": 0.39
+      },
+      "ms": 219
+    },
+    {
+      "scenario": "es-facturas",
+      "message": "C",
+      "model": "typesafe-ai/jev",
+      "run": 1,
+      "choice": "Facturas",
+      "probabilities": {
+        "Personal": 0.04,
+        "Ideas": 0,
+        "Facturas": 0.96,
+        "none": 0
+      },
+      "ms": 188
+    },
+    {
+      "scenario": "es-facturas",
+      "message": "C",
+      "model": "typesafe-ai/jev",
+      "run": 2,
+      "choice": "Facturas",
+      "probabilities": {
+        "Personal": 0.04,
+        "Ideas": 0,
+        "Facturas": 0.96,
+        "none": 0
+      },
+      "ms": 174
+    },
+    {
+      "scenario": "es-facturas",
+      "message": "C",
+      "model": "typesafe-ai/jev",
+      "run": 3,
+      "choice": "Facturas",
+      "probabilities": {
+        "Personal": 0.03,
+        "Ideas": 0,
+        "Facturas": 0.97,
+        "none": 0
+      },
+      "ms": 180
+    },
+    {
+      "scenario": "es-facturas",
+      "message": "C",
+      "model": "typesafe-ai/jev",
+      "run": 4,
+      "choice": "Facturas",
+      "probabilities": {
+        "Personal": 0.03,
+        "Ideas": 0,
+        "Facturas": 0.97,
+        "none": 0
+      },
+      "ms": 254
+    },
+    {
+      "scenario": "es-facturas",
+      "message": "C",
+      "model": "typesafe-ai/jev",
+      "run": 5,
+      "choice": "Facturas",
+      "probabilities": {
+        "Personal": 0.02,
+        "Ideas": 0,
+        "Facturas": 0.98,
+        "none": 0
+      },
+      "ms": 204
+    },
+    {
+      "scenario": "es-facturas",
+      "message": "C",
+      "model": "typesafe-ai/jev",
+      "run": 6,
+      "choice": "Facturas",
+      "probabilities": {
+        "Personal": 0.03,
+        "Ideas": 0,
+        "Facturas": 0.97,
+        "none": 0
+      },
+      "ms": 220
+    },
+    {
+      "scenario": "es-facturas",
+      "message": "C",
+      "model": "typesafe-ai/jev",
+      "run": 7,
+      "choice": "Facturas",
+      "probabilities": {
+        "Personal": 0.03,
+        "Ideas": 0,
+        "Facturas": 0.97,
+        "none": 0
+      },
+      "ms": 228
+    },
+    {
+      "scenario": "es-facturas",
+      "message": "C",
+      "model": "typesafe-ai/jev",
+      "run": 8,
+      "choice": "Facturas",
+      "probabilities": {
+        "Personal": 0.04,
+        "Ideas": 0,
+        "Facturas": 0.96,
+        "none": 0
+      },
+      "ms": 174
+    },
+    {
+      "scenario": "es-facturas",
+      "message": "C",
+      "model": "typesafe-ai/jev",
+      "run": 9,
+      "choice": "Facturas",
+      "probabilities": {
+        "Personal": 0.04,
+        "Ideas": 0,
+        "Facturas": 0.96,
+        "none": 0
+      },
+      "ms": 233
+    },
+    {
+      "scenario": "es-facturas",
+      "message": "C",
+      "model": "typesafe-ai/jev",
+      "run": 10,
+      "choice": "Facturas",
+      "probabilities": {
+        "Personal": 0.03,
+        "Ideas": 0,
+        "Facturas": 0.97,
+        "none": 0
+      },
+      "ms": 247
+    }
+  ]
+}

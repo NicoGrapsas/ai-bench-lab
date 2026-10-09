@@ -1,0 +1,19 @@
+{
+  "slug": "phone-spending-folders",
+  "title": "Which folder does a chat about phone spending go in?",
+  "task": "choice between the user's folders",
+  "date": "2026-10-09",
+  "calls": 500,
+  "scores": [
+    {
+      "model": "typesafe-ai/jev",
+      "right": 250,
+      "of": 250
+    },
+    {
+      "model": "openai/gpt-6-luna-decisions",
+      "right": 110,
+      "of": 250
+    }
+  ]
+}

@@ -1,0 +1,17 @@
+{
+  "name": "ai-bench-lab",
+  "private": true,
+  "type": "module",
+  "description": "Small, reproducible benchmarks of decision models (Decisions API) on the Vercel AI Gateway",
+  "license": "MIT",
+  "engines": { "node": ">=22.9" },
+  "scripts": {
+    "bench": "node --env-file-if-exists=.env scripts/run.mjs bench",
+    "report": "node scripts/run.mjs report",
+    "list": "node scripts/run.mjs list"
+  },
+  "dependencies": {
+    "@ai-sdk/gateway": "4.0.110",
+    "ai": "7.0.137"
+  }
+}
