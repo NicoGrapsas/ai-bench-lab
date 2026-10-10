@@ -26,8 +26,8 @@ const card = (s) => `<a class="bench" href="benchmarks/${esc(s.category)}/${esc(
   <p class="note">${esc(s.task)} · ${s.calls} calls · ${esc(s.date)}</p>
   <table class="summary"><tbody>${s.scores
     .map(
-      (m) => `<tr><th scope="row"><code>${esc(m.model)}</code></th>
-      <td><span class="meter"><span style="width:${(m.right / m.of) * 100}%"></span></span> ${m.right}/${m.of}</td></tr>`,
+      (m) => `<tr><th scope="row"><code>${esc(m.model)}</code>${m.kind === "text" ? ' <span class="kind">text model, for comparison</span>' : ""}</th>
+      <td><span class="meter ${esc(m.kind ?? "")}"><span style="width:${(m.right / m.of) * 100}%"></span></span> ${m.right}/${m.of}</td></tr>`,
     )
     .join("")}</tbody></table>
 </a>`;
@@ -73,6 +73,8 @@ ${fontLinks}
 .bench td { white-space: nowrap; text-align: right; font-family: var(--font-data); }
 .meter { display: inline-block; width: 120px; height: 8px; background: var(--line); border-radius: 4px; vertical-align: middle; margin-right: 10px; overflow: hidden; }
 .meter span { display: block; height: 100%; background: var(--accent); }
+.meter.text span { background: var(--muted); }
+.bench th .kind { display: block; font-size: 13px; color: var(--muted); }
 @media (max-width: 560px) { .meter { width: 56px; } }
 </style>
 </head>

@@ -1,5 +1,6 @@
-// Builds index.html, this benchmark's shareable page, and results/summary.json,
-// the line the repo's landing page shows for it, from results/raw.json.
+// Builds, from results/raw.json: index.html, this benchmark's shareable page;
+// results/results.md, every case as tables; and results/summary.json, the line
+// the repo's landing page shows for it.
 //
 // The page tells the investigation in order: the task, the case that started
 // it, each theory tested with one change, and what we concluded. Every number
@@ -7,7 +8,7 @@
 // written against the run committed with them.
 
 import { readFile, writeFile } from "node:fs/promises";
-import { escapeHtml as esc, fmt } from "../../../lib/bench.mjs";
+import { escapeHtml as esc, fmt, range } from "../../../lib/bench.mjs";
 import { fontLinks, pageCss } from "../../../lib/page.mjs";
 
 const here = new URL(".", import.meta.url);
@@ -22,15 +23,25 @@ const data = JSON.parse(await readFile(new URL("results/raw.json", here), "utf8"
 const { scenarios, results, runs, question } = data;
 const day = data.date.slice(0, 10);
 
-const luna = { id: "openai/gpt-6-luna-decisions", name: "GPT-6 Luna Decisions", short: "Luna", price: "$0.10" };
-const jev = { id: "typesafe-ai/jev", name: "jev", short: "jev", price: "$0.042" };
-const models = [jev, luna];
+// Prices per 1M tokens from the Vercel AI Gateway on the day of the run.
+const luna = { id: "openai/gpt-6-luna-decisions", name: "GPT-6 Luna Decisions", short: "Luna Decisions", price: "$0.10 input, output free" };
+const jev = { id: "typesafe-ai/jev", name: "jev", short: "jev", price: "$0.042 input, output free" };
+const lunaText = { id: "openai/gpt-6-luna", name: "GPT-6 Luna", short: "GPT-6 Luna", price: "$0.10 input, $0.50 output", text: true };
+const haiku = { id: "anthropic/claude-haiku-5.5", name: "Claude Haiku 5.5", short: "Haiku 5.5", price: "$0.10 input, $0.50 output", text: true };
+const decisionModels = [jev, luna];
+const textModels = [lunaText, haiku];
+const models = [...decisionModels, ...textModels];
 const scenarioById = Object.fromEntries(scenarios.map((s) => [s.id, s]));
 
 const runsOf = (scenario, message, model) =>
   results.filter((r) => r.scenario === scenario && r.message === message && r.model === model.id);
+// A decision model's mean probability for an option. A text model returns no
+// probabilities, so its value is the share of runs that picked the option.
 const mean = (rows, option) =>
-  rows.reduce((sum, r) => sum + (r.probabilities?.[option] ?? 0), 0) / rows.length;
+  rows.reduce((sum, r) => sum + (r.probabilities ? (r.probabilities[option] ?? 0) : r.choice === option ? 1 : 0), 0) /
+  rows.length;
+const median = (values) => [...values].sort((a, b) => a - b)[Math.floor(values.length / 2)];
+const latency = (model) => `${(median(results.filter((r) => r.model === model.id).map((r) => r.ms)) / 1000).toFixed(1)} s`;
 const isRight = (r) => r.choice === scenarioById[r.scenario].target;
 const score = (model, filter = () => true) => {
   const rows = results.filter((r) => r.model === model.id && filter(r));
@@ -171,13 +182,14 @@ const bar = (scenarioId, message, model) => {
   const segments = options
     .map((option, i) => {
       const kind = option === scenario.target ? "target" : i === top ? "wrong" : "other";
-      const label = means[i] >= 0.14 ? `${esc(optionName(option))} ${Math.round(means[i] * 100)}%` : "";
+      const value = model.text ? `${Math.round(means[i] * rows.length)}/${rows.length}` : `${Math.round(means[i] * 100)}%`;
+      const label = means[i] >= 0.14 ? `${esc(optionName(option))} ${value}` : "";
       return means[i] > 0.004 ? `<span class="seg ${kind}" style="width:${means[i] * 100}%">${label}</span>` : "";
     })
     .join("");
   const summary = options.map((o, i) => `${optionName(o)} ${Math.round(means[i] * 100)}%`).join(", ");
   const ok = options[top] === scenario.target;
-  return `<div class="answer-row">
+  return `<div class="answer-row${model.text ? " text" : ""}">
     <div class="model-name">${esc(model.short)}</div>
     <div class="stack" role="img" aria-label="${esc(`${model.short}: ${summary}`)}">${segments}</div>
     <div class="verdict ${ok ? "ok" : "miss"}"><span aria-hidden="true">${ok ? "✓" : "✗"}</span> ${esc(optionName(options[top]))} · ${right}/${rows.length}</div>
@@ -192,7 +204,9 @@ const caseCard = (message, scenarioIds) => `<article class="case">
     .map(
       (id) => `<div class="variant">
     ${folderRow(id)}
-    ${models.map((m) => bar(id, message, m)).join("")}
+    ${decisionModels.map((m) => bar(id, message, m)).join("")}
+    <p class="kind-label">Text models · how the ${runs} runs split</p>
+    ${textModels.map((m) => bar(id, message, m)).join("")}
   </div>`,
     )
     .join("")}
@@ -208,13 +222,15 @@ const spread = (model) => {
     const [s, m] = key.split("|");
     const rows = runsOf(s, m, model);
     if (new Set(rows.map((r) => r.choice)).size > 1) changedPick++;
-    for (const option of Object.keys(rows[0].probabilities)) {
+    for (const option of Object.keys(rows[0].probabilities ?? {})) {
       const values = rows.map((r) => r.probabilities[option] ?? 0);
       maxSpread = Math.max(maxSpread, Math.max(...values) - Math.min(...values));
     }
   }
   return { maxSpread, changedPick, cases: cases.size };
 };
+
+const total = Object.fromEntries(models.map((m) => [m.id, score(m)]));
 
 // Figures the conclusions quote, computed from the saved runs.
 const rightIn = (model, scenarioId, messages) => {
@@ -238,7 +254,7 @@ const theories = [
   {
     id: "language",
     title: "Is it the language?",
-    answer: "No. In English, both models get it when the folder is called Bills. Call it Invoices and Luna says none.",
+    answer: "No. In English, every model gets it when the folder is called Bills. Call it Invoices and Luna Decisions says none.",
     setup: `The same question in English, with the third folder called <b>Bills</b> and then <b>Invoices</b>.`,
     body: cards([
       ["B", ["en-bills", "en-invoices"]],
@@ -251,7 +267,7 @@ const theories = [
   {
     id: "words",
     title: "Is it just matching words?",
-    answer: "For Luna, mostly yes. Take “bills” out of the question and it misses even the Bills folder.",
+    answer: "For Luna Decisions, mostly yes. Take “bills” out of the question and it misses even the Bills folder.",
     setup: `Above, the user said “phone bills”, the Bills folder's own name. Here the user says “phone service”,
       which names neither folder.`,
     body: cards([
@@ -280,15 +296,16 @@ const theories = [
   {
     id: "repeat",
     title: "Do the answers repeat?",
-    answer: "Yes. Neither model changed its pick between runs.",
+    answer: `Both decision models, yes: neither changed its pick between runs. The text models changed it in
+      ${spread(lunaText).changedPick} and ${spread(haiku).changedPick} cases.`,
     setup: `Every case ran ${runs} times.`,
     body: `<div class="scroll"><table><thead><tr><th>Model</th><th>Pick changed</th><th>Largest swing in a probability</th></tr></thead><tbody>${models
       .map((m) => {
         const s = spread(m);
-        return `<tr><td>${esc(m.name)}</td><td class="data">${s.changedPick} of ${s.cases} cases</td><td class="data">${fmt(s.maxSpread)}</td></tr>`;
+        return `<tr><td>${esc(m.name)}</td><td class="data">${s.changedPick} of ${s.cases} cases</td><td class="data">${m.text ? "no probabilities" : fmt(s.maxSpread)}</td></tr>`;
       })
       .join("")}</tbody></table></div>`,
-    after: "Luna returns exactly the same numbers every time. jev's move a little.",
+    after: "Luna Decisions returns exactly the same numbers every time. jev's move a little.",
   },
 ];
 
@@ -303,28 +320,34 @@ const conclusions = [
   the everyday word, it stays at ${targetRange(jev, "es-facturas", [...withoutReply, ...withReply])}.`,
   `<b>Without the folder's word, Luna struggles even with an obvious match.</b> When the user says “phone service”,
   Luna gets Bills ${rightIn(luna, "en-service-bills")} and Invoices ${rightIn(luna, "en-service-invoices")}.`,
+  `<b>The weakness is specific to Luna Decisions.</b> The same GPT-6 Luna, asked as a text model, gets
+  ${total[lunaText.id].right}/${total[lunaText.id].of}, and Claude Haiku 5.5 gets ${total[haiku.id].right}/${total[haiku.id].of}.
+  Every miss of theirs is the Invoices folder going to Personal, the same cases where jev's confidence drops. They
+  return no probabilities and are slower: a median of ${latency(lunaText)} and ${latency(haiku)} per call, against
+  ${latency(jev)} for jev.`,
   `<b>The carrier is not the cause.</b> With Verizon and T-Mobile instead of Personal Flow, Luna leans further towards
   the Personal folder, not less.`,
   `<b>For this feature,</b> a folder suggestion should not depend on the user typing the folder's exact name. In
-  this test, only jev met that bar.`,
+  this test, jev met it in every run. The text models missed it in ${total[lunaText.id].of - total[lunaText.id].right} and
+  ${total[haiku.id].of - total[haiku.id].right} runs of ${total[haiku.id].of}.`,
 ];
 
 const allResults = scenarios
   .map((s) => `<h3>${esc(s.label)}</h3>${optionsTable(Object.keys(s.messages).map((m) => [s.id, m]))}`)
   .join("");
 
-const total = Object.fromEntries(models.map((m) => [m.id, score(m)]));
 const title = `jev vs GPT-6 Luna Decisions: ${total[jev.id].right}/${total[jev.id].of} vs ${total[luna.id].right}/${total[luna.id].of} on folder classification`;
 const description =
   "A small reproducible bench of the Decisions API on the Vercel AI Gateway: which folder does a chat about phone spending go in?";
 
 const scoreRow = (m) => {
   const t = total[m.id];
+  const kind = m.text ? "text" : "decision";
   return `<div class="score-row">
     <div class="score-name"><b>${esc(m.name)}</b><code>${esc(m.id)}</code></div>
-    <div class="score-bar" role="img" aria-label="${t.right} of ${t.of} right"><span style="width:${(t.right / t.of) * 100}%"></span></div>
+    <div class="score-bar ${kind}" role="img" aria-label="${t.right} of ${t.of} right"><span style="width:${(t.right / t.of) * 100}%"></span></div>
     <div class="score-num"><b>${t.right}</b>/${t.of}</div>
-    <div class="score-price">${m.price} / 1M input tokens</div>
+    <div class="score-price">${m.price} per 1M tokens · median ${latency(m)} per call</div>
   </div>`;
 };
 
@@ -369,6 +392,10 @@ ${fontLinks}
 .score-num b { font: 800 30px var(--font-body); color: var(--ink); letter-spacing: -0.02em; }
 .score-bar { grid-area: bar; height: 10px; background: var(--line); border-radius: 5px; overflow: hidden; }
 .score-bar span { display: block; height: 100%; background: var(--accent); }
+.score-bar.text span { background: var(--muted); }
+.score-group { margin: 6px 0 -4px; font: 500 12px/1.4 var(--font-data); letter-spacing: 0.04em; text-transform: uppercase; color: var(--muted); }
+.score-group + .score-row { margin-top: 0; }
+.kind-label { margin: 6px 0 0; font: 500 11px/1.4 var(--font-data); letter-spacing: 0.05em; text-transform: uppercase; color: var(--muted); }
 .score-price { grid-area: price; font-size: 13px; color: var(--muted); }
 section.q { margin-top: 64px; scroll-margin-top: 24px; }
 section.q .answer { font-size: 19px; font-weight: 600; margin: 0 0 12px; }
@@ -395,7 +422,7 @@ section.q .after { font-size: 15px; color: var(--muted); margin-top: 16px; }
 .folder.right { border: 2px solid var(--ok); color: var(--ok); background: var(--ok-bg); }
 .folder.none-of { border-style: dashed; color: var(--muted); font-weight: 400; }
 .note-in { font-weight: 400; color: var(--muted); }
-.answer-row { display: grid; grid-template-columns: 44px minmax(0, 1fr) 150px; gap: 10px; align-items: center; }
+.answer-row { display: grid; grid-template-columns: 112px minmax(0, 1fr) 150px; gap: 10px; align-items: center; }
 .model-name { font: 500 13px var(--font-data); }
 .stack { display: flex; height: 26px; border-radius: 4px; overflow: hidden; background: var(--line); }
 .seg { display: flex; align-items: center; justify-content: center; overflow: hidden; white-space: nowrap; font: 500 12px var(--font-data); }
@@ -435,11 +462,17 @@ th .folder { display: block; font-size: 13px; color: var(--muted); border: 0; pa
 <main>
 <p class="eyebrow"><a href="../../../">AI bench lab</a> · <a href="../../../#${category}">${esc(categories[category].name)}</a> · ${day}</p>
 <h1>Which folder does a chat about phone spending go in?</h1>
-<p class="lede">Two decision models choose which of the user's folders a chat belongs in. Each case ran ${runs} times,
-and each test changes one variable: the language, the folder's name, the user's wording or the carriers mentioned.</p>
+<p class="lede">Two decision models choose which of the user's folders a chat belongs in, with two text models
+answering the same question for comparison. Each case ran ${runs} times, and each test changes one variable: the
+language, the folder's name, the user's wording or the carriers mentioned.</p>
 
-<div class="scores">${[jev, luna].map(scoreRow).join("")}</div>
-<p class="note">Right folder, out of ${total[jev.id].of} runs each. Prices from the Vercel AI Gateway on ${day}; output is free for both.</p>
+<div class="scores">
+  <p class="score-group">Decision models · a probability per option</p>
+  ${decisionModels.map(scoreRow).join("")}
+  <p class="score-group">Text models · one choice, for comparison</p>
+  ${textModels.map(scoreRow).join("")}
+</div>
+<p class="note">Right folder, out of ${total[jev.id].of} runs each. Prices from the Vercel AI Gateway on ${day}.</p>
 
 <section class="q" id="task">
   <p class="eyebrow">The task</p>
@@ -449,6 +482,9 @@ and each test changes one variable: the language, the folder's name, the user's 
   <a href="https://vercel.com/docs/ai-gateway/sdks-and-apis/openai-decisions">Decisions API</a>:
   <b>“${esc(question)}”</b> The options are the user's three folders and <b>None of these</b>. The model gives each
   option a probability; its pick is the highest.</p>
+  <p>For comparison, two text models, GPT-6 Luna and Claude Haiku 5.5, get the same question and options as
+  instructions and answer with one option. They return no probabilities, so their bars show how the ${runs} runs
+  split. On this page “Luna” alone means GPT-6 Luna Decisions.</p>
   <p>Every card below is one conversation, the folders it was filed against, and one bar per model: how the model
   split its probability across the options, averaged over ${runs} runs, and how many runs picked the right folder.</p>
   <ul class="legend">
@@ -462,7 +498,7 @@ and each test changes one variable: the language, the folder's name, the user's 
 <section class="q" id="spanish">
   <p class="eyebrow">Where we started</p>
   <h2>A question in Spanish</h2>
-  <p class="answer">jev files it under Facturas. Luna says none of the folders fit.</p>
+  <p class="answer">jev files it under Facturas, and so do both text models. Luna Decisions says none of the folders fit.</p>
   <p>We noticed this in a real chat, in Spanish; the messages below recreate it. The folders are <b>Personal</b>,
   <b>Ideas</b> and <b>Facturas</b>, the everyday Spanish word for bills. A person would file this chat under
   Facturas.</p>
@@ -488,7 +524,9 @@ ${theories.map((s, i) => section(s, s.id === "repeat" ? "Check" : `Theory ${i + 
   <h2>Limits</h2>
   <ul>
     <li>One topic, hand-written messages, one wording of the question, three folders. It shows a pattern, not a
-    general ranking of the two models.</li>
+    general ranking of these models.</li>
+    <li>The text models get one prompt, written for this test, with the gateway's default settings. Another
+    wording could change their numbers.</li>
     <li>jev varies between runs, so a rerun will not give exactly these numbers.</li>
     <li><code>experimental_decide</code> is experimental in the AI SDK, and the Decisions API is in beta.</li>
   </ul>
@@ -496,7 +534,8 @@ ${theories.map((s, i) => section(s, s.id === "repeat" ? "Check" : `Theory ${i + 
 
 <details>
   <summary>Every probability, for every case</summary>
-  <p class="note">Mean over ${runs} runs; the highlighted cell is the model's pick. Min–max ranges are in
+  <p class="note">Mean probability over ${runs} runs for the decision models, and the share of runs that picked
+  each option for the text models; the highlighted cell is the model's pick. Min–max ranges are in
   <a href="results/results.md">results.md</a>, every call in <a href="results/raw.json">raw.json</a>, and the exact
   messages in <a href="${esc(sourceUrl)}bench.mjs">bench.mjs</a>.</p>
   ${allResults}
@@ -511,6 +550,32 @@ ${theories.map((s, i) => section(s, s.id === "repeat" ? "Check" : `Theory ${i + 
 </html>
 `;
 
+// results.md: every case as plain tables, for readers on GitHub.
+const mdLines = [
+  "# Results",
+  "",
+  `${runs} runs per message and model. For a decision model, each cell is the probability it gave that option, as a min–max range across runs when it varied. For a text model, each cell is the share of runs that picked that option. "Picks" counts the runs whose choice was that option.`,
+  "",
+];
+for (const scenario of scenarios) {
+  const options = [...scenario.folders, "none"];
+  mdLines.push(`## ${scenario.label}`, "", `| Message | Model | Picks | ${options.join(" | ")} |`, `|---|---|---|${options.map(() => "---").join("|")}|`);
+  for (const message of Object.keys(scenario.messages)) {
+    for (const model of models) {
+      const rows = runsOf(scenario.id, message, model);
+      const counts = {};
+      for (const r of rows) counts[r.choice] = (counts[r.choice] ?? 0) + 1;
+      const picks = Object.entries(counts)
+        .sort((x, y) => y[1] - x[1])
+        .map(([choice, n]) => `${choice} ${n}/${rows.length}`)
+        .join(", ");
+      const cells = options.map((o) => (model.text ? fmt(mean(rows, o)) : range(rows.map((r) => r.probabilities[o] ?? 0))));
+      mdLines.push(`| ${message} | ${model.name} | ${picks} | ${cells.join(" | ")} |`);
+    }
+  }
+  mdLines.push("");
+}
+await writeFile(new URL("results/results.md", here), mdLines.join("\n"));
 await writeFile(new URL("index.html", here), html);
 await writeFile(
   new URL("results/summary.json", here),
@@ -522,7 +587,7 @@ await writeFile(
       task: "choice between the user's folders",
       date: day,
       calls: results.length,
-      scores: [jev, luna].map((m) => ({ model: m.id, ...total[m.id] })),
+      scores: models.map((m) => ({ model: m.id, kind: m.text ? "text" : "decision", ...total[m.id] })),
     },
     null,
     2,

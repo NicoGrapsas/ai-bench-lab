@@ -79,6 +79,10 @@ footer { margin-top: 64px; padding-top: 16px; border-top: 1px solid var(--line);
 .score-num b { font: 800 30px var(--font-body); color: var(--ink); letter-spacing: -0.02em; }
 .score-bar { grid-area: bar; height: 10px; background: var(--line); border-radius: 5px; overflow: hidden; }
 .score-bar span { display: block; height: 100%; background: var(--accent); }
+.score-bar.text span { background: var(--muted); }
+.score-group { margin: 6px 0 -4px; font: 500 12px/1.4 var(--font-data); letter-spacing: 0.04em; text-transform: uppercase; color: var(--muted); }
+.score-group + .score-row { margin-top: 0; }
+.kind-label { margin: 6px 0 0; font: 500 11px/1.4 var(--font-data); letter-spacing: 0.05em; text-transform: uppercase; color: var(--muted); }
 .score-price { grid-area: price; font-size: 13px; color: var(--muted); }
 section.q { margin-top: 64px; scroll-margin-top: 24px; }
 section.q .answer { font-size: 19px; font-weight: 600; margin: 0 0 12px; }
@@ -105,7 +109,7 @@ section.q .after { font-size: 15px; color: var(--muted); margin-top: 16px; }
 .folder.right { border: 2px solid var(--ok); color: var(--ok); background: var(--ok-bg); }
 .folder.none-of { border-style: dashed; color: var(--muted); font-weight: 400; }
 .note-in { font-weight: 400; color: var(--muted); }
-.answer-row { display: grid; grid-template-columns: 44px minmax(0, 1fr) 150px; gap: 10px; align-items: center; }
+.answer-row { display: grid; grid-template-columns: 112px minmax(0, 1fr) 150px; gap: 10px; align-items: center; }
 .model-name { font: 500 13px var(--font-data); }
 .stack { display: flex; height: 26px; border-radius: 4px; overflow: hidden; background: var(--line); }
 .seg { display: flex; align-items: center; justify-content: center; overflow: hidden; white-space: nowrap; font: 500 12px var(--font-data); }
@@ -145,21 +149,37 @@ th .folder { display: block; font-size: 13px; color: var(--muted); border: 0; pa
 <main>
 <p class="eyebrow"><a href="../../../">AI bench lab</a> · <a href="../../../#decision-models">Decision models</a> · 2026-10-09</p>
 <h1>Which folder does a chat about phone spending go in?</h1>
-<p class="lede">Two decision models choose which of the user's folders a chat belongs in. Each case ran 10 times,
-and each test changes one variable: the language, the folder's name, the user's wording or the carriers mentioned.</p>
+<p class="lede">Two decision models choose which of the user's folders a chat belongs in, with two text models
+answering the same question for comparison. Each case ran 10 times, and each test changes one variable: the
+language, the folder's name, the user's wording or the carriers mentioned.</p>
 
-<div class="scores"><div class="score-row">
+<div class="scores">
+  <p class="score-group">Decision models · a probability per option</p>
+  <div class="score-row">
     <div class="score-name"><b>jev</b><code>typesafe-ai/jev</code></div>
-    <div class="score-bar" role="img" aria-label="250 of 250 right"><span style="width:100%"></span></div>
+    <div class="score-bar decision" role="img" aria-label="250 of 250 right"><span style="width:100%"></span></div>
     <div class="score-num"><b>250</b>/250</div>
-    <div class="score-price">$0.042 / 1M input tokens</div>
+    <div class="score-price">$0.042 input, output free per 1M tokens · median 0.2 s per call</div>
   </div><div class="score-row">
     <div class="score-name"><b>GPT-6 Luna Decisions</b><code>openai/gpt-6-luna-decisions</code></div>
-    <div class="score-bar" role="img" aria-label="110 of 250 right"><span style="width:44%"></span></div>
+    <div class="score-bar decision" role="img" aria-label="110 of 250 right"><span style="width:44%"></span></div>
     <div class="score-num"><b>110</b>/250</div>
-    <div class="score-price">$0.10 / 1M input tokens</div>
-  </div></div>
-<p class="note">Right folder, out of 250 runs each. Prices from the Vercel AI Gateway on 2026-10-09; output is free for both.</p>
+    <div class="score-price">$0.10 input, output free per 1M tokens · median 0.2 s per call</div>
+  </div>
+  <p class="score-group">Text models · one choice, for comparison</p>
+  <div class="score-row">
+    <div class="score-name"><b>GPT-6 Luna</b><code>openai/gpt-6-luna</code></div>
+    <div class="score-bar text" role="img" aria-label="242 of 250 right"><span style="width:96.8%"></span></div>
+    <div class="score-num"><b>242</b>/250</div>
+    <div class="score-price">$0.10 input, $0.50 output per 1M tokens · median 1.4 s per call</div>
+  </div><div class="score-row">
+    <div class="score-name"><b>Claude Haiku 5.5</b><code>anthropic/claude-haiku-5.5</code></div>
+    <div class="score-bar text" role="img" aria-label="241 of 250 right"><span style="width:96.39999999999999%"></span></div>
+    <div class="score-num"><b>241</b>/250</div>
+    <div class="score-price">$0.10 input, $0.50 output per 1M tokens · median 1.0 s per call</div>
+  </div>
+</div>
+<p class="note">Right folder, out of 250 runs each. Prices from the Vercel AI Gateway on 2026-10-09.</p>
 
 <section class="q" id="task">
   <p class="eyebrow">The task</p>
@@ -169,6 +189,9 @@ and each test changes one variable: the language, the folder's name, the user's 
   <a href="https://vercel.com/docs/ai-gateway/sdks-and-apis/openai-decisions">Decisions API</a>:
   <b>“Which of the user's folders does a conversation with these messages belong in?”</b> The options are the user's three folders and <b>None of these</b>. The model gives each
   option a probability; its pick is the highest.</p>
+  <p>For comparison, two text models, GPT-6 Luna and Claude Haiku 5.5, get the same question and options as
+  instructions and answer with one option. They return no probabilities, so their bars show how the 10 runs
+  split. On this page “Luna” alone means GPT-6 Luna Decisions.</p>
   <p>Every card below is one conversation, the folders it was filed against, and one bar per model: how the model
   split its probability across the options, averaged over 10 runs, and how many runs picked the right folder.</p>
   <ul class="legend">
@@ -182,7 +205,7 @@ and each test changes one variable: the language, the folder's name, the user's 
 <section class="q" id="spanish">
   <p class="eyebrow">Where we started</p>
   <h2>A question in Spanish</h2>
-  <p class="answer">jev files it under Facturas. Luna says none of the folders fit.</p>
+  <p class="answer">jev files it under Facturas, and so do both text models. Luna Decisions says none of the folders fit.</p>
   <p>We noticed this in a real chat, in Spanish; the messages below recreate it. The folders are <b>Personal</b>,
   <b>Ideas</b> and <b>Facturas</b>, the everyday Spanish word for bills. A person would file this chat under
   Facturas.</p>
@@ -195,9 +218,19 @@ and each test changes one variable: the language, the folder's name, the user's 
     <div class="stack" role="img" aria-label="jev: Personal 4%, Ideas 0%, Facturas 95%, None 1%"><span class="seg other" style="width:3.600000000000001%"></span><span class="seg target" style="width:95.39999999999999%">Facturas 95%</span><span class="seg other" style="width:0.9999999999999999%"></span></div>
     <div class="verdict ok"><span aria-hidden="true">✓</span> Facturas · 10/10</div>
   </div><div class="answer-row">
-    <div class="model-name">Luna</div>
-    <div class="stack" role="img" aria-label="Luna: Personal 11%, Ideas 1%, Facturas 37%, None 51%"><span class="seg other" style="width:11.000000000000002%"></span><span class="seg other" style="width:0.9999999999999999%"></span><span class="seg target" style="width:37.00000000000001%">Facturas 37%</span><span class="seg wrong" style="width:50.99999999999999%">None 51%</span></div>
+    <div class="model-name">Luna Decisions</div>
+    <div class="stack" role="img" aria-label="Luna Decisions: Personal 11%, Ideas 1%, Facturas 37%, None 51%"><span class="seg other" style="width:11.000000000000002%"></span><span class="seg other" style="width:0.9999999999999999%"></span><span class="seg target" style="width:37.00000000000001%">Facturas 37%</span><span class="seg wrong" style="width:50.99999999999999%">None 51%</span></div>
     <div class="verdict miss"><span aria-hidden="true">✗</span> None · 0/10</div>
+  </div>
+    <p class="kind-label">Text models · how the 10 runs split</p>
+    <div class="answer-row text">
+    <div class="model-name">GPT-6 Luna</div>
+    <div class="stack" role="img" aria-label="GPT-6 Luna: Personal 0%, Ideas 0%, Facturas 100%, None 0%"><span class="seg target" style="width:100%">Facturas 10/10</span></div>
+    <div class="verdict ok"><span aria-hidden="true">✓</span> Facturas · 10/10</div>
+  </div><div class="answer-row text">
+    <div class="model-name">Haiku 5.5</div>
+    <div class="stack" role="img" aria-label="Haiku 5.5: Personal 0%, Ideas 0%, Facturas 100%, None 0%"><span class="seg target" style="width:100%">Facturas 10/10</span></div>
+    <div class="verdict ok"><span aria-hidden="true">✓</span> Facturas · 10/10</div>
   </div>
   </div>
 </article><article class="case">
@@ -209,9 +242,19 @@ and each test changes one variable: the language, the folder's name, the user's 
     <div class="stack" role="img" aria-label="jev: Personal 7%, Ideas 0%, Facturas 92%, None 1%"><span class="seg other" style="width:6.7%"></span><span class="seg target" style="width:92%">Facturas 92%</span><span class="seg other" style="width:1.3%"></span></div>
     <div class="verdict ok"><span aria-hidden="true">✓</span> Facturas · 10/10</div>
   </div><div class="answer-row">
-    <div class="model-name">Luna</div>
-    <div class="stack" role="img" aria-label="Luna: Personal 27%, Ideas 0%, Facturas 34%, None 39%"><span class="seg other" style="width:27%">Personal 27%</span><span class="seg target" style="width:34%">Facturas 34%</span><span class="seg wrong" style="width:39.00000000000001%">None 39%</span></div>
+    <div class="model-name">Luna Decisions</div>
+    <div class="stack" role="img" aria-label="Luna Decisions: Personal 27%, Ideas 0%, Facturas 34%, None 39%"><span class="seg other" style="width:27%">Personal 27%</span><span class="seg target" style="width:34%">Facturas 34%</span><span class="seg wrong" style="width:39.00000000000001%">None 39%</span></div>
     <div class="verdict miss"><span aria-hidden="true">✗</span> None · 0/10</div>
+  </div>
+    <p class="kind-label">Text models · how the 10 runs split</p>
+    <div class="answer-row text">
+    <div class="model-name">GPT-6 Luna</div>
+    <div class="stack" role="img" aria-label="GPT-6 Luna: Personal 0%, Ideas 0%, Facturas 100%, None 0%"><span class="seg target" style="width:100%">Facturas 10/10</span></div>
+    <div class="verdict ok"><span aria-hidden="true">✓</span> Facturas · 10/10</div>
+  </div><div class="answer-row text">
+    <div class="model-name">Haiku 5.5</div>
+    <div class="stack" role="img" aria-label="Haiku 5.5: Personal 0%, Ideas 0%, Facturas 100%, None 0%"><span class="seg target" style="width:100%">Facturas 10/10</span></div>
+    <div class="verdict ok"><span aria-hidden="true">✓</span> Facturas · 10/10</div>
   </div>
   </div>
 </article><article class="case">
@@ -223,9 +266,19 @@ and each test changes one variable: the language, the folder's name, the user's 
     <div class="stack" role="img" aria-label="jev: Personal 3%, Ideas 0%, Facturas 97%, None 0%"><span class="seg other" style="width:3.2999999999999994%"></span><span class="seg target" style="width:96.7%">Facturas 97%</span></div>
     <div class="verdict ok"><span aria-hidden="true">✓</span> Facturas · 10/10</div>
   </div><div class="answer-row">
-    <div class="model-name">Luna</div>
-    <div class="stack" role="img" aria-label="Luna: Personal 24%, Ideas 0%, Facturas 37%, None 39%"><span class="seg other" style="width:24.000000000000004%">Personal 24%</span><span class="seg target" style="width:37.00000000000001%">Facturas 37%</span><span class="seg wrong" style="width:39.00000000000001%">None 39%</span></div>
+    <div class="model-name">Luna Decisions</div>
+    <div class="stack" role="img" aria-label="Luna Decisions: Personal 24%, Ideas 0%, Facturas 37%, None 39%"><span class="seg other" style="width:24.000000000000004%">Personal 24%</span><span class="seg target" style="width:37.00000000000001%">Facturas 37%</span><span class="seg wrong" style="width:39.00000000000001%">None 39%</span></div>
     <div class="verdict miss"><span aria-hidden="true">✗</span> None · 0/10</div>
+  </div>
+    <p class="kind-label">Text models · how the 10 runs split</p>
+    <div class="answer-row text">
+    <div class="model-name">GPT-6 Luna</div>
+    <div class="stack" role="img" aria-label="GPT-6 Luna: Personal 0%, Ideas 0%, Facturas 100%, None 0%"><span class="seg target" style="width:100%">Facturas 10/10</span></div>
+    <div class="verdict ok"><span aria-hidden="true">✓</span> Facturas · 10/10</div>
+  </div><div class="answer-row text">
+    <div class="model-name">Haiku 5.5</div>
+    <div class="stack" role="img" aria-label="Haiku 5.5: Personal 0%, Ideas 0%, Facturas 100%, None 0%"><span class="seg target" style="width:100%">Facturas 10/10</span></div>
+    <div class="verdict ok"><span aria-hidden="true">✓</span> Facturas · 10/10</div>
   </div>
   </div>
 </article></div>
@@ -237,7 +290,7 @@ and each test changes one variable: the language, the folder's name, the user's 
 <section class="q" id="language">
   <p class="eyebrow">Theory 1</p>
   <h2>Is it the language?</h2>
-  <p class="answer">No. In English, both models get it when the folder is called Bills. Call it Invoices and Luna says none.</p>
+  <p class="answer">No. In English, every model gets it when the folder is called Bills. Call it Invoices and Luna Decisions says none.</p>
   <p>The same question in English, with the third folder called <b>Bills</b> and then <b>Invoices</b>.</p>
   <div class="cases"><article class="case">
   <div class="chat"><div class="bubble user"><span class="sr">User: </span>how much am I spending on my phone bills each month?</div></div>
@@ -248,8 +301,18 @@ and each test changes one variable: the language, the folder's name, the user's 
     <div class="stack" role="img" aria-label="jev: Personal 0%, Ideas 0%, Bills 100%, None 0%"><span class="seg target" style="width:100%">Bills 100%</span></div>
     <div class="verdict ok"><span aria-hidden="true">✓</span> Bills · 10/10</div>
   </div><div class="answer-row">
-    <div class="model-name">Luna</div>
-    <div class="stack" role="img" aria-label="Luna: Personal 2%, Ideas 0%, Bills 87%, None 11%"><span class="seg other" style="width:1.9999999999999998%"></span><span class="seg target" style="width:86.99999999999999%">Bills 87%</span><span class="seg other" style="width:11.000000000000002%"></span></div>
+    <div class="model-name">Luna Decisions</div>
+    <div class="stack" role="img" aria-label="Luna Decisions: Personal 2%, Ideas 0%, Bills 87%, None 11%"><span class="seg other" style="width:1.9999999999999998%"></span><span class="seg target" style="width:86.99999999999999%">Bills 87%</span><span class="seg other" style="width:11.000000000000002%"></span></div>
+    <div class="verdict ok"><span aria-hidden="true">✓</span> Bills · 10/10</div>
+  </div>
+    <p class="kind-label">Text models · how the 10 runs split</p>
+    <div class="answer-row text">
+    <div class="model-name">GPT-6 Luna</div>
+    <div class="stack" role="img" aria-label="GPT-6 Luna: Personal 0%, Ideas 0%, Bills 100%, None 0%"><span class="seg target" style="width:100%">Bills 10/10</span></div>
+    <div class="verdict ok"><span aria-hidden="true">✓</span> Bills · 10/10</div>
+  </div><div class="answer-row text">
+    <div class="model-name">Haiku 5.5</div>
+    <div class="stack" role="img" aria-label="Haiku 5.5: Personal 0%, Ideas 0%, Bills 100%, None 0%"><span class="seg target" style="width:100%">Bills 10/10</span></div>
     <div class="verdict ok"><span aria-hidden="true">✓</span> Bills · 10/10</div>
   </div>
   </div><div class="variant">
@@ -259,9 +322,19 @@ and each test changes one variable: the language, the folder's name, the user's 
     <div class="stack" role="img" aria-label="jev: Personal 39%, Ideas 0%, Invoices 59%, None 3%"><span class="seg other" style="width:38.8%">Personal 39%</span><span class="seg target" style="width:58.60000000000001%">Invoices 59%</span><span class="seg other" style="width:2.6%"></span></div>
     <div class="verdict ok"><span aria-hidden="true">✓</span> Invoices · 10/10</div>
   </div><div class="answer-row">
-    <div class="model-name">Luna</div>
-    <div class="stack" role="img" aria-label="Luna: Personal 33%, Ideas 1%, Invoices 1%, None 65%"><span class="seg other" style="width:33%">Personal 33%</span><span class="seg other" style="width:0.9999999999999999%"></span><span class="seg target" style="width:0.9999999999999999%"></span><span class="seg wrong" style="width:65.00000000000001%">None 65%</span></div>
+    <div class="model-name">Luna Decisions</div>
+    <div class="stack" role="img" aria-label="Luna Decisions: Personal 33%, Ideas 1%, Invoices 1%, None 65%"><span class="seg other" style="width:33%">Personal 33%</span><span class="seg other" style="width:0.9999999999999999%"></span><span class="seg target" style="width:0.9999999999999999%"></span><span class="seg wrong" style="width:65.00000000000001%">None 65%</span></div>
     <div class="verdict miss"><span aria-hidden="true">✗</span> None · 0/10</div>
+  </div>
+    <p class="kind-label">Text models · how the 10 runs split</p>
+    <div class="answer-row text">
+    <div class="model-name">GPT-6 Luna</div>
+    <div class="stack" role="img" aria-label="GPT-6 Luna: Personal 20%, Ideas 0%, Invoices 80%, None 0%"><span class="seg other" style="width:20%">Personal 2/10</span><span class="seg target" style="width:80%">Invoices 8/10</span></div>
+    <div class="verdict ok"><span aria-hidden="true">✓</span> Invoices · 8/10</div>
+  </div><div class="answer-row text">
+    <div class="model-name">Haiku 5.5</div>
+    <div class="stack" role="img" aria-label="Haiku 5.5: Personal 0%, Ideas 0%, Invoices 100%, None 0%"><span class="seg target" style="width:100%">Invoices 10/10</span></div>
+    <div class="verdict ok"><span aria-hidden="true">✓</span> Invoices · 10/10</div>
   </div>
   </div>
 </article><article class="case">
@@ -273,8 +346,18 @@ and each test changes one variable: the language, the folder's name, the user's 
     <div class="stack" role="img" aria-label="jev: Personal 0%, Ideas 0%, Bills 100%, None 0%"><span class="seg target" style="width:100%">Bills 100%</span></div>
     <div class="verdict ok"><span aria-hidden="true">✓</span> Bills · 10/10</div>
   </div><div class="answer-row">
-    <div class="model-name">Luna</div>
-    <div class="stack" role="img" aria-label="Luna: Personal 1%, Ideas 0%, Bills 95%, None 4%"><span class="seg other" style="width:0.9999999999999999%"></span><span class="seg target" style="width:95%">Bills 95%</span><span class="seg other" style="width:3.9999999999999996%"></span></div>
+    <div class="model-name">Luna Decisions</div>
+    <div class="stack" role="img" aria-label="Luna Decisions: Personal 1%, Ideas 0%, Bills 95%, None 4%"><span class="seg other" style="width:0.9999999999999999%"></span><span class="seg target" style="width:95%">Bills 95%</span><span class="seg other" style="width:3.9999999999999996%"></span></div>
+    <div class="verdict ok"><span aria-hidden="true">✓</span> Bills · 10/10</div>
+  </div>
+    <p class="kind-label">Text models · how the 10 runs split</p>
+    <div class="answer-row text">
+    <div class="model-name">GPT-6 Luna</div>
+    <div class="stack" role="img" aria-label="GPT-6 Luna: Personal 0%, Ideas 0%, Bills 100%, None 0%"><span class="seg target" style="width:100%">Bills 10/10</span></div>
+    <div class="verdict ok"><span aria-hidden="true">✓</span> Bills · 10/10</div>
+  </div><div class="answer-row text">
+    <div class="model-name">Haiku 5.5</div>
+    <div class="stack" role="img" aria-label="Haiku 5.5: Personal 0%, Ideas 0%, Bills 100%, None 0%"><span class="seg target" style="width:100%">Bills 10/10</span></div>
     <div class="verdict ok"><span aria-hidden="true">✓</span> Bills · 10/10</div>
   </div>
   </div><div class="variant">
@@ -284,9 +367,19 @@ and each test changes one variable: the language, the folder's name, the user's 
     <div class="stack" role="img" aria-label="jev: Personal 30%, Ideas 0%, Invoices 67%, None 3%"><span class="seg other" style="width:29.900000000000006%">Personal 30%</span><span class="seg target" style="width:66.69999999999999%">Invoices 67%</span><span class="seg other" style="width:3.3000000000000007%"></span></div>
     <div class="verdict ok"><span aria-hidden="true">✓</span> Invoices · 10/10</div>
   </div><div class="answer-row">
-    <div class="model-name">Luna</div>
-    <div class="stack" role="img" aria-label="Luna: Personal 28%, Ideas 2%, Invoices 23%, None 47%"><span class="seg other" style="width:28.000000000000007%">Personal 28%</span><span class="seg other" style="width:1.9999999999999998%"></span><span class="seg target" style="width:23.000000000000004%">Invoices 23%</span><span class="seg wrong" style="width:46.999999999999986%">None 47%</span></div>
+    <div class="model-name">Luna Decisions</div>
+    <div class="stack" role="img" aria-label="Luna Decisions: Personal 28%, Ideas 2%, Invoices 23%, None 47%"><span class="seg other" style="width:28.000000000000007%">Personal 28%</span><span class="seg other" style="width:1.9999999999999998%"></span><span class="seg target" style="width:23.000000000000004%">Invoices 23%</span><span class="seg wrong" style="width:46.999999999999986%">None 47%</span></div>
     <div class="verdict miss"><span aria-hidden="true">✗</span> None · 0/10</div>
+  </div>
+    <p class="kind-label">Text models · how the 10 runs split</p>
+    <div class="answer-row text">
+    <div class="model-name">GPT-6 Luna</div>
+    <div class="stack" role="img" aria-label="GPT-6 Luna: Personal 0%, Ideas 0%, Invoices 100%, None 0%"><span class="seg target" style="width:100%">Invoices 10/10</span></div>
+    <div class="verdict ok"><span aria-hidden="true">✓</span> Invoices · 10/10</div>
+  </div><div class="answer-row text">
+    <div class="model-name">Haiku 5.5</div>
+    <div class="stack" role="img" aria-label="Haiku 5.5: Personal 0%, Ideas 0%, Invoices 100%, None 0%"><span class="seg target" style="width:100%">Invoices 10/10</span></div>
+    <div class="verdict ok"><span aria-hidden="true">✓</span> Invoices · 10/10</div>
   </div>
   </div>
 </article><article class="case">
@@ -298,8 +391,18 @@ and each test changes one variable: the language, the folder's name, the user's 
     <div class="stack" role="img" aria-label="jev: Personal 0%, Ideas 0%, Bills 100%, None 0%"><span class="seg target" style="width:100%">Bills 100%</span></div>
     <div class="verdict ok"><span aria-hidden="true">✓</span> Bills · 10/10</div>
   </div><div class="answer-row">
-    <div class="model-name">Luna</div>
-    <div class="stack" role="img" aria-label="Luna: Personal 1%, Ideas 0%, Bills 98%, None 1%"><span class="seg other" style="width:0.9999999999999999%"></span><span class="seg target" style="width:98.00000000000001%">Bills 98%</span><span class="seg other" style="width:0.9999999999999999%"></span></div>
+    <div class="model-name">Luna Decisions</div>
+    <div class="stack" role="img" aria-label="Luna Decisions: Personal 1%, Ideas 0%, Bills 98%, None 1%"><span class="seg other" style="width:0.9999999999999999%"></span><span class="seg target" style="width:98.00000000000001%">Bills 98%</span><span class="seg other" style="width:0.9999999999999999%"></span></div>
+    <div class="verdict ok"><span aria-hidden="true">✓</span> Bills · 10/10</div>
+  </div>
+    <p class="kind-label">Text models · how the 10 runs split</p>
+    <div class="answer-row text">
+    <div class="model-name">GPT-6 Luna</div>
+    <div class="stack" role="img" aria-label="GPT-6 Luna: Personal 0%, Ideas 0%, Bills 100%, None 0%"><span class="seg target" style="width:100%">Bills 10/10</span></div>
+    <div class="verdict ok"><span aria-hidden="true">✓</span> Bills · 10/10</div>
+  </div><div class="answer-row text">
+    <div class="model-name">Haiku 5.5</div>
+    <div class="stack" role="img" aria-label="Haiku 5.5: Personal 0%, Ideas 0%, Bills 100%, None 0%"><span class="seg target" style="width:100%">Bills 10/10</span></div>
     <div class="verdict ok"><span aria-hidden="true">✓</span> Bills · 10/10</div>
   </div>
   </div><div class="variant">
@@ -309,8 +412,18 @@ and each test changes one variable: the language, the folder's name, the user's 
     <div class="stack" role="img" aria-label="jev: Personal 11%, Ideas 0%, Invoices 88%, None 1%"><span class="seg other" style="width:11.099999999999998%"></span><span class="seg target" style="width:87.9%">Invoices 88%</span><span class="seg other" style="width:0.9999999999999999%"></span></div>
     <div class="verdict ok"><span aria-hidden="true">✓</span> Invoices · 10/10</div>
   </div><div class="answer-row">
-    <div class="model-name">Luna</div>
-    <div class="stack" role="img" aria-label="Luna: Personal 17%, Ideas 1%, Invoices 49%, None 33%"><span class="seg other" style="width:17%">Personal 17%</span><span class="seg other" style="width:0.9999999999999999%"></span><span class="seg target" style="width:49.00000000000001%">Invoices 49%</span><span class="seg other" style="width:33%">None 33%</span></div>
+    <div class="model-name">Luna Decisions</div>
+    <div class="stack" role="img" aria-label="Luna Decisions: Personal 17%, Ideas 1%, Invoices 49%, None 33%"><span class="seg other" style="width:17%">Personal 17%</span><span class="seg other" style="width:0.9999999999999999%"></span><span class="seg target" style="width:49.00000000000001%">Invoices 49%</span><span class="seg other" style="width:33%">None 33%</span></div>
+    <div class="verdict ok"><span aria-hidden="true">✓</span> Invoices · 10/10</div>
+  </div>
+    <p class="kind-label">Text models · how the 10 runs split</p>
+    <div class="answer-row text">
+    <div class="model-name">GPT-6 Luna</div>
+    <div class="stack" role="img" aria-label="GPT-6 Luna: Personal 0%, Ideas 0%, Invoices 100%, None 0%"><span class="seg target" style="width:100%">Invoices 10/10</span></div>
+    <div class="verdict ok"><span aria-hidden="true">✓</span> Invoices · 10/10</div>
+  </div><div class="answer-row text">
+    <div class="model-name">Haiku 5.5</div>
+    <div class="stack" role="img" aria-label="Haiku 5.5: Personal 0%, Ideas 0%, Invoices 100%, None 0%"><span class="seg target" style="width:100%">Invoices 10/10</span></div>
     <div class="verdict ok"><span aria-hidden="true">✓</span> Invoices · 10/10</div>
   </div>
   </div>
@@ -320,7 +433,7 @@ and each test changes one variable: the language, the folder's name, the user's 
 </section><section class="q" id="words">
   <p class="eyebrow">Theory 2</p>
   <h2>Is it just matching words?</h2>
-  <p class="answer">For Luna, mostly yes. Take “bills” out of the question and it misses even the Bills folder.</p>
+  <p class="answer">For Luna Decisions, mostly yes. Take “bills” out of the question and it misses even the Bills folder.</p>
   <p>Above, the user said “phone bills”, the Bills folder's own name. Here the user says “phone service”,
       which names neither folder.</p>
   <div class="cases"><article class="case">
@@ -332,9 +445,19 @@ and each test changes one variable: the language, the folder's name, the user's 
     <div class="stack" role="img" aria-label="jev: Personal 0%, Ideas 0%, Bills 100%, None 0%"><span class="seg target" style="width:100%">Bills 100%</span></div>
     <div class="verdict ok"><span aria-hidden="true">✓</span> Bills · 10/10</div>
   </div><div class="answer-row">
-    <div class="model-name">Luna</div>
-    <div class="stack" role="img" aria-label="Luna: Personal 23%, Ideas 1%, Bills 23%, None 53%"><span class="seg other" style="width:23.000000000000004%">Personal 23%</span><span class="seg other" style="width:0.9999999999999999%"></span><span class="seg target" style="width:23.000000000000004%">Bills 23%</span><span class="seg wrong" style="width:53.000000000000014%">None 53%</span></div>
+    <div class="model-name">Luna Decisions</div>
+    <div class="stack" role="img" aria-label="Luna Decisions: Personal 23%, Ideas 1%, Bills 23%, None 53%"><span class="seg other" style="width:23.000000000000004%">Personal 23%</span><span class="seg other" style="width:0.9999999999999999%"></span><span class="seg target" style="width:23.000000000000004%">Bills 23%</span><span class="seg wrong" style="width:53.000000000000014%">None 53%</span></div>
     <div class="verdict miss"><span aria-hidden="true">✗</span> None · 0/10</div>
+  </div>
+    <p class="kind-label">Text models · how the 10 runs split</p>
+    <div class="answer-row text">
+    <div class="model-name">GPT-6 Luna</div>
+    <div class="stack" role="img" aria-label="GPT-6 Luna: Personal 0%, Ideas 0%, Bills 100%, None 0%"><span class="seg target" style="width:100%">Bills 10/10</span></div>
+    <div class="verdict ok"><span aria-hidden="true">✓</span> Bills · 10/10</div>
+  </div><div class="answer-row text">
+    <div class="model-name">Haiku 5.5</div>
+    <div class="stack" role="img" aria-label="Haiku 5.5: Personal 0%, Ideas 0%, Bills 100%, None 0%"><span class="seg target" style="width:100%">Bills 10/10</span></div>
+    <div class="verdict ok"><span aria-hidden="true">✓</span> Bills · 10/10</div>
   </div>
   </div><div class="variant">
     <ul class="folders" aria-label="Folders"><li class="folder"><svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M4 20h16a2 2 0 0 0 2-2V8a2 2 0 0 0-2-2h-7.9a2 2 0 0 1-1.69-.9L9.6 3.9A2 2 0 0 0 7.93 3H4a2 2 0 0 0-2 2v13a2 2 0 0 0 2 2Z"/></svg><span>Personal</span></li><li class="folder"><svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M4 20h16a2 2 0 0 0 2-2V8a2 2 0 0 0-2-2h-7.9a2 2 0 0 1-1.69-.9L9.6 3.9A2 2 0 0 0 7.93 3H4a2 2 0 0 0-2 2v13a2 2 0 0 0 2 2Z"/></svg><span>Ideas</span></li><li class="folder right"><svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M4 20h16a2 2 0 0 0 2-2V8a2 2 0 0 0-2-2h-7.9a2 2 0 0 1-1.69-.9L9.6 3.9A2 2 0 0 0 7.93 3H4a2 2 0 0 0-2 2v13a2 2 0 0 0 2 2Z"/></svg><span>Invoices</span><span class="sr">, the right folder</span></li><li class="folder none-of">None of these</li></ul>
@@ -343,9 +466,19 @@ and each test changes one variable: the language, the folder's name, the user's 
     <div class="stack" role="img" aria-label="jev: Personal 33%, Ideas 0%, Invoices 65%, None 2%"><span class="seg other" style="width:32.599999999999994%">Personal 33%</span><span class="seg target" style="width:65.2%">Invoices 65%</span><span class="seg other" style="width:2.1999999999999997%"></span></div>
     <div class="verdict ok"><span aria-hidden="true">✓</span> Invoices · 10/10</div>
   </div><div class="answer-row">
-    <div class="model-name">Luna</div>
-    <div class="stack" role="img" aria-label="Luna: Personal 13%, Ideas 2%, Invoices 1%, None 84%"><span class="seg other" style="width:12.999999999999998%"></span><span class="seg other" style="width:1.9999999999999998%"></span><span class="seg target" style="width:0.9999999999999999%"></span><span class="seg wrong" style="width:84.00000000000001%">None 84%</span></div>
+    <div class="model-name">Luna Decisions</div>
+    <div class="stack" role="img" aria-label="Luna Decisions: Personal 13%, Ideas 2%, Invoices 1%, None 84%"><span class="seg other" style="width:12.999999999999998%"></span><span class="seg other" style="width:1.9999999999999998%"></span><span class="seg target" style="width:0.9999999999999999%"></span><span class="seg wrong" style="width:84.00000000000001%">None 84%</span></div>
     <div class="verdict miss"><span aria-hidden="true">✗</span> None · 0/10</div>
+  </div>
+    <p class="kind-label">Text models · how the 10 runs split</p>
+    <div class="answer-row text">
+    <div class="model-name">GPT-6 Luna</div>
+    <div class="stack" role="img" aria-label="GPT-6 Luna: Personal 30%, Ideas 0%, Invoices 70%, None 0%"><span class="seg other" style="width:30%">Personal 3/10</span><span class="seg target" style="width:70%">Invoices 7/10</span></div>
+    <div class="verdict ok"><span aria-hidden="true">✓</span> Invoices · 7/10</div>
+  </div><div class="answer-row text">
+    <div class="model-name">Haiku 5.5</div>
+    <div class="stack" role="img" aria-label="Haiku 5.5: Personal 50%, Ideas 0%, Invoices 50%, None 0%"><span class="seg wrong" style="width:50%">Personal 5/10</span><span class="seg target" style="width:50%">Invoices 5/10</span></div>
+    <div class="verdict miss"><span aria-hidden="true">✗</span> Personal · 5/10</div>
   </div>
   </div>
 </article><article class="case">
@@ -357,8 +490,18 @@ and each test changes one variable: the language, the folder's name, the user's 
     <div class="stack" role="img" aria-label="jev: Personal 0%, Ideas 0%, Bills 100%, None 0%"><span class="seg target" style="width:100%">Bills 100%</span></div>
     <div class="verdict ok"><span aria-hidden="true">✓</span> Bills · 10/10</div>
   </div><div class="answer-row">
-    <div class="model-name">Luna</div>
-    <div class="stack" role="img" aria-label="Luna: Personal 3%, Ideas 1%, Bills 71%, None 25%"><span class="seg other" style="width:3.0000000000000004%"></span><span class="seg other" style="width:0.9999999999999999%"></span><span class="seg target" style="width:71%">Bills 71%</span><span class="seg other" style="width:25%">None 25%</span></div>
+    <div class="model-name">Luna Decisions</div>
+    <div class="stack" role="img" aria-label="Luna Decisions: Personal 3%, Ideas 1%, Bills 71%, None 25%"><span class="seg other" style="width:3.0000000000000004%"></span><span class="seg other" style="width:0.9999999999999999%"></span><span class="seg target" style="width:71%">Bills 71%</span><span class="seg other" style="width:25%">None 25%</span></div>
+    <div class="verdict ok"><span aria-hidden="true">✓</span> Bills · 10/10</div>
+  </div>
+    <p class="kind-label">Text models · how the 10 runs split</p>
+    <div class="answer-row text">
+    <div class="model-name">GPT-6 Luna</div>
+    <div class="stack" role="img" aria-label="GPT-6 Luna: Personal 0%, Ideas 0%, Bills 100%, None 0%"><span class="seg target" style="width:100%">Bills 10/10</span></div>
+    <div class="verdict ok"><span aria-hidden="true">✓</span> Bills · 10/10</div>
+  </div><div class="answer-row text">
+    <div class="model-name">Haiku 5.5</div>
+    <div class="stack" role="img" aria-label="Haiku 5.5: Personal 0%, Ideas 0%, Bills 100%, None 0%"><span class="seg target" style="width:100%">Bills 10/10</span></div>
     <div class="verdict ok"><span aria-hidden="true">✓</span> Bills · 10/10</div>
   </div>
   </div><div class="variant">
@@ -368,9 +511,19 @@ and each test changes one variable: the language, the folder's name, the user's 
     <div class="stack" role="img" aria-label="jev: Personal 27%, Ideas 0%, Invoices 70%, None 3%"><span class="seg other" style="width:26.900000000000002%">Personal 27%</span><span class="seg target" style="width:69.6%">Invoices 70%</span><span class="seg other" style="width:3.4999999999999996%"></span></div>
     <div class="verdict ok"><span aria-hidden="true">✓</span> Invoices · 10/10</div>
   </div><div class="answer-row">
-    <div class="model-name">Luna</div>
-    <div class="stack" role="img" aria-label="Luna: Personal 35%, Ideas 1%, Invoices 5%, None 59%"><span class="seg other" style="width:35%">Personal 35%</span><span class="seg other" style="width:0.9999999999999999%"></span><span class="seg target" style="width:5%"></span><span class="seg wrong" style="width:59%">None 59%</span></div>
+    <div class="model-name">Luna Decisions</div>
+    <div class="stack" role="img" aria-label="Luna Decisions: Personal 35%, Ideas 1%, Invoices 5%, None 59%"><span class="seg other" style="width:35%">Personal 35%</span><span class="seg other" style="width:0.9999999999999999%"></span><span class="seg target" style="width:5%"></span><span class="seg wrong" style="width:59%">None 59%</span></div>
     <div class="verdict miss"><span aria-hidden="true">✗</span> None · 0/10</div>
+  </div>
+    <p class="kind-label">Text models · how the 10 runs split</p>
+    <div class="answer-row text">
+    <div class="model-name">GPT-6 Luna</div>
+    <div class="stack" role="img" aria-label="GPT-6 Luna: Personal 10%, Ideas 0%, Invoices 90%, None 0%"><span class="seg other" style="width:10%"></span><span class="seg target" style="width:90%">Invoices 9/10</span></div>
+    <div class="verdict ok"><span aria-hidden="true">✓</span> Invoices · 9/10</div>
+  </div><div class="answer-row text">
+    <div class="model-name">Haiku 5.5</div>
+    <div class="stack" role="img" aria-label="Haiku 5.5: Personal 0%, Ideas 0%, Invoices 100%, None 0%"><span class="seg target" style="width:100%">Invoices 10/10</span></div>
+    <div class="verdict ok"><span aria-hidden="true">✓</span> Invoices · 10/10</div>
   </div>
   </div>
 </article><article class="case">
@@ -382,8 +535,18 @@ and each test changes one variable: the language, the folder's name, the user's 
     <div class="stack" role="img" aria-label="jev: Personal 0%, Ideas 0%, Bills 100%, None 0%"><span class="seg target" style="width:100%">Bills 100%</span></div>
     <div class="verdict ok"><span aria-hidden="true">✓</span> Bills · 10/10</div>
   </div><div class="answer-row">
-    <div class="model-name">Luna</div>
-    <div class="stack" role="img" aria-label="Luna: Personal 2%, Ideas 0%, Bills 92%, None 6%"><span class="seg other" style="width:1.9999999999999998%"></span><span class="seg target" style="width:92.00000000000001%">Bills 92%</span><span class="seg other" style="width:6.000000000000001%"></span></div>
+    <div class="model-name">Luna Decisions</div>
+    <div class="stack" role="img" aria-label="Luna Decisions: Personal 2%, Ideas 0%, Bills 92%, None 6%"><span class="seg other" style="width:1.9999999999999998%"></span><span class="seg target" style="width:92.00000000000001%">Bills 92%</span><span class="seg other" style="width:6.000000000000001%"></span></div>
+    <div class="verdict ok"><span aria-hidden="true">✓</span> Bills · 10/10</div>
+  </div>
+    <p class="kind-label">Text models · how the 10 runs split</p>
+    <div class="answer-row text">
+    <div class="model-name">GPT-6 Luna</div>
+    <div class="stack" role="img" aria-label="GPT-6 Luna: Personal 0%, Ideas 0%, Bills 100%, None 0%"><span class="seg target" style="width:100%">Bills 10/10</span></div>
+    <div class="verdict ok"><span aria-hidden="true">✓</span> Bills · 10/10</div>
+  </div><div class="answer-row text">
+    <div class="model-name">Haiku 5.5</div>
+    <div class="stack" role="img" aria-label="Haiku 5.5: Personal 0%, Ideas 0%, Bills 100%, None 0%"><span class="seg target" style="width:100%">Bills 10/10</span></div>
     <div class="verdict ok"><span aria-hidden="true">✓</span> Bills · 10/10</div>
   </div>
   </div><div class="variant">
@@ -393,9 +556,19 @@ and each test changes one variable: the language, the folder's name, the user's 
     <div class="stack" role="img" aria-label="jev: Personal 12%, Ideas 0%, Invoices 87%, None 1%"><span class="seg other" style="width:12.100000000000003%"></span><span class="seg target" style="width:86.9%">Invoices 87%</span><span class="seg other" style="width:0.9999999999999999%"></span></div>
     <div class="verdict ok"><span aria-hidden="true">✓</span> Invoices · 10/10</div>
   </div><div class="answer-row">
-    <div class="model-name">Luna</div>
-    <div class="stack" role="img" aria-label="Luna: Personal 41%, Ideas 1%, Invoices 40%, None 18%"><span class="seg wrong" style="width:41%">Personal 41%</span><span class="seg other" style="width:0.9999999999999999%"></span><span class="seg target" style="width:40%">Invoices 40%</span><span class="seg other" style="width:17.999999999999996%">None 18%</span></div>
+    <div class="model-name">Luna Decisions</div>
+    <div class="stack" role="img" aria-label="Luna Decisions: Personal 41%, Ideas 1%, Invoices 40%, None 18%"><span class="seg wrong" style="width:41%">Personal 41%</span><span class="seg other" style="width:0.9999999999999999%"></span><span class="seg target" style="width:40%">Invoices 40%</span><span class="seg other" style="width:17.999999999999996%">None 18%</span></div>
     <div class="verdict miss"><span aria-hidden="true">✗</span> Personal · 0/10</div>
+  </div>
+    <p class="kind-label">Text models · how the 10 runs split</p>
+    <div class="answer-row text">
+    <div class="model-name">GPT-6 Luna</div>
+    <div class="stack" role="img" aria-label="GPT-6 Luna: Personal 0%, Ideas 0%, Invoices 100%, None 0%"><span class="seg target" style="width:100%">Invoices 10/10</span></div>
+    <div class="verdict ok"><span aria-hidden="true">✓</span> Invoices · 10/10</div>
+  </div><div class="answer-row text">
+    <div class="model-name">Haiku 5.5</div>
+    <div class="stack" role="img" aria-label="Haiku 5.5: Personal 0%, Ideas 0%, Invoices 100%, None 0%"><span class="seg target" style="width:100%">Invoices 10/10</span></div>
+    <div class="verdict ok"><span aria-hidden="true">✓</span> Invoices · 10/10</div>
   </div>
   </div>
 </article></div>
@@ -415,9 +588,19 @@ and each test changes one variable: the language, the folder's name, the user's 
     <div class="stack" role="img" aria-label="jev: Personal 27%, Ideas 0%, Invoices 70%, None 3%"><span class="seg other" style="width:26.900000000000002%">Personal 27%</span><span class="seg target" style="width:69.6%">Invoices 70%</span><span class="seg other" style="width:3.4999999999999996%"></span></div>
     <div class="verdict ok"><span aria-hidden="true">✓</span> Invoices · 10/10</div>
   </div><div class="answer-row">
-    <div class="model-name">Luna</div>
-    <div class="stack" role="img" aria-label="Luna: Personal 35%, Ideas 1%, Invoices 5%, None 59%"><span class="seg other" style="width:35%">Personal 35%</span><span class="seg other" style="width:0.9999999999999999%"></span><span class="seg target" style="width:5%"></span><span class="seg wrong" style="width:59%">None 59%</span></div>
+    <div class="model-name">Luna Decisions</div>
+    <div class="stack" role="img" aria-label="Luna Decisions: Personal 35%, Ideas 1%, Invoices 5%, None 59%"><span class="seg other" style="width:35%">Personal 35%</span><span class="seg other" style="width:0.9999999999999999%"></span><span class="seg target" style="width:5%"></span><span class="seg wrong" style="width:59%">None 59%</span></div>
     <div class="verdict miss"><span aria-hidden="true">✗</span> None · 0/10</div>
+  </div>
+    <p class="kind-label">Text models · how the 10 runs split</p>
+    <div class="answer-row text">
+    <div class="model-name">GPT-6 Luna</div>
+    <div class="stack" role="img" aria-label="GPT-6 Luna: Personal 10%, Ideas 0%, Invoices 90%, None 0%"><span class="seg other" style="width:10%"></span><span class="seg target" style="width:90%">Invoices 9/10</span></div>
+    <div class="verdict ok"><span aria-hidden="true">✓</span> Invoices · 9/10</div>
+  </div><div class="answer-row text">
+    <div class="model-name">Haiku 5.5</div>
+    <div class="stack" role="img" aria-label="Haiku 5.5: Personal 0%, Ideas 0%, Invoices 100%, None 0%"><span class="seg target" style="width:100%">Invoices 10/10</span></div>
+    <div class="verdict ok"><span aria-hidden="true">✓</span> Invoices · 10/10</div>
   </div>
   </div>
 </article><article class="case">
@@ -429,9 +612,19 @@ and each test changes one variable: the language, the folder's name, the user's 
     <div class="stack" role="img" aria-label="jev: Personal 39%, Ideas 0%, Invoices 58%, None 2%"><span class="seg other" style="width:39.4%">Personal 39%</span><span class="seg target" style="width:58.3%">Invoices 58%</span><span class="seg other" style="width:2.3%"></span></div>
     <div class="verdict ok"><span aria-hidden="true">✓</span> Invoices · 10/10</div>
   </div><div class="answer-row">
-    <div class="model-name">Luna</div>
-    <div class="stack" role="img" aria-label="Luna: Personal 46%, Ideas 2%, Invoices 2%, None 50%"><span class="seg other" style="width:46.00000000000001%">Personal 46%</span><span class="seg other" style="width:1.9999999999999998%"></span><span class="seg target" style="width:1.9999999999999998%"></span><span class="seg wrong" style="width:50%">None 50%</span></div>
+    <div class="model-name">Luna Decisions</div>
+    <div class="stack" role="img" aria-label="Luna Decisions: Personal 46%, Ideas 2%, Invoices 2%, None 50%"><span class="seg other" style="width:46.00000000000001%">Personal 46%</span><span class="seg other" style="width:1.9999999999999998%"></span><span class="seg target" style="width:1.9999999999999998%"></span><span class="seg wrong" style="width:50%">None 50%</span></div>
     <div class="verdict miss"><span aria-hidden="true">✗</span> None · 0/10</div>
+  </div>
+    <p class="kind-label">Text models · how the 10 runs split</p>
+    <div class="answer-row text">
+    <div class="model-name">GPT-6 Luna</div>
+    <div class="stack" role="img" aria-label="GPT-6 Luna: Personal 10%, Ideas 0%, Invoices 90%, None 0%"><span class="seg other" style="width:10%"></span><span class="seg target" style="width:90%">Invoices 9/10</span></div>
+    <div class="verdict ok"><span aria-hidden="true">✓</span> Invoices · 9/10</div>
+  </div><div class="answer-row text">
+    <div class="model-name">Haiku 5.5</div>
+    <div class="stack" role="img" aria-label="Haiku 5.5: Personal 40%, Ideas 0%, Invoices 60%, None 0%"><span class="seg other" style="width:40%">Personal 4/10</span><span class="seg target" style="width:60%">Invoices 6/10</span></div>
+    <div class="verdict ok"><span aria-hidden="true">✓</span> Invoices · 6/10</div>
   </div>
   </div>
 </article><article class="case">
@@ -443,9 +636,19 @@ and each test changes one variable: the language, the folder's name, the user's 
     <div class="stack" role="img" aria-label="jev: Personal 7%, Ideas 0%, Facturas 92%, None 1%"><span class="seg other" style="width:6.7%"></span><span class="seg target" style="width:92%">Facturas 92%</span><span class="seg other" style="width:1.3%"></span></div>
     <div class="verdict ok"><span aria-hidden="true">✓</span> Facturas · 10/10</div>
   </div><div class="answer-row">
-    <div class="model-name">Luna</div>
-    <div class="stack" role="img" aria-label="Luna: Personal 27%, Ideas 0%, Facturas 34%, None 39%"><span class="seg other" style="width:27%">Personal 27%</span><span class="seg target" style="width:34%">Facturas 34%</span><span class="seg wrong" style="width:39.00000000000001%">None 39%</span></div>
+    <div class="model-name">Luna Decisions</div>
+    <div class="stack" role="img" aria-label="Luna Decisions: Personal 27%, Ideas 0%, Facturas 34%, None 39%"><span class="seg other" style="width:27%">Personal 27%</span><span class="seg target" style="width:34%">Facturas 34%</span><span class="seg wrong" style="width:39.00000000000001%">None 39%</span></div>
     <div class="verdict miss"><span aria-hidden="true">✗</span> None · 0/10</div>
+  </div>
+    <p class="kind-label">Text models · how the 10 runs split</p>
+    <div class="answer-row text">
+    <div class="model-name">GPT-6 Luna</div>
+    <div class="stack" role="img" aria-label="GPT-6 Luna: Personal 0%, Ideas 0%, Facturas 100%, None 0%"><span class="seg target" style="width:100%">Facturas 10/10</span></div>
+    <div class="verdict ok"><span aria-hidden="true">✓</span> Facturas · 10/10</div>
+  </div><div class="answer-row text">
+    <div class="model-name">Haiku 5.5</div>
+    <div class="stack" role="img" aria-label="Haiku 5.5: Personal 0%, Ideas 0%, Facturas 100%, None 0%"><span class="seg target" style="width:100%">Facturas 10/10</span></div>
+    <div class="verdict ok"><span aria-hidden="true">✓</span> Facturas · 10/10</div>
   </div>
   </div>
 </article><article class="case">
@@ -457,9 +660,19 @@ and each test changes one variable: the language, the folder's name, the user's 
     <div class="stack" role="img" aria-label="jev: Personal 8%, Ideas 0%, Facturas 91%, None 1%"><span class="seg other" style="width:7.7%"></span><span class="seg target" style="width:91.3%">Facturas 91%</span><span class="seg other" style="width:0.9999999999999999%"></span></div>
     <div class="verdict ok"><span aria-hidden="true">✓</span> Facturas · 10/10</div>
   </div><div class="answer-row">
-    <div class="model-name">Luna</div>
-    <div class="stack" role="img" aria-label="Luna: Personal 37%, Ideas 1%, Facturas 29%, None 33%"><span class="seg wrong" style="width:37.00000000000001%">Personal 37%</span><span class="seg other" style="width:0.9999999999999999%"></span><span class="seg target" style="width:28.999999999999996%">Facturas 29%</span><span class="seg other" style="width:33%">None 33%</span></div>
+    <div class="model-name">Luna Decisions</div>
+    <div class="stack" role="img" aria-label="Luna Decisions: Personal 37%, Ideas 1%, Facturas 29%, None 33%"><span class="seg wrong" style="width:37.00000000000001%">Personal 37%</span><span class="seg other" style="width:0.9999999999999999%"></span><span class="seg target" style="width:28.999999999999996%">Facturas 29%</span><span class="seg other" style="width:33%">None 33%</span></div>
     <div class="verdict miss"><span aria-hidden="true">✗</span> Personal · 0/10</div>
+  </div>
+    <p class="kind-label">Text models · how the 10 runs split</p>
+    <div class="answer-row text">
+    <div class="model-name">GPT-6 Luna</div>
+    <div class="stack" role="img" aria-label="GPT-6 Luna: Personal 0%, Ideas 0%, Facturas 100%, None 0%"><span class="seg target" style="width:100%">Facturas 10/10</span></div>
+    <div class="verdict ok"><span aria-hidden="true">✓</span> Facturas · 10/10</div>
+  </div><div class="answer-row text">
+    <div class="model-name">Haiku 5.5</div>
+    <div class="stack" role="img" aria-label="Haiku 5.5: Personal 0%, Ideas 0%, Facturas 100%, None 0%"><span class="seg target" style="width:100%">Facturas 10/10</span></div>
+    <div class="verdict ok"><span aria-hidden="true">✓</span> Facturas · 10/10</div>
   </div>
   </div>
 </article></div>
@@ -469,10 +682,11 @@ and each test changes one variable: the language, the folder's name, the user's 
 </section><section class="q" id="repeat">
   <p class="eyebrow">Check</p>
   <h2>Do the answers repeat?</h2>
-  <p class="answer">Yes. Neither model changed its pick between runs.</p>
+  <p class="answer">Both decision models, yes: neither changed its pick between runs. The text models changed it in
+      5 and 2 cases.</p>
   <p>Every case ran 10 times.</p>
-  <div class="scroll"><table><thead><tr><th>Model</th><th>Pick changed</th><th>Largest swing in a probability</th></tr></thead><tbody><tr><td>jev</td><td class="data">0 of 25 cases</td><td class="data">0.11</td></tr><tr><td>GPT-6 Luna Decisions</td><td class="data">0 of 25 cases</td><td class="data">0.00</td></tr></tbody></table></div>
-  <p class="after">Luna returns exactly the same numbers every time. jev's move a little.</p>
+  <div class="scroll"><table><thead><tr><th>Model</th><th>Pick changed</th><th>Largest swing in a probability</th></tr></thead><tbody><tr><td>jev</td><td class="data">0 of 25 cases</td><td class="data">0.11</td></tr><tr><td>GPT-6 Luna Decisions</td><td class="data">0 of 25 cases</td><td class="data">0.00</td></tr><tr><td>GPT-6 Luna</td><td class="data">5 of 25 cases</td><td class="data">no probabilities</td></tr><tr><td>Claude Haiku 5.5</td><td class="data">2 of 25 cases</td><td class="data">no probabilities</td></tr></tbody></table></div>
+  <p class="after">Luna Decisions returns exactly the same numbers every time. jev's move a little.</p>
 </section>
 
 <section class="q" id="conclusions">
@@ -485,16 +699,23 @@ and each test changes one variable: the language, the folder's name, the user's 
   58%–67%, and climbs back to 84%–88% once the
   assistant's reply says “invoices”. The word moves jev's confidence, not its answer. In Spanish, where Facturas is
   the everyday word, it stays at 91%–98%.</li><li><b>Without the folder's word, Luna struggles even with an obvious match.</b> When the user says “phone service”,
-  Luna gets Bills 40/50 and Invoices 0/50.</li><li><b>The carrier is not the cause.</b> With Verizon and T-Mobile instead of Personal Flow, Luna leans further towards
+  Luna gets Bills 40/50 and Invoices 0/50.</li><li><b>The weakness is specific to Luna Decisions.</b> The same GPT-6 Luna, asked as a text model, gets
+  242/250, and Claude Haiku 5.5 gets 241/250.
+  Every miss of theirs is the Invoices folder going to Personal, the same cases where jev's confidence drops. They
+  return no probabilities and are slower: a median of 1.4 s and 1.0 s per call, against
+  0.2 s for jev.</li><li><b>The carrier is not the cause.</b> With Verizon and T-Mobile instead of Personal Flow, Luna leans further towards
   the Personal folder, not less.</li><li><b>For this feature,</b> a folder suggestion should not depend on the user typing the folder's exact name. In
-  this test, only jev met that bar.</li></ol>
+  this test, jev met it in every run. The text models missed it in 8 and
+  9 runs of 250.</li></ol>
 </section>
 
 <section class="q" id="limits">
   <h2>Limits</h2>
   <ul>
     <li>One topic, hand-written messages, one wording of the question, three folders. It shows a pattern, not a
-    general ranking of the two models.</li>
+    general ranking of these models.</li>
+    <li>The text models get one prompt, written for this test, with the gateway's default settings. Another
+    wording could change their numbers.</li>
     <li>jev varies between runs, so a rerun will not give exactly these numbers.</li>
     <li><code>experimental_decide</code> is experimental in the AI SDK, and the Decisions API is in beta.</li>
   </ul>
@@ -502,29 +723,30 @@ and each test changes one variable: the language, the folder's name, the user's 
 
 <details>
   <summary>Every probability, for every case</summary>
-  <p class="note">Mean over 10 runs; the highlighted cell is the model's pick. Min–max ranges are in
+  <p class="note">Mean probability over 10 runs for the decision models, and the share of runs that picked
+  each option for the text models; the highlighted cell is the model's pick. Min–max ranges are in
   <a href="results/results.md">results.md</a>, every call in <a href="results/raw.json">raw.json</a>, and the exact
   messages in <a href="https://github.com/NicoGrapsas/ai-bench-lab/blob/main/benchmarks/decision-models/phone-spending-folders/bench.mjs">bench.mjs</a>.</p>
   <h3>Spanish · Personal / Ideas / Facturas</h3><div class="scroll"><table class="options">
   <thead><tr><th>Model</th><th>Personal</th><th>Ideas</th><th>Facturas</th><th>None</th></tr></thead>
-  <tbody><tr><th scope="rowgroup" colspan="5" class="conv"><span class="turn user"><span class="who">User</span>cuanto estoy gastando en telefonia por mes? tengo movistar y personal flow<span class="tr">how much am I spending on my phone each month? I have Movistar and Personal Flow</span></span></th></tr><tr><td class="model">jev</td><td class="num">0.07</td><td class="num">0.00</td><td class="num win ok">✓ 0.92</td><td class="num">0.01</td></tr><tr><td class="model">Luna</td><td class="num">0.27</td><td class="num">0.00</td><td class="num">0.34</td><td class="num win miss">✗ 0.39</td></tr><tr><th scope="rowgroup" colspan="5" class="conv"><span class="turn user"><span class="who">User</span>cuanto estoy gastando en telefonia por mes?<span class="tr">how much am I spending on my phone each month?</span></span></th></tr><tr><td class="model">jev</td><td class="num">0.04</td><td class="num">0.00</td><td class="num win ok">✓ 0.95</td><td class="num">0.01</td></tr><tr><td class="model">Luna</td><td class="num">0.11</td><td class="num">0.01</td><td class="num">0.37</td><td class="num win miss">✗ 0.51</td></tr><tr><th scope="rowgroup" colspan="5" class="conv"><span class="turn user"><span class="who">User</span>cuanto estoy gastando en telefonia por mes? tengo movistar y personal flow<span class="tr">how much am I spending on my phone each month? I have Movistar and Personal Flow</span></span><span class="turn assistant"><span class="who">Assistant</span>Para calcularlo sumá tus facturas mensuales de Movistar y Personal Flow. …<span class="tr">To work it out, add up your monthly bills (facturas) from Movistar and Personal Flow. …</span></span></th></tr><tr><td class="model">jev</td><td class="num">0.03</td><td class="num">0.00</td><td class="num win ok">✓ 0.97</td><td class="num">0.00</td></tr><tr><td class="model">Luna</td><td class="num">0.24</td><td class="num">0.00</td><td class="num">0.37</td><td class="num win miss">✗ 0.39</td></tr><tr><th scope="rowgroup" colspan="5" class="conv"><span class="turn user"><span class="who">User</span>cuanto estoy gastando en telefonia por mes? tengo verizon y t-mobile<span class="tr">how much am I spending on my phone each month? I have Verizon and T-Mobile</span></span></th></tr><tr><td class="model">jev</td><td class="num">0.08</td><td class="num">0.00</td><td class="num win ok">✓ 0.91</td><td class="num">0.01</td></tr><tr><td class="model">Luna</td><td class="num win miss">✗ 0.37</td><td class="num">0.01</td><td class="num">0.29</td><td class="num">0.33</td></tr><tr><th scope="rowgroup" colspan="5" class="conv"><span class="turn user"><span class="who">User</span>cuanto estoy gastando en telefonia por mes? tengo verizon y t-mobile<span class="tr">how much am I spending on my phone each month? I have Verizon and T-Mobile</span></span><span class="turn assistant"><span class="who">Assistant</span>Para calcularlo sumá tus facturas mensuales de Verizon y T-Mobile. …<span class="tr">To work it out, add up your monthly bills (facturas) from Verizon and T-Mobile. …</span></span></th></tr><tr><td class="model">jev</td><td class="num">0.02</td><td class="num">0.00</td><td class="num win ok">✓ 0.98</td><td class="num">0.00</td></tr><tr><td class="model">Luna</td><td class="num">0.15</td><td class="num">0.00</td><td class="num win ok">✓ 0.57</td><td class="num">0.28</td></tr></tbody>
+  <tbody><tr><th scope="rowgroup" colspan="5" class="conv"><span class="turn user"><span class="who">User</span>cuanto estoy gastando en telefonia por mes? tengo movistar y personal flow<span class="tr">how much am I spending on my phone each month? I have Movistar and Personal Flow</span></span></th></tr><tr><td class="model">jev</td><td class="num">0.07</td><td class="num">0.00</td><td class="num win ok">✓ 0.92</td><td class="num">0.01</td></tr><tr><td class="model">Luna Decisions</td><td class="num">0.27</td><td class="num">0.00</td><td class="num">0.34</td><td class="num win miss">✗ 0.39</td></tr><tr><td class="model">GPT-6 Luna</td><td class="num">0.00</td><td class="num">0.00</td><td class="num win ok">✓ 1.00</td><td class="num">0.00</td></tr><tr><td class="model">Haiku 5.5</td><td class="num">0.00</td><td class="num">0.00</td><td class="num win ok">✓ 1.00</td><td class="num">0.00</td></tr><tr><th scope="rowgroup" colspan="5" class="conv"><span class="turn user"><span class="who">User</span>cuanto estoy gastando en telefonia por mes?<span class="tr">how much am I spending on my phone each month?</span></span></th></tr><tr><td class="model">jev</td><td class="num">0.04</td><td class="num">0.00</td><td class="num win ok">✓ 0.95</td><td class="num">0.01</td></tr><tr><td class="model">Luna Decisions</td><td class="num">0.11</td><td class="num">0.01</td><td class="num">0.37</td><td class="num win miss">✗ 0.51</td></tr><tr><td class="model">GPT-6 Luna</td><td class="num">0.00</td><td class="num">0.00</td><td class="num win ok">✓ 1.00</td><td class="num">0.00</td></tr><tr><td class="model">Haiku 5.5</td><td class="num">0.00</td><td class="num">0.00</td><td class="num win ok">✓ 1.00</td><td class="num">0.00</td></tr><tr><th scope="rowgroup" colspan="5" class="conv"><span class="turn user"><span class="who">User</span>cuanto estoy gastando en telefonia por mes? tengo movistar y personal flow<span class="tr">how much am I spending on my phone each month? I have Movistar and Personal Flow</span></span><span class="turn assistant"><span class="who">Assistant</span>Para calcularlo sumá tus facturas mensuales de Movistar y Personal Flow. …<span class="tr">To work it out, add up your monthly bills (facturas) from Movistar and Personal Flow. …</span></span></th></tr><tr><td class="model">jev</td><td class="num">0.03</td><td class="num">0.00</td><td class="num win ok">✓ 0.97</td><td class="num">0.00</td></tr><tr><td class="model">Luna Decisions</td><td class="num">0.24</td><td class="num">0.00</td><td class="num">0.37</td><td class="num win miss">✗ 0.39</td></tr><tr><td class="model">GPT-6 Luna</td><td class="num">0.00</td><td class="num">0.00</td><td class="num win ok">✓ 1.00</td><td class="num">0.00</td></tr><tr><td class="model">Haiku 5.5</td><td class="num">0.00</td><td class="num">0.00</td><td class="num win ok">✓ 1.00</td><td class="num">0.00</td></tr><tr><th scope="rowgroup" colspan="5" class="conv"><span class="turn user"><span class="who">User</span>cuanto estoy gastando en telefonia por mes? tengo verizon y t-mobile<span class="tr">how much am I spending on my phone each month? I have Verizon and T-Mobile</span></span></th></tr><tr><td class="model">jev</td><td class="num">0.08</td><td class="num">0.00</td><td class="num win ok">✓ 0.91</td><td class="num">0.01</td></tr><tr><td class="model">Luna Decisions</td><td class="num win miss">✗ 0.37</td><td class="num">0.01</td><td class="num">0.29</td><td class="num">0.33</td></tr><tr><td class="model">GPT-6 Luna</td><td class="num">0.00</td><td class="num">0.00</td><td class="num win ok">✓ 1.00</td><td class="num">0.00</td></tr><tr><td class="model">Haiku 5.5</td><td class="num">0.00</td><td class="num">0.00</td><td class="num win ok">✓ 1.00</td><td class="num">0.00</td></tr><tr><th scope="rowgroup" colspan="5" class="conv"><span class="turn user"><span class="who">User</span>cuanto estoy gastando en telefonia por mes? tengo verizon y t-mobile<span class="tr">how much am I spending on my phone each month? I have Verizon and T-Mobile</span></span><span class="turn assistant"><span class="who">Assistant</span>Para calcularlo sumá tus facturas mensuales de Verizon y T-Mobile. …<span class="tr">To work it out, add up your monthly bills (facturas) from Verizon and T-Mobile. …</span></span></th></tr><tr><td class="model">jev</td><td class="num">0.02</td><td class="num">0.00</td><td class="num win ok">✓ 0.98</td><td class="num">0.00</td></tr><tr><td class="model">Luna Decisions</td><td class="num">0.15</td><td class="num">0.00</td><td class="num win ok">✓ 0.57</td><td class="num">0.28</td></tr><tr><td class="model">GPT-6 Luna</td><td class="num">0.00</td><td class="num">0.00</td><td class="num win ok">✓ 1.00</td><td class="num">0.00</td></tr><tr><td class="model">Haiku 5.5</td><td class="num">0.00</td><td class="num">0.00</td><td class="num win ok">✓ 1.00</td><td class="num">0.00</td></tr></tbody>
 </table></div><h3>English (&quot;phone bills&quot;) · Personal / Ideas / Invoices</h3><div class="scroll"><table class="options">
   <thead><tr><th>Model</th><th>Personal</th><th>Ideas</th><th>Invoices</th><th>None</th></tr></thead>
-  <tbody><tr><th scope="rowgroup" colspan="5" class="conv"><span class="turn user"><span class="who">User</span>how much am I spending on my phone bills each month? I have Movistar and Personal Flow</span></th></tr><tr><td class="model">jev</td><td class="num">0.30</td><td class="num">0.00</td><td class="num win ok">✓ 0.67</td><td class="num">0.03</td></tr><tr><td class="model">Luna</td><td class="num">0.28</td><td class="num">0.02</td><td class="num">0.23</td><td class="num win miss">✗ 0.47</td></tr><tr><th scope="rowgroup" colspan="5" class="conv"><span class="turn user"><span class="who">User</span>how much am I spending on my phone bills each month?</span></th></tr><tr><td class="model">jev</td><td class="num">0.39</td><td class="num">0.00</td><td class="num win ok">✓ 0.59</td><td class="num">0.03</td></tr><tr><td class="model">Luna</td><td class="num">0.33</td><td class="num">0.01</td><td class="num">0.01</td><td class="num win miss">✗ 0.65</td></tr><tr><th scope="rowgroup" colspan="5" class="conv"><span class="turn user"><span class="who">User</span>how much am I spending on my phone bills each month? I have Movistar and Personal Flow</span><span class="turn assistant"><span class="who">Assistant</span>To work it out, add up your monthly invoices from Movistar and Personal Flow. …</span></th></tr><tr><td class="model">jev</td><td class="num">0.11</td><td class="num">0.00</td><td class="num win ok">✓ 0.88</td><td class="num">0.01</td></tr><tr><td class="model">Luna</td><td class="num">0.17</td><td class="num">0.01</td><td class="num win ok">✓ 0.49</td><td class="num">0.33</td></tr><tr><th scope="rowgroup" colspan="5" class="conv"><span class="turn user"><span class="who">User</span>how much am I spending on my phone bills each month? I have Verizon and T-Mobile</span></th></tr><tr><td class="model">jev</td><td class="num">0.40</td><td class="num">0.00</td><td class="num win ok">✓ 0.58</td><td class="num">0.02</td></tr><tr><td class="model">Luna</td><td class="num">0.46</td><td class="num">0.01</td><td class="num">0.01</td><td class="num win miss">✗ 0.52</td></tr><tr><th scope="rowgroup" colspan="5" class="conv"><span class="turn user"><span class="who">User</span>how much am I spending on my phone bills each month? I have Verizon and T-Mobile</span><span class="turn assistant"><span class="who">Assistant</span>To work it out, add up your monthly invoices from Verizon and T-Mobile. …</span></th></tr><tr><td class="model">jev</td><td class="num">0.15</td><td class="num">0.00</td><td class="num win ok">✓ 0.84</td><td class="num">0.01</td></tr><tr><td class="model">Luna</td><td class="num">0.31</td><td class="num">0.01</td><td class="num">0.22</td><td class="num win miss">✗ 0.46</td></tr></tbody>
+  <tbody><tr><th scope="rowgroup" colspan="5" class="conv"><span class="turn user"><span class="who">User</span>how much am I spending on my phone bills each month? I have Movistar and Personal Flow</span></th></tr><tr><td class="model">jev</td><td class="num">0.30</td><td class="num">0.00</td><td class="num win ok">✓ 0.67</td><td class="num">0.03</td></tr><tr><td class="model">Luna Decisions</td><td class="num">0.28</td><td class="num">0.02</td><td class="num">0.23</td><td class="num win miss">✗ 0.47</td></tr><tr><td class="model">GPT-6 Luna</td><td class="num">0.00</td><td class="num">0.00</td><td class="num win ok">✓ 1.00</td><td class="num">0.00</td></tr><tr><td class="model">Haiku 5.5</td><td class="num">0.00</td><td class="num">0.00</td><td class="num win ok">✓ 1.00</td><td class="num">0.00</td></tr><tr><th scope="rowgroup" colspan="5" class="conv"><span class="turn user"><span class="who">User</span>how much am I spending on my phone bills each month?</span></th></tr><tr><td class="model">jev</td><td class="num">0.39</td><td class="num">0.00</td><td class="num win ok">✓ 0.59</td><td class="num">0.03</td></tr><tr><td class="model">Luna Decisions</td><td class="num">0.33</td><td class="num">0.01</td><td class="num">0.01</td><td class="num win miss">✗ 0.65</td></tr><tr><td class="model">GPT-6 Luna</td><td class="num">0.20</td><td class="num">0.00</td><td class="num win ok">✓ 0.80</td><td class="num">0.00</td></tr><tr><td class="model">Haiku 5.5</td><td class="num">0.00</td><td class="num">0.00</td><td class="num win ok">✓ 1.00</td><td class="num">0.00</td></tr><tr><th scope="rowgroup" colspan="5" class="conv"><span class="turn user"><span class="who">User</span>how much am I spending on my phone bills each month? I have Movistar and Personal Flow</span><span class="turn assistant"><span class="who">Assistant</span>To work it out, add up your monthly invoices from Movistar and Personal Flow. …</span></th></tr><tr><td class="model">jev</td><td class="num">0.11</td><td class="num">0.00</td><td class="num win ok">✓ 0.88</td><td class="num">0.01</td></tr><tr><td class="model">Luna Decisions</td><td class="num">0.17</td><td class="num">0.01</td><td class="num win ok">✓ 0.49</td><td class="num">0.33</td></tr><tr><td class="model">GPT-6 Luna</td><td class="num">0.00</td><td class="num">0.00</td><td class="num win ok">✓ 1.00</td><td class="num">0.00</td></tr><tr><td class="model">Haiku 5.5</td><td class="num">0.00</td><td class="num">0.00</td><td class="num win ok">✓ 1.00</td><td class="num">0.00</td></tr><tr><th scope="rowgroup" colspan="5" class="conv"><span class="turn user"><span class="who">User</span>how much am I spending on my phone bills each month? I have Verizon and T-Mobile</span></th></tr><tr><td class="model">jev</td><td class="num">0.40</td><td class="num">0.00</td><td class="num win ok">✓ 0.58</td><td class="num">0.02</td></tr><tr><td class="model">Luna Decisions</td><td class="num">0.46</td><td class="num">0.01</td><td class="num">0.01</td><td class="num win miss">✗ 0.52</td></tr><tr><td class="model">GPT-6 Luna</td><td class="num">0.00</td><td class="num">0.00</td><td class="num win ok">✓ 1.00</td><td class="num">0.00</td></tr><tr><td class="model">Haiku 5.5</td><td class="num">0.00</td><td class="num">0.00</td><td class="num win ok">✓ 1.00</td><td class="num">0.00</td></tr><tr><th scope="rowgroup" colspan="5" class="conv"><span class="turn user"><span class="who">User</span>how much am I spending on my phone bills each month? I have Verizon and T-Mobile</span><span class="turn assistant"><span class="who">Assistant</span>To work it out, add up your monthly invoices from Verizon and T-Mobile. …</span></th></tr><tr><td class="model">jev</td><td class="num">0.15</td><td class="num">0.00</td><td class="num win ok">✓ 0.84</td><td class="num">0.01</td></tr><tr><td class="model">Luna Decisions</td><td class="num">0.31</td><td class="num">0.01</td><td class="num">0.22</td><td class="num win miss">✗ 0.46</td></tr><tr><td class="model">GPT-6 Luna</td><td class="num">0.10</td><td class="num">0.00</td><td class="num win ok">✓ 0.90</td><td class="num">0.00</td></tr><tr><td class="model">Haiku 5.5</td><td class="num">0.00</td><td class="num">0.00</td><td class="num win ok">✓ 1.00</td><td class="num">0.00</td></tr></tbody>
 </table></div><h3>English (&quot;phone bills&quot;) · Personal / Ideas / Bills</h3><div class="scroll"><table class="options">
   <thead><tr><th>Model</th><th>Personal</th><th>Ideas</th><th>Bills</th><th>None</th></tr></thead>
-  <tbody><tr><th scope="rowgroup" colspan="5" class="conv"><span class="turn user"><span class="who">User</span>how much am I spending on my phone bills each month? I have Movistar and Personal Flow</span></th></tr><tr><td class="model">jev</td><td class="num">0.00</td><td class="num">0.00</td><td class="num win ok">✓ 1.00</td><td class="num">0.00</td></tr><tr><td class="model">Luna</td><td class="num">0.01</td><td class="num">0.00</td><td class="num win ok">✓ 0.95</td><td class="num">0.04</td></tr><tr><th scope="rowgroup" colspan="5" class="conv"><span class="turn user"><span class="who">User</span>how much am I spending on my phone bills each month?</span></th></tr><tr><td class="model">jev</td><td class="num">0.00</td><td class="num">0.00</td><td class="num win ok">✓ 1.00</td><td class="num">0.00</td></tr><tr><td class="model">Luna</td><td class="num">0.02</td><td class="num">0.00</td><td class="num win ok">✓ 0.87</td><td class="num">0.11</td></tr><tr><th scope="rowgroup" colspan="5" class="conv"><span class="turn user"><span class="who">User</span>how much am I spending on my phone bills each month? I have Movistar and Personal Flow</span><span class="turn assistant"><span class="who">Assistant</span>To work it out, add up your monthly invoices from Movistar and Personal Flow. …</span></th></tr><tr><td class="model">jev</td><td class="num">0.00</td><td class="num">0.00</td><td class="num win ok">✓ 1.00</td><td class="num">0.00</td></tr><tr><td class="model">Luna</td><td class="num">0.01</td><td class="num">0.00</td><td class="num win ok">✓ 0.98</td><td class="num">0.01</td></tr><tr><th scope="rowgroup" colspan="5" class="conv"><span class="turn user"><span class="who">User</span>how much am I spending on my phone bills each month? I have Verizon and T-Mobile</span></th></tr><tr><td class="model">jev</td><td class="num">0.00</td><td class="num">0.00</td><td class="num win ok">✓ 1.00</td><td class="num">0.00</td></tr><tr><td class="model">Luna</td><td class="num">0.00</td><td class="num">0.00</td><td class="num win ok">✓ 0.99</td><td class="num">0.01</td></tr><tr><th scope="rowgroup" colspan="5" class="conv"><span class="turn user"><span class="who">User</span>how much am I spending on my phone bills each month? I have Verizon and T-Mobile</span><span class="turn assistant"><span class="who">Assistant</span>To work it out, add up your monthly invoices from Verizon and T-Mobile. …</span></th></tr><tr><td class="model">jev</td><td class="num">0.00</td><td class="num">0.00</td><td class="num win ok">✓ 1.00</td><td class="num">0.00</td></tr><tr><td class="model">Luna</td><td class="num">0.03</td><td class="num">0.00</td><td class="num win ok">✓ 0.84</td><td class="num">0.13</td></tr></tbody>
+  <tbody><tr><th scope="rowgroup" colspan="5" class="conv"><span class="turn user"><span class="who">User</span>how much am I spending on my phone bills each month? I have Movistar and Personal Flow</span></th></tr><tr><td class="model">jev</td><td class="num">0.00</td><td class="num">0.00</td><td class="num win ok">✓ 1.00</td><td class="num">0.00</td></tr><tr><td class="model">Luna Decisions</td><td class="num">0.01</td><td class="num">0.00</td><td class="num win ok">✓ 0.95</td><td class="num">0.04</td></tr><tr><td class="model">GPT-6 Luna</td><td class="num">0.00</td><td class="num">0.00</td><td class="num win ok">✓ 1.00</td><td class="num">0.00</td></tr><tr><td class="model">Haiku 5.5</td><td class="num">0.00</td><td class="num">0.00</td><td class="num win ok">✓ 1.00</td><td class="num">0.00</td></tr><tr><th scope="rowgroup" colspan="5" class="conv"><span class="turn user"><span class="who">User</span>how much am I spending on my phone bills each month?</span></th></tr><tr><td class="model">jev</td><td class="num">0.00</td><td class="num">0.00</td><td class="num win ok">✓ 1.00</td><td class="num">0.00</td></tr><tr><td class="model">Luna Decisions</td><td class="num">0.02</td><td class="num">0.00</td><td class="num win ok">✓ 0.87</td><td class="num">0.11</td></tr><tr><td class="model">GPT-6 Luna</td><td class="num">0.00</td><td class="num">0.00</td><td class="num win ok">✓ 1.00</td><td class="num">0.00</td></tr><tr><td class="model">Haiku 5.5</td><td class="num">0.00</td><td class="num">0.00</td><td class="num win ok">✓ 1.00</td><td class="num">0.00</td></tr><tr><th scope="rowgroup" colspan="5" class="conv"><span class="turn user"><span class="who">User</span>how much am I spending on my phone bills each month? I have Movistar and Personal Flow</span><span class="turn assistant"><span class="who">Assistant</span>To work it out, add up your monthly invoices from Movistar and Personal Flow. …</span></th></tr><tr><td class="model">jev</td><td class="num">0.00</td><td class="num">0.00</td><td class="num win ok">✓ 1.00</td><td class="num">0.00</td></tr><tr><td class="model">Luna Decisions</td><td class="num">0.01</td><td class="num">0.00</td><td class="num win ok">✓ 0.98</td><td class="num">0.01</td></tr><tr><td class="model">GPT-6 Luna</td><td class="num">0.00</td><td class="num">0.00</td><td class="num win ok">✓ 1.00</td><td class="num">0.00</td></tr><tr><td class="model">Haiku 5.5</td><td class="num">0.00</td><td class="num">0.00</td><td class="num win ok">✓ 1.00</td><td class="num">0.00</td></tr><tr><th scope="rowgroup" colspan="5" class="conv"><span class="turn user"><span class="who">User</span>how much am I spending on my phone bills each month? I have Verizon and T-Mobile</span></th></tr><tr><td class="model">jev</td><td class="num">0.00</td><td class="num">0.00</td><td class="num win ok">✓ 1.00</td><td class="num">0.00</td></tr><tr><td class="model">Luna Decisions</td><td class="num">0.00</td><td class="num">0.00</td><td class="num win ok">✓ 0.99</td><td class="num">0.01</td></tr><tr><td class="model">GPT-6 Luna</td><td class="num">0.00</td><td class="num">0.00</td><td class="num win ok">✓ 1.00</td><td class="num">0.00</td></tr><tr><td class="model">Haiku 5.5</td><td class="num">0.00</td><td class="num">0.00</td><td class="num win ok">✓ 1.00</td><td class="num">0.00</td></tr><tr><th scope="rowgroup" colspan="5" class="conv"><span class="turn user"><span class="who">User</span>how much am I spending on my phone bills each month? I have Verizon and T-Mobile</span><span class="turn assistant"><span class="who">Assistant</span>To work it out, add up your monthly invoices from Verizon and T-Mobile. …</span></th></tr><tr><td class="model">jev</td><td class="num">0.00</td><td class="num">0.00</td><td class="num win ok">✓ 1.00</td><td class="num">0.00</td></tr><tr><td class="model">Luna Decisions</td><td class="num">0.03</td><td class="num">0.00</td><td class="num win ok">✓ 0.84</td><td class="num">0.13</td></tr><tr><td class="model">GPT-6 Luna</td><td class="num">0.00</td><td class="num">0.00</td><td class="num win ok">✓ 1.00</td><td class="num">0.00</td></tr><tr><td class="model">Haiku 5.5</td><td class="num">0.00</td><td class="num">0.00</td><td class="num win ok">✓ 1.00</td><td class="num">0.00</td></tr></tbody>
 </table></div><h3>English (&quot;phone service&quot;) · Personal / Ideas / Invoices</h3><div class="scroll"><table class="options">
   <thead><tr><th>Model</th><th>Personal</th><th>Ideas</th><th>Invoices</th><th>None</th></tr></thead>
-  <tbody><tr><th scope="rowgroup" colspan="5" class="conv"><span class="turn user"><span class="who">User</span>how much am I spending on phone service each month? I have Movistar and Personal Flow</span></th></tr><tr><td class="model">jev</td><td class="num">0.27</td><td class="num">0.00</td><td class="num win ok">✓ 0.70</td><td class="num">0.03</td></tr><tr><td class="model">Luna</td><td class="num">0.35</td><td class="num">0.01</td><td class="num">0.05</td><td class="num win miss">✗ 0.59</td></tr><tr><th scope="rowgroup" colspan="5" class="conv"><span class="turn user"><span class="who">User</span>how much am I spending on phone service each month?</span></th></tr><tr><td class="model">jev</td><td class="num">0.33</td><td class="num">0.00</td><td class="num win ok">✓ 0.65</td><td class="num">0.02</td></tr><tr><td class="model">Luna</td><td class="num">0.13</td><td class="num">0.02</td><td class="num">0.01</td><td class="num win miss">✗ 0.84</td></tr><tr><th scope="rowgroup" colspan="5" class="conv"><span class="turn user"><span class="who">User</span>how much am I spending on phone service each month? I have Movistar and Personal Flow</span><span class="turn assistant"><span class="who">Assistant</span>To work it out, add up your monthly invoices from Movistar and Personal Flow. …</span></th></tr><tr><td class="model">jev</td><td class="num">0.12</td><td class="num">0.00</td><td class="num win ok">✓ 0.87</td><td class="num">0.01</td></tr><tr><td class="model">Luna</td><td class="num win miss">✗ 0.41</td><td class="num">0.01</td><td class="num">0.40</td><td class="num">0.18</td></tr><tr><th scope="rowgroup" colspan="5" class="conv"><span class="turn user"><span class="who">User</span>how much am I spending on phone service each month? I have Verizon and T-Mobile</span></th></tr><tr><td class="model">jev</td><td class="num">0.39</td><td class="num">0.00</td><td class="num win ok">✓ 0.58</td><td class="num">0.02</td></tr><tr><td class="model">Luna</td><td class="num">0.46</td><td class="num">0.02</td><td class="num">0.02</td><td class="num win miss">✗ 0.50</td></tr><tr><th scope="rowgroup" colspan="5" class="conv"><span class="turn user"><span class="who">User</span>how much am I spending on phone service each month? I have Verizon and T-Mobile</span><span class="turn assistant"><span class="who">Assistant</span>To work it out, add up your monthly invoices from Verizon and T-Mobile. …</span></th></tr><tr><td class="model">jev</td><td class="num">0.14</td><td class="num">0.00</td><td class="num win ok">✓ 0.85</td><td class="num">0.01</td></tr><tr><td class="model">Luna</td><td class="num win miss">✗ 0.44</td><td class="num">0.01</td><td class="num">0.15</td><td class="num">0.40</td></tr></tbody>
+  <tbody><tr><th scope="rowgroup" colspan="5" class="conv"><span class="turn user"><span class="who">User</span>how much am I spending on phone service each month? I have Movistar and Personal Flow</span></th></tr><tr><td class="model">jev</td><td class="num">0.27</td><td class="num">0.00</td><td class="num win ok">✓ 0.70</td><td class="num">0.03</td></tr><tr><td class="model">Luna Decisions</td><td class="num">0.35</td><td class="num">0.01</td><td class="num">0.05</td><td class="num win miss">✗ 0.59</td></tr><tr><td class="model">GPT-6 Luna</td><td class="num">0.10</td><td class="num">0.00</td><td class="num win ok">✓ 0.90</td><td class="num">0.00</td></tr><tr><td class="model">Haiku 5.5</td><td class="num">0.00</td><td class="num">0.00</td><td class="num win ok">✓ 1.00</td><td class="num">0.00</td></tr><tr><th scope="rowgroup" colspan="5" class="conv"><span class="turn user"><span class="who">User</span>how much am I spending on phone service each month?</span></th></tr><tr><td class="model">jev</td><td class="num">0.33</td><td class="num">0.00</td><td class="num win ok">✓ 0.65</td><td class="num">0.02</td></tr><tr><td class="model">Luna Decisions</td><td class="num">0.13</td><td class="num">0.02</td><td class="num">0.01</td><td class="num win miss">✗ 0.84</td></tr><tr><td class="model">GPT-6 Luna</td><td class="num">0.30</td><td class="num">0.00</td><td class="num win ok">✓ 0.70</td><td class="num">0.00</td></tr><tr><td class="model">Haiku 5.5</td><td class="num win miss">✗ 0.50</td><td class="num">0.00</td><td class="num">0.50</td><td class="num">0.00</td></tr><tr><th scope="rowgroup" colspan="5" class="conv"><span class="turn user"><span class="who">User</span>how much am I spending on phone service each month? I have Movistar and Personal Flow</span><span class="turn assistant"><span class="who">Assistant</span>To work it out, add up your monthly invoices from Movistar and Personal Flow. …</span></th></tr><tr><td class="model">jev</td><td class="num">0.12</td><td class="num">0.00</td><td class="num win ok">✓ 0.87</td><td class="num">0.01</td></tr><tr><td class="model">Luna Decisions</td><td class="num win miss">✗ 0.41</td><td class="num">0.01</td><td class="num">0.40</td><td class="num">0.18</td></tr><tr><td class="model">GPT-6 Luna</td><td class="num">0.00</td><td class="num">0.00</td><td class="num win ok">✓ 1.00</td><td class="num">0.00</td></tr><tr><td class="model">Haiku 5.5</td><td class="num">0.00</td><td class="num">0.00</td><td class="num win ok">✓ 1.00</td><td class="num">0.00</td></tr><tr><th scope="rowgroup" colspan="5" class="conv"><span class="turn user"><span class="who">User</span>how much am I spending on phone service each month? I have Verizon and T-Mobile</span></th></tr><tr><td class="model">jev</td><td class="num">0.39</td><td class="num">0.00</td><td class="num win ok">✓ 0.58</td><td class="num">0.02</td></tr><tr><td class="model">Luna Decisions</td><td class="num">0.46</td><td class="num">0.02</td><td class="num">0.02</td><td class="num win miss">✗ 0.50</td></tr><tr><td class="model">GPT-6 Luna</td><td class="num">0.10</td><td class="num">0.00</td><td class="num win ok">✓ 0.90</td><td class="num">0.00</td></tr><tr><td class="model">Haiku 5.5</td><td class="num">0.40</td><td class="num">0.00</td><td class="num win ok">✓ 0.60</td><td class="num">0.00</td></tr><tr><th scope="rowgroup" colspan="5" class="conv"><span class="turn user"><span class="who">User</span>how much am I spending on phone service each month? I have Verizon and T-Mobile</span><span class="turn assistant"><span class="who">Assistant</span>To work it out, add up your monthly invoices from Verizon and T-Mobile. …</span></th></tr><tr><td class="model">jev</td><td class="num">0.14</td><td class="num">0.00</td><td class="num win ok">✓ 0.85</td><td class="num">0.01</td></tr><tr><td class="model">Luna Decisions</td><td class="num win miss">✗ 0.44</td><td class="num">0.01</td><td class="num">0.15</td><td class="num">0.40</td></tr><tr><td class="model">GPT-6 Luna</td><td class="num">0.00</td><td class="num">0.00</td><td class="num win ok">✓ 1.00</td><td class="num">0.00</td></tr><tr><td class="model">Haiku 5.5</td><td class="num">0.00</td><td class="num">0.00</td><td class="num win ok">✓ 1.00</td><td class="num">0.00</td></tr></tbody>
 </table></div><h3>English (&quot;phone service&quot;) · Personal / Ideas / Bills</h3><div class="scroll"><table class="options">
   <thead><tr><th>Model</th><th>Personal</th><th>Ideas</th><th>Bills</th><th>None</th></tr></thead>
-  <tbody><tr><th scope="rowgroup" colspan="5" class="conv"><span class="turn user"><span class="who">User</span>how much am I spending on phone service each month? I have Movistar and Personal Flow</span></th></tr><tr><td class="model">jev</td><td class="num">0.00</td><td class="num">0.00</td><td class="num win ok">✓ 1.00</td><td class="num">0.00</td></tr><tr><td class="model">Luna</td><td class="num">0.03</td><td class="num">0.01</td><td class="num win ok">✓ 0.71</td><td class="num">0.25</td></tr><tr><th scope="rowgroup" colspan="5" class="conv"><span class="turn user"><span class="who">User</span>how much am I spending on phone service each month?</span></th></tr><tr><td class="model">jev</td><td class="num">0.00</td><td class="num">0.00</td><td class="num win ok">✓ 1.00</td><td class="num">0.00</td></tr><tr><td class="model">Luna</td><td class="num">0.23</td><td class="num">0.01</td><td class="num">0.23</td><td class="num win miss">✗ 0.53</td></tr><tr><th scope="rowgroup" colspan="5" class="conv"><span class="turn user"><span class="who">User</span>how much am I spending on phone service each month? I have Movistar and Personal Flow</span><span class="turn assistant"><span class="who">Assistant</span>To work it out, add up your monthly invoices from Movistar and Personal Flow. …</span></th></tr><tr><td class="model">jev</td><td class="num">0.00</td><td class="num">0.00</td><td class="num win ok">✓ 1.00</td><td class="num">0.00</td></tr><tr><td class="model">Luna</td><td class="num">0.02</td><td class="num">0.00</td><td class="num win ok">✓ 0.92</td><td class="num">0.06</td></tr><tr><th scope="rowgroup" colspan="5" class="conv"><span class="turn user"><span class="who">User</span>how much am I spending on phone service each month? I have Verizon and T-Mobile</span></th></tr><tr><td class="model">jev</td><td class="num">0.00</td><td class="num">0.00</td><td class="num win ok">✓ 1.00</td><td class="num">0.00</td></tr><tr><td class="model">Luna</td><td class="num">0.06</td><td class="num">0.01</td><td class="num win ok">✓ 0.70</td><td class="num">0.23</td></tr><tr><th scope="rowgroup" colspan="5" class="conv"><span class="turn user"><span class="who">User</span>how much am I spending on phone service each month? I have Verizon and T-Mobile</span><span class="turn assistant"><span class="who">Assistant</span>To work it out, add up your monthly invoices from Verizon and T-Mobile. …</span></th></tr><tr><td class="model">jev</td><td class="num">0.00</td><td class="num">0.00</td><td class="num win ok">✓ 1.00</td><td class="num">0.00</td></tr><tr><td class="model">Luna</td><td class="num">0.01</td><td class="num">0.00</td><td class="num win ok">✓ 0.83</td><td class="num">0.16</td></tr></tbody>
+  <tbody><tr><th scope="rowgroup" colspan="5" class="conv"><span class="turn user"><span class="who">User</span>how much am I spending on phone service each month? I have Movistar and Personal Flow</span></th></tr><tr><td class="model">jev</td><td class="num">0.00</td><td class="num">0.00</td><td class="num win ok">✓ 1.00</td><td class="num">0.00</td></tr><tr><td class="model">Luna Decisions</td><td class="num">0.03</td><td class="num">0.01</td><td class="num win ok">✓ 0.71</td><td class="num">0.25</td></tr><tr><td class="model">GPT-6 Luna</td><td class="num">0.00</td><td class="num">0.00</td><td class="num win ok">✓ 1.00</td><td class="num">0.00</td></tr><tr><td class="model">Haiku 5.5</td><td class="num">0.00</td><td class="num">0.00</td><td class="num win ok">✓ 1.00</td><td class="num">0.00</td></tr><tr><th scope="rowgroup" colspan="5" class="conv"><span class="turn user"><span class="who">User</span>how much am I spending on phone service each month?</span></th></tr><tr><td class="model">jev</td><td class="num">0.00</td><td class="num">0.00</td><td class="num win ok">✓ 1.00</td><td class="num">0.00</td></tr><tr><td class="model">Luna Decisions</td><td class="num">0.23</td><td class="num">0.01</td><td class="num">0.23</td><td class="num win miss">✗ 0.53</td></tr><tr><td class="model">GPT-6 Luna</td><td class="num">0.00</td><td class="num">0.00</td><td class="num win ok">✓ 1.00</td><td class="num">0.00</td></tr><tr><td class="model">Haiku 5.5</td><td class="num">0.00</td><td class="num">0.00</td><td class="num win ok">✓ 1.00</td><td class="num">0.00</td></tr><tr><th scope="rowgroup" colspan="5" class="conv"><span class="turn user"><span class="who">User</span>how much am I spending on phone service each month? I have Movistar and Personal Flow</span><span class="turn assistant"><span class="who">Assistant</span>To work it out, add up your monthly invoices from Movistar and Personal Flow. …</span></th></tr><tr><td class="model">jev</td><td class="num">0.00</td><td class="num">0.00</td><td class="num win ok">✓ 1.00</td><td class="num">0.00</td></tr><tr><td class="model">Luna Decisions</td><td class="num">0.02</td><td class="num">0.00</td><td class="num win ok">✓ 0.92</td><td class="num">0.06</td></tr><tr><td class="model">GPT-6 Luna</td><td class="num">0.00</td><td class="num">0.00</td><td class="num win ok">✓ 1.00</td><td class="num">0.00</td></tr><tr><td class="model">Haiku 5.5</td><td class="num">0.00</td><td class="num">0.00</td><td class="num win ok">✓ 1.00</td><td class="num">0.00</td></tr><tr><th scope="rowgroup" colspan="5" class="conv"><span class="turn user"><span class="who">User</span>how much am I spending on phone service each month? I have Verizon and T-Mobile</span></th></tr><tr><td class="model">jev</td><td class="num">0.00</td><td class="num">0.00</td><td class="num win ok">✓ 1.00</td><td class="num">0.00</td></tr><tr><td class="model">Luna Decisions</td><td class="num">0.06</td><td class="num">0.01</td><td class="num win ok">✓ 0.70</td><td class="num">0.23</td></tr><tr><td class="model">GPT-6 Luna</td><td class="num">0.00</td><td class="num">0.00</td><td class="num win ok">✓ 1.00</td><td class="num">0.00</td></tr><tr><td class="model">Haiku 5.5</td><td class="num">0.00</td><td class="num">0.00</td><td class="num win ok">✓ 1.00</td><td class="num">0.00</td></tr><tr><th scope="rowgroup" colspan="5" class="conv"><span class="turn user"><span class="who">User</span>how much am I spending on phone service each month? I have Verizon and T-Mobile</span><span class="turn assistant"><span class="who">Assistant</span>To work it out, add up your monthly invoices from Verizon and T-Mobile. …</span></th></tr><tr><td class="model">jev</td><td class="num">0.00</td><td class="num">0.00</td><td class="num win ok">✓ 1.00</td><td class="num">0.00</td></tr><tr><td class="model">Luna Decisions</td><td class="num">0.01</td><td class="num">0.00</td><td class="num win ok">✓ 0.83</td><td class="num">0.16</td></tr><tr><td class="model">GPT-6 Luna</td><td class="num">0.00</td><td class="num">0.00</td><td class="num win ok">✓ 1.00</td><td class="num">0.00</td></tr><tr><td class="model">Haiku 5.5</td><td class="num">0.00</td><td class="num">0.00</td><td class="num win ok">✓ 1.00</td><td class="num">0.00</td></tr></tbody>
 </table></div>
 </details>
 
 <footer>
-  500 calls on 2026-10-09. Code and how to rerun it:
+  1000 calls on 2026-10-09. Code and how to rerun it:
   <a href="https://github.com/NicoGrapsas/ai-bench-lab">github.com/NicoGrapsas/ai-bench-lab</a>.
  Built by <a href="https://github.com/NicoGrapsas">Nico Grapsas</a> with <a href="https://claude.com/claude-code">Claude Code</a>.</footer>
 </main>

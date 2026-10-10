@@ -17,7 +17,7 @@ probabilities instead of text, through the
 
 | Benchmark | Question | Result |
 |---|---|---|
-| [Which folder does a chat about phone spending go in?](benchmarks/decision-models/phone-spending-folders) | `choice` between the user's folders | jev 250/250 · GPT-6 Luna Decisions 110/250 |
+| [Which folder does a chat about phone spending go in?](benchmarks/decision-models/phone-spending-folders) | `choice` between the user's folders | jev 250/250 · GPT-6 Luna Decisions 110/250 · text models for comparison: GPT-6 Luna 242/250, Claude Haiku 5.5 241/250 |
 
 ## Run them
 

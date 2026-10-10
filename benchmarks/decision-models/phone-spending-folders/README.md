@@ -4,15 +4,18 @@
 
 A chat app suggests which of your folders a conversation belongs in. We asked
 two decision models to make that call, 10 times per case, and changed one
-thing at a time to isolate what changes the answer.
+thing at a time to isolate what changes the answer. Two text models answered
+the same question for comparison.
 
-| Model | Right folder | Price per 1M input tokens |
-|---|---|---|
-| `typesafe-ai/jev` | **250 of 250** runs | $0.042 |
-| `openai/gpt-6-luna-decisions` | **110 of 250** runs | $0.10 |
+| Model | Kind | Right folder | Price per 1M tokens | Median per call |
+|---|---|---|---|---|
+| `typesafe-ai/jev` | decision | **250 of 250** runs | $0.042 input, output free | 0.2 s |
+| `openai/gpt-6-luna-decisions` | decision | **110 of 250** runs | $0.10 input, output free | 0.2 s |
+| `openai/gpt-6-luna` | text | **242 of 250** runs | $0.10 input, $0.50 output | 1.4 s |
+| `anthropic/claude-haiku-5.5` | text | **241 of 250** runs | $0.10 input, $0.50 output | 1.0 s |
 
-Prices from the Vercel AI Gateway model list on 2026-10-09. Neither model
-charges for output.
+Prices from the Vercel AI Gateway model list on 2026-10-09. In this README,
+"Luna" alone means GPT-6 Luna Decisions.
 
 ## The task
 
@@ -30,6 +33,11 @@ the carriers they use, or followed by the assistant's reply.
 
 In the tables, each cell is what the model picked and its probability,
 averaged over 10 runs. ✓ means it is the right folder.
+
+For comparison, two text models, GPT-6 Luna and Claude Haiku 5.5, get the same
+question and options as instructions and answer with one option. They return
+no probabilities, so the tables below show only the decision models; their
+picks for every case are in [`results/results.md`](results/results.md).
 
 ## Where we started: a question in Spanish
 
@@ -108,6 +116,8 @@ personal finance.
 |---|---|---|
 | jev | 0 of 25 | 0.11 |
 | Luna Decisions | 0 of 25 | 0.00 |
+| GPT-6 Luna (text) | 5 of 25 | no probabilities |
+| Claude Haiku 5.5 (text) | 2 of 25 | no probabilities |
 
 Every option's probability for every case is in [the report](https://nicograpsas.github.io/ai-bench-lab/benchmarks/decision-models/phone-spending-folders/)
 and [`results/results.md`](results/results.md); every call is in
@@ -126,15 +136,23 @@ and [`results/results.md`](results/results.md); every call is in
    where Facturas is the everyday word, it stays at 91–98%.
 3. **Without the folder's word, Luna struggles even with an obvious match.**
    When the user says "phone service", Luna gets Bills 40/50 and Invoices 0/50.
-4. **The carrier is not the cause.** With Verizon and T-Mobile instead of
+4. **The weakness is specific to Luna Decisions.** The same GPT-6 Luna, asked
+   as a text model, gets 242/250, and Claude Haiku 5.5 gets 241/250. Every
+   miss of theirs is the Invoices folder going to Personal, the same cases
+   where jev's confidence drops. They return no probabilities and are slower:
+   a median of 1.4 s and 1.0 s per call, against 0.2 s for jev.
+5. **The carrier is not the cause.** With Verizon and T-Mobile instead of
    Personal Flow, Luna leans further towards the Personal folder, not less.
-5. **For this feature,** a folder suggestion should not depend on the user
-   typing the folder's exact name. In this test, only jev met that bar.
+6. **For this feature,** a folder suggestion should not depend on the user
+   typing the folder's exact name. In this test, jev met it in every run. The
+   text models missed it in 8 and 9 runs of 250.
 
 ## Limits
 
 - One topic, hand-written messages, one wording of the question, three
-  folders. It shows a pattern, not a general ranking of the two models.
+  folders. It shows a pattern, not a general ranking of these models.
+- The text models get one prompt, written for this test, with the gateway's
+  default settings. Another wording could change their numbers.
 - jev varies between runs, so a rerun will not give exactly these numbers.
 - `experimental_decide` is experimental in the AI SDK, and the Decisions API is
   in beta.
@@ -142,7 +160,7 @@ and [`results/results.md`](results/results.md); every call is in
 ## Rerun
 
 ```bash
-npm run bench -- decision-models/phone-spending-folders            # 500 calls, well under one cent
+npm run bench -- decision-models/phone-spending-folders            # 1,000 calls, about three cents
 npm run bench -- decision-models/phone-spending-folders --runs 3
 ```
 

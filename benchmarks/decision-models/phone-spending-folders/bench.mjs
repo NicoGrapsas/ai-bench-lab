@@ -1,17 +1,21 @@
 // Which of the user's folders does a chat about phone spending go in?
-// openai/gpt-6-luna-decisions vs typesafe-ai/jev, one `choice` question.
+// Two decision models answer one `choice` question with a probability per
+// option. Two text models answer the same question by naming one option, for
+// comparison: they return a choice and no probabilities.
 //
-// Writes results/raw.json (every call) and results/results.md (tables).
+// Writes results/raw.json, every call; report.mjs builds the tables from it.
 
 import { mkdir, writeFile } from "node:fs/promises";
-import { experimental_decide as decide } from "ai";
-import { gatewayFromEnv, pool, range, runsFromArgs } from "../../../lib/bench.mjs";
+import { experimental_decide as decide, generateText, Output } from "ai";
+import { gatewayFromEnv, pool, runsFromArgs } from "../../../lib/bench.mjs";
 
 const here = new URL(".", import.meta.url);
 const runs = runsFromArgs();
 const gateway = gatewayFromEnv();
 
-const models = ["openai/gpt-6-luna-decisions", "typesafe-ai/jev"];
+const decisionModels = ["openai/gpt-6-luna-decisions", "typesafe-ai/jev"];
+const textModels = ["openai/gpt-6-luna", "anthropic/claude-haiku-5.5"];
+const models = [...decisionModels, ...textModels];
 
 const question =
   "Which of the user's folders does a conversation with these messages belong in?";
@@ -114,6 +118,19 @@ const classify = async (model, folders, state) => {
   return { choice, probabilities, ms: Date.now() - startedAt };
 };
 
+// A text model gets the question and the options as instructions and the
+// conversation as the prompt, and must answer with one option's key.
+const pick = async (model, folders, state) => {
+  const startedAt = Date.now();
+  const { output, usage } = await generateText({
+    model: gateway(model),
+    output: Output.choice({ options: [...folders, noneKey] }),
+    system: `${question}\nOptions: ${folders.join(", ")}, or "${noneKey}" if none of these folders fits.`,
+    prompt: `Messages:\n${state}`,
+  });
+  return { choice: output, ms: Date.now() - startedAt, usage: { input: usage.inputTokens, output: usage.outputTokens } };
+};
+
 const jobs = [];
 for (const scenario of scenarios) {
   for (const [messageId, state] of Object.entries(scenario.messages)) {
@@ -130,44 +147,12 @@ const raw = await pool(jobs, async (job) => ({
   message: job.messageId,
   model: job.model,
   run: job.run,
-  ...(await classify(job.model, job.scenario.folders, job.state)),
+  ...(await (textModels.includes(job.model) ? pick : classify)(job.model, job.scenario.folders, job.state)),
 }));
-
-const shortName = (model) => (model.includes("luna") ? "Luna Decisions" : "jev");
-
-const lines = [
-  "# Results",
-  "",
-  `${runs} runs per message and model. Each cell is the probability the model gave that option, as a min–max range across runs when it varied. "Picks" counts the runs whose top choice was that option.`,
-  "",
-];
-for (const scenario of scenarios) {
-  const options = [...scenario.folders, noneKey];
-  lines.push(`## ${scenario.label}`, "");
-  lines.push(`| Message | Model | Picks | ${options.join(" | ")} |`);
-  lines.push(`|---|---|---|${options.map(() => "---").join("|")}|`);
-  for (const messageId of Object.keys(scenario.messages)) {
-    for (const model of models) {
-      const rows = raw.filter(
-        (r) => r.scenario === scenario.id && r.message === messageId && r.model === model,
-      );
-      const counts = {};
-      for (const r of rows) counts[r.choice] = (counts[r.choice] ?? 0) + 1;
-      const picks = Object.entries(counts)
-        .sort((a, b) => b[1] - a[1])
-        .map(([choice, n]) => `${choice} ${n}/${rows.length}`)
-        .join(", ");
-      const cells = options.map((o) => range(rows.map((r) => r.probabilities?.[o] ?? 0)));
-      lines.push(`| ${messageId} | ${shortName(model)} | ${picks} | ${cells.join(" | ")} |`);
-    }
-  }
-  lines.push("");
-}
 
 await mkdir(new URL("results/", here), { recursive: true });
 await writeFile(
   new URL("results/raw.json", here),
-  `${JSON.stringify({ date: new Date().toISOString(), runs, question, scenarios, results: raw }, null, 2)}\n`,
+  `${JSON.stringify({ date: new Date().toISOString(), runs, question, models: { decision: decisionModels, text: textModels }, scenarios, results: raw }, null, 2)}\n`,
 );
-await writeFile(new URL("results/results.md", here), lines.join("\n"));
-console.log(lines.join("\n"));
+console.log(`results/raw.json: ${raw.length} calls`);

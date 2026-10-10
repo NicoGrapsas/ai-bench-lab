@@ -4,16 +4,30 @@
   "title": "Which folder does a chat about phone spending go in?",
   "task": "choice between the user's folders",
   "date": "2026-10-09",
-  "calls": 500,
+  "calls": 1000,
   "scores": [
     {
       "model": "typesafe-ai/jev",
+      "kind": "decision",
       "right": 250,
       "of": 250
     },
     {
       "model": "openai/gpt-6-luna-decisions",
+      "kind": "decision",
       "right": 110,
+      "of": 250
+    },
+    {
+      "model": "openai/gpt-6-luna",
+      "kind": "text",
+      "right": 242,
+      "of": 250
+    },
+    {
+      "model": "anthropic/claude-haiku-5.5",
+      "kind": "text",
+      "right": 241,
       "of": 250
     }
   ]

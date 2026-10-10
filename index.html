@@ -72,6 +72,8 @@ footer { margin-top: 64px; padding-top: 16px; border-top: 1px solid var(--line);
 .bench td { white-space: nowrap; text-align: right; font-family: var(--font-data); }
 .meter { display: inline-block; width: 120px; height: 8px; background: var(--line); border-radius: 4px; vertical-align: middle; margin-right: 10px; overflow: hidden; }
 .meter span { display: block; height: 100%; background: var(--accent); }
+.meter.text span { background: var(--muted); }
+.bench th .kind { display: block; font-size: 13px; color: var(--muted); }
 @media (max-width: 560px) { .meter { width: 56px; } }
 </style>
 </head>
@@ -86,10 +88,12 @@ publishes every call it made.</p>
 <p class="note">Models that answer typed questions (yes or no, pick one, a score) with probabilities instead of text, through the Decisions API on the Vercel AI Gateway.</p>
 <a class="bench" href="benchmarks/decision-models/phone-spending-folders/">
   <h3>Which folder does a chat about phone spending go in?</h3>
-  <p class="note">choice between the user's folders · 500 calls · 2026-10-09</p>
+  <p class="note">choice between the user's folders · 1000 calls · 2026-10-09</p>
   <table class="summary"><tbody><tr><th scope="row"><code>typesafe-ai/jev</code></th>
-      <td><span class="meter"><span style="width:100%"></span></span> 250/250</td></tr><tr><th scope="row"><code>openai/gpt-6-luna-decisions</code></th>
-      <td><span class="meter"><span style="width:44%"></span></span> 110/250</td></tr></tbody></table>
+      <td><span class="meter decision"><span style="width:100%"></span></span> 250/250</td></tr><tr><th scope="row"><code>openai/gpt-6-luna-decisions</code></th>
+      <td><span class="meter decision"><span style="width:44%"></span></span> 110/250</td></tr><tr><th scope="row"><code>openai/gpt-6-luna</code> <span class="kind">text model, for comparison</span></th>
+      <td><span class="meter text"><span style="width:96.8%"></span></span> 242/250</td></tr><tr><th scope="row"><code>anthropic/claude-haiku-5.5</code> <span class="kind">text model, for comparison</span></th>
+      <td><span class="meter text"><span style="width:96.39999999999999%"></span></span> 241/250</td></tr></tbody></table>
 </a>
 </section>
 <footer>Code, raw data and how to rerun: <a href="https://github.com/NicoGrapsas/ai-bench-lab">github.com/NicoGrapsas/ai-bench-lab</a>. Built by <a href="https://github.com/NicoGrapsas">Nico Grapsas</a> with <a href="https://claude.com/claude-code">Claude Code</a>.</footer>

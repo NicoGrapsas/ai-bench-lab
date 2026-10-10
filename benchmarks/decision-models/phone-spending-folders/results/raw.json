@@ -2,6 +2,16 @@
   "date": "2026-10-09T20:49:27.739Z",
   "runs": 10,
   "question": "Which of the user's folders does a conversation with these messages belong in?",
+  "models": {
+    "decision": [
+      "openai/gpt-6-luna-decisions",
+      "typesafe-ai/jev"
+    ],
+    "text": [
+      "openai/gpt-6-luna",
+      "anthropic/claude-haiku-5.5"
+    ]
+  },
   "scenarios": [
     {
       "id": "es-facturas",
@@ -7089,6 +7099,6006 @@
         "none": 0
       },
       "ms": 247
+    },
+    {
+      "scenario": "es-facturas",
+      "message": "A",
+      "model": "openai/gpt-6-luna",
+      "run": 1,
+      "choice": "Facturas",
+      "ms": 1799,
+      "usage": {
+        "input": 96,
+        "output": 83
+      }
+    },
+    {
+      "scenario": "es-facturas",
+      "message": "A",
+      "model": "openai/gpt-6-luna",
+      "run": 2,
+      "choice": "Facturas",
+      "ms": 1790,
+      "usage": {
+        "input": 96,
+        "output": 55
+      }
+    },
+    {
+      "scenario": "es-facturas",
+      "message": "A",
+      "model": "openai/gpt-6-luna",
+      "run": 3,
+      "choice": "Facturas",
+      "ms": 1511,
+      "usage": {
+        "input": 96,
+        "output": 47
+      }
+    },
+    {
+      "scenario": "es-facturas",
+      "message": "A",
+      "model": "openai/gpt-6-luna",
+      "run": 4,
+      "choice": "Facturas",
+      "ms": 1682,
+      "usage": {
+        "input": 96,
+        "output": 69
+      }
+    },
+    {
+      "scenario": "es-facturas",
+      "message": "A",
+      "model": "openai/gpt-6-luna",
+      "run": 5,
+      "choice": "Facturas",
+      "ms": 1691,
+      "usage": {
+        "input": 96,
+        "output": 47
+      }
+    },
+    {
+      "scenario": "es-facturas",
+      "message": "A",
+      "model": "openai/gpt-6-luna",
+      "run": 6,
+      "choice": "Facturas",
+      "ms": 1565,
+      "usage": {
+        "input": 96,
+        "output": 46
+      }
+    },
+    {
+      "scenario": "es-facturas",
+      "message": "A",
+      "model": "openai/gpt-6-luna",
+      "run": 7,
+      "choice": "Facturas",
+      "ms": 1458,
+      "usage": {
+        "input": 96,
+        "output": 49
+      }
+    },
+    {
+      "scenario": "es-facturas",
+      "message": "A",
+      "model": "openai/gpt-6-luna",
+      "run": 8,
+      "choice": "Facturas",
+      "ms": 1816,
+      "usage": {
+        "input": 96,
+        "output": 78
+      }
+    },
+    {
+      "scenario": "es-facturas",
+      "message": "A",
+      "model": "openai/gpt-6-luna",
+      "run": 9,
+      "choice": "Facturas",
+      "ms": 1426,
+      "usage": {
+        "input": 96,
+        "output": 63
+      }
+    },
+    {
+      "scenario": "es-facturas",
+      "message": "A",
+      "model": "openai/gpt-6-luna",
+      "run": 10,
+      "choice": "Facturas",
+      "ms": 1748,
+      "usage": {
+        "input": 96,
+        "output": 68
+      }
+    },
+    {
+      "scenario": "es-facturas",
+      "message": "B",
+      "model": "openai/gpt-6-luna",
+      "run": 1,
+      "choice": "Facturas",
+      "ms": 1818,
+      "usage": {
+        "input": 90,
+        "output": 48
+      }
+    },
+    {
+      "scenario": "es-facturas",
+      "message": "B",
+      "model": "openai/gpt-6-luna",
+      "run": 2,
+      "choice": "Facturas",
+      "ms": 1495,
+      "usage": {
+        "input": 90,
+        "output": 50
+      }
+    },
+    {
+      "scenario": "es-facturas",
+      "message": "B",
+      "model": "openai/gpt-6-luna",
+      "run": 3,
+      "choice": "Facturas",
+      "ms": 1325,
+      "usage": {
+        "input": 90,
+        "output": 59
+      }
+    },
+    {
+      "scenario": "es-facturas",
+      "message": "B",
+      "model": "openai/gpt-6-luna",
+      "run": 4,
+      "choice": "Facturas",
+      "ms": 1561,
+      "usage": {
+        "input": 90,
+        "output": 68
+      }
+    },
+    {
+      "scenario": "es-facturas",
+      "message": "B",
+      "model": "openai/gpt-6-luna",
+      "run": 5,
+      "choice": "Facturas",
+      "ms": 1560,
+      "usage": {
+        "input": 90,
+        "output": 49
+      }
+    },
+    {
+      "scenario": "es-facturas",
+      "message": "B",
+      "model": "openai/gpt-6-luna",
+      "run": 6,
+      "choice": "Facturas",
+      "ms": 1194,
+      "usage": {
+        "input": 90,
+        "output": 39
+      }
+    },
+    {
+      "scenario": "es-facturas",
+      "message": "B",
+      "model": "openai/gpt-6-luna",
+      "run": 7,
+      "choice": "Facturas",
+      "ms": 1492,
+      "usage": {
+        "input": 90,
+        "output": 69
+      }
+    },
+    {
+      "scenario": "es-facturas",
+      "message": "B",
+      "model": "openai/gpt-6-luna",
+      "run": 8,
+      "choice": "Facturas",
+      "ms": 1116,
+      "usage": {
+        "input": 90,
+        "output": 47
+      }
+    },
+    {
+      "scenario": "es-facturas",
+      "message": "B",
+      "model": "openai/gpt-6-luna",
+      "run": 9,
+      "choice": "Facturas",
+      "ms": 1183,
+      "usage": {
+        "input": 90,
+        "output": 43
+      }
+    },
+    {
+      "scenario": "es-facturas",
+      "message": "B",
+      "model": "openai/gpt-6-luna",
+      "run": 10,
+      "choice": "Facturas",
+      "ms": 1218,
+      "usage": {
+        "input": 90,
+        "output": 48
+      }
+    },
+    {
+      "scenario": "es-facturas",
+      "message": "C",
+      "model": "openai/gpt-6-luna",
+      "run": 1,
+      "choice": "Facturas",
+      "ms": 1433,
+      "usage": {
+        "input": 132,
+        "output": 41
+      }
+    },
+    {
+      "scenario": "es-facturas",
+      "message": "C",
+      "model": "openai/gpt-6-luna",
+      "run": 2,
+      "choice": "Facturas",
+      "ms": 1269,
+      "usage": {
+        "input": 132,
+        "output": 42
+      }
+    },
+    {
+      "scenario": "es-facturas",
+      "message": "C",
+      "model": "openai/gpt-6-luna",
+      "run": 3,
+      "choice": "Facturas",
+      "ms": 1176,
+      "usage": {
+        "input": 132,
+        "output": 40
+      }
+    },
+    {
+      "scenario": "es-facturas",
+      "message": "C",
+      "model": "openai/gpt-6-luna",
+      "run": 4,
+      "choice": "Facturas",
+      "ms": 1287,
+      "usage": {
+        "input": 132,
+        "output": 36
+      }
+    },
+    {
+      "scenario": "es-facturas",
+      "message": "C",
+      "model": "openai/gpt-6-luna",
+      "run": 5,
+      "choice": "Facturas",
+      "ms": 1391,
+      "usage": {
+        "input": 132,
+        "output": 57
+      }
+    },
+    {
+      "scenario": "es-facturas",
+      "message": "C",
+      "model": "openai/gpt-6-luna",
+      "run": 6,
+      "choice": "Facturas",
+      "ms": 1328,
+      "usage": {
+        "input": 132,
+        "output": 39
+      }
+    },
+    {
+      "scenario": "es-facturas",
+      "message": "C",
+      "model": "openai/gpt-6-luna",
+      "run": 7,
+      "choice": "Facturas",
+      "ms": 1759,
+      "usage": {
+        "input": 132,
+        "output": 68
+      }
+    },
+    {
+      "scenario": "es-facturas",
+      "message": "C",
+      "model": "openai/gpt-6-luna",
+      "run": 8,
+      "choice": "Facturas",
+      "ms": 1141,
+      "usage": {
+        "input": 132,
+        "output": 44
+      }
+    },
+    {
+      "scenario": "es-facturas",
+      "message": "C",
+      "model": "openai/gpt-6-luna",
+      "run": 9,
+      "choice": "Facturas",
+      "ms": 1153,
+      "usage": {
+        "input": 132,
+        "output": 37
+      }
+    },
+    {
+      "scenario": "es-facturas",
+      "message": "C",
+      "model": "openai/gpt-6-luna",
+      "run": 10,
+      "choice": "Facturas",
+      "ms": 1253,
+      "usage": {
+        "input": 132,
+        "output": 39
+      }
+    },
+    {
+      "scenario": "es-facturas",
+      "message": "A-us",
+      "model": "openai/gpt-6-luna",
+      "run": 1,
+      "choice": "Facturas",
+      "ms": 1045,
+      "usage": {
+        "input": 96,
+        "output": 43
+      }
+    },
+    {
+      "scenario": "es-facturas",
+      "message": "A-us",
+      "model": "openai/gpt-6-luna",
+      "run": 2,
+      "choice": "Facturas",
+      "ms": 1527,
+      "usage": {
+        "input": 96,
+        "output": 44
+      }
+    },
+    {
+      "scenario": "es-facturas",
+      "message": "A-us",
+      "model": "openai/gpt-6-luna",
+      "run": 3,
+      "choice": "Facturas",
+      "ms": 1291,
+      "usage": {
+        "input": 96,
+        "output": 50
+      }
+    },
+    {
+      "scenario": "es-facturas",
+      "message": "A-us",
+      "model": "openai/gpt-6-luna",
+      "run": 4,
+      "choice": "Facturas",
+      "ms": 1254,
+      "usage": {
+        "input": 96,
+        "output": 50
+      }
+    },
+    {
+      "scenario": "es-facturas",
+      "message": "A-us",
+      "model": "openai/gpt-6-luna",
+      "run": 5,
+      "choice": "Facturas",
+      "ms": 1601,
+      "usage": {
+        "input": 96,
+        "output": 47
+      }
+    },
+    {
+      "scenario": "es-facturas",
+      "message": "A-us",
+      "model": "openai/gpt-6-luna",
+      "run": 6,
+      "choice": "Facturas",
+      "ms": 1252,
+      "usage": {
+        "input": 96,
+        "output": 42
+      }
+    },
+    {
+      "scenario": "es-facturas",
+      "message": "A-us",
+      "model": "openai/gpt-6-luna",
+      "run": 7,
+      "choice": "Facturas",
+      "ms": 1438,
+      "usage": {
+        "input": 96,
+        "output": 50
+      }
+    },
+    {
+      "scenario": "es-facturas",
+      "message": "A-us",
+      "model": "openai/gpt-6-luna",
+      "run": 8,
+      "choice": "Facturas",
+      "ms": 1272,
+      "usage": {
+        "input": 96,
+        "output": 48
+      }
+    },
+    {
+      "scenario": "es-facturas",
+      "message": "A-us",
+      "model": "openai/gpt-6-luna",
+      "run": 9,
+      "choice": "Facturas",
+      "ms": 1134,
+      "usage": {
+        "input": 96,
+        "output": 46
+      }
+    },
+    {
+      "scenario": "es-facturas",
+      "message": "A-us",
+      "model": "openai/gpt-6-luna",
+      "run": 10,
+      "choice": "Facturas",
+      "ms": 1639,
+      "usage": {
+        "input": 96,
+        "output": 46
+      }
+    },
+    {
+      "scenario": "es-facturas",
+      "message": "C-us",
+      "model": "openai/gpt-6-luna",
+      "run": 1,
+      "choice": "Facturas",
+      "ms": 1768,
+      "usage": {
+        "input": 131,
+        "output": 44
+      }
+    },
+    {
+      "scenario": "es-facturas",
+      "message": "C-us",
+      "model": "openai/gpt-6-luna",
+      "run": 2,
+      "choice": "Facturas",
+      "ms": 1879,
+      "usage": {
+        "input": 131,
+        "output": 40
+      }
+    },
+    {
+      "scenario": "es-facturas",
+      "message": "C-us",
+      "model": "openai/gpt-6-luna",
+      "run": 3,
+      "choice": "Facturas",
+      "ms": 1263,
+      "usage": {
+        "input": 131,
+        "output": 42
+      }
+    },
+    {
+      "scenario": "es-facturas",
+      "message": "C-us",
+      "model": "openai/gpt-6-luna",
+      "run": 4,
+      "choice": "Facturas",
+      "ms": 1516,
+      "usage": {
+        "input": 131,
+        "output": 44
+      }
+    },
+    {
+      "scenario": "es-facturas",
+      "message": "C-us",
+      "model": "openai/gpt-6-luna",
+      "run": 5,
+      "choice": "Facturas",
+      "ms": 1272,
+      "usage": {
+        "input": 131,
+        "output": 42
+      }
+    },
+    {
+      "scenario": "es-facturas",
+      "message": "C-us",
+      "model": "openai/gpt-6-luna",
+      "run": 6,
+      "choice": "Facturas",
+      "ms": 1189,
+      "usage": {
+        "input": 131,
+        "output": 43
+      }
+    },
+    {
+      "scenario": "es-facturas",
+      "message": "C-us",
+      "model": "openai/gpt-6-luna",
+      "run": 7,
+      "choice": "Facturas",
+      "ms": 1384,
+      "usage": {
+        "input": 131,
+        "output": 29
+      }
+    },
+    {
+      "scenario": "es-facturas",
+      "message": "C-us",
+      "model": "openai/gpt-6-luna",
+      "run": 8,
+      "choice": "Facturas",
+      "ms": 1359,
+      "usage": {
+        "input": 131,
+        "output": 38
+      }
+    },
+    {
+      "scenario": "es-facturas",
+      "message": "C-us",
+      "model": "openai/gpt-6-luna",
+      "run": 9,
+      "choice": "Facturas",
+      "ms": 1200,
+      "usage": {
+        "input": 131,
+        "output": 40
+      }
+    },
+    {
+      "scenario": "es-facturas",
+      "message": "C-us",
+      "model": "openai/gpt-6-luna",
+      "run": 10,
+      "choice": "Facturas",
+      "ms": 1235,
+      "usage": {
+        "input": 131,
+        "output": 39
+      }
+    },
+    {
+      "scenario": "en-invoices",
+      "message": "A",
+      "model": "openai/gpt-6-luna",
+      "run": 1,
+      "choice": "Invoices",
+      "ms": 1863,
+      "usage": {
+        "input": 97,
+        "output": 72
+      }
+    },
+    {
+      "scenario": "en-invoices",
+      "message": "A",
+      "model": "openai/gpt-6-luna",
+      "run": 2,
+      "choice": "Invoices",
+      "ms": 1659,
+      "usage": {
+        "input": 97,
+        "output": 44
+      }
+    },
+    {
+      "scenario": "en-invoices",
+      "message": "A",
+      "model": "openai/gpt-6-luna",
+      "run": 3,
+      "choice": "Invoices",
+      "ms": 1888,
+      "usage": {
+        "input": 97,
+        "output": 42
+      }
+    },
+    {
+      "scenario": "en-invoices",
+      "message": "A",
+      "model": "openai/gpt-6-luna",
+      "run": 4,
+      "choice": "Invoices",
+      "ms": 2658,
+      "usage": {
+        "input": 97,
+        "output": 99
+      }
+    },
+    {
+      "scenario": "en-invoices",
+      "message": "A",
+      "model": "openai/gpt-6-luna",
+      "run": 5,
+      "choice": "Invoices",
+      "ms": 2416,
+      "usage": {
+        "input": 97,
+        "output": 82
+      }
+    },
+    {
+      "scenario": "en-invoices",
+      "message": "A",
+      "model": "openai/gpt-6-luna",
+      "run": 6,
+      "choice": "Invoices",
+      "ms": 1643,
+      "usage": {
+        "input": 97,
+        "output": 71
+      }
+    },
+    {
+      "scenario": "en-invoices",
+      "message": "A",
+      "model": "openai/gpt-6-luna",
+      "run": 7,
+      "choice": "Invoices",
+      "ms": 1457,
+      "usage": {
+        "input": 97,
+        "output": 58
+      }
+    },
+    {
+      "scenario": "en-invoices",
+      "message": "A",
+      "model": "openai/gpt-6-luna",
+      "run": 8,
+      "choice": "Invoices",
+      "ms": 2538,
+      "usage": {
+        "input": 97,
+        "output": 121
+      }
+    },
+    {
+      "scenario": "en-invoices",
+      "message": "A",
+      "model": "openai/gpt-6-luna",
+      "run": 9,
+      "choice": "Invoices",
+      "ms": 2091,
+      "usage": {
+        "input": 97,
+        "output": 93
+      }
+    },
+    {
+      "scenario": "en-invoices",
+      "message": "A",
+      "model": "openai/gpt-6-luna",
+      "run": 10,
+      "choice": "Invoices",
+      "ms": 2055,
+      "usage": {
+        "input": 97,
+        "output": 104
+      }
+    },
+    {
+      "scenario": "en-invoices",
+      "message": "B",
+      "model": "openai/gpt-6-luna",
+      "run": 1,
+      "choice": "Invoices",
+      "ms": 2088,
+      "usage": {
+        "input": 90,
+        "output": 53
+      }
+    },
+    {
+      "scenario": "en-invoices",
+      "message": "B",
+      "model": "openai/gpt-6-luna",
+      "run": 2,
+      "choice": "Invoices",
+      "ms": 2032,
+      "usage": {
+        "input": 90,
+        "output": 92
+      }
+    },
+    {
+      "scenario": "en-invoices",
+      "message": "B",
+      "model": "openai/gpt-6-luna",
+      "run": 3,
+      "choice": "Invoices",
+      "ms": 2017,
+      "usage": {
+        "input": 90,
+        "output": 93
+      }
+    },
+    {
+      "scenario": "en-invoices",
+      "message": "B",
+      "model": "openai/gpt-6-luna",
+      "run": 4,
+      "choice": "Invoices",
+      "ms": 1447,
+      "usage": {
+        "input": 90,
+        "output": 70
+      }
+    },
+    {
+      "scenario": "en-invoices",
+      "message": "B",
+      "model": "openai/gpt-6-luna",
+      "run": 5,
+      "choice": "Invoices",
+      "ms": 2029,
+      "usage": {
+        "input": 90,
+        "output": 100
+      }
+    },
+    {
+      "scenario": "en-invoices",
+      "message": "B",
+      "model": "openai/gpt-6-luna",
+      "run": 6,
+      "choice": "Personal",
+      "ms": 1826,
+      "usage": {
+        "input": 90,
+        "output": 67
+      }
+    },
+    {
+      "scenario": "en-invoices",
+      "message": "B",
+      "model": "openai/gpt-6-luna",
+      "run": 7,
+      "choice": "Invoices",
+      "ms": 1406,
+      "usage": {
+        "input": 90,
+        "output": 60
+      }
+    },
+    {
+      "scenario": "en-invoices",
+      "message": "B",
+      "model": "openai/gpt-6-luna",
+      "run": 8,
+      "choice": "Personal",
+      "ms": 1632,
+      "usage": {
+        "input": 90,
+        "output": 56
+      }
+    },
+    {
+      "scenario": "en-invoices",
+      "message": "B",
+      "model": "openai/gpt-6-luna",
+      "run": 9,
+      "choice": "Invoices",
+      "ms": 1769,
+      "usage": {
+        "input": 90,
+        "output": 107
+      }
+    },
+    {
+      "scenario": "en-invoices",
+      "message": "B",
+      "model": "openai/gpt-6-luna",
+      "run": 10,
+      "choice": "Invoices",
+      "ms": 1242,
+      "usage": {
+        "input": 90,
+        "output": 42
+      }
+    },
+    {
+      "scenario": "en-invoices",
+      "message": "C",
+      "model": "openai/gpt-6-luna",
+      "run": 1,
+      "choice": "Invoices",
+      "ms": 1301,
+      "usage": {
+        "input": 135,
+        "output": 53
+      }
+    },
+    {
+      "scenario": "en-invoices",
+      "message": "C",
+      "model": "openai/gpt-6-luna",
+      "run": 2,
+      "choice": "Invoices",
+      "ms": 1402,
+      "usage": {
+        "input": 135,
+        "output": 60
+      }
+    },
+    {
+      "scenario": "en-invoices",
+      "message": "C",
+      "model": "openai/gpt-6-luna",
+      "run": 3,
+      "choice": "Invoices",
+      "ms": 1305,
+      "usage": {
+        "input": 135,
+        "output": 40
+      }
+    },
+    {
+      "scenario": "en-invoices",
+      "message": "C",
+      "model": "openai/gpt-6-luna",
+      "run": 4,
+      "choice": "Invoices",
+      "ms": 1812,
+      "usage": {
+        "input": 135,
+        "output": 47
+      }
+    },
+    {
+      "scenario": "en-invoices",
+      "message": "C",
+      "model": "openai/gpt-6-luna",
+      "run": 5,
+      "choice": "Invoices",
+      "ms": 2466,
+      "usage": {
+        "input": 135,
+        "output": 57
+      }
+    },
+    {
+      "scenario": "en-invoices",
+      "message": "C",
+      "model": "openai/gpt-6-luna",
+      "run": 6,
+      "choice": "Invoices",
+      "ms": 1163,
+      "usage": {
+        "input": 135,
+        "output": 35
+      }
+    },
+    {
+      "scenario": "en-invoices",
+      "message": "C",
+      "model": "openai/gpt-6-luna",
+      "run": 7,
+      "choice": "Invoices",
+      "ms": 1698,
+      "usage": {
+        "input": 135,
+        "output": 52
+      }
+    },
+    {
+      "scenario": "en-invoices",
+      "message": "C",
+      "model": "openai/gpt-6-luna",
+      "run": 8,
+      "choice": "Invoices",
+      "ms": 1328,
+      "usage": {
+        "input": 135,
+        "output": 39
+      }
+    },
+    {
+      "scenario": "en-invoices",
+      "message": "C",
+      "model": "openai/gpt-6-luna",
+      "run": 9,
+      "choice": "Invoices",
+      "ms": 1317,
+      "usage": {
+        "input": 135,
+        "output": 41
+      }
+    },
+    {
+      "scenario": "en-invoices",
+      "message": "C",
+      "model": "openai/gpt-6-luna",
+      "run": 10,
+      "choice": "Invoices",
+      "ms": 1296,
+      "usage": {
+        "input": 135,
+        "output": 52
+      }
+    },
+    {
+      "scenario": "en-invoices",
+      "message": "A-us",
+      "model": "openai/gpt-6-luna",
+      "run": 1,
+      "choice": "Invoices",
+      "ms": 1246,
+      "usage": {
+        "input": 96,
+        "output": 48
+      }
+    },
+    {
+      "scenario": "en-invoices",
+      "message": "A-us",
+      "model": "openai/gpt-6-luna",
+      "run": 2,
+      "choice": "Invoices",
+      "ms": 1426,
+      "usage": {
+        "input": 96,
+        "output": 62
+      }
+    },
+    {
+      "scenario": "en-invoices",
+      "message": "A-us",
+      "model": "openai/gpt-6-luna",
+      "run": 3,
+      "choice": "Invoices",
+      "ms": 1401,
+      "usage": {
+        "input": 96,
+        "output": 53
+      }
+    },
+    {
+      "scenario": "en-invoices",
+      "message": "A-us",
+      "model": "openai/gpt-6-luna",
+      "run": 4,
+      "choice": "Invoices",
+      "ms": 1541,
+      "usage": {
+        "input": 96,
+        "output": 63
+      }
+    },
+    {
+      "scenario": "en-invoices",
+      "message": "A-us",
+      "model": "openai/gpt-6-luna",
+      "run": 5,
+      "choice": "Invoices",
+      "ms": 1796,
+      "usage": {
+        "input": 96,
+        "output": 97
+      }
+    },
+    {
+      "scenario": "en-invoices",
+      "message": "A-us",
+      "model": "openai/gpt-6-luna",
+      "run": 6,
+      "choice": "Invoices",
+      "ms": 1397,
+      "usage": {
+        "input": 96,
+        "output": 60
+      }
+    },
+    {
+      "scenario": "en-invoices",
+      "message": "A-us",
+      "model": "openai/gpt-6-luna",
+      "run": 7,
+      "choice": "Invoices",
+      "ms": 1263,
+      "usage": {
+        "input": 96,
+        "output": 47
+      }
+    },
+    {
+      "scenario": "en-invoices",
+      "message": "A-us",
+      "model": "openai/gpt-6-luna",
+      "run": 8,
+      "choice": "Invoices",
+      "ms": 1655,
+      "usage": {
+        "input": 96,
+        "output": 81
+      }
+    },
+    {
+      "scenario": "en-invoices",
+      "message": "A-us",
+      "model": "openai/gpt-6-luna",
+      "run": 9,
+      "choice": "Invoices",
+      "ms": 1243,
+      "usage": {
+        "input": 96,
+        "output": 39
+      }
+    },
+    {
+      "scenario": "en-invoices",
+      "message": "A-us",
+      "model": "openai/gpt-6-luna",
+      "run": 10,
+      "choice": "Invoices",
+      "ms": 1497,
+      "usage": {
+        "input": 96,
+        "output": 57
+      }
+    },
+    {
+      "scenario": "en-invoices",
+      "message": "C-us",
+      "model": "openai/gpt-6-luna",
+      "run": 1,
+      "choice": "Invoices",
+      "ms": 1240,
+      "usage": {
+        "input": 133,
+        "output": 38
+      }
+    },
+    {
+      "scenario": "en-invoices",
+      "message": "C-us",
+      "model": "openai/gpt-6-luna",
+      "run": 2,
+      "choice": "Invoices",
+      "ms": 1193,
+      "usage": {
+        "input": 133,
+        "output": 30
+      }
+    },
+    {
+      "scenario": "en-invoices",
+      "message": "C-us",
+      "model": "openai/gpt-6-luna",
+      "run": 3,
+      "choice": "Invoices",
+      "ms": 1211,
+      "usage": {
+        "input": 133,
+        "output": 35
+      }
+    },
+    {
+      "scenario": "en-invoices",
+      "message": "C-us",
+      "model": "openai/gpt-6-luna",
+      "run": 4,
+      "choice": "Invoices",
+      "ms": 1201,
+      "usage": {
+        "input": 133,
+        "output": 37
+      }
+    },
+    {
+      "scenario": "en-invoices",
+      "message": "C-us",
+      "model": "openai/gpt-6-luna",
+      "run": 5,
+      "choice": "Invoices",
+      "ms": 1154,
+      "usage": {
+        "input": 133,
+        "output": 42
+      }
+    },
+    {
+      "scenario": "en-invoices",
+      "message": "C-us",
+      "model": "openai/gpt-6-luna",
+      "run": 6,
+      "choice": "Invoices",
+      "ms": 1546,
+      "usage": {
+        "input": 133,
+        "output": 29
+      }
+    },
+    {
+      "scenario": "en-invoices",
+      "message": "C-us",
+      "model": "openai/gpt-6-luna",
+      "run": 7,
+      "choice": "Invoices",
+      "ms": 1919,
+      "usage": {
+        "input": 133,
+        "output": 35
+      }
+    },
+    {
+      "scenario": "en-invoices",
+      "message": "C-us",
+      "model": "openai/gpt-6-luna",
+      "run": 8,
+      "choice": "Invoices",
+      "ms": 4480,
+      "usage": {
+        "input": 133,
+        "output": 40
+      }
+    },
+    {
+      "scenario": "en-invoices",
+      "message": "C-us",
+      "model": "openai/gpt-6-luna",
+      "run": 9,
+      "choice": "Invoices",
+      "ms": 2001,
+      "usage": {
+        "input": 133,
+        "output": 34
+      }
+    },
+    {
+      "scenario": "en-invoices",
+      "message": "C-us",
+      "model": "openai/gpt-6-luna",
+      "run": 10,
+      "choice": "Personal",
+      "ms": 1742,
+      "usage": {
+        "input": 133,
+        "output": 92
+      }
+    },
+    {
+      "scenario": "en-bills",
+      "message": "A",
+      "model": "openai/gpt-6-luna",
+      "run": 1,
+      "choice": "Bills",
+      "ms": 1670,
+      "usage": {
+        "input": 96,
+        "output": 26
+      }
+    },
+    {
+      "scenario": "en-bills",
+      "message": "A",
+      "model": "openai/gpt-6-luna",
+      "run": 2,
+      "choice": "Bills",
+      "ms": 1498,
+      "usage": {
+        "input": 96,
+        "output": 38
+      }
+    },
+    {
+      "scenario": "en-bills",
+      "message": "A",
+      "model": "openai/gpt-6-luna",
+      "run": 3,
+      "choice": "Bills",
+      "ms": 1288,
+      "usage": {
+        "input": 96,
+        "output": 36
+      }
+    },
+    {
+      "scenario": "en-bills",
+      "message": "A",
+      "model": "openai/gpt-6-luna",
+      "run": 4,
+      "choice": "Bills",
+      "ms": 1420,
+      "usage": {
+        "input": 96,
+        "output": 38
+      }
+    },
+    {
+      "scenario": "en-bills",
+      "message": "A",
+      "model": "openai/gpt-6-luna",
+      "run": 5,
+      "choice": "Bills",
+      "ms": 1083,
+      "usage": {
+        "input": 96,
+        "output": 48
+      }
+    },
+    {
+      "scenario": "en-bills",
+      "message": "A",
+      "model": "openai/gpt-6-luna",
+      "run": 6,
+      "choice": "Bills",
+      "ms": 1152,
+      "usage": {
+        "input": 96,
+        "output": 29
+      }
+    },
+    {
+      "scenario": "en-bills",
+      "message": "A",
+      "model": "openai/gpt-6-luna",
+      "run": 7,
+      "choice": "Bills",
+      "ms": 1182,
+      "usage": {
+        "input": 96,
+        "output": 27
+      }
+    },
+    {
+      "scenario": "en-bills",
+      "message": "A",
+      "model": "openai/gpt-6-luna",
+      "run": 8,
+      "choice": "Bills",
+      "ms": 1133,
+      "usage": {
+        "input": 96,
+        "output": 28
+      }
+    },
+    {
+      "scenario": "en-bills",
+      "message": "A",
+      "model": "openai/gpt-6-luna",
+      "run": 9,
+      "choice": "Bills",
+      "ms": 1628,
+      "usage": {
+        "input": 96,
+        "output": 42
+      }
+    },
+    {
+      "scenario": "en-bills",
+      "message": "A",
+      "model": "openai/gpt-6-luna",
+      "run": 10,
+      "choice": "Bills",
+      "ms": 934,
+      "usage": {
+        "input": 96,
+        "output": 28
+      }
+    },
+    {
+      "scenario": "en-bills",
+      "message": "B",
+      "model": "openai/gpt-6-luna",
+      "run": 1,
+      "choice": "Bills",
+      "ms": 1152,
+      "usage": {
+        "input": 89,
+        "output": 26
+      }
+    },
+    {
+      "scenario": "en-bills",
+      "message": "B",
+      "model": "openai/gpt-6-luna",
+      "run": 2,
+      "choice": "Bills",
+      "ms": 932,
+      "usage": {
+        "input": 89,
+        "output": 33
+      }
+    },
+    {
+      "scenario": "en-bills",
+      "message": "B",
+      "model": "openai/gpt-6-luna",
+      "run": 3,
+      "choice": "Bills",
+      "ms": 967,
+      "usage": {
+        "input": 89,
+        "output": 35
+      }
+    },
+    {
+      "scenario": "en-bills",
+      "message": "B",
+      "model": "openai/gpt-6-luna",
+      "run": 4,
+      "choice": "Bills",
+      "ms": 1016,
+      "usage": {
+        "input": 89,
+        "output": 37
+      }
+    },
+    {
+      "scenario": "en-bills",
+      "message": "B",
+      "model": "openai/gpt-6-luna",
+      "run": 5,
+      "choice": "Bills",
+      "ms": 954,
+      "usage": {
+        "input": 89,
+        "output": 34
+      }
+    },
+    {
+      "scenario": "en-bills",
+      "message": "B",
+      "model": "openai/gpt-6-luna",
+      "run": 6,
+      "choice": "Bills",
+      "ms": 844,
+      "usage": {
+        "input": 89,
+        "output": 28
+      }
+    },
+    {
+      "scenario": "en-bills",
+      "message": "B",
+      "model": "openai/gpt-6-luna",
+      "run": 7,
+      "choice": "Bills",
+      "ms": 1405,
+      "usage": {
+        "input": 89,
+        "output": 35
+      }
+    },
+    {
+      "scenario": "en-bills",
+      "message": "B",
+      "model": "openai/gpt-6-luna",
+      "run": 8,
+      "choice": "Bills",
+      "ms": 1241,
+      "usage": {
+        "input": 89,
+        "output": 33
+      }
+    },
+    {
+      "scenario": "en-bills",
+      "message": "B",
+      "model": "openai/gpt-6-luna",
+      "run": 9,
+      "choice": "Bills",
+      "ms": 1183,
+      "usage": {
+        "input": 89,
+        "output": 29
+      }
+    },
+    {
+      "scenario": "en-bills",
+      "message": "B",
+      "model": "openai/gpt-6-luna",
+      "run": 10,
+      "choice": "Bills",
+      "ms": 1016,
+      "usage": {
+        "input": 89,
+        "output": 27
+      }
+    },
+    {
+      "scenario": "en-bills",
+      "message": "C",
+      "model": "openai/gpt-6-luna",
+      "run": 1,
+      "choice": "Bills",
+      "ms": 1043,
+      "usage": {
+        "input": 134,
+        "output": 26
+      }
+    },
+    {
+      "scenario": "en-bills",
+      "message": "C",
+      "model": "openai/gpt-6-luna",
+      "run": 2,
+      "choice": "Bills",
+      "ms": 1178,
+      "usage": {
+        "input": 134,
+        "output": 28
+      }
+    },
+    {
+      "scenario": "en-bills",
+      "message": "C",
+      "model": "openai/gpt-6-luna",
+      "run": 3,
+      "choice": "Bills",
+      "ms": 1201,
+      "usage": {
+        "input": 134,
+        "output": 29
+      }
+    },
+    {
+      "scenario": "en-bills",
+      "message": "C",
+      "model": "openai/gpt-6-luna",
+      "run": 4,
+      "choice": "Bills",
+      "ms": 1239,
+      "usage": {
+        "input": 134,
+        "output": 27
+      }
+    },
+    {
+      "scenario": "en-bills",
+      "message": "C",
+      "model": "openai/gpt-6-luna",
+      "run": 5,
+      "choice": "Bills",
+      "ms": 1730,
+      "usage": {
+        "input": 134,
+        "output": 26
+      }
+    },
+    {
+      "scenario": "en-bills",
+      "message": "C",
+      "model": "openai/gpt-6-luna",
+      "run": 6,
+      "choice": "Bills",
+      "ms": 1408,
+      "usage": {
+        "input": 134,
+        "output": 27
+      }
+    },
+    {
+      "scenario": "en-bills",
+      "message": "C",
+      "model": "openai/gpt-6-luna",
+      "run": 7,
+      "choice": "Bills",
+      "ms": 1390,
+      "usage": {
+        "input": 134,
+        "output": 33
+      }
+    },
+    {
+      "scenario": "en-bills",
+      "message": "C",
+      "model": "openai/gpt-6-luna",
+      "run": 8,
+      "choice": "Bills",
+      "ms": 2879,
+      "usage": {
+        "input": 134,
+        "output": 28
+      }
+    },
+    {
+      "scenario": "en-bills",
+      "message": "C",
+      "model": "openai/gpt-6-luna",
+      "run": 9,
+      "choice": "Bills",
+      "ms": 1822,
+      "usage": {
+        "input": 134,
+        "output": 27
+      }
+    },
+    {
+      "scenario": "en-bills",
+      "message": "C",
+      "model": "openai/gpt-6-luna",
+      "run": 10,
+      "choice": "Bills",
+      "ms": 5367,
+      "usage": {
+        "input": 134,
+        "output": 27
+      }
+    },
+    {
+      "scenario": "en-bills",
+      "message": "A-us",
+      "model": "openai/gpt-6-luna",
+      "run": 1,
+      "choice": "Bills",
+      "ms": 5378,
+      "usage": {
+        "input": 95,
+        "output": 30
+      }
+    },
+    {
+      "scenario": "en-bills",
+      "message": "A-us",
+      "model": "openai/gpt-6-luna",
+      "run": 2,
+      "choice": "Bills",
+      "ms": 1992,
+      "usage": {
+        "input": 95,
+        "output": 36
+      }
+    },
+    {
+      "scenario": "en-bills",
+      "message": "A-us",
+      "model": "openai/gpt-6-luna",
+      "run": 3,
+      "choice": "Bills",
+      "ms": 2569,
+      "usage": {
+        "input": 95,
+        "output": 27
+      }
+    },
+    {
+      "scenario": "en-bills",
+      "message": "A-us",
+      "model": "openai/gpt-6-luna",
+      "run": 4,
+      "choice": "Bills",
+      "ms": 4364,
+      "usage": {
+        "input": 95,
+        "output": 35
+      }
+    },
+    {
+      "scenario": "en-bills",
+      "message": "A-us",
+      "model": "openai/gpt-6-luna",
+      "run": 5,
+      "choice": "Bills",
+      "ms": 1943,
+      "usage": {
+        "input": 95,
+        "output": 26
+      }
+    },
+    {
+      "scenario": "en-bills",
+      "message": "A-us",
+      "model": "openai/gpt-6-luna",
+      "run": 6,
+      "choice": "Bills",
+      "ms": 2084,
+      "usage": {
+        "input": 95,
+        "output": 35
+      }
+    },
+    {
+      "scenario": "en-bills",
+      "message": "A-us",
+      "model": "openai/gpt-6-luna",
+      "run": 7,
+      "choice": "Bills",
+      "ms": 1821,
+      "usage": {
+        "input": 95,
+        "output": 28
+      }
+    },
+    {
+      "scenario": "en-bills",
+      "message": "A-us",
+      "model": "openai/gpt-6-luna",
+      "run": 8,
+      "choice": "Bills",
+      "ms": 1911,
+      "usage": {
+        "input": 95,
+        "output": 29
+      }
+    },
+    {
+      "scenario": "en-bills",
+      "message": "A-us",
+      "model": "openai/gpt-6-luna",
+      "run": 9,
+      "choice": "Bills",
+      "ms": 1938,
+      "usage": {
+        "input": 95,
+        "output": 36
+      }
+    },
+    {
+      "scenario": "en-bills",
+      "message": "A-us",
+      "model": "openai/gpt-6-luna",
+      "run": 10,
+      "choice": "Bills",
+      "ms": 1693,
+      "usage": {
+        "input": 95,
+        "output": 39
+      }
+    },
+    {
+      "scenario": "en-bills",
+      "message": "C-us",
+      "model": "openai/gpt-6-luna",
+      "run": 1,
+      "choice": "Bills",
+      "ms": 2357,
+      "usage": {
+        "input": 132,
+        "output": 26
+      }
+    },
+    {
+      "scenario": "en-bills",
+      "message": "C-us",
+      "model": "openai/gpt-6-luna",
+      "run": 2,
+      "choice": "Bills",
+      "ms": 1289,
+      "usage": {
+        "input": 132,
+        "output": 26
+      }
+    },
+    {
+      "scenario": "en-bills",
+      "message": "C-us",
+      "model": "openai/gpt-6-luna",
+      "run": 3,
+      "choice": "Bills",
+      "ms": 1663,
+      "usage": {
+        "input": 132,
+        "output": 27
+      }
+    },
+    {
+      "scenario": "en-bills",
+      "message": "C-us",
+      "model": "openai/gpt-6-luna",
+      "run": 4,
+      "choice": "Bills",
+      "ms": 1643,
+      "usage": {
+        "input": 132,
+        "output": 35
+      }
+    },
+    {
+      "scenario": "en-bills",
+      "message": "C-us",
+      "model": "openai/gpt-6-luna",
+      "run": 5,
+      "choice": "Bills",
+      "ms": 1398,
+      "usage": {
+        "input": 132,
+        "output": 26
+      }
+    },
+    {
+      "scenario": "en-bills",
+      "message": "C-us",
+      "model": "openai/gpt-6-luna",
+      "run": 6,
+      "choice": "Bills",
+      "ms": 1335,
+      "usage": {
+        "input": 132,
+        "output": 25
+      }
+    },
+    {
+      "scenario": "en-bills",
+      "message": "C-us",
+      "model": "openai/gpt-6-luna",
+      "run": 7,
+      "choice": "Bills",
+      "ms": 1461,
+      "usage": {
+        "input": 132,
+        "output": 27
+      }
+    },
+    {
+      "scenario": "en-bills",
+      "message": "C-us",
+      "model": "openai/gpt-6-luna",
+      "run": 8,
+      "choice": "Bills",
+      "ms": 1340,
+      "usage": {
+        "input": 132,
+        "output": 26
+      }
+    },
+    {
+      "scenario": "en-bills",
+      "message": "C-us",
+      "model": "openai/gpt-6-luna",
+      "run": 9,
+      "choice": "Bills",
+      "ms": 1151,
+      "usage": {
+        "input": 132,
+        "output": 27
+      }
+    },
+    {
+      "scenario": "en-bills",
+      "message": "C-us",
+      "model": "openai/gpt-6-luna",
+      "run": 10,
+      "choice": "Bills",
+      "ms": 987,
+      "usage": {
+        "input": 132,
+        "output": 26
+      }
+    },
+    {
+      "scenario": "en-service-invoices",
+      "message": "A",
+      "model": "openai/gpt-6-luna",
+      "run": 1,
+      "choice": "Invoices",
+      "ms": 1448,
+      "usage": {
+        "input": 96,
+        "output": 75
+      }
+    },
+    {
+      "scenario": "en-service-invoices",
+      "message": "A",
+      "model": "openai/gpt-6-luna",
+      "run": 2,
+      "choice": "Invoices",
+      "ms": 1378,
+      "usage": {
+        "input": 96,
+        "output": 55
+      }
+    },
+    {
+      "scenario": "en-service-invoices",
+      "message": "A",
+      "model": "openai/gpt-6-luna",
+      "run": 3,
+      "choice": "Invoices",
+      "ms": 1831,
+      "usage": {
+        "input": 96,
+        "output": 87
+      }
+    },
+    {
+      "scenario": "en-service-invoices",
+      "message": "A",
+      "model": "openai/gpt-6-luna",
+      "run": 4,
+      "choice": "Invoices",
+      "ms": 2495,
+      "usage": {
+        "input": 96,
+        "output": 123
+      }
+    },
+    {
+      "scenario": "en-service-invoices",
+      "message": "A",
+      "model": "openai/gpt-6-luna",
+      "run": 5,
+      "choice": "Invoices",
+      "ms": 1835,
+      "usage": {
+        "input": 96,
+        "output": 80
+      }
+    },
+    {
+      "scenario": "en-service-invoices",
+      "message": "A",
+      "model": "openai/gpt-6-luna",
+      "run": 6,
+      "choice": "Invoices",
+      "ms": 1471,
+      "usage": {
+        "input": 96,
+        "output": 49
+      }
+    },
+    {
+      "scenario": "en-service-invoices",
+      "message": "A",
+      "model": "openai/gpt-6-luna",
+      "run": 7,
+      "choice": "Invoices",
+      "ms": 2495,
+      "usage": {
+        "input": 96,
+        "output": 110
+      }
+    },
+    {
+      "scenario": "en-service-invoices",
+      "message": "A",
+      "model": "openai/gpt-6-luna",
+      "run": 8,
+      "choice": "Invoices",
+      "ms": 1308,
+      "usage": {
+        "input": 96,
+        "output": 55
+      }
+    },
+    {
+      "scenario": "en-service-invoices",
+      "message": "A",
+      "model": "openai/gpt-6-luna",
+      "run": 9,
+      "choice": "Invoices",
+      "ms": 1389,
+      "usage": {
+        "input": 96,
+        "output": 55
+      }
+    },
+    {
+      "scenario": "en-service-invoices",
+      "message": "A",
+      "model": "openai/gpt-6-luna",
+      "run": 10,
+      "choice": "Personal",
+      "ms": 2198,
+      "usage": {
+        "input": 96,
+        "output": 104
+      }
+    },
+    {
+      "scenario": "en-service-invoices",
+      "message": "B",
+      "model": "openai/gpt-6-luna",
+      "run": 1,
+      "choice": "Invoices",
+      "ms": 2008,
+      "usage": {
+        "input": 89,
+        "output": 105
+      }
+    },
+    {
+      "scenario": "en-service-invoices",
+      "message": "B",
+      "model": "openai/gpt-6-luna",
+      "run": 2,
+      "choice": "Invoices",
+      "ms": 1237,
+      "usage": {
+        "input": 89,
+        "output": 58
+      }
+    },
+    {
+      "scenario": "en-service-invoices",
+      "message": "B",
+      "model": "openai/gpt-6-luna",
+      "run": 3,
+      "choice": "Personal",
+      "ms": 1724,
+      "usage": {
+        "input": 89,
+        "output": 52
+      }
+    },
+    {
+      "scenario": "en-service-invoices",
+      "message": "B",
+      "model": "openai/gpt-6-luna",
+      "run": 4,
+      "choice": "Invoices",
+      "ms": 1155,
+      "usage": {
+        "input": 89,
+        "output": 41
+      }
+    },
+    {
+      "scenario": "en-service-invoices",
+      "message": "B",
+      "model": "openai/gpt-6-luna",
+      "run": 5,
+      "choice": "Personal",
+      "ms": 1343,
+      "usage": {
+        "input": 89,
+        "output": 56
+      }
+    },
+    {
+      "scenario": "en-service-invoices",
+      "message": "B",
+      "model": "openai/gpt-6-luna",
+      "run": 6,
+      "choice": "Personal",
+      "ms": 1397,
+      "usage": {
+        "input": 89,
+        "output": 58
+      }
+    },
+    {
+      "scenario": "en-service-invoices",
+      "message": "B",
+      "model": "openai/gpt-6-luna",
+      "run": 7,
+      "choice": "Invoices",
+      "ms": 1600,
+      "usage": {
+        "input": 89,
+        "output": 52
+      }
+    },
+    {
+      "scenario": "en-service-invoices",
+      "message": "B",
+      "model": "openai/gpt-6-luna",
+      "run": 8,
+      "choice": "Invoices",
+      "ms": 2015,
+      "usage": {
+        "input": 89,
+        "output": 57
+      }
+    },
+    {
+      "scenario": "en-service-invoices",
+      "message": "B",
+      "model": "openai/gpt-6-luna",
+      "run": 9,
+      "choice": "Invoices",
+      "ms": 1840,
+      "usage": {
+        "input": 89,
+        "output": 47
+      }
+    },
+    {
+      "scenario": "en-service-invoices",
+      "message": "B",
+      "model": "openai/gpt-6-luna",
+      "run": 10,
+      "choice": "Invoices",
+      "ms": 1673,
+      "usage": {
+        "input": 89,
+        "output": 42
+      }
+    },
+    {
+      "scenario": "en-service-invoices",
+      "message": "C",
+      "model": "openai/gpt-6-luna",
+      "run": 1,
+      "choice": "Invoices",
+      "ms": 1295,
+      "usage": {
+        "input": 134,
+        "output": 50
+      }
+    },
+    {
+      "scenario": "en-service-invoices",
+      "message": "C",
+      "model": "openai/gpt-6-luna",
+      "run": 2,
+      "choice": "Invoices",
+      "ms": 1559,
+      "usage": {
+        "input": 134,
+        "output": 42
+      }
+    },
+    {
+      "scenario": "en-service-invoices",
+      "message": "C",
+      "model": "openai/gpt-6-luna",
+      "run": 3,
+      "choice": "Invoices",
+      "ms": 1422,
+      "usage": {
+        "input": 134,
+        "output": 50
+      }
+    },
+    {
+      "scenario": "en-service-invoices",
+      "message": "C",
+      "model": "openai/gpt-6-luna",
+      "run": 4,
+      "choice": "Invoices",
+      "ms": 1165,
+      "usage": {
+        "input": 134,
+        "output": 38
+      }
+    },
+    {
+      "scenario": "en-service-invoices",
+      "message": "C",
+      "model": "openai/gpt-6-luna",
+      "run": 5,
+      "choice": "Invoices",
+      "ms": 1385,
+      "usage": {
+        "input": 134,
+        "output": 63
+      }
+    },
+    {
+      "scenario": "en-service-invoices",
+      "message": "C",
+      "model": "openai/gpt-6-luna",
+      "run": 6,
+      "choice": "Invoices",
+      "ms": 1539,
+      "usage": {
+        "input": 134,
+        "output": 63
+      }
+    },
+    {
+      "scenario": "en-service-invoices",
+      "message": "C",
+      "model": "openai/gpt-6-luna",
+      "run": 7,
+      "choice": "Invoices",
+      "ms": 1705,
+      "usage": {
+        "input": 134,
+        "output": 70
+      }
+    },
+    {
+      "scenario": "en-service-invoices",
+      "message": "C",
+      "model": "openai/gpt-6-luna",
+      "run": 8,
+      "choice": "Invoices",
+      "ms": 1767,
+      "usage": {
+        "input": 134,
+        "output": 45
+      }
+    },
+    {
+      "scenario": "en-service-invoices",
+      "message": "C",
+      "model": "openai/gpt-6-luna",
+      "run": 9,
+      "choice": "Invoices",
+      "ms": 1633,
+      "usage": {
+        "input": 134,
+        "output": 43
+      }
+    },
+    {
+      "scenario": "en-service-invoices",
+      "message": "C",
+      "model": "openai/gpt-6-luna",
+      "run": 10,
+      "choice": "Invoices",
+      "ms": 1451,
+      "usage": {
+        "input": 134,
+        "output": 58
+      }
+    },
+    {
+      "scenario": "en-service-invoices",
+      "message": "A-us",
+      "model": "openai/gpt-6-luna",
+      "run": 1,
+      "choice": "Invoices",
+      "ms": 1222,
+      "usage": {
+        "input": 95,
+        "output": 55
+      }
+    },
+    {
+      "scenario": "en-service-invoices",
+      "message": "A-us",
+      "model": "openai/gpt-6-luna",
+      "run": 2,
+      "choice": "Invoices",
+      "ms": 1411,
+      "usage": {
+        "input": 95,
+        "output": 61
+      }
+    },
+    {
+      "scenario": "en-service-invoices",
+      "message": "A-us",
+      "model": "openai/gpt-6-luna",
+      "run": 3,
+      "choice": "Invoices",
+      "ms": 1378,
+      "usage": {
+        "input": 95,
+        "output": 60
+      }
+    },
+    {
+      "scenario": "en-service-invoices",
+      "message": "A-us",
+      "model": "openai/gpt-6-luna",
+      "run": 4,
+      "choice": "Invoices",
+      "ms": 1205,
+      "usage": {
+        "input": 95,
+        "output": 51
+      }
+    },
+    {
+      "scenario": "en-service-invoices",
+      "message": "A-us",
+      "model": "openai/gpt-6-luna",
+      "run": 5,
+      "choice": "Invoices",
+      "ms": 1853,
+      "usage": {
+        "input": 95,
+        "output": 67
+      }
+    },
+    {
+      "scenario": "en-service-invoices",
+      "message": "A-us",
+      "model": "openai/gpt-6-luna",
+      "run": 6,
+      "choice": "Personal",
+      "ms": 1563,
+      "usage": {
+        "input": 95,
+        "output": 44
+      }
+    },
+    {
+      "scenario": "en-service-invoices",
+      "message": "A-us",
+      "model": "openai/gpt-6-luna",
+      "run": 7,
+      "choice": "Invoices",
+      "ms": 2333,
+      "usage": {
+        "input": 95,
+        "output": 118
+      }
+    },
+    {
+      "scenario": "en-service-invoices",
+      "message": "A-us",
+      "model": "openai/gpt-6-luna",
+      "run": 8,
+      "choice": "Invoices",
+      "ms": 1132,
+      "usage": {
+        "input": 95,
+        "output": 39
+      }
+    },
+    {
+      "scenario": "en-service-invoices",
+      "message": "A-us",
+      "model": "openai/gpt-6-luna",
+      "run": 9,
+      "choice": "Invoices",
+      "ms": 1160,
+      "usage": {
+        "input": 95,
+        "output": 43
+      }
+    },
+    {
+      "scenario": "en-service-invoices",
+      "message": "A-us",
+      "model": "openai/gpt-6-luna",
+      "run": 10,
+      "choice": "Invoices",
+      "ms": 1218,
+      "usage": {
+        "input": 95,
+        "output": 46
+      }
+    },
+    {
+      "scenario": "en-service-invoices",
+      "message": "C-us",
+      "model": "openai/gpt-6-luna",
+      "run": 1,
+      "choice": "Invoices",
+      "ms": 1578,
+      "usage": {
+        "input": 132,
+        "output": 57
+      }
+    },
+    {
+      "scenario": "en-service-invoices",
+      "message": "C-us",
+      "model": "openai/gpt-6-luna",
+      "run": 2,
+      "choice": "Invoices",
+      "ms": 1240,
+      "usage": {
+        "input": 132,
+        "output": 44
+      }
+    },
+    {
+      "scenario": "en-service-invoices",
+      "message": "C-us",
+      "model": "openai/gpt-6-luna",
+      "run": 3,
+      "choice": "Invoices",
+      "ms": 1174,
+      "usage": {
+        "input": 132,
+        "output": 40
+      }
+    },
+    {
+      "scenario": "en-service-invoices",
+      "message": "C-us",
+      "model": "openai/gpt-6-luna",
+      "run": 4,
+      "choice": "Invoices",
+      "ms": 1313,
+      "usage": {
+        "input": 132,
+        "output": 40
+      }
+    },
+    {
+      "scenario": "en-service-invoices",
+      "message": "C-us",
+      "model": "openai/gpt-6-luna",
+      "run": 5,
+      "choice": "Invoices",
+      "ms": 1170,
+      "usage": {
+        "input": 132,
+        "output": 46
+      }
+    },
+    {
+      "scenario": "en-service-invoices",
+      "message": "C-us",
+      "model": "openai/gpt-6-luna",
+      "run": 6,
+      "choice": "Invoices",
+      "ms": 1775,
+      "usage": {
+        "input": 132,
+        "output": 54
+      }
+    },
+    {
+      "scenario": "en-service-invoices",
+      "message": "C-us",
+      "model": "openai/gpt-6-luna",
+      "run": 7,
+      "choice": "Invoices",
+      "ms": 1092,
+      "usage": {
+        "input": 132,
+        "output": 37
+      }
+    },
+    {
+      "scenario": "en-service-invoices",
+      "message": "C-us",
+      "model": "openai/gpt-6-luna",
+      "run": 8,
+      "choice": "Invoices",
+      "ms": 1333,
+      "usage": {
+        "input": 132,
+        "output": 44
+      }
+    },
+    {
+      "scenario": "en-service-invoices",
+      "message": "C-us",
+      "model": "openai/gpt-6-luna",
+      "run": 9,
+      "choice": "Invoices",
+      "ms": 1447,
+      "usage": {
+        "input": 132,
+        "output": 69
+      }
+    },
+    {
+      "scenario": "en-service-invoices",
+      "message": "C-us",
+      "model": "openai/gpt-6-luna",
+      "run": 10,
+      "choice": "Invoices",
+      "ms": 1167,
+      "usage": {
+        "input": 132,
+        "output": 32
+      }
+    },
+    {
+      "scenario": "en-service-bills",
+      "message": "A",
+      "model": "openai/gpt-6-luna",
+      "run": 1,
+      "choice": "Bills",
+      "ms": 1207,
+      "usage": {
+        "input": 95,
+        "output": 38
+      }
+    },
+    {
+      "scenario": "en-service-bills",
+      "message": "A",
+      "model": "openai/gpt-6-luna",
+      "run": 2,
+      "choice": "Bills",
+      "ms": 1136,
+      "usage": {
+        "input": 95,
+        "output": 36
+      }
+    },
+    {
+      "scenario": "en-service-bills",
+      "message": "A",
+      "model": "openai/gpt-6-luna",
+      "run": 3,
+      "choice": "Bills",
+      "ms": 1143,
+      "usage": {
+        "input": 95,
+        "output": 41
+      }
+    },
+    {
+      "scenario": "en-service-bills",
+      "message": "A",
+      "model": "openai/gpt-6-luna",
+      "run": 4,
+      "choice": "Bills",
+      "ms": 1106,
+      "usage": {
+        "input": 95,
+        "output": 45
+      }
+    },
+    {
+      "scenario": "en-service-bills",
+      "message": "A",
+      "model": "openai/gpt-6-luna",
+      "run": 5,
+      "choice": "Bills",
+      "ms": 1100,
+      "usage": {
+        "input": 95,
+        "output": 43
+      }
+    },
+    {
+      "scenario": "en-service-bills",
+      "message": "A",
+      "model": "openai/gpt-6-luna",
+      "run": 6,
+      "choice": "Bills",
+      "ms": 1184,
+      "usage": {
+        "input": 95,
+        "output": 37
+      }
+    },
+    {
+      "scenario": "en-service-bills",
+      "message": "A",
+      "model": "openai/gpt-6-luna",
+      "run": 7,
+      "choice": "Bills",
+      "ms": 1288,
+      "usage": {
+        "input": 95,
+        "output": 48
+      }
+    },
+    {
+      "scenario": "en-service-bills",
+      "message": "A",
+      "model": "openai/gpt-6-luna",
+      "run": 8,
+      "choice": "Bills",
+      "ms": 2220,
+      "usage": {
+        "input": 95,
+        "output": 39
+      }
+    },
+    {
+      "scenario": "en-service-bills",
+      "message": "A",
+      "model": "openai/gpt-6-luna",
+      "run": 9,
+      "choice": "Bills",
+      "ms": 1237,
+      "usage": {
+        "input": 95,
+        "output": 43
+      }
+    },
+    {
+      "scenario": "en-service-bills",
+      "message": "A",
+      "model": "openai/gpt-6-luna",
+      "run": 10,
+      "choice": "Bills",
+      "ms": 1749,
+      "usage": {
+        "input": 95,
+        "output": 39
+      }
+    },
+    {
+      "scenario": "en-service-bills",
+      "message": "B",
+      "model": "openai/gpt-6-luna",
+      "run": 1,
+      "choice": "Bills",
+      "ms": 1092,
+      "usage": {
+        "input": 88,
+        "output": 34
+      }
+    },
+    {
+      "scenario": "en-service-bills",
+      "message": "B",
+      "model": "openai/gpt-6-luna",
+      "run": 2,
+      "choice": "Bills",
+      "ms": 1436,
+      "usage": {
+        "input": 88,
+        "output": 32
+      }
+    },
+    {
+      "scenario": "en-service-bills",
+      "message": "B",
+      "model": "openai/gpt-6-luna",
+      "run": 3,
+      "choice": "Bills",
+      "ms": 1383,
+      "usage": {
+        "input": 88,
+        "output": 40
+      }
+    },
+    {
+      "scenario": "en-service-bills",
+      "message": "B",
+      "model": "openai/gpt-6-luna",
+      "run": 4,
+      "choice": "Bills",
+      "ms": 1296,
+      "usage": {
+        "input": 88,
+        "output": 34
+      }
+    },
+    {
+      "scenario": "en-service-bills",
+      "message": "B",
+      "model": "openai/gpt-6-luna",
+      "run": 5,
+      "choice": "Bills",
+      "ms": 1492,
+      "usage": {
+        "input": 88,
+        "output": 51
+      }
+    },
+    {
+      "scenario": "en-service-bills",
+      "message": "B",
+      "model": "openai/gpt-6-luna",
+      "run": 6,
+      "choice": "Bills",
+      "ms": 1453,
+      "usage": {
+        "input": 88,
+        "output": 40
+      }
+    },
+    {
+      "scenario": "en-service-bills",
+      "message": "B",
+      "model": "openai/gpt-6-luna",
+      "run": 7,
+      "choice": "Bills",
+      "ms": 1137,
+      "usage": {
+        "input": 88,
+        "output": 35
+      }
+    },
+    {
+      "scenario": "en-service-bills",
+      "message": "B",
+      "model": "openai/gpt-6-luna",
+      "run": 8,
+      "choice": "Bills",
+      "ms": 1389,
+      "usage": {
+        "input": 88,
+        "output": 47
+      }
+    },
+    {
+      "scenario": "en-service-bills",
+      "message": "B",
+      "model": "openai/gpt-6-luna",
+      "run": 9,
+      "choice": "Bills",
+      "ms": 1259,
+      "usage": {
+        "input": 88,
+        "output": 47
+      }
+    },
+    {
+      "scenario": "en-service-bills",
+      "message": "B",
+      "model": "openai/gpt-6-luna",
+      "run": 10,
+      "choice": "Bills",
+      "ms": 1210,
+      "usage": {
+        "input": 88,
+        "output": 38
+      }
+    },
+    {
+      "scenario": "en-service-bills",
+      "message": "C",
+      "model": "openai/gpt-6-luna",
+      "run": 1,
+      "choice": "Bills",
+      "ms": 2172,
+      "usage": {
+        "input": 133,
+        "output": 37
+      }
+    },
+    {
+      "scenario": "en-service-bills",
+      "message": "C",
+      "model": "openai/gpt-6-luna",
+      "run": 2,
+      "choice": "Bills",
+      "ms": 1171,
+      "usage": {
+        "input": 133,
+        "output": 50
+      }
+    },
+    {
+      "scenario": "en-service-bills",
+      "message": "C",
+      "model": "openai/gpt-6-luna",
+      "run": 3,
+      "choice": "Bills",
+      "ms": 1036,
+      "usage": {
+        "input": 133,
+        "output": 33
+      }
+    },
+    {
+      "scenario": "en-service-bills",
+      "message": "C",
+      "model": "openai/gpt-6-luna",
+      "run": 4,
+      "choice": "Bills",
+      "ms": 1046,
+      "usage": {
+        "input": 133,
+        "output": 37
+      }
+    },
+    {
+      "scenario": "en-service-bills",
+      "message": "C",
+      "model": "openai/gpt-6-luna",
+      "run": 5,
+      "choice": "Bills",
+      "ms": 1103,
+      "usage": {
+        "input": 133,
+        "output": 43
+      }
+    },
+    {
+      "scenario": "en-service-bills",
+      "message": "C",
+      "model": "openai/gpt-6-luna",
+      "run": 6,
+      "choice": "Bills",
+      "ms": 1837,
+      "usage": {
+        "input": 133,
+        "output": 33
+      }
+    },
+    {
+      "scenario": "en-service-bills",
+      "message": "C",
+      "model": "openai/gpt-6-luna",
+      "run": 7,
+      "choice": "Bills",
+      "ms": 1335,
+      "usage": {
+        "input": 133,
+        "output": 34
+      }
+    },
+    {
+      "scenario": "en-service-bills",
+      "message": "C",
+      "model": "openai/gpt-6-luna",
+      "run": 8,
+      "choice": "Bills",
+      "ms": 1497,
+      "usage": {
+        "input": 133,
+        "output": 38
+      }
+    },
+    {
+      "scenario": "en-service-bills",
+      "message": "C",
+      "model": "openai/gpt-6-luna",
+      "run": 9,
+      "choice": "Bills",
+      "ms": 1196,
+      "usage": {
+        "input": 133,
+        "output": 27
+      }
+    },
+    {
+      "scenario": "en-service-bills",
+      "message": "C",
+      "model": "openai/gpt-6-luna",
+      "run": 10,
+      "choice": "Bills",
+      "ms": 1254,
+      "usage": {
+        "input": 133,
+        "output": 41
+      }
+    },
+    {
+      "scenario": "en-service-bills",
+      "message": "A-us",
+      "model": "openai/gpt-6-luna",
+      "run": 1,
+      "choice": "Bills",
+      "ms": 1130,
+      "usage": {
+        "input": 94,
+        "output": 29
+      }
+    },
+    {
+      "scenario": "en-service-bills",
+      "message": "A-us",
+      "model": "openai/gpt-6-luna",
+      "run": 2,
+      "choice": "Bills",
+      "ms": 1312,
+      "usage": {
+        "input": 94,
+        "output": 29
+      }
+    },
+    {
+      "scenario": "en-service-bills",
+      "message": "A-us",
+      "model": "openai/gpt-6-luna",
+      "run": 3,
+      "choice": "Bills",
+      "ms": 992,
+      "usage": {
+        "input": 94,
+        "output": 30
+      }
+    },
+    {
+      "scenario": "en-service-bills",
+      "message": "A-us",
+      "model": "openai/gpt-6-luna",
+      "run": 4,
+      "choice": "Bills",
+      "ms": 1386,
+      "usage": {
+        "input": 94,
+        "output": 32
+      }
+    },
+    {
+      "scenario": "en-service-bills",
+      "message": "A-us",
+      "model": "openai/gpt-6-luna",
+      "run": 5,
+      "choice": "Bills",
+      "ms": 1105,
+      "usage": {
+        "input": 94,
+        "output": 36
+      }
+    },
+    {
+      "scenario": "en-service-bills",
+      "message": "A-us",
+      "model": "openai/gpt-6-luna",
+      "run": 6,
+      "choice": "Bills",
+      "ms": 1020,
+      "usage": {
+        "input": 94,
+        "output": 34
+      }
+    },
+    {
+      "scenario": "en-service-bills",
+      "message": "A-us",
+      "model": "openai/gpt-6-luna",
+      "run": 7,
+      "choice": "Bills",
+      "ms": 1771,
+      "usage": {
+        "input": 94,
+        "output": 34
+      }
+    },
+    {
+      "scenario": "en-service-bills",
+      "message": "A-us",
+      "model": "openai/gpt-6-luna",
+      "run": 8,
+      "choice": "Bills",
+      "ms": 1492,
+      "usage": {
+        "input": 94,
+        "output": 31
+      }
+    },
+    {
+      "scenario": "en-service-bills",
+      "message": "A-us",
+      "model": "openai/gpt-6-luna",
+      "run": 9,
+      "choice": "Bills",
+      "ms": 1509,
+      "usage": {
+        "input": 94,
+        "output": 35
+      }
+    },
+    {
+      "scenario": "en-service-bills",
+      "message": "A-us",
+      "model": "openai/gpt-6-luna",
+      "run": 10,
+      "choice": "Bills",
+      "ms": 1511,
+      "usage": {
+        "input": 94,
+        "output": 34
+      }
+    },
+    {
+      "scenario": "en-service-bills",
+      "message": "C-us",
+      "model": "openai/gpt-6-luna",
+      "run": 1,
+      "choice": "Bills",
+      "ms": 1358,
+      "usage": {
+        "input": 131,
+        "output": 38
+      }
+    },
+    {
+      "scenario": "en-service-bills",
+      "message": "C-us",
+      "model": "openai/gpt-6-luna",
+      "run": 2,
+      "choice": "Bills",
+      "ms": 1084,
+      "usage": {
+        "input": 131,
+        "output": 34
+      }
+    },
+    {
+      "scenario": "en-service-bills",
+      "message": "C-us",
+      "model": "openai/gpt-6-luna",
+      "run": 3,
+      "choice": "Bills",
+      "ms": 1364,
+      "usage": {
+        "input": 131,
+        "output": 39
+      }
+    },
+    {
+      "scenario": "en-service-bills",
+      "message": "C-us",
+      "model": "openai/gpt-6-luna",
+      "run": 4,
+      "choice": "Bills",
+      "ms": 1266,
+      "usage": {
+        "input": 131,
+        "output": 42
+      }
+    },
+    {
+      "scenario": "en-service-bills",
+      "message": "C-us",
+      "model": "openai/gpt-6-luna",
+      "run": 5,
+      "choice": "Bills",
+      "ms": 987,
+      "usage": {
+        "input": 131,
+        "output": 35
+      }
+    },
+    {
+      "scenario": "en-service-bills",
+      "message": "C-us",
+      "model": "openai/gpt-6-luna",
+      "run": 6,
+      "choice": "Bills",
+      "ms": 971,
+      "usage": {
+        "input": 131,
+        "output": 34
+      }
+    },
+    {
+      "scenario": "en-service-bills",
+      "message": "C-us",
+      "model": "openai/gpt-6-luna",
+      "run": 7,
+      "choice": "Bills",
+      "ms": 1404,
+      "usage": {
+        "input": 131,
+        "output": 35
+      }
+    },
+    {
+      "scenario": "en-service-bills",
+      "message": "C-us",
+      "model": "openai/gpt-6-luna",
+      "run": 8,
+      "choice": "Bills",
+      "ms": 929,
+      "usage": {
+        "input": 131,
+        "output": 32
+      }
+    },
+    {
+      "scenario": "en-service-bills",
+      "message": "C-us",
+      "model": "openai/gpt-6-luna",
+      "run": 9,
+      "choice": "Bills",
+      "ms": 1206,
+      "usage": {
+        "input": 131,
+        "output": 36
+      }
+    },
+    {
+      "scenario": "en-service-bills",
+      "message": "C-us",
+      "model": "openai/gpt-6-luna",
+      "run": 10,
+      "choice": "Bills",
+      "ms": 1184,
+      "usage": {
+        "input": 131,
+        "output": 33
+      }
+    },
+    {
+      "scenario": "es-facturas",
+      "message": "A",
+      "model": "anthropic/claude-haiku-5.5",
+      "run": 1,
+      "choice": "Facturas",
+      "ms": 1892,
+      "usage": {
+        "input": 346,
+        "output": 13
+      }
+    },
+    {
+      "scenario": "es-facturas",
+      "message": "A",
+      "model": "anthropic/claude-haiku-5.5",
+      "run": 2,
+      "choice": "Facturas",
+      "ms": 2285,
+      "usage": {
+        "input": 346,
+        "output": 89
+      }
+    },
+    {
+      "scenario": "es-facturas",
+      "message": "A",
+      "model": "anthropic/claude-haiku-5.5",
+      "run": 3,
+      "choice": "Facturas",
+      "ms": 2025,
+      "usage": {
+        "input": 346,
+        "output": 58
+      }
+    },
+    {
+      "scenario": "es-facturas",
+      "message": "A",
+      "model": "anthropic/claude-haiku-5.5",
+      "run": 4,
+      "choice": "Facturas",
+      "ms": 1780,
+      "usage": {
+        "input": 346,
+        "output": 13
+      }
+    },
+    {
+      "scenario": "es-facturas",
+      "message": "A",
+      "model": "anthropic/claude-haiku-5.5",
+      "run": 5,
+      "choice": "Facturas",
+      "ms": 2325,
+      "usage": {
+        "input": 346,
+        "output": 86
+      }
+    },
+    {
+      "scenario": "es-facturas",
+      "message": "A",
+      "model": "anthropic/claude-haiku-5.5",
+      "run": 6,
+      "choice": "Facturas",
+      "ms": 1786,
+      "usage": {
+        "input": 346,
+        "output": 13
+      }
+    },
+    {
+      "scenario": "es-facturas",
+      "message": "A",
+      "model": "anthropic/claude-haiku-5.5",
+      "run": 7,
+      "choice": "Facturas",
+      "ms": 1804,
+      "usage": {
+        "input": 346,
+        "output": 13
+      }
+    },
+    {
+      "scenario": "es-facturas",
+      "message": "A",
+      "model": "anthropic/claude-haiku-5.5",
+      "run": 8,
+      "choice": "Facturas",
+      "ms": 1785,
+      "usage": {
+        "input": 346,
+        "output": 13
+      }
+    },
+    {
+      "scenario": "es-facturas",
+      "message": "A",
+      "model": "anthropic/claude-haiku-5.5",
+      "run": 9,
+      "choice": "Facturas",
+      "ms": 1135,
+      "usage": {
+        "input": 346,
+        "output": 13
+      }
+    },
+    {
+      "scenario": "es-facturas",
+      "message": "A",
+      "model": "anthropic/claude-haiku-5.5",
+      "run": 10,
+      "choice": "Facturas",
+      "ms": 1003,
+      "usage": {
+        "input": 346,
+        "output": 13
+      }
+    },
+    {
+      "scenario": "es-facturas",
+      "message": "B",
+      "model": "anthropic/claude-haiku-5.5",
+      "run": 1,
+      "choice": "Facturas",
+      "ms": 1005,
+      "usage": {
+        "input": 335,
+        "output": 57
+      }
+    },
+    {
+      "scenario": "es-facturas",
+      "message": "B",
+      "model": "anthropic/claude-haiku-5.5",
+      "run": 2,
+      "choice": "Facturas",
+      "ms": 969,
+      "usage": {
+        "input": 335,
+        "output": 13
+      }
+    },
+    {
+      "scenario": "es-facturas",
+      "message": "B",
+      "model": "anthropic/claude-haiku-5.5",
+      "run": 3,
+      "choice": "Facturas",
+      "ms": 1107,
+      "usage": {
+        "input": 335,
+        "output": 57
+      }
+    },
+    {
+      "scenario": "es-facturas",
+      "message": "B",
+      "model": "anthropic/claude-haiku-5.5",
+      "run": 4,
+      "choice": "Facturas",
+      "ms": 906,
+      "usage": {
+        "input": 335,
+        "output": 57
+      }
+    },
+    {
+      "scenario": "es-facturas",
+      "message": "B",
+      "model": "anthropic/claude-haiku-5.5",
+      "run": 5,
+      "choice": "Facturas",
+      "ms": 679,
+      "usage": {
+        "input": 335,
+        "output": 13
+      }
+    },
+    {
+      "scenario": "es-facturas",
+      "message": "B",
+      "model": "anthropic/claude-haiku-5.5",
+      "run": 6,
+      "choice": "Facturas",
+      "ms": 1279,
+      "usage": {
+        "input": 335,
+        "output": 57
+      }
+    },
+    {
+      "scenario": "es-facturas",
+      "message": "B",
+      "model": "anthropic/claude-haiku-5.5",
+      "run": 7,
+      "choice": "Facturas",
+      "ms": 769,
+      "usage": {
+        "input": 335,
+        "output": 13
+      }
+    },
+    {
+      "scenario": "es-facturas",
+      "message": "B",
+      "model": "anthropic/claude-haiku-5.5",
+      "run": 8,
+      "choice": "Facturas",
+      "ms": 677,
+      "usage": {
+        "input": 335,
+        "output": 13
+      }
+    },
+    {
+      "scenario": "es-facturas",
+      "message": "B",
+      "model": "anthropic/claude-haiku-5.5",
+      "run": 9,
+      "choice": "Facturas",
+      "ms": 1217,
+      "usage": {
+        "input": 335,
+        "output": 67
+      }
+    },
+    {
+      "scenario": "es-facturas",
+      "message": "B",
+      "model": "anthropic/claude-haiku-5.5",
+      "run": 10,
+      "choice": "Facturas",
+      "ms": 957,
+      "usage": {
+        "input": 335,
+        "output": 84
+      }
+    },
+    {
+      "scenario": "es-facturas",
+      "message": "C",
+      "model": "anthropic/claude-haiku-5.5",
+      "run": 1,
+      "choice": "Facturas",
+      "ms": 1930,
+      "usage": {
+        "input": 406,
+        "output": 13
+      }
+    },
+    {
+      "scenario": "es-facturas",
+      "message": "C",
+      "model": "anthropic/claude-haiku-5.5",
+      "run": 2,
+      "choice": "Facturas",
+      "ms": 1097,
+      "usage": {
+        "input": 406,
+        "output": 13
+      }
+    },
+    {
+      "scenario": "es-facturas",
+      "message": "C",
+      "model": "anthropic/claude-haiku-5.5",
+      "run": 3,
+      "choice": "Facturas",
+      "ms": 1775,
+      "usage": {
+        "input": 406,
+        "output": 13
+      }
+    },
+    {
+      "scenario": "es-facturas",
+      "message": "C",
+      "model": "anthropic/claude-haiku-5.5",
+      "run": 4,
+      "choice": "Facturas",
+      "ms": 769,
+      "usage": {
+        "input": 406,
+        "output": 13
+      }
+    },
+    {
+      "scenario": "es-facturas",
+      "message": "C",
+      "model": "anthropic/claude-haiku-5.5",
+      "run": 5,
+      "choice": "Facturas",
+      "ms": 707,
+      "usage": {
+        "input": 406,
+        "output": 13
+      }
+    },
+    {
+      "scenario": "es-facturas",
+      "message": "C",
+      "model": "anthropic/claude-haiku-5.5",
+      "run": 6,
+      "choice": "Facturas",
+      "ms": 713,
+      "usage": {
+        "input": 406,
+        "output": 13
+      }
+    },
+    {
+      "scenario": "es-facturas",
+      "message": "C",
+      "model": "anthropic/claude-haiku-5.5",
+      "run": 7,
+      "choice": "Facturas",
+      "ms": 593,
+      "usage": {
+        "input": 406,
+        "output": 13
+      }
+    },
+    {
+      "scenario": "es-facturas",
+      "message": "C",
+      "model": "anthropic/claude-haiku-5.5",
+      "run": 8,
+      "choice": "Facturas",
+      "ms": 759,
+      "usage": {
+        "input": 406,
+        "output": 13
+      }
+    },
+    {
+      "scenario": "es-facturas",
+      "message": "C",
+      "model": "anthropic/claude-haiku-5.5",
+      "run": 9,
+      "choice": "Facturas",
+      "ms": 1237,
+      "usage": {
+        "input": 406,
+        "output": 13
+      }
+    },
+    {
+      "scenario": "es-facturas",
+      "message": "C",
+      "model": "anthropic/claude-haiku-5.5",
+      "run": 10,
+      "choice": "Facturas",
+      "ms": 611,
+      "usage": {
+        "input": 406,
+        "output": 13
+      }
+    },
+    {
+      "scenario": "es-facturas",
+      "message": "A-us",
+      "model": "anthropic/claude-haiku-5.5",
+      "run": 1,
+      "choice": "Facturas",
+      "ms": 1031,
+      "usage": {
+        "input": 347,
+        "output": 13
+      }
+    },
+    {
+      "scenario": "es-facturas",
+      "message": "A-us",
+      "model": "anthropic/claude-haiku-5.5",
+      "run": 2,
+      "choice": "Facturas",
+      "ms": 1795,
+      "usage": {
+        "input": 347,
+        "output": 13
+      }
+    },
+    {
+      "scenario": "es-facturas",
+      "message": "A-us",
+      "model": "anthropic/claude-haiku-5.5",
+      "run": 3,
+      "choice": "Facturas",
+      "ms": 1661,
+      "usage": {
+        "input": 347,
+        "output": 13
+      }
+    },
+    {
+      "scenario": "es-facturas",
+      "message": "A-us",
+      "model": "anthropic/claude-haiku-5.5",
+      "run": 4,
+      "choice": "Facturas",
+      "ms": 1022,
+      "usage": {
+        "input": 347,
+        "output": 13
+      }
+    },
+    {
+      "scenario": "es-facturas",
+      "message": "A-us",
+      "model": "anthropic/claude-haiku-5.5",
+      "run": 5,
+      "choice": "Facturas",
+      "ms": 782,
+      "usage": {
+        "input": 347,
+        "output": 13
+      }
+    },
+    {
+      "scenario": "es-facturas",
+      "message": "A-us",
+      "model": "anthropic/claude-haiku-5.5",
+      "run": 6,
+      "choice": "Facturas",
+      "ms": 714,
+      "usage": {
+        "input": 347,
+        "output": 13
+      }
+    },
+    {
+      "scenario": "es-facturas",
+      "message": "A-us",
+      "model": "anthropic/claude-haiku-5.5",
+      "run": 7,
+      "choice": "Facturas",
+      "ms": 776,
+      "usage": {
+        "input": 347,
+        "output": 13
+      }
+    },
+    {
+      "scenario": "es-facturas",
+      "message": "A-us",
+      "model": "anthropic/claude-haiku-5.5",
+      "run": 8,
+      "choice": "Facturas",
+      "ms": 1519,
+      "usage": {
+        "input": 347,
+        "output": 13
+      }
+    },
+    {
+      "scenario": "es-facturas",
+      "message": "A-us",
+      "model": "anthropic/claude-haiku-5.5",
+      "run": 9,
+      "choice": "Facturas",
+      "ms": 752,
+      "usage": {
+        "input": 347,
+        "output": 13
+      }
+    },
+    {
+      "scenario": "es-facturas",
+      "message": "A-us",
+      "model": "anthropic/claude-haiku-5.5",
+      "run": 10,
+      "choice": "Facturas",
+      "ms": 842,
+      "usage": {
+        "input": 347,
+        "output": 13
+      }
+    },
+    {
+      "scenario": "es-facturas",
+      "message": "C-us",
+      "model": "anthropic/claude-haiku-5.5",
+      "run": 1,
+      "choice": "Facturas",
+      "ms": 1034,
+      "usage": {
+        "input": 407,
+        "output": 13
+      }
+    },
+    {
+      "scenario": "es-facturas",
+      "message": "C-us",
+      "model": "anthropic/claude-haiku-5.5",
+      "run": 2,
+      "choice": "Facturas",
+      "ms": 2003,
+      "usage": {
+        "input": 407,
+        "output": 13
+      }
+    },
+    {
+      "scenario": "es-facturas",
+      "message": "C-us",
+      "model": "anthropic/claude-haiku-5.5",
+      "run": 3,
+      "choice": "Facturas",
+      "ms": 957,
+      "usage": {
+        "input": 407,
+        "output": 13
+      }
+    },
+    {
+      "scenario": "es-facturas",
+      "message": "C-us",
+      "model": "anthropic/claude-haiku-5.5",
+      "run": 4,
+      "choice": "Facturas",
+      "ms": 909,
+      "usage": {
+        "input": 407,
+        "output": 13
+      }
+    },
+    {
+      "scenario": "es-facturas",
+      "message": "C-us",
+      "model": "anthropic/claude-haiku-5.5",
+      "run": 5,
+      "choice": "Facturas",
+      "ms": 936,
+      "usage": {
+        "input": 407,
+        "output": 13
+      }
+    },
+    {
+      "scenario": "es-facturas",
+      "message": "C-us",
+      "model": "anthropic/claude-haiku-5.5",
+      "run": 6,
+      "choice": "Facturas",
+      "ms": 776,
+      "usage": {
+        "input": 407,
+        "output": 13
+      }
+    },
+    {
+      "scenario": "es-facturas",
+      "message": "C-us",
+      "model": "anthropic/claude-haiku-5.5",
+      "run": 7,
+      "choice": "Facturas",
+      "ms": 859,
+      "usage": {
+        "input": 407,
+        "output": 13
+      }
+    },
+    {
+      "scenario": "es-facturas",
+      "message": "C-us",
+      "model": "anthropic/claude-haiku-5.5",
+      "run": 8,
+      "choice": "Facturas",
+      "ms": 1029,
+      "usage": {
+        "input": 407,
+        "output": 13
+      }
+    },
+    {
+      "scenario": "es-facturas",
+      "message": "C-us",
+      "model": "anthropic/claude-haiku-5.5",
+      "run": 9,
+      "choice": "Facturas",
+      "ms": 865,
+      "usage": {
+        "input": 407,
+        "output": 13
+      }
+    },
+    {
+      "scenario": "es-facturas",
+      "message": "C-us",
+      "model": "anthropic/claude-haiku-5.5",
+      "run": 10,
+      "choice": "Facturas",
+      "ms": 834,
+      "usage": {
+        "input": 407,
+        "output": 13
+      }
+    },
+    {
+      "scenario": "en-invoices",
+      "message": "A",
+      "model": "anthropic/claude-haiku-5.5",
+      "run": 1,
+      "choice": "Invoices",
+      "ms": 1939,
+      "usage": {
+        "input": 344,
+        "output": 71
+      }
+    },
+    {
+      "scenario": "en-invoices",
+      "message": "A",
+      "model": "anthropic/claude-haiku-5.5",
+      "run": 2,
+      "choice": "Invoices",
+      "ms": 2243,
+      "usage": {
+        "input": 344,
+        "output": 120
+      }
+    },
+    {
+      "scenario": "en-invoices",
+      "message": "A",
+      "model": "anthropic/claude-haiku-5.5",
+      "run": 3,
+      "choice": "Invoices",
+      "ms": 2579,
+      "usage": {
+        "input": 344,
+        "output": 206
+      }
+    },
+    {
+      "scenario": "en-invoices",
+      "message": "A",
+      "model": "anthropic/claude-haiku-5.5",
+      "run": 4,
+      "choice": "Invoices",
+      "ms": 1616,
+      "usage": {
+        "input": 344,
+        "output": 81
+      }
+    },
+    {
+      "scenario": "en-invoices",
+      "message": "A",
+      "model": "anthropic/claude-haiku-5.5",
+      "run": 5,
+      "choice": "Invoices",
+      "ms": 2056,
+      "usage": {
+        "input": 344,
+        "output": 197
+      }
+    },
+    {
+      "scenario": "en-invoices",
+      "message": "A",
+      "model": "anthropic/claude-haiku-5.5",
+      "run": 6,
+      "choice": "Invoices",
+      "ms": 828,
+      "usage": {
+        "input": 344,
+        "output": 13
+      }
+    },
+    {
+      "scenario": "en-invoices",
+      "message": "A",
+      "model": "anthropic/claude-haiku-5.5",
+      "run": 7,
+      "choice": "Invoices",
+      "ms": 1371,
+      "usage": {
+        "input": 344,
+        "output": 92
+      }
+    },
+    {
+      "scenario": "en-invoices",
+      "message": "A",
+      "model": "anthropic/claude-haiku-5.5",
+      "run": 8,
+      "choice": "Invoices",
+      "ms": 1215,
+      "usage": {
+        "input": 344,
+        "output": 77
+      }
+    },
+    {
+      "scenario": "en-invoices",
+      "message": "A",
+      "model": "anthropic/claude-haiku-5.5",
+      "run": 9,
+      "choice": "Invoices",
+      "ms": 784,
+      "usage": {
+        "input": 344,
+        "output": 13
+      }
+    },
+    {
+      "scenario": "en-invoices",
+      "message": "A",
+      "model": "anthropic/claude-haiku-5.5",
+      "run": 10,
+      "choice": "Invoices",
+      "ms": 1488,
+      "usage": {
+        "input": 344,
+        "output": 129
+      }
+    },
+    {
+      "scenario": "en-invoices",
+      "message": "B",
+      "model": "anthropic/claude-haiku-5.5",
+      "run": 1,
+      "choice": "Invoices",
+      "ms": 936,
+      "usage": {
+        "input": 331,
+        "output": 13
+      }
+    },
+    {
+      "scenario": "en-invoices",
+      "message": "B",
+      "model": "anthropic/claude-haiku-5.5",
+      "run": 2,
+      "choice": "Invoices",
+      "ms": 1702,
+      "usage": {
+        "input": 331,
+        "output": 89
+      }
+    },
+    {
+      "scenario": "en-invoices",
+      "message": "B",
+      "model": "anthropic/claude-haiku-5.5",
+      "run": 3,
+      "choice": "Invoices",
+      "ms": 1172,
+      "usage": {
+        "input": 331,
+        "output": 74
+      }
+    },
+    {
+      "scenario": "en-invoices",
+      "message": "B",
+      "model": "anthropic/claude-haiku-5.5",
+      "run": 4,
+      "choice": "Invoices",
+      "ms": 1215,
+      "usage": {
+        "input": 331,
+        "output": 70
+      }
+    },
+    {
+      "scenario": "en-invoices",
+      "message": "B",
+      "model": "anthropic/claude-haiku-5.5",
+      "run": 5,
+      "choice": "Invoices",
+      "ms": 1049,
+      "usage": {
+        "input": 331,
+        "output": 84
+      }
+    },
+    {
+      "scenario": "en-invoices",
+      "message": "B",
+      "model": "anthropic/claude-haiku-5.5",
+      "run": 6,
+      "choice": "Invoices",
+      "ms": 968,
+      "usage": {
+        "input": 331,
+        "output": 82
+      }
+    },
+    {
+      "scenario": "en-invoices",
+      "message": "B",
+      "model": "anthropic/claude-haiku-5.5",
+      "run": 7,
+      "choice": "Invoices",
+      "ms": 923,
+      "usage": {
+        "input": 331,
+        "output": 48
+      }
+    },
+    {
+      "scenario": "en-invoices",
+      "message": "B",
+      "model": "anthropic/claude-haiku-5.5",
+      "run": 8,
+      "choice": "Invoices",
+      "ms": 980,
+      "usage": {
+        "input": 331,
+        "output": 63
+      }
+    },
+    {
+      "scenario": "en-invoices",
+      "message": "B",
+      "model": "anthropic/claude-haiku-5.5",
+      "run": 9,
+      "choice": "Invoices",
+      "ms": 1090,
+      "usage": {
+        "input": 331,
+        "output": 82
+      }
+    },
+    {
+      "scenario": "en-invoices",
+      "message": "B",
+      "model": "anthropic/claude-haiku-5.5",
+      "run": 10,
+      "choice": "Invoices",
+      "ms": 1168,
+      "usage": {
+        "input": 331,
+        "output": 86
+      }
+    },
+    {
+      "scenario": "en-invoices",
+      "message": "C",
+      "model": "anthropic/claude-haiku-5.5",
+      "run": 1,
+      "choice": "Invoices",
+      "ms": 1335,
+      "usage": {
+        "input": 398,
+        "output": 115
+      }
+    },
+    {
+      "scenario": "en-invoices",
+      "message": "C",
+      "model": "anthropic/claude-haiku-5.5",
+      "run": 2,
+      "choice": "Invoices",
+      "ms": 1960,
+      "usage": {
+        "input": 398,
+        "output": 53
+      }
+    },
+    {
+      "scenario": "en-invoices",
+      "message": "C",
+      "model": "anthropic/claude-haiku-5.5",
+      "run": 3,
+      "choice": "Invoices",
+      "ms": 1448,
+      "usage": {
+        "input": 398,
+        "output": 144
+      }
+    },
+    {
+      "scenario": "en-invoices",
+      "message": "C",
+      "model": "anthropic/claude-haiku-5.5",
+      "run": 4,
+      "choice": "Invoices",
+      "ms": 1709,
+      "usage": {
+        "input": 398,
+        "output": 13
+      }
+    },
+    {
+      "scenario": "en-invoices",
+      "message": "C",
+      "model": "anthropic/claude-haiku-5.5",
+      "run": 5,
+      "choice": "Invoices",
+      "ms": 726,
+      "usage": {
+        "input": 398,
+        "output": 13
+      }
+    },
+    {
+      "scenario": "en-invoices",
+      "message": "C",
+      "model": "anthropic/claude-haiku-5.5",
+      "run": 6,
+      "choice": "Invoices",
+      "ms": 1129,
+      "usage": {
+        "input": 398,
+        "output": 127
+      }
+    },
+    {
+      "scenario": "en-invoices",
+      "message": "C",
+      "model": "anthropic/claude-haiku-5.5",
+      "run": 7,
+      "choice": "Invoices",
+      "ms": 690,
+      "usage": {
+        "input": 398,
+        "output": 13
+      }
+    },
+    {
+      "scenario": "en-invoices",
+      "message": "C",
+      "model": "anthropic/claude-haiku-5.5",
+      "run": 8,
+      "choice": "Invoices",
+      "ms": 964,
+      "usage": {
+        "input": 398,
+        "output": 53
+      }
+    },
+    {
+      "scenario": "en-invoices",
+      "message": "C",
+      "model": "anthropic/claude-haiku-5.5",
+      "run": 9,
+      "choice": "Invoices",
+      "ms": 640,
+      "usage": {
+        "input": 398,
+        "output": 13
+      }
+    },
+    {
+      "scenario": "en-invoices",
+      "message": "C",
+      "model": "anthropic/claude-haiku-5.5",
+      "run": 10,
+      "choice": "Invoices",
+      "ms": 689,
+      "usage": {
+        "input": 398,
+        "output": 13
+      }
+    },
+    {
+      "scenario": "en-invoices",
+      "message": "A-us",
+      "model": "anthropic/claude-haiku-5.5",
+      "run": 1,
+      "choice": "Invoices",
+      "ms": 1364,
+      "usage": {
+        "input": 344,
+        "output": 81
+      }
+    },
+    {
+      "scenario": "en-invoices",
+      "message": "A-us",
+      "model": "anthropic/claude-haiku-5.5",
+      "run": 2,
+      "choice": "Invoices",
+      "ms": 1697,
+      "usage": {
+        "input": 344,
+        "output": 111
+      }
+    },
+    {
+      "scenario": "en-invoices",
+      "message": "A-us",
+      "model": "anthropic/claude-haiku-5.5",
+      "run": 3,
+      "choice": "Invoices",
+      "ms": 1953,
+      "usage": {
+        "input": 344,
+        "output": 190
+      }
+    },
+    {
+      "scenario": "en-invoices",
+      "message": "A-us",
+      "model": "anthropic/claude-haiku-5.5",
+      "run": 4,
+      "choice": "Invoices",
+      "ms": 1676,
+      "usage": {
+        "input": 344,
+        "output": 79
+      }
+    },
+    {
+      "scenario": "en-invoices",
+      "message": "A-us",
+      "model": "anthropic/claude-haiku-5.5",
+      "run": 5,
+      "choice": "Invoices",
+      "ms": 1337,
+      "usage": {
+        "input": 344,
+        "output": 71
+      }
+    },
+    {
+      "scenario": "en-invoices",
+      "message": "A-us",
+      "model": "anthropic/claude-haiku-5.5",
+      "run": 6,
+      "choice": "Invoices",
+      "ms": 1258,
+      "usage": {
+        "input": 344,
+        "output": 87
+      }
+    },
+    {
+      "scenario": "en-invoices",
+      "message": "A-us",
+      "model": "anthropic/claude-haiku-5.5",
+      "run": 7,
+      "choice": "Invoices",
+      "ms": 1626,
+      "usage": {
+        "input": 344,
+        "output": 105
+      }
+    },
+    {
+      "scenario": "en-invoices",
+      "message": "A-us",
+      "model": "anthropic/claude-haiku-5.5",
+      "run": 8,
+      "choice": "Invoices",
+      "ms": 1431,
+      "usage": {
+        "input": 344,
+        "output": 116
+      }
+    },
+    {
+      "scenario": "en-invoices",
+      "message": "A-us",
+      "model": "anthropic/claude-haiku-5.5",
+      "run": 9,
+      "choice": "Invoices",
+      "ms": 1895,
+      "usage": {
+        "input": 344,
+        "output": 176
+      }
+    },
+    {
+      "scenario": "en-invoices",
+      "message": "A-us",
+      "model": "anthropic/claude-haiku-5.5",
+      "run": 10,
+      "choice": "Invoices",
+      "ms": 2028,
+      "usage": {
+        "input": 344,
+        "output": 114
+      }
+    },
+    {
+      "scenario": "en-invoices",
+      "message": "C-us",
+      "model": "anthropic/claude-haiku-5.5",
+      "run": 1,
+      "choice": "Invoices",
+      "ms": 2581,
+      "usage": {
+        "input": 398,
+        "output": 111
+      }
+    },
+    {
+      "scenario": "en-invoices",
+      "message": "C-us",
+      "model": "anthropic/claude-haiku-5.5",
+      "run": 2,
+      "choice": "Invoices",
+      "ms": 902,
+      "usage": {
+        "input": 398,
+        "output": 13
+      }
+    },
+    {
+      "scenario": "en-invoices",
+      "message": "C-us",
+      "model": "anthropic/claude-haiku-5.5",
+      "run": 3,
+      "choice": "Invoices",
+      "ms": 2307,
+      "usage": {
+        "input": 398,
+        "output": 13
+      }
+    },
+    {
+      "scenario": "en-invoices",
+      "message": "C-us",
+      "model": "anthropic/claude-haiku-5.5",
+      "run": 4,
+      "choice": "Invoices",
+      "ms": 1985,
+      "usage": {
+        "input": 398,
+        "output": 13
+      }
+    },
+    {
+      "scenario": "en-invoices",
+      "message": "C-us",
+      "model": "anthropic/claude-haiku-5.5",
+      "run": 5,
+      "choice": "Invoices",
+      "ms": 1018,
+      "usage": {
+        "input": 398,
+        "output": 13
+      }
+    },
+    {
+      "scenario": "en-invoices",
+      "message": "C-us",
+      "model": "anthropic/claude-haiku-5.5",
+      "run": 6,
+      "choice": "Invoices",
+      "ms": 971,
+      "usage": {
+        "input": 398,
+        "output": 13
+      }
+    },
+    {
+      "scenario": "en-invoices",
+      "message": "C-us",
+      "model": "anthropic/claude-haiku-5.5",
+      "run": 7,
+      "choice": "Invoices",
+      "ms": 4532,
+      "usage": {
+        "input": 398,
+        "output": 13
+      }
+    },
+    {
+      "scenario": "en-invoices",
+      "message": "C-us",
+      "model": "anthropic/claude-haiku-5.5",
+      "run": 8,
+      "choice": "Invoices",
+      "ms": 1549,
+      "usage": {
+        "input": 398,
+        "output": 124
+      }
+    },
+    {
+      "scenario": "en-invoices",
+      "message": "C-us",
+      "model": "anthropic/claude-haiku-5.5",
+      "run": 9,
+      "choice": "Invoices",
+      "ms": 902,
+      "usage": {
+        "input": 398,
+        "output": 13
+      }
+    },
+    {
+      "scenario": "en-invoices",
+      "message": "C-us",
+      "model": "anthropic/claude-haiku-5.5",
+      "run": 10,
+      "choice": "Invoices",
+      "ms": 2460,
+      "usage": {
+        "input": 398,
+        "output": 13
+      }
+    },
+    {
+      "scenario": "en-bills",
+      "message": "A",
+      "model": "anthropic/claude-haiku-5.5",
+      "run": 1,
+      "choice": "Bills",
+      "ms": 1670,
+      "usage": {
+        "input": 342,
+        "output": 12
+      }
+    },
+    {
+      "scenario": "en-bills",
+      "message": "A",
+      "model": "anthropic/claude-haiku-5.5",
+      "run": 2,
+      "choice": "Bills",
+      "ms": 1163,
+      "usage": {
+        "input": 342,
+        "output": 12
+      }
+    },
+    {
+      "scenario": "en-bills",
+      "message": "A",
+      "model": "anthropic/claude-haiku-5.5",
+      "run": 3,
+      "choice": "Bills",
+      "ms": 1965,
+      "usage": {
+        "input": 342,
+        "output": 12
+      }
+    },
+    {
+      "scenario": "en-bills",
+      "message": "A",
+      "model": "anthropic/claude-haiku-5.5",
+      "run": 4,
+      "choice": "Bills",
+      "ms": 1192,
+      "usage": {
+        "input": 342,
+        "output": 12
+      }
+    },
+    {
+      "scenario": "en-bills",
+      "message": "A",
+      "model": "anthropic/claude-haiku-5.5",
+      "run": 5,
+      "choice": "Bills",
+      "ms": 759,
+      "usage": {
+        "input": 342,
+        "output": 12
+      }
+    },
+    {
+      "scenario": "en-bills",
+      "message": "A",
+      "model": "anthropic/claude-haiku-5.5",
+      "run": 6,
+      "choice": "Bills",
+      "ms": 760,
+      "usage": {
+        "input": 342,
+        "output": 12
+      }
+    },
+    {
+      "scenario": "en-bills",
+      "message": "A",
+      "model": "anthropic/claude-haiku-5.5",
+      "run": 7,
+      "choice": "Bills",
+      "ms": 901,
+      "usage": {
+        "input": 342,
+        "output": 12
+      }
+    },
+    {
+      "scenario": "en-bills",
+      "message": "A",
+      "model": "anthropic/claude-haiku-5.5",
+      "run": 8,
+      "choice": "Bills",
+      "ms": 833,
+      "usage": {
+        "input": 342,
+        "output": 12
+      }
+    },
+    {
+      "scenario": "en-bills",
+      "message": "A",
+      "model": "anthropic/claude-haiku-5.5",
+      "run": 9,
+      "choice": "Bills",
+      "ms": 785,
+      "usage": {
+        "input": 342,
+        "output": 12
+      }
+    },
+    {
+      "scenario": "en-bills",
+      "message": "A",
+      "model": "anthropic/claude-haiku-5.5",
+      "run": 10,
+      "choice": "Bills",
+      "ms": 611,
+      "usage": {
+        "input": 342,
+        "output": 12
+      }
+    },
+    {
+      "scenario": "en-bills",
+      "message": "B",
+      "model": "anthropic/claude-haiku-5.5",
+      "run": 1,
+      "choice": "Bills",
+      "ms": 1160,
+      "usage": {
+        "input": 329,
+        "output": 12
+      }
+    },
+    {
+      "scenario": "en-bills",
+      "message": "B",
+      "model": "anthropic/claude-haiku-5.5",
+      "run": 2,
+      "choice": "Bills",
+      "ms": 1105,
+      "usage": {
+        "input": 329,
+        "output": 12
+      }
+    },
+    {
+      "scenario": "en-bills",
+      "message": "B",
+      "model": "anthropic/claude-haiku-5.5",
+      "run": 3,
+      "choice": "Bills",
+      "ms": 581,
+      "usage": {
+        "input": 329,
+        "output": 12
+      }
+    },
+    {
+      "scenario": "en-bills",
+      "message": "B",
+      "model": "anthropic/claude-haiku-5.5",
+      "run": 4,
+      "choice": "Bills",
+      "ms": 656,
+      "usage": {
+        "input": 329,
+        "output": 12
+      }
+    },
+    {
+      "scenario": "en-bills",
+      "message": "B",
+      "model": "anthropic/claude-haiku-5.5",
+      "run": 5,
+      "choice": "Bills",
+      "ms": 777,
+      "usage": {
+        "input": 329,
+        "output": 12
+      }
+    },
+    {
+      "scenario": "en-bills",
+      "message": "B",
+      "model": "anthropic/claude-haiku-5.5",
+      "run": 6,
+      "choice": "Bills",
+      "ms": 907,
+      "usage": {
+        "input": 329,
+        "output": 12
+      }
+    },
+    {
+      "scenario": "en-bills",
+      "message": "B",
+      "model": "anthropic/claude-haiku-5.5",
+      "run": 7,
+      "choice": "Bills",
+      "ms": 623,
+      "usage": {
+        "input": 329,
+        "output": 12
+      }
+    },
+    {
+      "scenario": "en-bills",
+      "message": "B",
+      "model": "anthropic/claude-haiku-5.5",
+      "run": 8,
+      "choice": "Bills",
+      "ms": 798,
+      "usage": {
+        "input": 329,
+        "output": 12
+      }
+    },
+    {
+      "scenario": "en-bills",
+      "message": "B",
+      "model": "anthropic/claude-haiku-5.5",
+      "run": 9,
+      "choice": "Bills",
+      "ms": 671,
+      "usage": {
+        "input": 329,
+        "output": 12
+      }
+    },
+    {
+      "scenario": "en-bills",
+      "message": "B",
+      "model": "anthropic/claude-haiku-5.5",
+      "run": 10,
+      "choice": "Bills",
+      "ms": 712,
+      "usage": {
+        "input": 329,
+        "output": 12
+      }
+    },
+    {
+      "scenario": "en-bills",
+      "message": "C",
+      "model": "anthropic/claude-haiku-5.5",
+      "run": 1,
+      "choice": "Bills",
+      "ms": 1013,
+      "usage": {
+        "input": 396,
+        "output": 12
+      }
+    },
+    {
+      "scenario": "en-bills",
+      "message": "C",
+      "model": "anthropic/claude-haiku-5.5",
+      "run": 2,
+      "choice": "Bills",
+      "ms": 1770,
+      "usage": {
+        "input": 396,
+        "output": 12
+      }
+    },
+    {
+      "scenario": "en-bills",
+      "message": "C",
+      "model": "anthropic/claude-haiku-5.5",
+      "run": 3,
+      "choice": "Bills",
+      "ms": 1864,
+      "usage": {
+        "input": 396,
+        "output": 12
+      }
+    },
+    {
+      "scenario": "en-bills",
+      "message": "C",
+      "model": "anthropic/claude-haiku-5.5",
+      "run": 4,
+      "choice": "Bills",
+      "ms": 1764,
+      "usage": {
+        "input": 396,
+        "output": 12
+      }
+    },
+    {
+      "scenario": "en-bills",
+      "message": "C",
+      "model": "anthropic/claude-haiku-5.5",
+      "run": 5,
+      "choice": "Bills",
+      "ms": 599,
+      "usage": {
+        "input": 396,
+        "output": 12
+      }
+    },
+    {
+      "scenario": "en-bills",
+      "message": "C",
+      "model": "anthropic/claude-haiku-5.5",
+      "run": 6,
+      "choice": "Bills",
+      "ms": 1037,
+      "usage": {
+        "input": 396,
+        "output": 12
+      }
+    },
+    {
+      "scenario": "en-bills",
+      "message": "C",
+      "model": "anthropic/claude-haiku-5.5",
+      "run": 7,
+      "choice": "Bills",
+      "ms": 619,
+      "usage": {
+        "input": 396,
+        "output": 12
+      }
+    },
+    {
+      "scenario": "en-bills",
+      "message": "C",
+      "model": "anthropic/claude-haiku-5.5",
+      "run": 8,
+      "choice": "Bills",
+      "ms": 598,
+      "usage": {
+        "input": 396,
+        "output": 12
+      }
+    },
+    {
+      "scenario": "en-bills",
+      "message": "C",
+      "model": "anthropic/claude-haiku-5.5",
+      "run": 9,
+      "choice": "Bills",
+      "ms": 588,
+      "usage": {
+        "input": 396,
+        "output": 12
+      }
+    },
+    {
+      "scenario": "en-bills",
+      "message": "C",
+      "model": "anthropic/claude-haiku-5.5",
+      "run": 10,
+      "choice": "Bills",
+      "ms": 687,
+      "usage": {
+        "input": 396,
+        "output": 12
+      }
+    },
+    {
+      "scenario": "en-bills",
+      "message": "A-us",
+      "model": "anthropic/claude-haiku-5.5",
+      "run": 1,
+      "choice": "Bills",
+      "ms": 621,
+      "usage": {
+        "input": 342,
+        "output": 12
+      }
+    },
+    {
+      "scenario": "en-bills",
+      "message": "A-us",
+      "model": "anthropic/claude-haiku-5.5",
+      "run": 2,
+      "choice": "Bills",
+      "ms": 1287,
+      "usage": {
+        "input": 342,
+        "output": 12
+      }
+    },
+    {
+      "scenario": "en-bills",
+      "message": "A-us",
+      "model": "anthropic/claude-haiku-5.5",
+      "run": 3,
+      "choice": "Bills",
+      "ms": 629,
+      "usage": {
+        "input": 342,
+        "output": 12
+      }
+    },
+    {
+      "scenario": "en-bills",
+      "message": "A-us",
+      "model": "anthropic/claude-haiku-5.5",
+      "run": 4,
+      "choice": "Bills",
+      "ms": 739,
+      "usage": {
+        "input": 342,
+        "output": 12
+      }
+    },
+    {
+      "scenario": "en-bills",
+      "message": "A-us",
+      "model": "anthropic/claude-haiku-5.5",
+      "run": 5,
+      "choice": "Bills",
+      "ms": 689,
+      "usage": {
+        "input": 342,
+        "output": 12
+      }
+    },
+    {
+      "scenario": "en-bills",
+      "message": "A-us",
+      "model": "anthropic/claude-haiku-5.5",
+      "run": 6,
+      "choice": "Bills",
+      "ms": 615,
+      "usage": {
+        "input": 342,
+        "output": 12
+      }
+    },
+    {
+      "scenario": "en-bills",
+      "message": "A-us",
+      "model": "anthropic/claude-haiku-5.5",
+      "run": 7,
+      "choice": "Bills",
+      "ms": 621,
+      "usage": {
+        "input": 342,
+        "output": 12
+      }
+    },
+    {
+      "scenario": "en-bills",
+      "message": "A-us",
+      "model": "anthropic/claude-haiku-5.5",
+      "run": 8,
+      "choice": "Bills",
+      "ms": 700,
+      "usage": {
+        "input": 342,
+        "output": 12
+      }
+    },
+    {
+      "scenario": "en-bills",
+      "message": "A-us",
+      "model": "anthropic/claude-haiku-5.5",
+      "run": 9,
+      "choice": "Bills",
+      "ms": 954,
+      "usage": {
+        "input": 342,
+        "output": 12
+      }
+    },
+    {
+      "scenario": "en-bills",
+      "message": "A-us",
+      "model": "anthropic/claude-haiku-5.5",
+      "run": 10,
+      "choice": "Bills",
+      "ms": 656,
+      "usage": {
+        "input": 342,
+        "output": 12
+      }
+    },
+    {
+      "scenario": "en-bills",
+      "message": "C-us",
+      "model": "anthropic/claude-haiku-5.5",
+      "run": 1,
+      "choice": "Bills",
+      "ms": 1078,
+      "usage": {
+        "input": 396,
+        "output": 12
+      }
+    },
+    {
+      "scenario": "en-bills",
+      "message": "C-us",
+      "model": "anthropic/claude-haiku-5.5",
+      "run": 2,
+      "choice": "Bills",
+      "ms": 712,
+      "usage": {
+        "input": 396,
+        "output": 12
+      }
+    },
+    {
+      "scenario": "en-bills",
+      "message": "C-us",
+      "model": "anthropic/claude-haiku-5.5",
+      "run": 3,
+      "choice": "Bills",
+      "ms": 719,
+      "usage": {
+        "input": 396,
+        "output": 12
+      }
+    },
+    {
+      "scenario": "en-bills",
+      "message": "C-us",
+      "model": "anthropic/claude-haiku-5.5",
+      "run": 4,
+      "choice": "Bills",
+      "ms": 899,
+      "usage": {
+        "input": 396,
+        "output": 12
+      }
+    },
+    {
+      "scenario": "en-bills",
+      "message": "C-us",
+      "model": "anthropic/claude-haiku-5.5",
+      "run": 5,
+      "choice": "Bills",
+      "ms": 713,
+      "usage": {
+        "input": 396,
+        "output": 12
+      }
+    },
+    {
+      "scenario": "en-bills",
+      "message": "C-us",
+      "model": "anthropic/claude-haiku-5.5",
+      "run": 6,
+      "choice": "Bills",
+      "ms": 645,
+      "usage": {
+        "input": 396,
+        "output": 12
+      }
+    },
+    {
+      "scenario": "en-bills",
+      "message": "C-us",
+      "model": "anthropic/claude-haiku-5.5",
+      "run": 7,
+      "choice": "Bills",
+      "ms": 657,
+      "usage": {
+        "input": 396,
+        "output": 12
+      }
+    },
+    {
+      "scenario": "en-bills",
+      "message": "C-us",
+      "model": "anthropic/claude-haiku-5.5",
+      "run": 8,
+      "choice": "Bills",
+      "ms": 670,
+      "usage": {
+        "input": 396,
+        "output": 12
+      }
+    },
+    {
+      "scenario": "en-bills",
+      "message": "C-us",
+      "model": "anthropic/claude-haiku-5.5",
+      "run": 9,
+      "choice": "Bills",
+      "ms": 656,
+      "usage": {
+        "input": 396,
+        "output": 12
+      }
+    },
+    {
+      "scenario": "en-bills",
+      "message": "C-us",
+      "model": "anthropic/claude-haiku-5.5",
+      "run": 10,
+      "choice": "Bills",
+      "ms": 706,
+      "usage": {
+        "input": 396,
+        "output": 12
+      }
+    },
+    {
+      "scenario": "en-service-invoices",
+      "message": "A",
+      "model": "anthropic/claude-haiku-5.5",
+      "run": 1,
+      "choice": "Invoices",
+      "ms": 2397,
+      "usage": {
+        "input": 342,
+        "output": 142
+      }
+    },
+    {
+      "scenario": "en-service-invoices",
+      "message": "A",
+      "model": "anthropic/claude-haiku-5.5",
+      "run": 2,
+      "choice": "Invoices",
+      "ms": 2151,
+      "usage": {
+        "input": 342,
+        "output": 129
+      }
+    },
+    {
+      "scenario": "en-service-invoices",
+      "message": "A",
+      "model": "anthropic/claude-haiku-5.5",
+      "run": 3,
+      "choice": "Invoices",
+      "ms": 1628,
+      "usage": {
+        "input": 342,
+        "output": 123
+      }
+    },
+    {
+      "scenario": "en-service-invoices",
+      "message": "A",
+      "model": "anthropic/claude-haiku-5.5",
+      "run": 4,
+      "choice": "Invoices",
+      "ms": 3220,
+      "usage": {
+        "input": 342,
+        "output": 149
+      }
+    },
+    {
+      "scenario": "en-service-invoices",
+      "message": "A",
+      "model": "anthropic/claude-haiku-5.5",
+      "run": 5,
+      "choice": "Invoices",
+      "ms": 2352,
+      "usage": {
+        "input": 342,
+        "output": 139
+      }
+    },
+    {
+      "scenario": "en-service-invoices",
+      "message": "A",
+      "model": "anthropic/claude-haiku-5.5",
+      "run": 6,
+      "choice": "Invoices",
+      "ms": 1912,
+      "usage": {
+        "input": 342,
+        "output": 141
+      }
+    },
+    {
+      "scenario": "en-service-invoices",
+      "message": "A",
+      "model": "anthropic/claude-haiku-5.5",
+      "run": 7,
+      "choice": "Invoices",
+      "ms": 1952,
+      "usage": {
+        "input": 342,
+        "output": 176
+      }
+    },
+    {
+      "scenario": "en-service-invoices",
+      "message": "A",
+      "model": "anthropic/claude-haiku-5.5",
+      "run": 8,
+      "choice": "Invoices",
+      "ms": 4793,
+      "usage": {
+        "input": 342,
+        "output": 242
+      }
+    },
+    {
+      "scenario": "en-service-invoices",
+      "message": "A",
+      "model": "anthropic/claude-haiku-5.5",
+      "run": 9,
+      "choice": "Invoices",
+      "ms": 1938,
+      "usage": {
+        "input": 342,
+        "output": 160
+      }
+    },
+    {
+      "scenario": "en-service-invoices",
+      "message": "A",
+      "model": "anthropic/claude-haiku-5.5",
+      "run": 10,
+      "choice": "Invoices",
+      "ms": 2835,
+      "usage": {
+        "input": 342,
+        "output": 157
+      }
+    },
+    {
+      "scenario": "en-service-invoices",
+      "message": "B",
+      "model": "anthropic/claude-haiku-5.5",
+      "run": 1,
+      "choice": "Invoices",
+      "ms": 1201,
+      "usage": {
+        "input": 329,
+        "output": 120
+      }
+    },
+    {
+      "scenario": "en-service-invoices",
+      "message": "B",
+      "model": "anthropic/claude-haiku-5.5",
+      "run": 2,
+      "choice": "Personal",
+      "ms": 1642,
+      "usage": {
+        "input": 329,
+        "output": 105
+      }
+    },
+    {
+      "scenario": "en-service-invoices",
+      "message": "B",
+      "model": "anthropic/claude-haiku-5.5",
+      "run": 3,
+      "choice": "Invoices",
+      "ms": 1410,
+      "usage": {
+        "input": 329,
+        "output": 169
+      }
+    },
+    {
+      "scenario": "en-service-invoices",
+      "message": "B",
+      "model": "anthropic/claude-haiku-5.5",
+      "run": 4,
+      "choice": "Invoices",
+      "ms": 1525,
+      "usage": {
+        "input": 329,
+        "output": 166
+      }
+    },
+    {
+      "scenario": "en-service-invoices",
+      "message": "B",
+      "model": "anthropic/claude-haiku-5.5",
+      "run": 5,
+      "choice": "Personal",
+      "ms": 1579,
+      "usage": {
+        "input": 329,
+        "output": 109
+      }
+    },
+    {
+      "scenario": "en-service-invoices",
+      "message": "B",
+      "model": "anthropic/claude-haiku-5.5",
+      "run": 6,
+      "choice": "Personal",
+      "ms": 1254,
+      "usage": {
+        "input": 329,
+        "output": 135
+      }
+    },
+    {
+      "scenario": "en-service-invoices",
+      "message": "B",
+      "model": "anthropic/claude-haiku-5.5",
+      "run": 7,
+      "choice": "Invoices",
+      "ms": 1477,
+      "usage": {
+        "input": 329,
+        "output": 167
+      }
+    },
+    {
+      "scenario": "en-service-invoices",
+      "message": "B",
+      "model": "anthropic/claude-haiku-5.5",
+      "run": 8,
+      "choice": "Personal",
+      "ms": 1244,
+      "usage": {
+        "input": 329,
+        "output": 94
+      }
+    },
+    {
+      "scenario": "en-service-invoices",
+      "message": "B",
+      "model": "anthropic/claude-haiku-5.5",
+      "run": 9,
+      "choice": "Personal",
+      "ms": 1711,
+      "usage": {
+        "input": 329,
+        "output": 157
+      }
+    },
+    {
+      "scenario": "en-service-invoices",
+      "message": "B",
+      "model": "anthropic/claude-haiku-5.5",
+      "run": 10,
+      "choice": "Invoices",
+      "ms": 1212,
+      "usage": {
+        "input": 329,
+        "output": 81
+      }
+    },
+    {
+      "scenario": "en-service-invoices",
+      "message": "C",
+      "model": "anthropic/claude-haiku-5.5",
+      "run": 1,
+      "choice": "Invoices",
+      "ms": 988,
+      "usage": {
+        "input": 396,
+        "output": 13
+      }
+    },
+    {
+      "scenario": "en-service-invoices",
+      "message": "C",
+      "model": "anthropic/claude-haiku-5.5",
+      "run": 2,
+      "choice": "Invoices",
+      "ms": 818,
+      "usage": {
+        "input": 396,
+        "output": 13
+      }
+    },
+    {
+      "scenario": "en-service-invoices",
+      "message": "C",
+      "model": "anthropic/claude-haiku-5.5",
+      "run": 3,
+      "choice": "Invoices",
+      "ms": 658,
+      "usage": {
+        "input": 396,
+        "output": 13
+      }
+    },
+    {
+      "scenario": "en-service-invoices",
+      "message": "C",
+      "model": "anthropic/claude-haiku-5.5",
+      "run": 4,
+      "choice": "Invoices",
+      "ms": 585,
+      "usage": {
+        "input": 396,
+        "output": 13
+      }
+    },
+    {
+      "scenario": "en-service-invoices",
+      "message": "C",
+      "model": "anthropic/claude-haiku-5.5",
+      "run": 5,
+      "choice": "Invoices",
+      "ms": 650,
+      "usage": {
+        "input": 396,
+        "output": 13
+      }
+    },
+    {
+      "scenario": "en-service-invoices",
+      "message": "C",
+      "model": "anthropic/claude-haiku-5.5",
+      "run": 6,
+      "choice": "Invoices",
+      "ms": 607,
+      "usage": {
+        "input": 396,
+        "output": 13
+      }
+    },
+    {
+      "scenario": "en-service-invoices",
+      "message": "C",
+      "model": "anthropic/claude-haiku-5.5",
+      "run": 7,
+      "choice": "Invoices",
+      "ms": 635,
+      "usage": {
+        "input": 396,
+        "output": 13
+      }
+    },
+    {
+      "scenario": "en-service-invoices",
+      "message": "C",
+      "model": "anthropic/claude-haiku-5.5",
+      "run": 8,
+      "choice": "Invoices",
+      "ms": 647,
+      "usage": {
+        "input": 396,
+        "output": 13
+      }
+    },
+    {
+      "scenario": "en-service-invoices",
+      "message": "C",
+      "model": "anthropic/claude-haiku-5.5",
+      "run": 9,
+      "choice": "Invoices",
+      "ms": 627,
+      "usage": {
+        "input": 396,
+        "output": 13
+      }
+    },
+    {
+      "scenario": "en-service-invoices",
+      "message": "C",
+      "model": "anthropic/claude-haiku-5.5",
+      "run": 10,
+      "choice": "Invoices",
+      "ms": 712,
+      "usage": {
+        "input": 396,
+        "output": 13
+      }
+    },
+    {
+      "scenario": "en-service-invoices",
+      "message": "A-us",
+      "model": "anthropic/claude-haiku-5.5",
+      "run": 1,
+      "choice": "Invoices",
+      "ms": 1659,
+      "usage": {
+        "input": 342,
+        "output": 205
+      }
+    },
+    {
+      "scenario": "en-service-invoices",
+      "message": "A-us",
+      "model": "anthropic/claude-haiku-5.5",
+      "run": 2,
+      "choice": "Personal",
+      "ms": 935,
+      "usage": {
+        "input": 342,
+        "output": 69
+      }
+    },
+    {
+      "scenario": "en-service-invoices",
+      "message": "A-us",
+      "model": "anthropic/claude-haiku-5.5",
+      "run": 3,
+      "choice": "Invoices",
+      "ms": 1328,
+      "usage": {
+        "input": 342,
+        "output": 105
+      }
+    },
+    {
+      "scenario": "en-service-invoices",
+      "message": "A-us",
+      "model": "anthropic/claude-haiku-5.5",
+      "run": 4,
+      "choice": "Invoices",
+      "ms": 1316,
+      "usage": {
+        "input": 342,
+        "output": 106
+      }
+    },
+    {
+      "scenario": "en-service-invoices",
+      "message": "A-us",
+      "model": "anthropic/claude-haiku-5.5",
+      "run": 5,
+      "choice": "Invoices",
+      "ms": 1369,
+      "usage": {
+        "input": 342,
+        "output": 126
+      }
+    },
+    {
+      "scenario": "en-service-invoices",
+      "message": "A-us",
+      "model": "anthropic/claude-haiku-5.5",
+      "run": 6,
+      "choice": "Personal",
+      "ms": 1129,
+      "usage": {
+        "input": 342,
+        "output": 85
+      }
+    },
+    {
+      "scenario": "en-service-invoices",
+      "message": "A-us",
+      "model": "anthropic/claude-haiku-5.5",
+      "run": 7,
+      "choice": "Personal",
+      "ms": 1083,
+      "usage": {
+        "input": 342,
+        "output": 90
+      }
+    },
+    {
+      "scenario": "en-service-invoices",
+      "message": "A-us",
+      "model": "anthropic/claude-haiku-5.5",
+      "run": 8,
+      "choice": "Personal",
+      "ms": 1492,
+      "usage": {
+        "input": 342,
+        "output": 172
+      }
+    },
+    {
+      "scenario": "en-service-invoices",
+      "message": "A-us",
+      "model": "anthropic/claude-haiku-5.5",
+      "run": 9,
+      "choice": "Invoices",
+      "ms": 1376,
+      "usage": {
+        "input": 342,
+        "output": 135
+      }
+    },
+    {
+      "scenario": "en-service-invoices",
+      "message": "A-us",
+      "model": "anthropic/claude-haiku-5.5",
+      "run": 10,
+      "choice": "Invoices",
+      "ms": 1514,
+      "usage": {
+        "input": 342,
+        "output": 186
+      }
+    },
+    {
+      "scenario": "en-service-invoices",
+      "message": "C-us",
+      "model": "anthropic/claude-haiku-5.5",
+      "run": 1,
+      "choice": "Invoices",
+      "ms": 1070,
+      "usage": {
+        "input": 396,
+        "output": 13
+      }
+    },
+    {
+      "scenario": "en-service-invoices",
+      "message": "C-us",
+      "model": "anthropic/claude-haiku-5.5",
+      "run": 2,
+      "choice": "Invoices",
+      "ms": 888,
+      "usage": {
+        "input": 396,
+        "output": 13
+      }
+    },
+    {
+      "scenario": "en-service-invoices",
+      "message": "C-us",
+      "model": "anthropic/claude-haiku-5.5",
+      "run": 3,
+      "choice": "Invoices",
+      "ms": 1031,
+      "usage": {
+        "input": 396,
+        "output": 13
+      }
+    },
+    {
+      "scenario": "en-service-invoices",
+      "message": "C-us",
+      "model": "anthropic/claude-haiku-5.5",
+      "run": 4,
+      "choice": "Invoices",
+      "ms": 900,
+      "usage": {
+        "input": 396,
+        "output": 13
+      }
+    },
+    {
+      "scenario": "en-service-invoices",
+      "message": "C-us",
+      "model": "anthropic/claude-haiku-5.5",
+      "run": 5,
+      "choice": "Invoices",
+      "ms": 915,
+      "usage": {
+        "input": 396,
+        "output": 13
+      }
+    },
+    {
+      "scenario": "en-service-invoices",
+      "message": "C-us",
+      "model": "anthropic/claude-haiku-5.5",
+      "run": 6,
+      "choice": "Invoices",
+      "ms": 944,
+      "usage": {
+        "input": 396,
+        "output": 13
+      }
+    },
+    {
+      "scenario": "en-service-invoices",
+      "message": "C-us",
+      "model": "anthropic/claude-haiku-5.5",
+      "run": 7,
+      "choice": "Invoices",
+      "ms": 1656,
+      "usage": {
+        "input": 396,
+        "output": 13
+      }
+    },
+    {
+      "scenario": "en-service-invoices",
+      "message": "C-us",
+      "model": "anthropic/claude-haiku-5.5",
+      "run": 8,
+      "choice": "Invoices",
+      "ms": 1044,
+      "usage": {
+        "input": 396,
+        "output": 13
+      }
+    },
+    {
+      "scenario": "en-service-invoices",
+      "message": "C-us",
+      "model": "anthropic/claude-haiku-5.5",
+      "run": 9,
+      "choice": "Invoices",
+      "ms": 786,
+      "usage": {
+        "input": 396,
+        "output": 13
+      }
+    },
+    {
+      "scenario": "en-service-invoices",
+      "message": "C-us",
+      "model": "anthropic/claude-haiku-5.5",
+      "run": 10,
+      "choice": "Invoices",
+      "ms": 966,
+      "usage": {
+        "input": 396,
+        "output": 13
+      }
+    },
+    {
+      "scenario": "en-service-bills",
+      "message": "A",
+      "model": "anthropic/claude-haiku-5.5",
+      "run": 1,
+      "choice": "Bills",
+      "ms": 1031,
+      "usage": {
+        "input": 340,
+        "output": 63
+      }
+    },
+    {
+      "scenario": "en-service-bills",
+      "message": "A",
+      "model": "anthropic/claude-haiku-5.5",
+      "run": 2,
+      "choice": "Bills",
+      "ms": 817,
+      "usage": {
+        "input": 340,
+        "output": 63
+      }
+    },
+    {
+      "scenario": "en-service-bills",
+      "message": "A",
+      "model": "anthropic/claude-haiku-5.5",
+      "run": 3,
+      "choice": "Bills",
+      "ms": 800,
+      "usage": {
+        "input": 340,
+        "output": 69
+      }
+    },
+    {
+      "scenario": "en-service-bills",
+      "message": "A",
+      "model": "anthropic/claude-haiku-5.5",
+      "run": 4,
+      "choice": "Bills",
+      "ms": 922,
+      "usage": {
+        "input": 340,
+        "output": 57
+      }
+    },
+    {
+      "scenario": "en-service-bills",
+      "message": "A",
+      "model": "anthropic/claude-haiku-5.5",
+      "run": 5,
+      "choice": "Bills",
+      "ms": 1078,
+      "usage": {
+        "input": 340,
+        "output": 61
+      }
+    },
+    {
+      "scenario": "en-service-bills",
+      "message": "A",
+      "model": "anthropic/claude-haiku-5.5",
+      "run": 6,
+      "choice": "Bills",
+      "ms": 889,
+      "usage": {
+        "input": 340,
+        "output": 68
+      }
+    },
+    {
+      "scenario": "en-service-bills",
+      "message": "A",
+      "model": "anthropic/claude-haiku-5.5",
+      "run": 7,
+      "choice": "Bills",
+      "ms": 818,
+      "usage": {
+        "input": 340,
+        "output": 63
+      }
+    },
+    {
+      "scenario": "en-service-bills",
+      "message": "A",
+      "model": "anthropic/claude-haiku-5.5",
+      "run": 8,
+      "choice": "Bills",
+      "ms": 900,
+      "usage": {
+        "input": 340,
+        "output": 64
+      }
+    },
+    {
+      "scenario": "en-service-bills",
+      "message": "A",
+      "model": "anthropic/claude-haiku-5.5",
+      "run": 9,
+      "choice": "Bills",
+      "ms": 1953,
+      "usage": {
+        "input": 340,
+        "output": 63
+      }
+    },
+    {
+      "scenario": "en-service-bills",
+      "message": "A",
+      "model": "anthropic/claude-haiku-5.5",
+      "run": 10,
+      "choice": "Bills",
+      "ms": 828,
+      "usage": {
+        "input": 340,
+        "output": 51
+      }
+    },
+    {
+      "scenario": "en-service-bills",
+      "message": "B",
+      "model": "anthropic/claude-haiku-5.5",
+      "run": 1,
+      "choice": "Bills",
+      "ms": 835,
+      "usage": {
+        "input": 327,
+        "output": 36
+      }
+    },
+    {
+      "scenario": "en-service-bills",
+      "message": "B",
+      "model": "anthropic/claude-haiku-5.5",
+      "run": 2,
+      "choice": "Bills",
+      "ms": 1032,
+      "usage": {
+        "input": 327,
+        "output": 41
+      }
+    },
+    {
+      "scenario": "en-service-bills",
+      "message": "B",
+      "model": "anthropic/claude-haiku-5.5",
+      "run": 3,
+      "choice": "Bills",
+      "ms": 945,
+      "usage": {
+        "input": 327,
+        "output": 12
+      }
+    },
+    {
+      "scenario": "en-service-bills",
+      "message": "B",
+      "model": "anthropic/claude-haiku-5.5",
+      "run": 4,
+      "choice": "Bills",
+      "ms": 801,
+      "usage": {
+        "input": 327,
+        "output": 43
+      }
+    },
+    {
+      "scenario": "en-service-bills",
+      "message": "B",
+      "model": "anthropic/claude-haiku-5.5",
+      "run": 5,
+      "choice": "Bills",
+      "ms": 1096,
+      "usage": {
+        "input": 327,
+        "output": 12
+      }
+    },
+    {
+      "scenario": "en-service-bills",
+      "message": "B",
+      "model": "anthropic/claude-haiku-5.5",
+      "run": 6,
+      "choice": "Bills",
+      "ms": 648,
+      "usage": {
+        "input": 327,
+        "output": 12
+      }
+    },
+    {
+      "scenario": "en-service-bills",
+      "message": "B",
+      "model": "anthropic/claude-haiku-5.5",
+      "run": 7,
+      "choice": "Bills",
+      "ms": 668,
+      "usage": {
+        "input": 327,
+        "output": 12
+      }
+    },
+    {
+      "scenario": "en-service-bills",
+      "message": "B",
+      "model": "anthropic/claude-haiku-5.5",
+      "run": 8,
+      "choice": "Bills",
+      "ms": 730,
+      "usage": {
+        "input": 327,
+        "output": 39
+      }
+    },
+    {
+      "scenario": "en-service-bills",
+      "message": "B",
+      "model": "anthropic/claude-haiku-5.5",
+      "run": 9,
+      "choice": "Bills",
+      "ms": 874,
+      "usage": {
+        "input": 327,
+        "output": 39
+      }
+    },
+    {
+      "scenario": "en-service-bills",
+      "message": "B",
+      "model": "anthropic/claude-haiku-5.5",
+      "run": 10,
+      "choice": "Bills",
+      "ms": 881,
+      "usage": {
+        "input": 327,
+        "output": 36
+      }
+    },
+    {
+      "scenario": "en-service-bills",
+      "message": "C",
+      "model": "anthropic/claude-haiku-5.5",
+      "run": 1,
+      "choice": "Bills",
+      "ms": 1227,
+      "usage": {
+        "input": 394,
+        "output": 12
+      }
+    },
+    {
+      "scenario": "en-service-bills",
+      "message": "C",
+      "model": "anthropic/claude-haiku-5.5",
+      "run": 2,
+      "choice": "Bills",
+      "ms": 942,
+      "usage": {
+        "input": 394,
+        "output": 12
+      }
+    },
+    {
+      "scenario": "en-service-bills",
+      "message": "C",
+      "model": "anthropic/claude-haiku-5.5",
+      "run": 3,
+      "choice": "Bills",
+      "ms": 971,
+      "usage": {
+        "input": 394,
+        "output": 12
+      }
+    },
+    {
+      "scenario": "en-service-bills",
+      "message": "C",
+      "model": "anthropic/claude-haiku-5.5",
+      "run": 4,
+      "choice": "Bills",
+      "ms": 836,
+      "usage": {
+        "input": 394,
+        "output": 12
+      }
+    },
+    {
+      "scenario": "en-service-bills",
+      "message": "C",
+      "model": "anthropic/claude-haiku-5.5",
+      "run": 5,
+      "choice": "Bills",
+      "ms": 3059,
+      "usage": {
+        "input": 394,
+        "output": 12
+      }
+    },
+    {
+      "scenario": "en-service-bills",
+      "message": "C",
+      "model": "anthropic/claude-haiku-5.5",
+      "run": 6,
+      "choice": "Bills",
+      "ms": 1338,
+      "usage": {
+        "input": 394,
+        "output": 12
+      }
+    },
+    {
+      "scenario": "en-service-bills",
+      "message": "C",
+      "model": "anthropic/claude-haiku-5.5",
+      "run": 7,
+      "choice": "Bills",
+      "ms": 956,
+      "usage": {
+        "input": 394,
+        "output": 12
+      }
+    },
+    {
+      "scenario": "en-service-bills",
+      "message": "C",
+      "model": "anthropic/claude-haiku-5.5",
+      "run": 8,
+      "choice": "Bills",
+      "ms": 1326,
+      "usage": {
+        "input": 394,
+        "output": 12
+      }
+    },
+    {
+      "scenario": "en-service-bills",
+      "message": "C",
+      "model": "anthropic/claude-haiku-5.5",
+      "run": 9,
+      "choice": "Bills",
+      "ms": 989,
+      "usage": {
+        "input": 394,
+        "output": 12
+      }
+    },
+    {
+      "scenario": "en-service-bills",
+      "message": "C",
+      "model": "anthropic/claude-haiku-5.5",
+      "run": 10,
+      "choice": "Bills",
+      "ms": 848,
+      "usage": {
+        "input": 394,
+        "output": 12
+      }
+    },
+    {
+      "scenario": "en-service-bills",
+      "message": "A-us",
+      "model": "anthropic/claude-haiku-5.5",
+      "run": 1,
+      "choice": "Bills",
+      "ms": 1048,
+      "usage": {
+        "input": 340,
+        "output": 12
+      }
+    },
+    {
+      "scenario": "en-service-bills",
+      "message": "A-us",
+      "model": "anthropic/claude-haiku-5.5",
+      "run": 2,
+      "choice": "Bills",
+      "ms": 795,
+      "usage": {
+        "input": 340,
+        "output": 12
+      }
+    },
+    {
+      "scenario": "en-service-bills",
+      "message": "A-us",
+      "model": "anthropic/claude-haiku-5.5",
+      "run": 3,
+      "choice": "Bills",
+      "ms": 974,
+      "usage": {
+        "input": 340,
+        "output": 32
+      }
+    },
+    {
+      "scenario": "en-service-bills",
+      "message": "A-us",
+      "model": "anthropic/claude-haiku-5.5",
+      "run": 4,
+      "choice": "Bills",
+      "ms": 1042,
+      "usage": {
+        "input": 340,
+        "output": 36
+      }
+    },
+    {
+      "scenario": "en-service-bills",
+      "message": "A-us",
+      "model": "anthropic/claude-haiku-5.5",
+      "run": 5,
+      "choice": "Bills",
+      "ms": 1517,
+      "usage": {
+        "input": 340,
+        "output": 36
+      }
+    },
+    {
+      "scenario": "en-service-bills",
+      "message": "A-us",
+      "model": "anthropic/claude-haiku-5.5",
+      "run": 6,
+      "choice": "Bills",
+      "ms": 923,
+      "usage": {
+        "input": 340,
+        "output": 34
+      }
+    },
+    {
+      "scenario": "en-service-bills",
+      "message": "A-us",
+      "model": "anthropic/claude-haiku-5.5",
+      "run": 7,
+      "choice": "Bills",
+      "ms": 1835,
+      "usage": {
+        "input": 340,
+        "output": 36
+      }
+    },
+    {
+      "scenario": "en-service-bills",
+      "message": "A-us",
+      "model": "anthropic/claude-haiku-5.5",
+      "run": 8,
+      "choice": "Bills",
+      "ms": 1063,
+      "usage": {
+        "input": 340,
+        "output": 37
+      }
+    },
+    {
+      "scenario": "en-service-bills",
+      "message": "A-us",
+      "model": "anthropic/claude-haiku-5.5",
+      "run": 9,
+      "choice": "Bills",
+      "ms": 1016,
+      "usage": {
+        "input": 340,
+        "output": 33
+      }
+    },
+    {
+      "scenario": "en-service-bills",
+      "message": "A-us",
+      "model": "anthropic/claude-haiku-5.5",
+      "run": 10,
+      "choice": "Bills",
+      "ms": 838,
+      "usage": {
+        "input": 340,
+        "output": 12
+      }
+    },
+    {
+      "scenario": "en-service-bills",
+      "message": "C-us",
+      "model": "anthropic/claude-haiku-5.5",
+      "run": 1,
+      "choice": "Bills",
+      "ms": 811,
+      "usage": {
+        "input": 394,
+        "output": 12
+      }
+    },
+    {
+      "scenario": "en-service-bills",
+      "message": "C-us",
+      "model": "anthropic/claude-haiku-5.5",
+      "run": 2,
+      "choice": "Bills",
+      "ms": 2819,
+      "usage": {
+        "input": 394,
+        "output": 12
+      }
+    },
+    {
+      "scenario": "en-service-bills",
+      "message": "C-us",
+      "model": "anthropic/claude-haiku-5.5",
+      "run": 3,
+      "choice": "Bills",
+      "ms": 1032,
+      "usage": {
+        "input": 394,
+        "output": 12
+      }
+    },
+    {
+      "scenario": "en-service-bills",
+      "message": "C-us",
+      "model": "anthropic/claude-haiku-5.5",
+      "run": 4,
+      "choice": "Bills",
+      "ms": 862,
+      "usage": {
+        "input": 394,
+        "output": 12
+      }
+    },
+    {
+      "scenario": "en-service-bills",
+      "message": "C-us",
+      "model": "anthropic/claude-haiku-5.5",
+      "run": 5,
+      "choice": "Bills",
+      "ms": 1159,
+      "usage": {
+        "input": 394,
+        "output": 12
+      }
+    },
+    {
+      "scenario": "en-service-bills",
+      "message": "C-us",
+      "model": "anthropic/claude-haiku-5.5",
+      "run": 6,
+      "choice": "Bills",
+      "ms": 839,
+      "usage": {
+        "input": 394,
+        "output": 12
+      }
+    },
+    {
+      "scenario": "en-service-bills",
+      "message": "C-us",
+      "model": "anthropic/claude-haiku-5.5",
+      "run": 7,
+      "choice": "Bills",
+      "ms": 2365,
+      "usage": {
+        "input": 394,
+        "output": 12
+      }
+    },
+    {
+      "scenario": "en-service-bills",
+      "message": "C-us",
+      "model": "anthropic/claude-haiku-5.5",
+      "run": 8,
+      "choice": "Bills",
+      "ms": 928,
+      "usage": {
+        "input": 394,
+        "output": 12
+      }
+    },
+    {
+      "scenario": "en-service-bills",
+      "message": "C-us",
+      "model": "anthropic/claude-haiku-5.5",
+      "run": 9,
+      "choice": "Bills",
+      "ms": 866,
+      "usage": {
+        "input": 394,
+        "output": 12
+      }
+    },
+    {
+      "scenario": "en-service-bills",
+      "message": "C-us",
+      "model": "anthropic/claude-haiku-5.5",
+      "run": 10,
+      "choice": "Bills",
+      "ms": 818,
+      "usage": {
+        "input": 394,
+        "output": 12
+      }
     }
   ]
 }
