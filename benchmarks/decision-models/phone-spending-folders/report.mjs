@@ -53,14 +53,14 @@ const score = (model, filter = () => true) => {
 // English renderings of the Spanish turns, for readers who do not speak it.
 const translations = {
   "cuanto estoy gastando en telefonia por mes?": "how much am I spending on my phone each month?",
-  "cuanto estoy gastando en telefonia por mes? tengo movistar y personal flow":
-    "how much am I spending on my phone each month? I have Movistar and Personal Flow",
-  "cuanto estoy gastando en telefonia por mes? tengo verizon y t-mobile":
-    "how much am I spending on my phone each month? I have Verizon and T-Mobile",
-  "Para calcularlo sumá tus facturas mensuales de Movistar y Personal Flow. …":
-    "To work it out, add up your monthly bills (facturas) from Movistar and Personal Flow. …",
-  "Para calcularlo sumá tus facturas mensuales de Verizon y T-Mobile. …":
-    "To work it out, add up your monthly bills (facturas) from Verizon and T-Mobile. …",
+  "cuanto estoy gastando en telefonia por mes? cuanto en la linea personal y cuanto en la del trabajo":
+    "how much am I spending on my phone each month? how much on the personal line and how much on the work one",
+  "cuanto estoy gastando en telefonia por mes? cuanto en mi linea y cuanto en la de la empresa":
+    "how much am I spending on my phone each month? how much on my line and how much on the company's",
+  "Para calcularlo sumá tus facturas mensuales de cada línea, la personal y la del trabajo. …":
+    "To work it out, add up your monthly bills (facturas) for each line, the personal one and the work one. …",
+  "Para calcularlo sumá tus facturas mensuales de cada línea, la tuya y la de la empresa. …":
+    "To work it out, add up your monthly bills (facturas) for each line, yours and the company's. …",
 };
 
 const conversation = (scenarioId, message) => {
@@ -230,6 +230,22 @@ const spread = (model) => {
   return { maxSpread, changedPick, cases: cases.size };
 };
 
+// Runs whose probabilities differ from the ones most runs of the same case
+// returned.
+const offRuns = (model) => {
+  let off = 0;
+  let of = 0;
+  for (const key of new Set(results.map((r) => `${r.scenario}|${r.message}`))) {
+    const [s, m] = key.split("|");
+    const sets = runsOf(s, m, model).map((r) => JSON.stringify(r.probabilities));
+    const counts = {};
+    for (const set of sets) counts[set] = (counts[set] ?? 0) + 1;
+    off += sets.length - Math.max(...Object.values(counts));
+    of += sets.length;
+  }
+  return { off, of };
+};
+
 const total = Object.fromEntries(models.map((m) => [m.id, score(m)]));
 
 // Figures the conclusions quote, computed from the saved runs.
@@ -247,8 +263,8 @@ const targetRange = (model, scenarioId, messages) => {
   return pct(lo) === pct(hi) ? pct(lo) : `${pct(lo)}–${pct(hi)}`;
 };
 const personalShare = (scenarioId, message) => pct(mean(runsOf(scenarioId, message, luna), "Personal"));
-const withoutReply = ["B", "A", "A-us"];
-const withReply = ["C", "C-us"];
+const withoutReply = ["B", "A", "A-own"];
+const withReply = ["C", "C-own"];
 
 const theories = [
   {
@@ -261,13 +277,13 @@ const theories = [
       ["A", ["en-bills", "en-invoices"]],
       ["C", ["en-bills", "en-invoices"]],
     ]),
-    after: `Luna only finds Invoices once the assistant's reply has said “invoices”. jev finds it every time, but less
-      sure of it than of Bills. So the next question: is Luna just matching words?`,
+    after: `Luna never picks Invoices, not even after the assistant's reply has said “invoices”. jev finds it every
+      time, but less sure of it than of Bills. So the next question: is Luna just matching words?`,
   },
   {
     id: "words",
     title: "Is it just matching words?",
-    answer: "For Luna Decisions, mostly yes. Take “bills” out of the question and it misses even the Bills folder.",
+    answer: "For Luna Decisions, mostly yes. Take “bills” out of the bare question and it misses even the Bills folder.",
     setup: `Above, the user said “phone bills”, the Bills folder's own name. Here the user says “phone service”,
       which names neither folder.`,
     body: cards([
@@ -278,20 +294,22 @@ const theories = [
     after: "jev's picks do not change.",
   },
   {
-    id: "carrier",
-    title: "Is “Personal Flow” pulling it towards the Personal folder?",
-    answer: "No. With Verizon and T-Mobile, Luna leans further towards Personal, not less.",
-    setup: `Personal Flow is an Argentine phone plan, and one folder is called Personal. We swapped in US carriers
-      and watched Luna's share for Personal.`,
+    id: "personal",
+    title: "Is the word “personal” pulling it towards the Personal folder?",
+    answer: "No. Without the word, Luna's share for Personal barely moves, and in one case it grows into Luna's pick.",
+    setup: `The user asks about their personal line and their work line, and one folder is called Personal. We asked
+      the same with “my own line” and “my company line”, which leave the word out, and watched Luna's share for
+      Personal.`,
     body: cards([
-      ["A", ["en-service-invoices"]],
-      ["A-us", ["en-service-invoices"]],
+      ["A", ["en-invoices"]],
+      ["A-own", ["en-invoices"]],
       ["A", ["es-facturas"]],
-      ["A-us", ["es-facturas"]],
+      ["A-own", ["es-facturas"]],
     ]),
-    after: `Luna's Personal goes from ${personalShare("en-service-invoices", "A")} to ${personalShare("en-service-invoices", "A-us")}
-      in English and from ${personalShare("es-facturas", "A")} to ${personalShare("es-facturas", "A-us")} in Spanish, where it
-      becomes Luna's pick. Our guess, untested: it reads “how much am I spending” as a personal finance question.`,
+    after: `Luna's Personal goes from ${personalShare("en-invoices", "A")} to ${personalShare("en-invoices", "A-own")}
+      with “phone bills” and Invoices, where it becomes Luna's pick, and from ${personalShare("es-facturas", "A")} to
+      ${personalShare("es-facturas", "A-own")} in Spanish. jev and both text models pick the right folder with and without
+      the word. Our guess, untested: Luna reads “how much am I spending” as a personal finance question.`,
   },
   {
     id: "repeat",
@@ -305,7 +323,9 @@ const theories = [
         return `<tr><td>${esc(m.name)}</td><td class="data">${s.changedPick} of ${s.cases} cases</td><td class="data">${m.text ? "no probabilities" : fmt(s.maxSpread)}</td></tr>`;
       })
       .join("")}</tbody></table></div>`,
-    after: "Luna Decisions returns exactly the same numbers every time. jev's move a little.",
+    after: `Luna Decisions returned the same probabilities in ${offRuns(luna).of - offRuns(luna).off} of its
+      ${offRuns(luna).of} runs; the other ${offRuns(luna).off} moved by up to ${fmt(spread(luna).maxSpread)} without changing
+      its pick. jev's move a little.`,
   },
 ];
 
@@ -325,8 +345,8 @@ const conclusions = [
   Every miss of theirs is the Invoices folder going to Personal, the same cases where jev's confidence drops. They
   return no probabilities and are slower: a median of ${latency(lunaText)} and ${latency(haiku)} per call, against
   ${latency(jev)} for jev.`,
-  `<b>The carrier is not the cause.</b> With Verizon and T-Mobile instead of Personal Flow, Luna leans further towards
-  the Personal folder, not less.`,
+  `<b>The word “personal” is not the cause.</b> Without it, Luna leans as much towards the Personal folder, and in
+  one case more.`,
   `<b>For this feature,</b> a folder suggestion should not depend on the user typing the folder's exact name. In
   this test, jev met it in every run. The text models missed it in ${total[lunaText.id].of - total[lunaText.id].right} and
   ${total[haiku.id].of - total[haiku.id].right} runs of ${total[haiku.id].of}.`,
@@ -464,7 +484,7 @@ th .folder { display: block; font-size: 13px; color: var(--muted); border: 0; pa
 <h1>Which folder does a chat about phone spending go in?</h1>
 <p class="lede">Two decision models choose which of the user's folders a chat belongs in, with two text models
 answering the same question for comparison. Each case ran ${runs} times, and each test changes one variable: the
-language, the folder's name, the user's wording or the carriers mentioned.</p>
+language, the folder's name, the user's wording or the word “personal”.</p>
 
 <div class="scores">
   <p class="score-group">Decision models · a probability per option</p>
@@ -498,7 +518,8 @@ language, the folder's name, the user's wording or the carriers mentioned.</p>
 <section class="q" id="spanish">
   <p class="eyebrow">Where we started</p>
   <h2>A question in Spanish</h2>
-  <p class="answer">jev files it under Facturas, and so do both text models. Luna Decisions says none of the folders fit.</p>
+  <p class="answer">jev files it under Facturas every time, and so do both text models. Luna Decisions mostly says none of
+  the folders fit.</p>
   <p>We noticed this in a real chat, in Spanish; the messages below recreate it. The folders are <b>Personal</b>,
   <b>Ideas</b> and <b>Facturas</b>, the everyday Spanish word for bills. A person would file this chat under
   Facturas.</p>
@@ -507,8 +528,8 @@ language, the folder's name, the user's wording or the carriers mentioned.</p>
     ["A", ["es-facturas"]],
     ["C", ["es-facturas"]],
   ])}
-  <p class="after">Facturas is Luna's second choice every time, even when the assistant itself says “facturas”. So we
-  started testing theories.</p>
+  <p class="after">Luna finds Facturas only when the user asks about the two lines, and loses it again once the assistant
+  itself says “facturas”. So we started testing theories.</p>
 </section>
 
 <div class="part"><p class="eyebrow">How we iterated</p><h2>Testing our theories, one change at a time</h2></div>
@@ -528,6 +549,8 @@ ${theories.map((s, i) => section(s, s.id === "repeat" ? "Check" : `Theory ${i + 
     <li>The text models get one prompt, written for this test, with the gateway's default settings. Another
     wording could change their numbers.</li>
     <li>jev varies between runs, so a rerun will not give exactly these numbers.</li>
+    <li>The bare question (message B) ran on ${data.dates.B.slice(0, 10)} and the other messages on ${day}, with the
+    same models and settings.</li>
     <li><code>experimental_decide</code> is experimental in the AI SDK, and the Decisions API is in beta.</li>
   </ul>
 </section>

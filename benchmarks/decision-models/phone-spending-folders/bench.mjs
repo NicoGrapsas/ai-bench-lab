@@ -23,38 +23,49 @@ const noneKey = "none";
 const noneLabel = "None of these folders fits";
 
 // Each conversation comes in five messages:
-//   A    the question, naming the user's carriers
+//   A    the question, asking for the personal line and the work line
 //   B    the question alone
 //   C    A followed by the assistant's reply
-//   A-us, C-us  the same as A and C with US carriers
-// "Personal Flow" is an Argentine phone plan. The US variants are the control
-// for whether that name pulls the conversation towards the "Personal" folder.
-const carriers = {
-  ar: { es: "movistar y personal flow", en: "Movistar and Personal Flow" },
-  us: { es: "verizon y t-mobile", en: "Verizon and T-Mobile" },
+//   A-own, C-own  the same as A and C without the word "personal": "my own
+//        line" and "the company line". One folder is called Personal, so these
+//        are the control for whether the word pulls the conversation there.
+const lines = {
+  personal: {
+    es: "cuanto en la linea personal y cuanto en la del trabajo",
+    esReply: "la personal y la del trabajo",
+    en: "How much on my personal line and how much on my work line?",
+    enReply: "personal and work",
+  },
+  own: {
+    es: "cuanto en mi linea y cuanto en la de la empresa",
+    esReply: "la tuya y la de la empresa",
+    en: "How much on my own line and how much on my company line?",
+    enReply: "yours and the company's",
+  },
 };
 
-const withCarriers = (build) => ({
-  A: build.withCarriers(carriers.ar),
+const withLines = (build) => ({
+  A: build.withLines(lines.personal),
   B: build.alone,
-  C: build.withReply(carriers.ar),
-  "A-us": build.withCarriers(carriers.us),
-  "C-us": build.withReply(carriers.us),
+  C: build.withReply(lines.personal),
+  "A-own": build.withLines(lines.own),
+  "C-own": build.withReply(lines.own),
 });
 
-const spanish = withCarriers({
-  alone: "cuanto estoy gastando en telefonia por mes?",
-  withCarriers: (c) => `cuanto estoy gastando en telefonia por mes? tengo ${c.es}`,
-  withReply: (c) =>
-    `user: cuanto estoy gastando en telefonia por mes? tengo ${c.es}\n\nassistant: Para calcularlo sumá tus facturas mensuales de ${c.en.replace(" and ", " y ")}. Si me pasás los montos te armo un resumen de gastos.`,
+const spanishQuestion = "cuanto estoy gastando en telefonia por mes?";
+const spanish = withLines({
+  alone: spanishQuestion,
+  withLines: (l) => `${spanishQuestion} ${l.es}`,
+  withReply: (l) =>
+    `user: ${spanishQuestion} ${l.es}\n\nassistant: Para calcularlo sumá tus facturas mensuales de cada línea, ${l.esReply}. Si me pasás los montos te armo un resumen de gastos.`,
 });
 
 const english = (question) =>
-  withCarriers({
+  withLines({
     alone: question,
-    withCarriers: (c) => `${question} I have ${c.en}`,
-    withReply: (c) =>
-      `user: ${question} I have ${c.en}\n\nassistant: To work it out, add up your monthly invoices from ${c.en}. If you send me the amounts I can put together a summary of your spending.`,
+    withLines: (l) => `${question} ${l.en}`,
+    withReply: (l) =>
+      `user: ${question} ${l.en}\n\nassistant: To work it out, add up your monthly invoices for each line, ${l.enReply}. If you send me the amounts I can put together a summary of your spending.`,
   });
 
 // Says "phone bills", the same word as the "Bills" folder.

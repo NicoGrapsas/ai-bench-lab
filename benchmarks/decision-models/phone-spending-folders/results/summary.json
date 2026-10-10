@@ -3,7 +3,7 @@
   "category": "decision-models",
   "title": "Which folder does a chat about phone spending go in?",
   "task": "choice between the user's folders",
-  "date": "2026-10-09",
+  "date": "2026-10-10",
   "calls": 1000,
   "scores": [
     {
@@ -21,13 +21,13 @@
     {
       "model": "openai/gpt-6-luna",
       "kind": "text",
-      "right": 242,
+      "right": 245,
       "of": 250
     },
     {
       "model": "anthropic/claude-haiku-5.5",
       "kind": "text",
-      "right": 241,
+      "right": 244,
       "of": 250
     }
   ]

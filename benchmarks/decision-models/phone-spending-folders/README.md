@@ -11,8 +11,8 @@ the same question for comparison.
 |---|---|---|---|---|
 | `typesafe-ai/jev` | decision | **250 of 250** runs | $0.042 input, output free | 0.2 s |
 | `openai/gpt-6-luna-decisions` | decision | **110 of 250** runs | $0.10 input, output free | 0.2 s |
-| `openai/gpt-6-luna` | text | **242 of 250** runs | $0.10 input, $0.50 output | 1.4 s |
-| `anthropic/claude-haiku-5.5` | text | **241 of 250** runs | $0.10 input, $0.50 output | 1.0 s |
+| `openai/gpt-6-luna` | text | **245 of 250** runs | $0.10 input, $0.50 output | 1.3 s |
+| `anthropic/claude-haiku-5.5` | text | **244 of 250** runs | $0.10 input, $0.50 output | 1.0 s |
 
 Prices from the Vercel AI Gateway model list on 2026-10-09. In this README,
 "Luna" alone means GPT-6 Luna Decisions.
@@ -28,8 +28,9 @@ The model gives each option a probability and picks the highest. It is right
 when it picks the folder a person would.
 
 The user always asks how much they spend on their phone. Each table shows the
-exact conversation the models received: the user's message on its own, with
-the carriers they use, or followed by the assistant's reply.
+exact conversation the models received: the user's message on its own, asking
+about their personal line and their work line, or followed by the assistant's
+reply.
 
 In the tables, each cell is what the model picked and its probability,
 averaged over 10 runs. ✓ means it is the right folder.
@@ -50,11 +51,12 @@ each month?"). A person would file it under Facturas.
 | Conversation the model gets | jev | Luna Decisions |
 |---|---|---|
 | *cuanto estoy gastando en telefonia por mes?*<br>("how much am I spending on my phone each month?") | ✓ **Facturas** 0.95 | ✗ none 0.51 |
-| *cuanto estoy gastando en telefonia por mes? tengo movistar y personal flow*<br>("… I have Movistar and Personal Flow") | ✓ **Facturas** 0.92 | ✗ none 0.39 |
-| the same, then the assistant: *Para calcularlo sumá tus facturas mensuales de Movistar y Personal Flow. …*<br>("To work it out, add up your monthly bills from Movistar and Personal Flow.") | ✓ **Facturas** 0.97 | ✗ none 0.39 |
+| *cuanto estoy gastando en telefonia por mes? cuanto en la linea personal y cuanto en la del trabajo*<br>("… how much on the personal line and how much on the work one") | ✓ **Facturas** 0.91 | ✓ **Facturas** 0.46 |
+| the same, then the assistant: *Para calcularlo sumá tus facturas mensuales de cada línea, la personal y la del trabajo. …*<br>("To work it out, add up your monthly bills for each line, the personal one and the work one.") | ✓ **Facturas** 0.96 | ✗ none 0.49 |
 
-jev picks Facturas every time. Luna Decisions never does: it answers "none",
-with Facturas a close second. So we asked why.
+jev picks Facturas every time. Luna Decisions finds it only when the user asks
+about the two lines, and loses it again once the assistant's reply says
+"facturas". So we asked why.
 
 ## How we iterated
 
@@ -70,14 +72,14 @@ each month?"*, once with the third folder called **Bills** and once with
 |---|---|---|---|
 | *how much am I spending on my phone bills each month?* | Bills | ✓ **Bills** 1.00 | ✓ **Bills** 0.87 |
 | *how much am I spending on my phone bills each month?* | Invoices | ✓ **Invoices** 0.59 | ✗ none 0.65 |
-| *how much am I spending on my phone bills each month? I have Movistar and Personal Flow* | Bills | ✓ **Bills** 1.00 | ✓ **Bills** 0.95 |
-| *how much am I spending on my phone bills each month? I have Movistar and Personal Flow* | Invoices | ✓ **Invoices** 0.67 | ✗ none 0.47 |
-| the same, then the assistant: *To work it out, add up your monthly invoices from Movistar and Personal Flow. …* | Bills | ✓ **Bills** 1.00 | ✓ **Bills** 0.98 |
-| the same, then the assistant: *To work it out, add up your monthly invoices from Movistar and Personal Flow. …* | Invoices | ✓ **Invoices** 0.88 | ✓ **Invoices** 0.49 |
+| *how much am I spending on my phone bills each month? How much on my personal line and how much on my work line?* | Bills | ✓ **Bills** 1.00 | ✓ **Bills** 0.79 |
+| *how much am I spending on my phone bills each month? How much on my personal line and how much on my work line?* | Invoices | ✓ **Invoices** 0.71 | ✗ none 0.57 |
+| the same, then the assistant: *To work it out, add up your monthly invoices for each line, personal and work. …* | Bills | ✓ **Bills** 1.00 | ✓ **Bills** 0.85 |
+| the same, then the assistant: *To work it out, add up your monthly invoices for each line, personal and work. …* | Invoices | ✓ **Invoices** 0.90 | ✗ none 0.57 |
 
 Not the language: the folder's name. When the folder is called Bills, the
 word the user said, both models get it. Call it Invoices and Luna
-Decisions answers "none", unless the assistant's reply says "invoices" for it.
+Decisions answers "none", even after the assistant's reply says "invoices".
 
 ### Theory 2: is it just matching words?
 
@@ -88,36 +90,42 @@ month?"*, which names neither folder.
 |---|---|---|---|
 | *how much am I spending on phone service each month?* | Bills | ✓ **Bills** 1.00 | ✗ none 0.53 |
 | *how much am I spending on phone service each month?* | Invoices | ✓ **Invoices** 0.65 | ✗ none 0.84 |
-| *how much am I spending on phone service each month? I have Movistar and Personal Flow* | Bills | ✓ **Bills** 1.00 | ✓ **Bills** 0.71 |
-| *how much am I spending on phone service each month? I have Movistar and Personal Flow* | Invoices | ✓ **Invoices** 0.70 | ✗ none 0.59 |
-| the same, then the assistant: *To work it out, add up your monthly invoices from Movistar and Personal Flow. …* | Bills | ✓ **Bills** 1.00 | ✓ **Bills** 0.92 |
-| the same, then the assistant: *To work it out, add up your monthly invoices from Movistar and Personal Flow. …* | Invoices | ✓ **Invoices** 0.87 | ✗ Personal 0.41 |
+| *how much am I spending on phone service each month? How much on my personal line and how much on my work line?* | Bills | ✓ **Bills** 1.00 | ✓ **Bills** 0.50 |
+| *how much am I spending on phone service each month? How much on my personal line and how much on my work line?* | Invoices | ✓ **Invoices** 0.76 | ✗ none 0.57 |
+| the same, then the assistant: *To work it out, add up your monthly invoices for each line, personal and work. …* | Bills | ✓ **Bills** 1.00 | ✓ **Bills** 0.58 |
+| the same, then the assistant: *To work it out, add up your monthly invoices for each line, personal and work. …* | Invoices | ✓ **Invoices** 0.90 | ✗ none 0.60 |
 
 For Luna Decisions, mostly yes: without the word in the message it loses Bills
 on the bare question and never gets Invoices. jev's answers do not change.
 
-### Theory 3: is "Personal Flow" pulling it towards the Personal folder?
+### Theory 3: is the word "personal" pulling it towards the Personal folder?
 
-Personal Flow is an Argentine phone plan, and one folder is called Personal.
-We swapped the carriers for Verizon and T-Mobile.
+The user asks about their personal line and their work line, and one folder
+is called Personal. We asked the same with *"my own line"* and *"my company
+line"* (in Spanish, *"mi linea"* and *"la de la empresa"*), which leave the
+word out.
 
-| Case | Luna: Personal, Movistar / Personal Flow | Luna: Personal, Verizon / T-Mobile | jev with Verizon / T-Mobile | Luna with Verizon / T-Mobile |
+| Case | Luna: Personal, "personal line" | Luna: Personal, "own line" | jev with "own line" | Luna with "own line" |
 |---|---|---|---|---|
-| "phone service", Invoices | 0.35 | 0.46 | ✓ **Invoices** 0.58 | ✗ none 0.50 |
-| Spanish, Facturas | 0.27 | 0.37 | ✓ **Facturas** 0.91 | ✗ Personal 0.37 |
+| "phone bills", Invoices | 0.40 | 0.49 | ✓ **Invoices** 0.65 | ✗ Personal 0.49 |
+| Spanish, Facturas | 0.16 | 0.13 | ✓ **Facturas** 0.90 | ✓ **Facturas** 0.51 |
 
-No. With US carriers Luna Decisions leans *more* towards Personal, and in
-Spanish it picks it. Our guess, untested: it reads "how much am I spending" as
-personal finance.
+No. Without the word, Luna Decisions leans as much towards Personal, and with
+"phone bills" and Invoices it picks it. jev and both text models pick the right
+folder with and without the word. Our guess, untested: Luna reads "how much am
+I spending" as personal finance.
 
 ### Check: do the answers repeat?
 
 | Model | Cases where the pick changed between runs | Largest change in a probability |
 |---|---|---|
-| jev | 0 of 25 | 0.11 |
-| Luna Decisions | 0 of 25 | 0.00 |
-| GPT-6 Luna (text) | 5 of 25 | no probabilities |
+| jev | 0 of 25 | 0.09 |
+| Luna Decisions | 0 of 25 | 0.24 |
+| GPT-6 Luna (text) | 2 of 25 | no probabilities |
 | Claude Haiku 5.5 (text) | 2 of 25 | no probabilities |
+
+Luna Decisions returned the same probabilities in 248 of its 250 runs; the
+other 2 moved by up to 0.24 without changing its pick.
 
 Every option's probability for every case is in [the report](https://nicograpsas.github.io/ai-bench-lab/benchmarks/decision-models/phone-spending-folders/)
 and [`results/results.md`](results/results.md); every call is in
@@ -128,24 +136,24 @@ and [`results/results.md`](results/results.md); every call is in
 1. **The folder's name matters more than the language.** Luna Decisions finds
    the folder when its name is the word the user wrote: Bills for "phone
    bills", 50/50. When the folder is called Facturas or Invoices it mostly
-   says none fits (10/50 and 10/50), even in English.
+   says none fits (20/50 and 0/50), even in English.
 2. **jev never picked a wrong folder, but its confidence shows the same
    pull.** It gives Bills 100%. Invoices, a word the user never said, drops to
-   58–67%, and climbs back to 84–88% once the assistant's reply says
+   59–71%, and climbs back to 89–90% once the assistant's reply says
    "invoices". The word moves jev's confidence, not its answer. In Spanish,
-   where Facturas is the everyday word, it stays at 91–98%.
+   where Facturas is the everyday word, it stays at 90–98%.
 3. **Without the folder's word, Luna struggles even with an obvious match.**
    When the user says "phone service", Luna gets Bills 40/50 and Invoices 0/50.
 4. **The weakness is specific to Luna Decisions.** The same GPT-6 Luna, asked
-   as a text model, gets 242/250, and Claude Haiku 5.5 gets 241/250. Every
+   as a text model, gets 245/250, and Claude Haiku 5.5 gets 244/250. Every
    miss of theirs is the Invoices folder going to Personal, the same cases
    where jev's confidence drops. They return no probabilities and are slower:
-   a median of 1.4 s and 1.0 s per call, against 0.2 s for jev.
-5. **The carrier is not the cause.** With Verizon and T-Mobile instead of
-   Personal Flow, Luna leans further towards the Personal folder, not less.
+   a median of 1.3 s and 1.0 s per call, against 0.2 s for jev.
+5. **The word "personal" is not the cause.** Without it, Luna leans as much
+   towards the Personal folder, and in one case more.
 6. **For this feature,** a folder suggestion should not depend on the user
    typing the folder's exact name. In this test, jev met it in every run. The
-   text models missed it in 8 and 9 runs of 250.
+   text models missed it in 5 and 6 runs of 250.
 
 ## Limits
 
@@ -154,6 +162,8 @@ and [`results/results.md`](results/results.md); every call is in
 - The text models get one prompt, written for this test, with the gateway's
   default settings. Another wording could change their numbers.
 - jev varies between runs, so a rerun will not give exactly these numbers.
+- The bare question (message B) ran on 2026-10-09 and the other messages on
+  2026-10-10, with the same models and settings.
 - `experimental_decide` is experimental in the AI SDK, and the Decisions API is
   in beta.
 
@@ -164,4 +174,4 @@ npm run bench -- decision-models/phone-spending-folders            # 1,000 calls
 npm run bench -- decision-models/phone-spending-folders --runs 3
 ```
 
-Run on 2026-10-09 with `ai@7.0.137` and `@ai-sdk/gateway@4.0.110`.
+Run on 2026-10-09 and 2026-10-10 with `ai@7.0.137` and `@ai-sdk/gateway@4.0.110`.
